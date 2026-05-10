@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re:Zero — Арка 10, Глава 17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;600;700&family=Cormorant+Infant:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c14;
+  --bg2: #0e1320;
+  --bg3: #13192e;
+  --text: #ddd4c0;
+  --text-dim: #8a8070;
+  --accent: #c8a46a;
+  --accent2: #7a9cc8;
+  --divider: #2a3050;
+  --ram: #e87aaa;
+  --emilia: #aac8ec;
+  --bordeaux: #d04040;
+  --marcos: #8a9ab0;
+  --fiore: #f0c060;
+  --sakura: #c08ad0;
+  --felt: #e8a050;
+  --reinhard: #5090d8;
+  --witch: #9040a0;
+  --narrator: #ddd4c0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.85;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Ambient particles ── */
+#canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ram), var(--accent), var(--reinhard));
+  width: 0%;
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ── Header ── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(8,12,20,0.96) 70%, transparent);
+  border-bottom: 1px solid rgba(200,164,106,0.1);
+}
+
+.header-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-family: 'Cormorant SC', 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.header-pov {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  transition: color 0.6s ease;
+}
+
+/* ── Chapter title block ── */
+.chapter-title-block {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.chapter-kanji {
+  font-family: serif;
+  font-size: 48px;
+  color: rgba(200,164,106,0.25);
+  letter-spacing: 0.4em;
+  margin-bottom: 32px;
+  animation: fadeSlideIn 2s ease forwards;
+}
+
+.chapter-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 2s ease 0.3s both;
+}
+
+.chapter-num {
+  font-family: 'Cormorant SC', 'Cinzel Decorative', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  animation: fadeSlideIn 2s ease 0.5s both;
+  text-shadow: 0 0 60px rgba(200,164,106,0.3);
+}
+
+.chapter-subtitle {
+  font-family: 'Cormorant Infant', 'EB Garamond', serif;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 32px);
+  color: var(--text);
+  margin-bottom: 60px;
+  animation: fadeSlideIn 2s ease 0.8s both;
+}
+
+.scroll-hint {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ── Main content ── */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 40px 160px;
+}
+
+/* ── Paragraph reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Narration ── */
+p.narr {
+  margin-bottom: 1.3em;
+  color: var(--text);
+}
+
+p.italic-narr {
+  font-style: italic;
+  color: #c8bcaa;
+  margin-bottom: 1.3em;
+}
+
+p.thought {
+  font-style: italic;
+  color: #b0a898;
+  padding-left: 20px;
+  border-left: 2px solid rgba(200,164,106,0.3);
+  margin: 1em 0 1.3em;
+}
+
+/* ── Dialogue ── */
+.dialogue-block {
+  margin: 0.4em 0 1.1em;
+  position: relative;
+}
+
+.speaker-tag {
+  display: none;
+}
+
+.dialogue-text {
+  font-style: normal;
+  color: #e0d8cc;
+  display: block;
+  padding-left: 4px;
+}
+
+.dialogue-text.emotional {
+  font-style: italic;
+}
+
+.sp-ram { color: var(--ram); }
+.sp-emilia { color: var(--emilia); }
+.sp-bordeaux { color: var(--bordeaux); }
+.sp-marcos { color: var(--marcos); }
+.sp-fiore { color: var(--fiore); }
+.sp-sakura { color: var(--sakura); }
+.sp-felt { color: var(--felt); }
+.sp-reinhard { color: var(--reinhard); }
+.sp-official { color: #9aaabb; }
+
+/* ── Section divider ── */
+.section-divider {
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+.divider-sigil {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  display: inline-block;
+  animation: sigil-pulse 3s ease-in-out infinite;
+}
+
+.divider-line {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 16px auto;
+  width: 60%;
+  opacity: 0.4;
+}
+
+/* ── Dramatic moments ── */
+.moment {
+  position: relative;
+  margin: 2.5em 0;
+  padding: 28px 32px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.moment::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.moment-label {
+  display: none;
+}
+
+.moment-text {
+  font-size: 20px;
+  line-height: 1.9;
+}
+
+/* Shock / revelation */
+.moment-shock {
+  border: 1px solid rgba(120,160,220,0.3);
+  background: rgba(10,20,50,0.6);
+  box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08);
+}
+.moment-shock .moment-label { color: var(--accent2); }
+.moment-shock .moment-text { color: #ccd8ec; }
+.moment-shock::before { background: radial-gradient(ellipse at center, rgba(80,120,220,1), transparent 70%); }
+
+/* Anger / tension */
+.moment-anger {
+  border: 1px solid rgba(200,60,60,0.3);
+  background: rgba(30,8,8,0.6);
+  box-shadow: inset 0 0 40px rgba(200,60,60,0.05), 0 0 30px rgba(200,60,60,0.08);
+}
+.moment-anger .moment-label { color: #e06060; }
+.moment-anger .moment-text { color: #f0d0d0; }
+.moment-anger::before { background: radial-gradient(ellipse at center, rgba(200,60,60,1), transparent 70%); }
+
+/* Resolve / defiance — Emilia's speech */
+.moment-resolve {
+  border: 1px solid rgba(200,164,106,0.4);
+  background: rgba(20,16,8,0.7);
+  box-shadow: inset 0 0 50px rgba(200,164,106,0.06), 0 0 40px rgba(200,164,106,0.12);
+}
+.moment-resolve .moment-label { color: var(--accent); }
+.moment-resolve .moment-text { color: #f0e8d8; font-style: italic; }
+.moment-resolve::before { background: radial-gradient(ellipse at center, rgba(200,164,106,1), transparent 70%); }
+
+/* Heavy / despair */
+.moment-heavy {
+  border: 1px solid rgba(80,90,120,0.4);
+  background: rgba(8,10,18,0.8);
+  box-shadow: inset 0 0 40px rgba(40,50,80,0.1);
+}
+.moment-heavy .moment-label { color: #7080a0; }
+.moment-heavy .moment-text { color: #b0b8c8; font-style: italic; }
+
+/* Warmth */
+.moment-warmth {
+  border: 1px solid rgba(232,122,170,0.3);
+  background: rgba(20,10,15,0.6);
+  box-shadow: inset 0 0 40px rgba(232,122,170,0.04), 0 0 20px rgba(232,122,170,0.07);
+}
+.moment-warmth .moment-label { color: var(--ram); }
+.moment-warmth .moment-text { color: #f0dce8; }
+
+/* ── Ram's internal fire monologue ── */
+.inner-fire {
+  font-style: italic;
+  color: #e8c090;
+  border-left: 3px solid var(--accent);
+  padding-left: 24px;
+  margin: 1.5em 0;
+  line-height: 2;
+  font-size: 20px;
+}
+
+/* ── POV section headers ── */
+.pov-header {
+  display: none;
+}
+.pov-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.pov-subtitle {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(200,164,106,0.5);
+}
+
+/* ── Scene label ── */
+.scene-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 24px 0 8px;
+  opacity: 0.6;
+}
+
+/* ── Animations ── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes sigil-pulse {
+  0%, 100% { opacity: 0.4; letter-spacing: 0.3em; }
+  50% { opacity: 0.9; letter-spacing: 0.45em; }
+}
+
+@keyframes shock-flare {
+  0% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+  50% { box-shadow: inset 0 0 80px rgba(80,120,200,0.15), 0 0 60px rgba(80,120,200,0.2); }
+  100% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+}
+
+.moment-shock.visible { animation: shock-flare 4s ease-in-out infinite; }
+
+@keyframes resolve-glow {
+  0%, 100% { box-shadow: inset 0 0 50px rgba(200,164,106,0.06), 0 0 40px rgba(200,164,106,0.12); }
+  50% { box-shadow: inset 0 0 80px rgba(200,164,106,0.12), 0 0 70px rgba(200,164,106,0.22); }
+}
+.moment-resolve.visible { animation: resolve-glow 3.5s ease-in-out infinite; }
+
+@keyframes anger-pulse {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(200,60,60,0.05), 0 0 30px rgba(200,60,60,0.08); }
+  50% { box-shadow: inset 0 0 60px rgba(200,60,60,0.12), 0 0 50px rgba(200,60,60,0.15); }
+}
+.moment-anger.visible { animation: anger-pulse 2.5s ease-in-out infinite; }
+
+/* ── Scroll indicator ── */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.scroll-chevron {
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(200,164,106,0.5);
+  border-bottom: 1px solid rgba(200,164,106,0.5);
+  transform: rotate(45deg);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+  50% { transform: rotate(45deg) translateY(6px); opacity: 0.9; }
+}
+
+/* ── Witch cult warning — for the name mention ── */
+.cult-mention {
+  color: var(--witch);
+  font-style: normal;
+  text-shadow: 0 0 8px rgba(144,64,160,0.3);
+}
+
+/* ── Quote marker ── */
+.em-dash { color: var(--text-dim); }
+
+/* ── Footnote-style location ── */
+.location-tag {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: rgba(200,164,106,0.35);
+  padding: 8px 0 30px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  main { padding: 60px 20px 100px; }
+  header { padding: 12px 20px; }
+  .header-arc { display: none; }
+  body { font-size: 17px; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="canvas"></canvas>
+
+<header>
+  <span class="header-arc">Re:Zero · Арка 10</span>
+  <span class="header-title">Сгорите же дотла</span>
+  <span class="header-pov" id="pov-indicator">Том 45</span>
+</header>
+
+<!-- ════ TITLE SCREEN ════ -->
+<div class="chapter-title-block">
+  <div class="chapter-kanji">灰 に な れ</div>
+  <div class="chapter-arc">Re:Zero — Жизнь с нуля в альтернативном мире · Арка 10</div>
+  <div class="chapter-num">Глава 17</div>
+  <div class="chapter-subtitle">«Сгорите же дотла»</div>
+  <div class="scroll-hint">↓ Читать</div>
+  <div class="scroll-down">
+    <div class="scroll-chevron"></div>
+    <div class="scroll-chevron" style="margin-top:-8px;opacity:0.5;"></div>
+  </div>
+</div>
+
+<!-- ════ MAIN CONTENT ════ -->
+<main id="main-content">
+
+  <div class="pov-header reveal" data-pov="Рам">
+    <div class="pov-name">Точка зрения</div>
+    <div class="pov-subtitle" style="color: rgba(232,122,170,0.6);">Рам</div>
+  </div>
+
+  <div class="location-tag reveal">Королевский замок · ЛугуНика</div>
+
+  <p class="narr reveal">«Скверно», — само собой напрашивалось слово. Именно им Рам могла оценить происходящее, пока сопровождала Эмилию в королевский замок.</p>
+
+  <p class="narr reveal">Во-первых, самой ей нездоровилось. Насколько она могла судить, за последний год это был пик её дурного самочувствия. Организм и без того редко радовал бодростью, но, дабы справиться с этим, Рам обычно до предела натягивала струну силы воли и искусственно удерживала состояние в норме. И вот как раз сейчас эта струна предательски ослабла.</p>
+
+  <p class="thought reveal">— Похоже, зря мы возвращались в особняк.</p>
+
+  <p class="narr reveal">Когда Рам воссоединилась с сестрой в Империи, она поспешила привезти очнувшуюся Рем домой, ибо надеялась, что это поможет вернуть ей «воспоминания». Ожидания отчасти оправдались: Рам наконец-то увидела сестру в долгожданной форме горничной поместья Розвааля. Но именно из-за этого внутреннее напряжение самой Рам спало. Результат — нынешняя слабость.</p>
+
+  <p class="narr reveal">Когда на Субару повесили нелепые обвинения и всему Лагерю следовало сплотиться, она была вынуждена предстать перед врагами в таком жалком виде.</p>
+
+  <p class="narr reveal">Пока Рам молча шагала по длинным коридорам, она присматривалась к гвардейцам замка, что безмолвно сверлили их спины суровыми взглядами. Как и те солдаты, что явились за Эмилией в гостевой особняк, они лучились напряжением и чувством долга. И стоило Рам с Эмилией пройти чуть дальше, как она тотчас ощутила по движению воздуха, что тяжёлые дубовые двери за ними закрыли.</p>
+
+  <p class="thought reveal">Обычно двери во дворце держали открытыми. Смысл этого новшества был очевиден.</p>
+
+  <p class="italic-narr reveal">Скверно.</p>
+
+  <p class="narr reveal">Всё кричало о высшей степени настороженности — и то, как за ними отрезали пути к отступлению, и небывалая напряжённость солдат, и главное: личный эскорт во главе с самим командиром рыцарей. Противник изначально настроен враждебно, чаша весов уже сдвинулась не в их пользу. И это была вторая скверная новость, никак не зависящая от самочувствия Рам.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Такое чувство, будто нас о-о-очень вежливо берут под стражу, — пробормотала идущая рядом Эмилия, слегка сбавив шаг.</span>
+  </div>
+
+  <p class="narr reveal">Рам удивилась, как тонко она прочувствовала здешнюю обстановку.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Надо же, — вскинула горничная бровь. — Поразительно, госпожа Эмилия, что и вы сумели это уловить.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Ага, — она опустила изящные уголки бровей. — Воздух прямо-таки искрит. Знаешь, когда я жила с Паком в лесу и спускалась в соседнюю деревню, люди вели себя похоже… Наверное, нас ужа-а-асно боятся.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Ещё бы. Барусу ведь ужасно облажался.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Интересно, как там Субару с Беатрис?.. И Круш, говорят, с ними.</span>
+  </div>
+
+  <p class="narr reveal">Аметистовые глаза Эмилии тревожно дрогнули, и Рам промолчала.</p>
+
+  <p class="narr reveal">Если честно, дела ужасны. Судя по дошедшим до них обрывкам, член Совета Мудрецов Миклотов МакМахон убит, Круш Карстен обвиняют в расправе, а Субару с Беатрис сочли её сообщниками. Из-за своей болезни Рам лишь краем уха слышала о конфликте Круш и Церкви, но картина вырисовывалась правдоподобная: загнанная в угол кандидатка от безысходности решилась на убийство, а случайно оказавшийся рядом Субару по доброте душевной стал её выгораживать. Очень похоже на правду.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— С ним же госпожа Беатрис… хотя нет, она всегда потакает Барусу. Ему отчаянно не хватает самообладания. Думал бы только о Рем… и о вас, госпожа Эмилия, — всё было бы хорошо.</span>
+  </div>
+
+  <p class="narr reveal">Как сестра, Рам испытывала смешанные чувства, но признавала: Субару искренне дорожил Рем, и это много раз их спасало. Сама Рем, хоть «воспоминания» к ней и не вернулись, а язык остался острым, явно питала к нему особые чувства — это было видно невооружённым глазом.</p>
+
+  <p class="narr reveal">Именно поэтому Субару следовало держать себя в руках и чётко понимать, кому дарить свою доброту. Вот только его дурацкая привычка быть хорошим для всех вышла боком именно сейчас.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Рам, ты злишься?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Любвеобильность Барусу всегда казалась мне непростительной. Но к нынешним обвинениям это отношения не имеет.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Да, верно. Нужно всё объяснить и доказать, какой Субару на самом деле. Чтобы ответить на любые их вопросы.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Для начала, госпожа Эмилия, заготовьте хотя бы десять хороших качеств Барусу.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Ой, десять? А можно только десять? Разве мне хватит всего десяти…</span>
+  </div>
+
+  <p class="narr reveal">Пока Эмилия волновалась совсем не о том, о чём следовало, Рам лишь поразилась, что та вообще способна с ходу назвать столько достоинств. За что его хвалить, кроме удачного выбора времени?</p>
+
+  <p class="narr reveal">Так или иначе…</p>
+
+  <p class="italic-narr reveal">— Момент истины.</p>
+
+  <p class="narr reveal">Ей показалось, что вся их жизнь состоит из одних лишь моментов истины, но Рам отбросила эти пустые мысли и устремила взгляд вперёд. Маркос остановился у дверей в конце коридора и толкнул их, приглашая войти. Они перешагнули порог, и на них обрушились десятки цепких взглядов. Воздух в комнате сгустился, повисла давящая тишина.</p>
+
+  <p class="narr reveal">Их привели не в большой зал, а в зал совещаний, где обычно заседала знать королевства. Не так давно Эмилия приходила сюда вместе с Фьоре, когда та объявляла о своём участии в Королевских Выборах и назначала рыцаря. С тех пор прошло всего несколько дней, но отношение разительно изменилось: теперь на них смотрели, как на конвоируемых преступников.</p>
+
+  <p class="narr reveal">Рам сразу же оценила расстановку сил. Двое у дверей, четверо вдоль стен, посередине — полукруглый стол из чёрного дерева, за которым сидят люди, а за их спинами маячат ещё несколько теней. Мечи в ножнах, руки не на эфесах. И всё же было ясно: они с самого начала готовились к худшему.</p>
+
+  <p class="thought reveal">— Показная вежливость.</p>
+
+  <p class="narr reveal">Внешне всё выглядело как приём, но гостеприимством здесь и не пахло. Загнать в угол по-аристократически: накрыть красивой крышкой и вежливо отрезать все пути к бегству. Словно в подтверждение её мыслей Маркос закрыл за ними двойные двери — щёлкнуло дважды. Двойные створки нужны, чтобы разговоры не просочились в коридор. Но сейчас Рам казалось, что смысл не в тайне, а именно в изоляции.</p>
+
+  <p class="narr reveal">— Эмилия! — вдруг послышался чей-то голос. Внезапно с края стола подскочила женщина в облачении монахини, с длинными светлыми волосами и красными глазами. Несмотря на ошарашенные взгляды, она с грохотом отшвырнула стул, перемахнула через стол и бросилась прямо к Эмилии, после чего сжала ту в объятиях.</p>
+
+  <p class="narr reveal">Полуэльфийка устояла на ногах и удивлённо захлопала ресницами.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Фьоре, ты тоже здесь?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Конечно! — ответила та. — Речь ведь о тебе и твоём рыцаре Субару! Я подумала, что должна помочь, и сразу же примчалась!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Не бойся! Я с тобой! Я сама ничего не понимаю, но ты точно ни в чём не виновата! Что бы ни случилось, я на твоей стороне!</span>
+  </div>
+
+  <p class="narr reveal">Рам узнала в ней новую кандидатку на трон, из-за которой недавно в столице поднялся переполох. Рем говорила, что они с Эмилией сдружились, но Рам не ожидала такой пылкой привязанности. Фьоре смотрела на неё полными слёз глазами и едва не хлюпала носом: в ней смешались искренняя тревога за Эмилию и растерянность от того, что она не знала, чем помочь.</p>
+
+  <p class="narr reveal">Совет Мудрецов, высокопоставленные дворяне и гвардейцы этот порыв не оценили. Послышалось недовольное покашливание, и на Фьоре посыпались колючие взгляды.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-sakura">Сакура</span>
+    <span class="dialogue-text">— Фьоре-е, — позвала ее женщина, сидевшая рядом с отброшенным стулом. Она говорила плавно и смотрела на вцепившуюся в Эмилию монахиню с мягкой усмешкой. — Ты только посмотри, как все напуганы. Нельзя же так бурно ра-адоваться.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Радоваться?! Я не радуюсь, а скорблю! Если бы я не отходила от Эмилии, то смогла бы разделить ее тревоги с самого начала! В Писании сказано: «Спасение одного вершится молитвами многих. Разделишь милость Дракона с ближним — и одинокая душа обретёт покой и истинное спасение»!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-sakura">Сакура</span>
+    <span class="dialogue-text">— Вольны трактовать как угодно, но затягивание беседы не пойдёт вам на по-ользу. Чем дольше вы тут дуетесь, тем хуже придётся Эми-илии.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— У-гу-гу… Сакура — дура!..</span>
+  </div>
+
+  <p class="narr reveal">На этот детский лепет женщина лишь пожала плечами. Спор вышел донельзя жалким, и Эмилия ласково погладила побеждённую Фьоре по голове.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Спасибо, Фьоре. Мне очень приятно. Просто побудь рядом.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Эмилия… да. Да! Я буду смотреть во все глаза!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text">— Госпожа Фьоре, прошу вас вернуться на место, — вмешался Маркос, пользуясь паузой.</span>
+  </div>
+
+  <p class="narr reveal">Фьоре утерла слезы и неохотно отпустила Эмилию. Она поплелась к своему стулу, подняла его и села, после чего показушно отвернулась от Сакуры.</p>
+
+  <p class="narr reveal">Когда суматоха улеглась, Маркос заговорил вновь:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text">— Госпожа Эмилия, прошу вас в центр. Сопровождающая…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Рам встанет позади госпожи Эмилии.</span>
+  </div>
+
+  <p class="narr reveal">Маркос замолчал.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Проблемы?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text">— Никаких. Прошу.</span>
+  </div>
+
+  <p class="narr reveal">Это было единственное, что Рам могла сделать: отказаться отходить от своей госпожи. Она встала чуть позади стула Эмилии. На миг их взгляды встретились. В аметистовых глазах читался страх и благодарность; Рам ответила едва заметным кивком.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо Зергеф</span>
+    <span class="dialogue-text">— Госпожа Эмилия, благодарю, что соизволили явиться, — вымолвил лысый старик, восседавший за столом.</span>
+  </div>
+
+  <p class="narr reveal">Бордо Зергеф. Один из семи членов Совета Мудрецов, герой Королевства, сражавшийся ещё в Войну Полулюдей с алебардой в руках. Известный своей непримиримой ненавистью к полукровкам, он был худшим собеседником для Эмилии. В его показной вежливости сквозила холодная враждебность.</p>
+
+  <p class="narr reveal">Но Эмилия смотрела не на него, а на пустующее кресло справа.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Обычно там сидит господин Миклотов, — сказала она.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Этот факт подтвердили, ошибки быть не может, — хрипло ответил старик, качая головой. — Эта утрата невосполнима для всего Королевства. С тех пор как королевская семья покинула нас, мы не знали большей беды.</span>
+  </div>
+
+  <p class="narr reveal">Учитывая, какую роль покойный играл в жизни Лугуники, с ним согласился бы любой житель страны. Но Эмилия восприняла эти слова иначе. Её окаймлённые длинными ресницами глаза сузились.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— И всё?.. Что вы имеете в виду?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Я понимаю, что для Королевства это беда. Но ведь вы так долго знали господина Миклотова лично. Разве вы не…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Считаете, мы должны убиваться горем и лить слёзы? Господин Миклотов, каким мы его знали, первый бы этого не одобрил. Он бы не потерпел, чтобы смерть одного человека ввела в панику всё Королевство и позволила его телу увядать.</span>
+  </div>
+
+  <p class="narr reveal">Эмилия промолчала.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Мы с вами по-разному скорбим о близких. Вот и все.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Верно… Простите. Вам ведь тоже ужа-а-асно больно.</span>
+  </div>
+
+  <p class="narr reveal">Эмилия тихо вздохнула и отступила. Однако Рам, что наблюдала за этим со стороны, видела картину иначе. Звучало гладко: мудрец, пекущийся о будущем страны, не оставил бы им времени на слёзы. Но Рам сомневалась, что там действительно не осталось места для скорби. Подозрения росли.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Вернёмся к причине, по которой мы вас вызвали. Мы должны прояснить подозрения в адрес вашего рыцаря, Нацуки Субару.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Мы подозреваем, что рыцарь Нацуки Субару связан с <span class="cult-mention">Культом Ведьмы</span>. И более того — занимает в нём высокое положение. Быть может, вплоть до <span class="cult-mention">Архиепископа Греха</span>.</span>
+  </div>
+
+  <p class="narr reveal">Рам нахмурилась. Обвинение звучало как бред, и Лагерь Эмилии был обязан его опровергнуть. Проблема в том, что источник этих слухов оставался неясен. Субару действительно прятал Спику, бывшую Архиепископом Чревоугодия, и если копнуть глубже, всплывёт много неприятного. Но Империя поклялась хранить тайну: им самим нужна была сила Спики, и раскрывать её личность они не стали бы. Откуда тогда взялись эти слухи?</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Я могу ответить прямо, — твердо сказала Эмилия. — Субару не из Культа Ведьмы. Он мой первый рыцарь и мой незаменимый друг.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Да-да! Они неразлучны! И я тоже могу заявить… м-м-м!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-sakura">Сакура</span>
+    <span class="dialogue-text">— Фьо-оре, давай-ка ты немножко помолчи-ишь.</span>
+  </div>
+
+  <p class="narr reveal">Зажатый рот Фьоре и прямой ответ Эмилии не изменили ничего: воздух остался тяжёлым. Ледяные взгляды всё так же сверлили Эмилию.</p>
+
+  <p class="narr reveal">Она тоже это почувствовала.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Можно вопрос? — начала она, прежде чем ей успели возразить. — Я хочу знать, почему Субару вообще подозревают в связях с Культом. Вы ведь и сами знаете, сколько всего Субару сделал. Даже Регулуса он победил…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Уничтожение нескольких Архиепископов Греха и двух из трех Великих Зверодемонов — Белого Кита и Великого Кролика. Насчет Кролика подтверждений нет, но остальное подкреплено показаниями свидетелей.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Вот видите? Тогда почему…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Эти самые заслуги и вызывают подозрения.</span>
+  </div>
+
+  <p class="narr reveal">Эмилия ахнула. Абсурд! Заявить, что победы над <span class="cult-mention">Культом Ведьмы</span> делают Субару подозрительным — это уже ни в какие ворота.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Выходит, Барусу делал всё слишком хорошо, и это вам не нравится?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text">— Сопровождающим слова не давали. Помолчите.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Прошу прощения за дерзость. Ушам своим не поверила.</span>
+  </div>
+
+  <p class="narr reveal">Взгляды стали ещё острее, но Рам сказала то, что думала. Все понимали, что пока это лишь пустые домыслы. Но раз они устроили этот допрос, у них в рукаве наверняка припрятано что-то ещё.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Рам, прости. — Она обратилась к остальным: — Но как его старания могут быть подозрительными?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Есть мнение, что всё это — часть хитроумного плана. Уничтожение Архиепископов и зверодемонов было лишь способом втереться в доверие к верхушке Королевства.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Да как вы!..</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Назовёте это абсурдом? Но посудите сами: страны годами страдали от <span class="cult-mention">Культа Ведьмы</span>, а тут за какие-то полтора года — такие ошеломляющие успехи. То же и со зверодемонами. Будто кто-то специально подстраивает всё так, чтобы рыцарь Нацуки Субару мог проявить себя.</span>
+  </div>
+
+  <p class="narr reveal">Бордо давил, не давая опомниться. Люди за столом согласно закивали.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Он одолел Белого Кита, с которым не справилась целая армия, а затем сразу же убил <span class="cult-mention">Архиепископа Лени</span>… Того, кого считали ходячим бедствием. Слишком гладко.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Голос из зала</span>
+    <span class="dialogue-text">— По словам свидетелей, рыцарь Нацуки Субару точно предсказал время и место появления Белого Кита, а затем раз за разом опережал все планы <span class="cult-mention">Культа Ведьмы</span>.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Голос из зала</span>
+    <span class="dialogue-text">— Говорят, он без потерь разбил Архиепископа. Вспомните прошлые жертвы Культа — в это просто невозможно поверить.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Голос из зала</span>
+    <span class="dialogue-text">— Но разве Культ пожертвовал бы своими высшими чинами?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Голос из зала</span>
+    <span class="dialogue-text">— Ходят слухи, что Архиепископы ненавидят друг друга. Возможно, он воспользовался этим…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text emotional">— Постойте!</span>
+  </div>
+
+  <p class="narr reveal">Мудрецы явно ждали удобного момента, чтобы выплеснуть эти сомнения, но ни одно из них не тянуло на доказательство. Эмилия стояла прямо, её вера в рыцаря не пошатнулась ни на йоту.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Вы заранее решили, что Субару подозрительный, вот вам так и кажется! Да, у него чудесная интуиция, он всегда находит лучший выход, и благодаря этому мы побеждали Культ, но…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Это звучит скорее как подтверждение наших слов…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Но не судите о моём рыцаре только по Культу и зверодемонам! В Башне Плеяд, в Волакии… Нет, ещё раньше, в самой столице, когда мне грозила беда, он спас меня. И это никак не связано с Культом!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Мы поняли вас, госпожа Эмилия. И не собираемся порочить имя рыцаря нелепыми придирками.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Правда?.. Тогда всё хорошо.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Но на вашего рыцаря пало тяжкое подозрение: он — преемник <span class="cult-mention">Архиепископа Греха Лени</span>. Что скажете на это?</span>
+  </div>
+
+  <p class="narr reveal">Рам стиснула зубы. Значит, вся предыдущая болтовня была лишь прелюдией.</p>
+
+  <!-- ──── SECTION BREAK ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <p class="narr reveal"><span class="cult-mention">Архиепископ Греха Лени.</span> Нацуки Субару подозревают в том, что он занял его место.</p>
+
+  <p class="narr reveal">Стоило услышать этот совершенно немыслимый вывод, Эмилия широко распахнула глаза. Рам нахмурилась.</p>
+
+  <p class="thought reveal">«Архиепископа Лени убили Барусу с Отто».</p>
+
+  <p class="narr reveal">Отто наверняка бы встрял с возмущённым воплем: «Позвольте возразить!», но сейчас его здесь не было. Рам сама косвенно участвовала в той битве. Самый известный в мире Архиепископ Греха был мёртв, и именно с этого началась война Лагеря Эмилии против Культа.</p>
+
+  <p class="narr reveal">Но при чём здесь Субару?</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Вы опять скажете, что Барусу слишком удачно проявил себя в битве с Ленью?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Это тоже, но главная причина — показания свидетеля. Показания плененного <span class="cult-mention">Архиепископа Гнева</span>.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Сириус…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Эта сумасшедшая до сих пор заперта в тюремной башне. Она отказывается нормально говорить, но во время этапирования из Пристеллы несколько раз повторяла одно и то же: <em>«<span class="cult-mention">Архиепископ Греха Лени</span> находится внутри Нацуки Субару».</em></span>
+  </div>
+
+  <p class="narr reveal">Зал замер.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— На церемонии награждения в столице… когда мы чествовали героев, что одолели Белого Кита и <span class="cult-mention">Архиепископа Лени</span>, я внимательно изучил отчёты. В них говорилось, что <span class="cult-mention">Архиепископ Лени</span> был злым духом, который мог вселяться в чужие тела. Что скажете?</span>
+  </div>
+
+  <p class="narr reveal">Эмилия побледнела. Она не сомневалась в Субару, но чудовищность этого совпадения лишила её дара речи.</p>
+
+  <p class="narr reveal">Они утверждали, что Нацуки Субару одержим. Что все это время, с того самого дня, перед ними стоял <span class="cult-mention">Архиепископ Греха</span>, притворяющийся их другом. Для Эмилии, сделавшей его своим рыцарем, это было немыслимым оскорблением. А для Рам…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text emotional">— Это полная нелепица.</span>
+  </div>
+
+  <p class="narr reveal">Она сама не заметила, как её голос зазвенел от гнева. Но даже осознав это, Рам не смогла сдержаться. Назвать Субару Архиепископом значило перечеркнуть всё. Перечеркнуть те ночи, когда он приходил к спящей Рем, и заявить, что всё это было лишь холодным расчётом чудовища.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Не верю, что многоуважаемый Совет Мудрецов собрал нас здесь из-за такого бреда. Верить словам Архиепископа Греха — чистое безумие! Плененная Гнев может влиять на чужие головы! И под её воздействием…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Рам!</span>
+  </div>
+
+  <p class="narr reveal">Окрик Эмилии подействовал как ушат холодной воды. Эмилия вскочила с места, обернулась и смерила её ледяным взглядом — разыгрывала гнев на зарвавшуюся служанку. Эта неумелая игра и то, что она заставила Эмилию выгораживать себя, уязвили Рам сильнее любых слов.</p>
+
+  <p class="italic-narr reveal">Скверно. Из-за слабости тела она теряет хватку. Зачем она вообще напросилась в замок, если не может держать себя в руках?</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Снова прошу прощения. Если прикажете, я покину зал.</span>
+  </div>
+
+  <p class="narr reveal">Эмилия отвернулась к столу. Она взяла удар на себя. Эмилия выросла, и Рам гордилась бы этим, если бы не обстоятельства. Только не здесь. Только не на этом судилище, где приговор вынесен заранее.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text">— В этом нет нужды. Впредь воздержитесь от комментариев. Ещё одна выходка, и вопросы возникнут уже к самой госпоже Эмилии.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Запомню. Приношу извинения.</span>
+  </div>
+
+  <p class="narr reveal">То, что её не выгнали, лишь подтвердило догадку Рам. Им нужно было держать их обеих здесь, вместе.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Спасибо, что не прогнали Рам. Значит, вы поверили Сириус и решили, что Субару — это <span class="cult-mention">Архиепископ Лени</span>?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Сначала это сочли бредом сумасшедшей. Верить Культу Ведьмы нелепо. Но господин Миклотов считал иначе. Он обладал мудростью отличать пустые бредни от предвестия беды.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Господин Миклотов… Постойте, вы хотите сказать…</span>
+  </div>
+
+  <p class="narr reveal">Эмилия прикрыла рот рукой. Рам тоже всё поняла. Сегодня утром, готовясь к отъезду в Пристеллу, Субару с Беатрис пошли на тайную встречу с Миклотовым. Что там случилось, они не знали, но итогом стало убийство и всё то, что происходило сейчас. Что, если Миклотов позвал Субару именно из-за этого?</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Мы не знаем точной причины той встречи. Но раз там присутствовал Нацуки Субару, а вместе с ним и герцогиня Карстен, что помогала ему убить Белого Кита и <span class="cult-mention">Архиепископа Лени</span>, вывод напрашивается сам. Миклотов был убит, потому что узнал нечто неудобное для Нацуки Субару.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text emotional">— Да это же!..</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text emotional">— Как мы можем верить тому, кто сбежал и сам лишил себя права на оправдание?!</span>
+  </div>
+
+  <p class="narr reveal">От раскатистого рёва Бордо Эмилия вздрогнула. Все сложилось один к одному. Кто бы ни стоял за этим, он продумал всё до мелочей. Загнал их в угол так, что не отвертеться.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— С места гибели господина Миклотова Нацуки Субару скрылся вместе с герцогиней Карстен. Свидетели говорят, что он применил неизвестную магию, которая блокирует чужие заклинания, и управлял чем-то невидимым. В отчётах сказано, что <span class="cult-mention">Архиепископ Лени</span> сражался невидимыми руками.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Эту магию Субару придумал вместе с Беатрис…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Жертвы Чревоугодия исчезают из памяти людей, либо сами теряют память. Но Нацуки Субару почему-то помнил тех, кого все забыли! Почему?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Но благодаря ему Рем и Юлиус не остались совсем одни!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Герцогиня Карстен получила неизлечимые раны от рук <span class="cult-mention">Архиепископа Похоти</span>. Но Нацуки Субару, который подвергся этому же, остался невредим. Как вы это объясните?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Субару переживал из-за этого больше всех!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Тогда кто он такой, этот ваш Нацуки Субару?! О нём нет ни единой записи до того самого дня, когда он представился вашим рыцарем! Почему?!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Субару — это!..</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Хватит! — Она вскочила и с силой хлопнула ладонями по столу. — Прекратите травить Эмилию! Она сейчас напугана не меньше вашего, и она больше всех хочет услышать самого Субару!</span>
+  </div>
+
+  <p class="narr reveal">По щекам Фьоре текли слёзы. Губы дрожали. Её отчаянная защита сбила спесь с обвинителей, но положение Субару это не спасало. А Рам страшилась следующего удара.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Мы повышаем голос не ради удовольствия. Тело Миклотова нашли люди из Церкви Божественного Дракона — ваши подчинённые, госпожа Фьоре. Именно они рассказали, что произошло в особняке.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Вопрос в другом… Знала ли госпожа Эмилия, её покровитель маркграф Розвааль и весь их Лагерь о том, кто такой Субару на самом деле?</span>
+  </div>
+
+  <p class="narr reveal">Повисла тишина.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Я знаю! Тига ранен… но он потерял столько крови! Может, ему просто показалось?!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-sakura">Сакура</span>
+    <span class="dialogue-text">— Это уж слишком жестоко по отношению к Ти-иге.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— В общем, я против такого судилища! — она бросила толстую книгу на стол. — В Писании сказано: «Нет души под небесами, лишённой спасения. Взгляни на небо — и узришь тень Дракона, сулящую равную милость всем детям своим»!</span>
+  </div>
+
+  <p class="narr reveal">Её отчаянная защита сбила спесь с обвинителей, но положение Субару это не спасало.</p>
+
+  <p class="narr reveal">Повисла тишина.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Если вы вступили в сговор, чтобы скрыть правду, и если Нацуки Субару — действительно <span class="cult-mention">Архиепископ Лени</span>… значит, и участие Эмилии в Выборах, и все ваши мнимые подвиги…</span>
+  </div>
+
+  <p class="narr reveal">Все, чего они добились за это время. Все победы, вырванные потом и кровью. Всё это объявят ложью.</p>
+
+  <p class="narr reveal">— Эмилия?..</p>
+
+  <p class="narr reveal">Рам вздрогнула. Это сказала Фьоре. Она широко раскрытыми глазами глядела в центр зала. Рам проследила за её взглядом. И увидела Эмилию.</p>
+
+  <p class="narr reveal">Ей только что бросили в лицо чудовищные обвинения. Выбили землю из-под ног. Растоптали всё, за что она боролась. Впору было расплакаться и сдаться под тяжестью этой несправедливости.</p>
+
+  <p class="italic-narr reveal">Но…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text emotional">— Моё имя — Эмилия. Просто Эмилия. Ведьма Оледенения из Великого Леса Элиор.</span>
+  </div>
+
+  <p class="narr reveal">Эмилия встала перед своими обвинителями и подняла палец к потолку. Рам знала этот жест — так делал один безрассудный дурак, когда собирался сморозить величайшую глупость на свете.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Я не впервые вижу такие взгляды. На меня смотрели так сотни раз. Я отчаивалась, но брала себя в руки и поднимала голову.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Поэтому мне всё равно, если придётся начать всё сначала. Я… мы не проиграем.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text emotional">— Мы не проиграем. Правда, Рам?!</span>
+  </div>
+
+  <p class="narr reveal">Она стояла всё с тем же поднятым пальцем и даже не обернулась. Не обернулась, потому что верила. Знаком доверия была эта досадная слепая уверенность в том, что Рам ответит именно так, как нужно. Она полностью доверяла своей горничной.</p>
+
+  <p class="narr reveal">И Рам не могла её предать.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Ха! Разумеется.</span>
+  </div>
+
+  <p class="narr reveal">Гордо, презрительно, непоколебимо — именно так, как ждала от неё Эмилия. Чтобы стать надёжной опорой для той, что сейчас стискивала зубы и бросала вызов всему миру.</p>
+
+  <!-- RAM'S INNER FIRE -->
+  <div class="inner-fire reveal">
+    <p>Смотрите, глупцы.</p>
+    <p>Разве могла эта Эмилия, стоящая перед вами, вырасти на удобной, вымощенной ложью дороге?</p>
+    <p>О, глупцы, погрязшие в подозрениях — сгорите же дотла, обратитесь в пепел! Выковырять бы вам глаза, что видят лишь фальшь, и вставить вместо них стекляшки.</p>
+  </div>
+
+  <p class="narr reveal">Ведь это сияние Эмилии, что закалялось слезами, криками, кровью и потом, было той самой статью, к которой она из кожи вон стремилась.</p>
+
+  <p class="narr reveal">Никто не нашёлся что ответить. Насмешки, подозрения, громкие обвинения — всё разбилось о непреклонную волю Эмилии.</p>
+
+  <p class="narr reveal">— Донесение! Срочное донесение! — в напряжённую тишину зала ворвался крик запыхавшегося солдата.</p>
+
+  <p class="narr reveal">Маркос, стоявший у дверей, шагнул ему навстречу и рявкнул:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text">— Глупец! Идёт важный допрос! О чём ты только думаешь?!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Солдат</span>
+    <span class="dialogue-text">— Виноват! Но я обязан доложить немедленно!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text">— Немедленно? Что случилось?</span>
+  </div>
+
+  <p class="narr reveal">Солдат сбивчивым шёпотом что-то доложил Маркосу. И когда тот дослушал, Маркос помрачнел в лице. Глубокая морщина пролегла меж его бровей.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text">— Вот как…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Командир Маркос, в чём дело? Это касается допроса?</span>
+  </div>
+
+  <p class="narr reveal">Маркос бросил быстрый взгляд на Эмилию и покачал головой.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text">— Не без этого.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Говорите. Раз солдат так спешил, дело не терпит отлагательств.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text">— После того как членов Лагеря Эмилии оставили в гостевом особняке, они обманули охрану и покинули здание. Пострадавших среди наших людей нет. Сейчас мы ведём их поиски.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Неслыханно…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-bordeaux">Бордо</span>
+    <span class="dialogue-text">— Пока госпожа оправдывается во дворце, её слуги водят за нос стражу. Трудно расценить это как жест доброй воли. Учитывая подозрения насчёт рыцаря Нацуки Субару, госпожа Эмилия останется под стражей в замке.</span>
+  </div>
+
+  <p class="narr reveal">Лицемерное сожаление в его голосе вызвало у Рам приступ ярости. Ненависть Бордо к полулюдям была общеизвестна, но то, с какой лёгкостью он воспользовался исчезновением умеренного Миклотова, чтобы избавиться от Эмилии, просто поражало. Всё было решено с самого начала.</p>
+
+  <p class="thought reveal">«Рем, хорошенько пни Гарфа и Отто. Вся надежда на тебя».</p>
+
+  <!-- ──── SECTION BREAK ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="pov-header reveal" data-pov="Эмилия">
+    <div class="pov-name">Точка зрения</div>
+    <div class="pov-subtitle" style="color: rgba(170,200,236,0.6);">Эмилия · Коридоры замка</div>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Сестрёнка Эмилия!</span>
+  </div>
+
+  <p class="narr reveal">Их вывели из зала суда и повели в другую часть замка. По пути к ним подбежала запыхавшаяся Фельт, ещё одна кандидатка на трон. Она смерила злым взглядом конвоиров, обступивших Эмилию со всех сторон.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Эй, вы чего творите?! Относитесь к ней как к преступнице?! Мы, вообще-то, кандидатки! Вы не имеете права!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Фельт, всё нормально! Я понимаю… ну, не понимаю, конечно, но принимаю это.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Что за бред?! Принимаю, не понимаю… Ты либо согласна, либо нет! Раз не согласна, так и скажи!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Госпожа Фельт, ваша забота трогательна, но не волнуйтесь: госпожа Эмилия уже задала им всем жару.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Задала жару? А, ну да. Сестрёнка не из тех, кто молча сносит обиды… Вас ведь не за это арестовали?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Нет, не за это. Но пока мы ничего не можем сделать.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Это из-за Субару и Круш?..</span>
+  </div>
+
+  <p class="narr reveal">Рам в ответ кивнула, и Фельт цокнула языком. Эмилия тоже кивнула. До Фельт уже дошли слухи. Неудивительно: сегодня они должны были отправиться в Пристеллу вместе с Райнхардом. Но когда поняла, что ни Эмилия, ни Фьоре не явились в назначенное время, Фельт заподозрила неладное.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Убить того старика с длиннющей бородой… да ещё и Субару обвинить — вообще курам на смех! Я ему жизнью обязана ещё со встречи с той чокнутой маньячкой. И в Пристелле мы вместе охраняли эту психопатку Гнев. Стал бы он якшаться с этими ублюдками? Да ни в жизнь!</span>
+  </div>
+
+  <p class="narr reveal">Фельт говорила так уверенно, что Эмилия вновь едва не бросилась её обнимать. Она была не одна. Не только её Лагерь верил Субару. Фельт, другая кандидатка на престол, тоже всё понимала. Все, кто хоть немного знал Нацуки Субару, видели, какой он отчаянный и честный.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Эмилия! Я иду с тобой! Пускай меня тоже запрут!</span>
+  </div>
+
+  <p class="narr reveal">Двери зала совещаний распахнулись, и оттуда вылетела растрёпанная Фьоре, что заливалась слезами. Она с размаху бросилась Эмилии на грудь.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text emotional">— Э-э-это не суд, а издевательство! Я буду жаловаться! Я использую всю свою власть, все свои привилегии кандидатки, чтобы отменить этот беспредел!..</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text">— Успокойся, Фьоре. Не надо. Мне ужа-а-асно приятно, но ты только навлечёшь на себя беду.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Какие же мы друзья, если не можем вместе измазаться в грязи?! Ради тебя я готова по уши вымазаться!</span>
+  </div>
+
+  <p class="narr reveal">Эмилия растрогалась до глубины души. Она только что сдержалась от объятий, а теперь её саму крепко обнимали.</p>
+
+  <p class="narr reveal">Тут Фьоре заметила стоявшую рядом Фельт. «А», — вырвалось у неё. Отношения между этими двумя были, мягко говоря, натянутыми. По-хорошему, Эмилии следовало бы вмешаться и помирить их, но…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Не парься, сестрёнка Эмилия. Думай о Субару и остальных. Насчёт меня не заморачивайся.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Д-да, я думаю, так будет лучше. Я тоже хотела это сказать. Кажется, мы с тобой поладим!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Ну ещё бы, мы ведь уже второй раз из-за одного стула собачиться будем. Не знаю, как насчёт поладим, но счёты у нас точно есть.</span>
+  </div>
+
+  <p class="narr reveal">Фельт прищурила один глаз, пока с любопытством разглядывала жмущуюся к Эмилии Фьоре. Та смотрела на неё со смесью страха и неловкости. Проблем хватало: и эти двое, и бегство Отто, и обвинения против Субару с Круш. Эмилия хотела верить, что всё обойдётся, но…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Знаете, госпожа Фельт, у меня есть к вам предложение.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— А? Чего тебе, горничная?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Вы упомянули, что у вас должок перед Барусу. Не хотите вернуть его прямо сейчас? Святой Меча сегодня с вами?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— А, так вот вы о чём. Дела — дрянь, не спорю. Я бы в жизни вас не бросила и с радостью одолжила бы его, но…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-ram">Рам</span>
+    <span class="dialogue-text">— Не выйдет?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Его вызвали в другую часть замка. Да и меня тоже.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— И тебя? — Она непонимающе склонила голову на груди Эмилии. — Так ты здесь не потому, что волновалась за Эмилию?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Я волновалась, но я тут по делу. Звиняйте.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-fiore">Фьоре</span>
+    <span class="dialogue-text">— Тебе не за что извиняться. Но куда тебя вызвали…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-felt">Фельт</span>
+    <span class="dialogue-text">— Туда же. — Кивок на двери зала совещаний. — Дракон их раздери или Ведьма — ничего хорошего не жди, а?</span>
+  </div>
+
+  <p class="narr reveal">Фельт дерзко усмехнулась, но Эмилию её ухмылка почему-то не успокоила. Наоборот, ей стало до боли обидно.</p>
+
+  <!-- ──── SECTION BREAK ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="pov-header reveal" data-pov="Райнхард">
+    <div class="pov-name">Точка зрения</div>
+    <div class="pov-subtitle" style="color: rgba(80,144,216,0.6);">Райнхард ван Астрея · Малый зал совета</div>
+  </div>
+
+  <p class="narr reveal">Тем временем в другом покое королевского замка Райнхард ван Астрея задумчиво рассматривал разложенную на столе карту столицы. В самом её центре стояла фишка — гостевой особняк в дворянском квартале. От него к окраинам тянулись красные линии. Карта превратилась в схему побега и перехвата.</p>
+
+  <p class="narr reveal">И смысл этой схемы был предельно ясен.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Чиновник</span>
+    <span class="dialogue-text">— Предположительно, оставшиеся в особняке члены Лагеря госпожи Эмилии ускользнули от наблюдения и собираются покинуть дворянский квартал. Их цель — объединиться с рыцарем Нацуки Субару либо подготовиться к вызволению госпожи Эмилии из замка. Пока это лишь догадки, но факт остаётся фактом: они устроили пожар и сбежали из-под надзора.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text">— Пожар?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Чиновник</span>
+    <span class="dialogue-text">— Из-под пола на кухне пошёл дым. Открытого огня не было, просто кто-то заткнул дымоход, и дым пошёл в дом.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text">— Понятно.</span>
+  </div>
+
+  <p class="narr reveal">Чиновник перевернул страницу приказа. Сверился с картой.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Чиновник</span>
+    <span class="dialogue-text">— За ними выслана погоня. Но беглецы довольно хороши в бою, так что, если попытаться взять их силой, это может плохо кончиться. Поэтому…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text">— …приказ отдали мне.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Чиновник</span>
+    <span class="dialogue-text">— Верно. Святой Меча Райнхард ван Астрея, вам приказано выследить и задержать беглецов.</span>
+  </div>
+
+  <p class="narr reveal">Текст на бумаге слово в слово повторял то, что только что озвучил чиновник. Совет был настроен твёрдо. В любой иной раз Райнхард бы пробежался глазами по приказу и тотчас принял его к исполнению. Но в этот раз Святой Меча промедлил. И причиной тому была его госпожа, вместе с которой он прибыл сегодня в замок.</p>
+
+  <p class="narr reveal">— Валга Кромвель, — вдруг бросил чиновник в повисшую тишину, отчего воздух в комнате тотчас заледенел.</p>
+
+  <p class="narr reveal">Никаких пояснений. Только имя. И Райнхард не задал ни единого вопроса.</p>
+
+  <p class="narr reveal">Повисло тяжёлое молчание, после которого он, наконец, аккуратно сложил бумагу и вернул её чиновнику.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text emotional">— Я… подчиняюсь.</span>
+  </div>
+
+  <p class="narr reveal">Он даже не посмотрел ни на карту, ни на собеседника. Святой Меча развернулся и пошёл к выходу из малого зала совета. Чиновник бросил ему в спину:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Чиновник</span>
+    <span class="dialogue-text">— Цели должны быть взяты живыми.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text">— Я их остановлю, — лишь ответил Райнхард и покинул комнату.</span>
+  </div>
+
+  <!-- ──── FINAL DIVIDER ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div style="text-align:center; padding: 40px 0 80px; opacity: 0.4;" class="reveal">
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.5em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px;">Конец главы</div>
+    <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 28px; color: var(--accent);">灰になれ</div>
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.3em; color: var(--text-dim); margin-top: 12px;">Арка 10 · Глава 17</div>
+  </div>
+
+</main>
+
+<script>
+// ── Progress bar ──
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+});
+
+// ── Reveal on scroll ──
+const revealEls = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+// ── Ambient particle canvas ──
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function Particle() {
+  this.reset();
+}
+Particle.prototype.reset = function() {
+  this.x = Math.random() * W;
+  this.y = Math.random() * H;
+  this.vx = (Math.random() - 0.5) * 0.15;
+  this.vy = -Math.random() * 0.3 - 0.05;
+  this.r = Math.random() * 1.2 + 0.3;
+  this.alpha = Math.random() * 0.4 + 0.05;
+  this.life = 1;
+  this.decay = Math.random() * 0.002 + 0.001;
+  // Alternate between gold and blue
+  this.color = Math.random() > 0.6
+    ? `rgba(200,164,106,${this.alpha})`
+    : Math.random() > 0.5
+      ? `rgba(130,160,200,${this.alpha})`
+      : `rgba(180,120,200,${this.alpha * 0.5})`;
+};
+
+for (let i = 0; i < 80; i++) {
+  const p = new Particle();
+  p.y = Math.random() * H; // scatter vertically on load
+  particles.push(p);
+}
+
+function animParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= p.decay;
+    if (p.life <= 0 || p.y < -10) p.reset();
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.life * 0.6;
+    ctx.fill();
+  });
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+</script>
+</body>
+</html>
