@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re:Zero — Арка 10 · Страна Короля Льва</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;600;700&family=Cormorant+Infant:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c14;
+  --bg2: #0e1320;
+  --bg3: #13192e;
+  --text: #ddd4c0;
+  --text-dim: #8a8070;
+  --accent: #c8a46a;
+  --accent2: #7a9cc8;
+  --divider: #2a3050;
+  --ram: #e87aaa;
+  --emilia: #aac8ec;
+  --bordeaux: #d04040;
+  --marcos: #8a9ab0;
+  --fiore: #f0c060;
+  --sakura: #c08ad0;
+  --felt: #e8a050;
+  --reinhard: #5090d8;
+  --witch: #9040a0;
+  --lion: #d4a840;
+  --ice: #90c0e0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.85;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Ambient particles ── */
+#canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--lion), var(--accent), var(--ice));
+  width: 0%;
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ── Header ── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(8,12,20,0.96) 70%, transparent);
+  border-bottom: 1px solid rgba(200,164,106,0.1);
+}
+
+.header-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-family: 'Cormorant SC', 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.header-pov {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* ── Title block ── */
+.arc-title-block {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.arc-kanji {
+  font-family: serif;
+  font-size: 52px;
+  color: rgba(212,168,64,0.2);
+  letter-spacing: 0.5em;
+  margin-bottom: 36px;
+  animation: fadeSlideIn 2s ease forwards;
+}
+
+.arc-label {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 2s ease 0.3s both;
+}
+
+.arc-num {
+  font-family: 'Cormorant SC', 'Cinzel Decorative', serif;
+  font-size: clamp(26px, 4.5vw, 48px);
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  animation: fadeSlideIn 2s ease 0.5s both;
+  text-shadow: 0 0 60px rgba(212,168,64,0.4);
+}
+
+.arc-title {
+  font-family: 'Cormorant Infant', 'EB Garamond', serif;
+  font-style: italic;
+  font-size: clamp(22px, 3.5vw, 38px);
+  color: var(--text);
+  margin-bottom: 28px;
+  animation: fadeSlideIn 2s ease 0.8s both;
+}
+
+.arc-tagline {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  margin-bottom: 70px;
+  animation: fadeSlideIn 2s ease 1.1s both;
+}
+
+.scroll-hint {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.scroll-chevron {
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(212,168,64,0.5);
+  border-bottom: 1px solid rgba(212,168,64,0.5);
+  transform: rotate(45deg);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+/* ── Main content ── */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 40px 160px;
+}
+
+/* ── Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Section divider ── */
+.section-divider {
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+.divider-sigil {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  display: inline-block;
+  animation: sigil-pulse 3s ease-in-out infinite;
+}
+.divider-line {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 16px auto;
+  width: 60%;
+  opacity: 0.4;
+}
+
+/* ── Arc synopsis ── */
+.synopsis-block {
+  position: relative;
+  border: 1px solid rgba(212,168,64,0.2);
+  background: rgba(15,18,30,0.7);
+  border-radius: 4px;
+  padding: 36px 40px;
+  margin: 40px 0;
+  box-shadow: 0 0 50px rgba(212,168,64,0.04);
+}
+
+.synopsis-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: rgba(212,168,64,0.5);
+  margin-bottom: 20px;
+}
+
+.synopsis-text {
+  font-style: italic;
+  color: #ccc4b0;
+  line-height: 2;
+}
+
+/* ── Phase header ── */
+.phase-header {
+  margin: 70px 0 30px;
+  text-align: center;
+}
+
+.phase-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.phase-name {
+  font-family: 'Cormorant SC', serif;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+/* ── Chapter cards ── */
+.chapters-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.chapter-card {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(42,48,80,0.8);
+  border-radius: 3px;
+  overflow: hidden;
+  background: rgba(14,19,32,0.6);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
+.chapter-card.available {
+  cursor: pointer;
+  border-color: rgba(200,164,106,0.2);
+}
+
+.chapter-card.available:hover {
+  border-color: rgba(200,164,106,0.5);
+  background: rgba(20,26,44,0.8);
+  box-shadow: 0 0 30px rgba(200,164,106,0.08);
+}
+
+.chapter-card.available:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.card-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  padding: 0 20px;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 11px;
+  color: var(--text-dim);
+  border-right: 1px solid rgba(42,48,80,0.8);
+  background: rgba(8,12,20,0.4);
+  letter-spacing: 0.05em;
+}
+
+.chapter-card.available .card-num {
+  color: var(--accent);
+  border-right-color: rgba(200,164,106,0.15);
+}
+
+.card-body {
+  flex: 1;
+  padding: 20px 24px;
+}
+
+.card-title {
+  font-family: 'Cormorant Infant', 'EB Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #c8c0b0;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.chapter-card.available .card-title {
+  color: var(--text);
+}
+
+.chapter-card.available:hover .card-title {
+  color: #f0e8d8;
+}
+
+.card-status {
+  margin-top: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.status-available {
+  color: rgba(200,164,106,0.6);
+}
+
+.status-locked {
+  color: rgba(100,100,120,0.5);
+}
+
+.card-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 8px;
+  color: rgba(200,164,106,0.4);
+  font-size: 14px;
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Lock icon */
+.card-lock {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 8px;
+  color: rgba(80,90,110,0.4);
+  font-size: 13px;
+}
+
+/* ── Phase ribbon ── */
+.phase-ribbon {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.ribbon-one {
+  color: rgba(144,192,224,0.8);
+  border: 1px solid rgba(144,192,224,0.2);
+  background: rgba(144,192,224,0.04);
+}
+
+.ribbon-two {
+  color: rgba(212,168,64,0.8);
+  border: 1px solid rgba(212,168,64,0.2);
+  background: rgba(212,168,64,0.04);
+}
+
+/* ── Character strip ── */
+.characters-section {
+  margin: 60px 0 40px;
+}
+
+.characters-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.characters-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.char-tag {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  padding: 5px 14px;
+  border-radius: 2px;
+  border: 1px solid;
+  opacity: 0.85;
+}
+
+.char-emilia  { color: var(--emilia);   border-color: rgba(170,200,236,0.2); background: rgba(170,200,236,0.04); }
+.char-subaru  { color: var(--accent2);  border-color: rgba(122,156,200,0.2); background: rgba(122,156,200,0.04); }
+.char-ram     { color: var(--ram);      border-color: rgba(232,122,170,0.2); background: rgba(232,122,170,0.04); }
+.char-beatrice{ color: var(--sakura);   border-color: rgba(192,138,208,0.2); background: rgba(192,138,208,0.04); }
+.char-crush   { color: var(--lion);     border-color: rgba(212,168,64,0.2);  background: rgba(212,168,64,0.04);  }
+.char-felt    { color: var(--felt);     border-color: rgba(232,160,80,0.2);  background: rgba(232,160,80,0.04);  }
+.char-reinhard{ color: var(--reinhard); border-color: rgba(80,144,216,0.2);  background: rgba(80,144,216,0.04);  }
+.char-fiore   { color: var(--fiore);    border-color: rgba(240,192,96,0.2);  background: rgba(240,192,96,0.04);  }
+.char-otto    { color: #90b080;         border-color: rgba(144,176,128,0.2); background: rgba(144,176,128,0.04); }
+.char-garfiel { color: #e07840;         border-color: rgba(224,120,64,0.2);  background: rgba(224,120,64,0.04);  }
+
+/* ── Volume tag ── */
+.volume-tag {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: rgba(200,164,106,0.35);
+  padding: 8px 0 24px;
+  text-transform: uppercase;
+}
+
+/* ── Intro prose ── */
+p.narr {
+  margin-bottom: 1.3em;
+  color: var(--text);
+}
+
+p.italic-narr {
+  font-style: italic;
+  color: #c8bcaa;
+  margin-bottom: 1.3em;
+}
+
+/* ── Footer mark ── */
+.arc-end-mark {
+  text-align: center;
+  padding: 60px 0 80px;
+  opacity: 0.4;
+}
+
+.arc-end-mark .kanji {
+  font-family: serif;
+  font-size: 32px;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.arc-end-mark .label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+/* ── Animations ── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.7; }
+}
+@keyframes sigil-pulse {
+  0%, 100% { opacity: 0.4; letter-spacing: 0.3em; }
+  50%       { opacity: 0.9; letter-spacing: 0.45em; }
+}
+@keyframes bounce {
+  0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+  50%      { transform: rotate(45deg) translateY(6px); opacity: 0.9; }
+}
+
+/* ── Highlight quote ── */
+.arc-quote {
+  position: relative;
+  border-left: 2px solid rgba(212,168,64,0.4);
+  padding: 4px 0 4px 24px;
+  margin: 2em 0;
+  font-style: italic;
+  color: #d4c8a8;
+  font-size: 20px;
+  line-height: 2;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  main { padding: 60px 20px 100px; }
+  header { padding: 12px 20px; }
+  .header-arc { display: none; }
+  body { font-size: 17px; }
+  .synopsis-block { padding: 28px 24px; }
+  .card-num { min-width: 56px; padding: 0 14px; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="canvas"></canvas>
+
+<header>
+  <span class="header-arc">Re:Zero · Арка 10</span>
+  <span class="header-title">Страна Короля Льва</span>
+  <span class="header-pov">Том 44–XX</span>
+</header>
+
+<!-- ════ TITLE SCREEN ════ -->
+<div class="arc-title-block">
+  <div class="arc-kanji">獅 子 王 の 国</div>
+  <div class="arc-label">Re:Zero — Жизнь с нуля в альтернативном мире</div>
+  <div class="arc-num">Арка 10</div>
+  <div class="arc-title">«Страна Короля Льва»</div>
+  <div class="arc-tagline">Королевские Выборы. Предательство. Огонь.</div>
+  <div class="scroll-hint">↓ К главам</div>
+  <div class="scroll-down">
+    <div class="scroll-chevron"></div>
+    <div class="scroll-chevron" style="margin-top:-8px;opacity:0.5;"></div>
+  </div>
+</div>
+
+<!-- ════ MAIN CONTENT ════ -->
+<main>
+
+  <!-- Synopsis -->
+  <div class="synopsis-block reveal">
+    <div class="synopsis-label">Об арке</div>
+    <p class="synopsis-text">
+      Битва с Альдебараном стихла, но на сердце Субару остались глубокие шрамы. Пока он со своими спутниками спешил в столицу на встречу с Эмилией, над Королевскими Выборами сгустились тучи. Внезапно объявилась Церковь Божественного Дракона вместе с Фьоре — «Святой», чья внешность и имя до боли напоминали о пропавшей принцессе. Ее таинственный дар уже принес Королевству чудо исцеления, но он же способен ввергнуть Драконье Королевство в хаос.
+    </p>
+  </div>
+
+  <div class="volume-tag reveal">Тома 44 · XX</div>
+
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <!-- Персонажи -->
+  <div class="characters-section reveal">
+    <div class="characters-label">Действующие лица</div>
+    <div class="characters-list">
+      <span class="char-tag char-emilia">Эмилия</span>
+      <span class="char-tag char-subaru">Субару</span>
+      <span class="char-tag char-ram">Рам</span>
+      <span class="char-tag char-beatrice">Беатрис</span>
+      <span class="char-tag char-crush">Круш</span>
+      <span class="char-tag char-felt">Фельт</span>
+      <span class="char-tag char-reinhard">Райнхард</span>
+      <span class="char-tag char-fiore">Фьоре</span>
+      <span class="char-tag char-otto">Отто</span>
+      <span class="char-tag char-garfiel">Гарфиель</span>
+    </div>
+  </div>
+
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <!-- ФАЗА 1 -->
+  <div class="phase-header reveal">
+    <div class="phase-label">Фаза I</div>
+    <div class="phase-name">Первая фаза</div>
+  </div>
+
+  <div class="chapters-grid">
+
+    <!-- Глава 1 — пример залитой (шаблон для будущих) -->
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">01</div>
+      <div class="card-body">
+        <div class="card-title">Глава 1</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">02</div>
+      <div class="card-body">
+        <div class="card-title">Глава 2</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">03</div>
+      <div class="card-body">
+        <div class="card-title">Глава 3</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">04</div>
+      <div class="card-body">
+        <div class="card-title">Глава 4</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">05</div>
+      <div class="card-body">
+        <div class="card-title">Глава 5</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">06</div>
+      <div class="card-body">
+        <div class="card-title">Глава 6</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">07</div>
+      <div class="card-body">
+        <div class="card-title">Глава 7</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">08</div>
+      <div class="card-body">
+        <div class="card-title">Глава 8</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">09</div>
+      <div class="card-body">
+        <div class="card-title">Глава 9</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">10</div>
+      <div class="card-body">
+        <div class="card-title">Глава 10</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">11</div>
+      <div class="card-body">
+        <div class="card-title">Глава 11</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">12</div>
+      <div class="card-body">
+        <div class="card-title">Глава 12</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+  </div>
+
+  <!-- ФАЗА 2 -->
+  <div class="phase-header reveal" style="margin-top: 60px;">
+    <div class="phase-label">Фаза II</div>
+    <div class="phase-name">Вторая фаза</div>
+  </div>
+
+  <div class="chapters-grid">
+
+    <!-- Глава 13 -->
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">13</div>
+      <div class="card-body">
+        <div class="card-title">Не запятнать кровью</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <!-- Глава 14 -->
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">14</div>
+      <div class="card-body">
+        <div class="card-title">Мятежник</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <!-- Глава 15 -->
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">15</div>
+      <div class="card-body">
+        <div class="card-title">С тобой хоть в ад</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <!-- Глава 16 -->
+    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+      <div class="card-num">16</div>
+      <div class="card-body">
+        <div class="card-title">Удар исподтишка</div>
+        <div class="card-status status-locked">Не залита</div>
+      </div>
+      <div class="card-lock">⬡</div>
+    </div>
+
+    <!-- Глава 17 — залита -->
+    <a class="chapter-card available reveal" href="https://wdfazik.github.io/rezero-reader/">
+      <div class="card-num">17</div>
+      <div class="card-body">
+        <div class="card-title">Сгорите же дотла</div>
+        <div class="card-status status-available">Читать</div>
+      </div>
+      <div class="card-arrow">›</div>
+    </a>
+
+  </div>
+
+  <div class="section-divider reveal" style="margin-top: 60px;">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="arc-end-mark reveal">
+    <span class="kanji">獅子王の国</span>
+    <span class="label">Арка 10 · Страна Короля Льва</span>
+  </div>
+
+</main>
+
+<script>
+// ── Progress bar ──
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+});
+
+// ── Reveal on scroll ──
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+revealEls.forEach(el => observer.observe(el));
+
+// ── Ambient particle canvas ──
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function Particle() { this.reset(); }
+Particle.prototype.reset = function() {
+  this.x = Math.random() * W;
+  this.y = Math.random() * H;
+  this.vx = (Math.random() - 0.5) * 0.15;
+  this.vy = -Math.random() * 0.3 - 0.05;
+  this.r = Math.random() * 1.2 + 0.3;
+  this.alpha = Math.random() * 0.4 + 0.05;
+  this.life = 1;
+  this.decay = Math.random() * 0.002 + 0.001;
+  const roll = Math.random();
+  if (roll > 0.6) {
+    this.color = `rgba(212,168,64,${this.alpha})`;    // lion gold
+  } else if (roll > 0.3) {
+    this.color = `rgba(144,192,224,${this.alpha})`;   // ice blue
+  } else {
+    this.color = `rgba(200,164,106,${this.alpha * 0.6})`; // warm gold
+  }
+};
+
+for (let i = 0; i < 80; i++) {
+  const p = new Particle();
+  p.y = Math.random() * H;
+  particles.push(p);
+}
+
+function animParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= p.decay;
+    if (p.life <= 0 || p.y < -10) p.reset();
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.life * 0.6;
+    ctx.fill();
+  });
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+</script>
+</body>
+</html>
