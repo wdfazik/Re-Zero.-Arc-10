@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re:Zero — Арка 10, Глава 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;600;700&family=Cormorant+Infant:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c14;
+  --bg2: #0e1320;
+  --bg3: #13192e;
+  --text: #ddd4c0;
+  --text-dim: #8a8070;
+  --accent: #c8a46a;
+  --accent2: #7a9cc8;
+  --divider: #2a3050;
+  --ram: #e87aaa;
+  --emilia: #aac8ec;
+  --bordeaux: #d04040;
+  --marcos: #8a9ab0;
+  --fiore: #f0c060;
+  --sakura: #c08ad0;
+  --felt: #e8a050;
+  --reinhard: #5090d8;
+  --witch: #9040a0;
+  --narrator: #ddd4c0;
+  --krusch: #5aaa7a;
+  --tiga: #d4a060;
+  --beatrice: #b08adc;
+  --subaru: #90b8e0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.85;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Ambient particles ── */
+#canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--krusch), var(--accent), var(--beatrice));
+  width: 0%;
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ── Header ── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(8,12,20,0.96) 70%, transparent);
+  border-bottom: 1px solid rgba(200,164,106,0.1);
+}
+
+.header-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-family: 'Cormorant SC', 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.header-pov {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  transition: color 0.6s ease;
+}
+
+/* ── Chapter title block ── */
+.chapter-title-block {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.chapter-kanji {
+  font-family: serif;
+  font-size: 48px;
+  color: rgba(200,164,106,0.25);
+  letter-spacing: 0.4em;
+  margin-bottom: 32px;
+  animation: fadeSlideIn 2s ease forwards;
+}
+
+.chapter-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 2s ease 0.3s both;
+}
+
+.chapter-num {
+  font-family: 'Cormorant SC', 'Cinzel Decorative', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  animation: fadeSlideIn 2s ease 0.5s both;
+  text-shadow: 0 0 60px rgba(200,164,106,0.3);
+}
+
+.chapter-subtitle {
+  font-family: 'Cormorant Infant', 'EB Garamond', serif;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 32px);
+  color: var(--text);
+  margin-bottom: 60px;
+  animation: fadeSlideIn 2s ease 0.8s both;
+}
+
+.scroll-hint {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ── Main content ── */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 40px 160px;
+}
+
+/* ── Paragraph reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Narration ── */
+p.narr {
+  margin-bottom: 1.3em;
+  color: var(--text);
+}
+
+p.italic-narr {
+  font-style: italic;
+  color: #c8bcaa;
+  margin-bottom: 1.3em;
+}
+
+p.thought {
+  font-style: italic;
+  color: #b0a898;
+  padding-left: 20px;
+  border-left: 2px solid rgba(200,164,106,0.3);
+  margin: 1em 0 1.3em;
+}
+
+/* ── Dialogue ── */
+.dialogue-block {
+  margin: 0.4em 0 1.1em;
+  position: relative;
+}
+
+.speaker-tag {
+  display: none;
+}
+
+.dialogue-text {
+  font-style: normal;
+  color: #e0d8cc;
+  display: block;
+  padding-left: 4px;
+}
+
+.dialogue-text.emotional {
+  font-style: italic;
+}
+
+.sp-ram { color: var(--ram); }
+.sp-emilia { color: var(--emilia); }
+.sp-bordeaux { color: var(--bordeaux); }
+.sp-marcos { color: var(--marcos); }
+.sp-fiore { color: var(--fiore); }
+.sp-sakura { color: var(--sakura); }
+.sp-felt { color: var(--felt); }
+.sp-reinhard { color: var(--reinhard); }
+.sp-official { color: #9aaabb; }
+.sp-krusch { color: var(--krusch); }
+.sp-tiga { color: var(--tiga); }
+.sp-beatrice { color: var(--beatrice); }
+.sp-subaru { color: var(--subaru); }
+
+
+/* ── Character colors stripped: dialogue colour-neutral ── */
+.dialogue-text { color: #e0d8cc !important; }
+/* ── Section divider ── */
+.section-divider {
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+.divider-sigil {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  display: inline-block;
+  animation: sigil-pulse 3s ease-in-out infinite;
+}
+
+.divider-line {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 16px auto;
+  width: 60%;
+  opacity: 0.4;
+}
+
+/* ── Dramatic moments ── */
+.moment {
+  position: relative;
+  margin: 2.5em 0;
+  padding: 28px 32px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.moment::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.moment-label {
+  display: none;
+}
+
+.moment-text {
+  font-size: 20px;
+  line-height: 1.9;
+}
+
+/* Shock / revelation */
+.moment-shock {
+  border: 1px solid rgba(120,160,220,0.3);
+  background: rgba(10,20,50,0.6);
+  box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08);
+}
+.moment-shock .moment-text { color: #ccd8ec; }
+.moment-shock::before { background: radial-gradient(ellipse at center, rgba(80,120,220,1), transparent 70%); }
+
+/* Anger / tension */
+.moment-anger {
+  border: 1px solid rgba(200,60,60,0.3);
+  background: rgba(30,8,8,0.6);
+  box-shadow: inset 0 0 40px rgba(200,60,60,0.05), 0 0 30px rgba(200,60,60,0.08);
+}
+.moment-anger .moment-text { color: #f0d0d0; }
+.moment-anger::before { background: radial-gradient(ellipse at center, rgba(200,60,60,1), transparent 70%); }
+
+/* Resolve / defiance */
+.moment-resolve {
+  border: 1px solid rgba(200,164,106,0.4);
+  background: rgba(20,16,8,0.7);
+  box-shadow: inset 0 0 50px rgba(200,164,106,0.06), 0 0 40px rgba(200,164,106,0.12);
+}
+.moment-resolve .moment-text { color: #f0e8d8; font-style: italic; }
+.moment-resolve::before { background: radial-gradient(ellipse at center, rgba(200,164,106,1), transparent 70%); }
+
+/* Heavy / despair */
+.moment-heavy {
+  border: 1px solid rgba(80,90,120,0.4);
+  background: rgba(8,10,18,0.8);
+  box-shadow: inset 0 0 40px rgba(40,50,80,0.1);
+}
+.moment-heavy .moment-text { color: #b0b8c8; font-style: italic; }
+
+/* Warmth */
+.moment-warmth {
+  border: 1px solid rgba(232,122,170,0.3);
+  background: rgba(20,10,15,0.6);
+  box-shadow: inset 0 0 40px rgba(232,122,170,0.04), 0 0 20px rgba(232,122,170,0.07);
+}
+.moment-warmth .moment-text { color: #f0dce8; }
+
+/* ── Krusch battle moment ── */
+.moment-krusch {
+  border: 1px solid rgba(90,170,122,0.3);
+  background: rgba(5,18,12,0.7);
+  box-shadow: inset 0 0 40px rgba(90,170,122,0.05), 0 0 30px rgba(90,170,122,0.08);
+}
+.moment-krusch .moment-text { color: #c0e8d0; }
+.moment-krusch::before { background: radial-gradient(ellipse at center, rgba(90,170,122,1), transparent 70%); }
+
+/* ── Dragon Eye reveal ── */
+.dragon-eye-reveal {
+  position: relative;
+  margin: 3em 0;
+  padding: 36px 40px;
+  border-radius: 6px;
+  background: rgba(8, 6, 20, 0.9);
+  border: 1px solid rgba(180, 140, 60, 0.4);
+  overflow: hidden;
+  text-align: center;
+}
+
+.dragon-eye-reveal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(200, 160, 30, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.dragon-eye-glyph {
+  font-size: 56px;
+  display: block;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 0 18px rgba(255,200,40,0.7));
+  animation: eye-pulse 2.5s ease-in-out infinite;
+}
+
+.dragon-eye-text {
+  font-family: 'Cormorant Infant', serif;
+  font-style: italic;
+  font-size: 21px;
+  color: #f0d870;
+  line-height: 1.9;
+  text-shadow: 0 0 12px rgba(220,180,40,0.4);
+}
+
+/* ── Return from death animation ── */
+.return-block {
+  position: relative;
+  margin: 3.5em 0;
+  padding: 40px 36px;
+  background: rgba(4, 6, 18, 0.95);
+  border: 1px solid rgba(80, 50, 160, 0.5);
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.return-vortex {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.return-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(160, 80, 220, 0.5);
+  animation: ring-expand 2.4s ease-out infinite;
+}
+
+.return-ring:nth-child(1) { width: 80px; height: 80px; animation-delay: 0s; }
+.return-ring:nth-child(2) { width: 80px; height: 80px; animation-delay: 0.6s; }
+.return-ring:nth-child(3) { width: 80px; height: 80px; animation-delay: 1.2s; }
+.return-ring:nth-child(4) { width: 80px; height: 80px; animation-delay: 1.8s; }
+
+.return-kanji {
+  position: relative;
+  z-index: 1;
+  font-family: serif;
+  font-size: 44px;
+  color: rgba(160, 80, 220, 0.9);
+  text-shadow: 0 0 30px rgba(160, 80, 220, 0.7), 0 0 60px rgba(80, 40, 140, 0.4);
+  display: block;
+  margin-bottom: 18px;
+  letter-spacing: 0.3em;
+  animation: return-glow 3s ease-in-out infinite;
+}
+
+.return-label {
+  position: relative;
+  z-index: 1;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: rgba(160, 80, 220, 0.6);
+  display: block;
+  margin-bottom: 22px;
+}
+
+.return-text {
+  position: relative;
+  z-index: 1;
+  font-family: 'Cormorant Infant', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #d8c8f0;
+  line-height: 2;
+  text-shadow: 0 0 8px rgba(140, 80, 200, 0.2);
+}
+
+.return-block.visible .return-ring { opacity: 1; }
+
+/* ── Inner fire / internal monologue ── */
+.inner-fire {
+  font-style: italic;
+  color: #e8c090;
+  border-left: 3px solid var(--accent);
+  padding-left: 24px;
+  margin: 1.5em 0;
+  line-height: 2;
+  font-size: 20px;
+}
+
+/* ── POV section headers ── */
+.pov-header {
+  display: none;
+}
+.pov-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.pov-subtitle {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(200,164,106,0.5);
+}
+
+/* ── Scene label ── */
+.scene-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 24px 0 8px;
+  opacity: 0.6;
+}
+
+/* ── Navigation buttons ── */
+.nav-buttons {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 40px 100px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1px solid rgba(200,164,106,0.25);
+  border-radius: 3px;
+  background: rgba(8,12,20,0.7);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(200,164,106,0.06), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.nav-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.nav-btn:hover {
+  color: var(--accent);
+  border-color: rgba(200,164,106,0.55);
+  box-shadow: 0 0 20px rgba(200,164,106,0.1);
+  transform: translateY(-1px);
+}
+
+.nav-btn-prev { border-color: rgba(90,170,122,0.25); }
+.nav-btn-prev:hover { color: var(--krusch); border-color: rgba(90,170,122,0.5); box-shadow: 0 0 20px rgba(90,170,122,0.1); }
+
+.nav-btn-toc { border-color: rgba(200,164,106,0.25); }
+.nav-btn-toc:hover { color: var(--accent); border-color: rgba(200,164,106,0.5); }
+
+.nav-btn-next { border-color: rgba(170,100,220,0.25); }
+.nav-btn-next:hover { color: var(--beatrice); border-color: rgba(170,100,220,0.5); box-shadow: 0 0 20px rgba(170,100,220,0.1); }
+
+.nav-icon {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ── Animations ── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes sigil-pulse {
+  0%, 100% { opacity: 0.4; letter-spacing: 0.3em; }
+  50% { opacity: 0.9; letter-spacing: 0.45em; }
+}
+
+@keyframes shock-flare {
+  0% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+  50% { box-shadow: inset 0 0 80px rgba(80,120,200,0.15), 0 0 60px rgba(80,120,200,0.2); }
+  100% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+}
+
+.moment-shock.visible { animation: shock-flare 4s ease-in-out infinite; }
+
+@keyframes resolve-glow {
+  0%, 100% { box-shadow: inset 0 0 50px rgba(200,164,106,0.06), 0 0 40px rgba(200,164,106,0.12); }
+  50% { box-shadow: inset 0 0 80px rgba(200,164,106,0.12), 0 0 70px rgba(200,164,106,0.22); }
+}
+.moment-resolve.visible { animation: resolve-glow 3.5s ease-in-out infinite; }
+
+@keyframes anger-pulse {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(200,60,60,0.05), 0 0 30px rgba(200,60,60,0.08); }
+  50% { box-shadow: inset 0 0 60px rgba(200,60,60,0.12), 0 0 50px rgba(200,60,60,0.15); }
+}
+.moment-anger.visible { animation: anger-pulse 2.5s ease-in-out infinite; }
+
+@keyframes krusch-glow {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(90,170,122,0.05), 0 0 30px rgba(90,170,122,0.08); }
+  50% { box-shadow: inset 0 0 70px rgba(90,170,122,0.12), 0 0 50px rgba(90,170,122,0.15); }
+}
+.moment-krusch.visible { animation: krusch-glow 3s ease-in-out infinite; }
+
+@keyframes eye-pulse {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(255,200,40,0.6)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 30px rgba(255,220,60,0.95)) drop-shadow(0 0 50px rgba(200,140,0,0.5)); transform: scale(1.06); }
+}
+
+@keyframes return-glow {
+  0%, 100% { text-shadow: 0 0 30px rgba(160,80,220,0.7), 0 0 60px rgba(80,40,140,0.4); }
+  50% { text-shadow: 0 0 50px rgba(180,100,255,1), 0 0 90px rgba(100,50,180,0.7), 0 0 4px #fff; }
+}
+
+@keyframes ring-expand {
+  0%   { width: 60px; height: 60px; opacity: 0.8; border-color: rgba(160,80,220,0.7); }
+  100% { width: 320px; height: 320px; opacity: 0; border-color: rgba(80,20,140,0); }
+}
+
+/* ── Scroll indicator ── */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.scroll-chevron {
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(200,164,106,0.5);
+  border-bottom: 1px solid rgba(200,164,106,0.5);
+  transform: rotate(45deg);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+  50% { transform: rotate(45deg) translateY(6px); opacity: 0.9; }
+}
+
+/* ── Witch cult / Dragon ── */
+.cult-mention {
+  color: var(--witch);
+  font-style: normal;
+  text-shadow: 0 0 8px rgba(144,64,160,0.3);
+}
+
+.dragon-mention {
+  color: #d4a020;
+  text-shadow: 0 0 8px rgba(200,150,0,0.3);
+}
+
+/* ── Footnote-style location ── */
+.location-tag {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: rgba(200,164,106,0.35);
+  padding: 8px 0 30px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  main { padding: 60px 20px 100px; }
+  header { padding: 12px 20px; }
+  .header-arc { display: none; }
+  body { font-size: 17px; }
+  .nav-buttons { padding: 40px 20px 80px; gap: 12px; }
+  .nav-btn { padding: 12px 18px; font-size: 10px; }
+  .chapter-kanji { font-size: 28px; letter-spacing: 0.25em; margin-bottom: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="canvas"></canvas>
+
+<header>
+  <span class="header-arc">Re:Zero · Арка 10</span>
+  <span class="header-title">Не запятнать кровью</span>
+  <span class="header-pov" id="pov-indicator">Том 45</span>
+</header>
+
+<!-- ════ TITLE SCREEN ════ -->
+<div class="chapter-title-block">
+  <div class="chapter-kanji">血 で は 汚 せ な い</div>
+  <div class="chapter-arc">Re:Zero — Жизнь с нуля в альтернативном мире · Арка 10</div>
+  <div class="chapter-num">Глава 13</div>
+  <div class="chapter-subtitle">«Не запятнать кровью»</div>
+  <div class="scroll-hint">↓ Читать</div>
+  <div class="scroll-down">
+    <div class="scroll-chevron"></div>
+    <div class="scroll-chevron" style="margin-top:-8px;opacity:0.5;"></div>
+  </div>
+</div>
+
+<!-- ════ MAIN CONTENT ════ -->
+<main id="main-content">
+
+  <div class="location-tag reveal">Особняк Миклотова МакМахона · Дворянский квартал · Лугуника</div>
+
+  <p class="narr reveal">Особняк Миклотова МакМахона, одного из членов Совета Мудрецов, возвышался в дворянском квартале королевской столицы Лугуники. Его сдержанный облик всецело отражал характер хозяина, известного своей скромностью.</p>
+
+  <p class="narr reveal">Многие аристократы любили ночные приемы и застолья — то и дело закатывали пышные празднества, чтобы похвастать своим могуществом. Однако Миклотов подобных привычек не разделял. С юных лет он блистал как государственный чиновник. Словно желая доказать, что он от и до принадлежит Королевству, он так и не обзавелся женой. Только лишь изводил себя неустанным трудом на благо страны.</p>
+
+  <p class="narr reveal">Потому особняк МакМахона никогда не отличался броской роскошью. Во всяком случае, до сегодняшнего дня… дня, когда жестоко убили чертову дюжину людей, когда зловоние крови и смерти поползло по коридору… когда оборвалась жизнь самого Миклотова МакМахона.</p>
+
+  <p class="narr reveal">Нацуки Субару застыл в оцепенении перед этой немыслимой, ужасающей картиной.</p>
+
+  <p class="narr reveal">— …</p>
+
+  <p class="narr reveal">Их сюда пригласили, но по пути через особняк им не встретилось ни единой живой души. Тринадцать мертвецов, которых они миновали, скорее всего, были стражниками и слугами. Каждого из них зарубили одним смертоносным ударом.</p>
+
+  <p class="narr reveal">Субару оставил позади этот шлейф из трупов и добрался до дальней комнаты. Судя по письменному столу и книжным шкафам, это был рабочий кабинет. Здесь старец вершил дела, ломал голову над бедами Королевства и тревожился о его будущем… И в этом самом кабинете, пропитанном историей, у дальней стены сейчас сидел сам Миклотов.</p>
+
+  <p class="narr reveal">Он вытянул ноги и привалился спиной к стене, словно ребенок, который наигрался и уснул прямо на полу. И в каком-то смысле так оно и было. Мудрый старец уснул. Уснул вечным сном под разрубленным флагом Лугуники.</p>
+
+  <p class="narr reveal">А рядом с мертвым старцем…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Госпожа Круш?.. — дрогнул голос Субару.</span>
+  </div>
+
+  <p class="narr reveal">Миклотов рухнул на пол, веки на его морщинистом лице были сомкнуты. А над ним стояла она, обернувшаяся к вошедшим вполоборота. Прекрасная дева, кою украшали янтарные глаза и длинные зеленые волосы, была облачена в темно-синий наряд, который чем-то напоминал военный мундир… Левый ее глаз скрывала широкая повязка.</p>
+
+  <p class="narr reveal">Это была Круш Карстен. Та самая девушка, которую Субару знал слишком хорошо. Она услышала сбивчивый оклик, прищурилась и поудобнее перехватила узкий меч, пока пристально смотрела на юношу.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Я чувствую ветер страха, Нацуки Субару, — слетело с ее губ. — Чего ты боишься?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Боюсь?.. Я? Но…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Зачем ты вообще сюда явился? Разве у тебя были какие-то личные дела с Миклотовом МакМахоном?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Он меня пригласил… да и я сам хотел кое о чем спросить…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Именно сегодня? Странно. О чем же ты хотел спросить? О Королевских Выборах, или дело в другом тайном сговоре? Я еще не попала в точку, а ветер твоего волнения все сильнее. Спрошу еще раз. Тот ли ты человек, которого я знаю?</span>
+  </div>
+
+  <p class="narr reveal">Слова сыпались градом. Ошеломленный этим безжалостным допросом, он не мог связать и двух слов. Субару еще не успел переварить то, что видел перед собой, а Круш уже разила его своими острыми, как бритва, вопросами.</p>
+
+  <p class="narr reveal">Она не сводила с него сурового взгляда, словно собиралась выпотрошить его душу, но тут…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-beatrice">Беатрис</span>
+    <span class="dialogue-text sp-beatrice">— Довольно, я полагаю, — раздался звонкий голос.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Да уж, зрелище не из приятных, — подхватил второй.</span>
+  </div>
+
+  <p class="narr reveal">Беатрис и Тига, не в силах смотреть на то, как Субару сдается под этим напором, вмешались в разговор. Девочка крепко сжала его ладонь, а Тига шагнул вперед, заслонив Субару от пронзительного взгляда Круш.</p>
+
+  <p class="narr reveal">Их поддержка привела юношу в чувство. Субару наконец-то смог вдохнуть, и прошибший его холодный пот немного остудил пылающий разум.</p>
+
+  <p class="narr reveal">Тем временем Тига встал лицом к лицу с Круш, пока поигрывал изогнутым клинком. Он надвинул на глаза поля шляпы и протянул:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Слушай… тебе бы понять, герцогиня, что обстановочка здесь располагает к недопониманию.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— К недопониманию?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Именно. Как-никак, кругом куча трупов, да еще и один из столпов Королевства убит, — говорил Тига в своей излюбленной небрежной манере. — И если посреди всего этого стоишь ты с мечом в руках, любой подумает, что всех этих людей перебила герцогиня Круш Карстен.</span>
+  </div>
+
+  <p class="narr reveal">Слова его били прямо в лоб. Да что уж там, Субару сам хотел спросить то же самое в первую очередь.</p>
+
+  <p class="narr reveal">Да, Тига прав. Круш — главная и единственная подозреваемая в кровавой резне, унесшей жизни всех обитателей особняка… и самого Миклотова. Но Субару ведь знал ее характер. Он не хотел верить, что все это учинила правда она.</p>
+
+  <p class="narr reveal">Круш благородна, она всегда судит здраво. Пусть потеряла «воспоминания» и ей пришлось заново учиться аристократической выдержке, но Чревоугодие не смогло сожрать ее добродетель и человечность. Она просто не способна на такое зверство. Это невозможно. И точка.</p>
+
+  <p class="narr reveal">Поэтому Субару ждал, что сейчас она все опровергнет. Скажет, что точно так же, как и они, почуяла неладное, бросилась на помощь, но опоздала. Субару хотел услышать именно это. Хотел, чтобы они вместе, горя праведным гневом, выследили убийц Миклотова и заставили их поплатиться.</p>
+
+  <p class="narr reveal">Он всем сердцем ждал этих слов, но из уст Круш вырвалось:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Вижу, ты из тех, кто любит разыгрывать невинность.</span>
+  </div>
+
+  <p class="narr reveal">Она смотрела на Тигу холодно, ни один мускул не дрогнул на ее лице. Тот лишь слегка пожал плечами:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Суровая оценка, но стерплю. Так что скажешь? — Он выдержал паузу и четко, чеканя каждое слово, спросил: — Миклотова МакМахона убила ты? Герцогиня Круш Карстен?</span>
+  </div>
+
+  <div class="moment moment-shock reveal">
+    <div class="moment-text">
+      <div class="dialogue-block">
+        <span class="speaker-tag sp-krusch">Круш</span>
+        <span class="dialogue-text sp-krusch">— Да, — сухо ответила та.</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="narr reveal">Это был худший ответ из всех. Он подтвердил худшие опасения, растоптал отчаянные надежды Субару. В горле у юноши пересохло, из груди вырвался хриплый вздох. Это короткое «да» эхом заметалось в его голове.</p>
+
+  <p class="narr reveal">Круш чуть вздернула подбородок.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— И прислугу, и Миклотова МакМахона зарубила я. Своими руками, — сказала она так, словно хотела добить Субару с концами. — Они предатели, ибо посягнули на благо Королевства…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Это скорее про тебя, герцогиня! — в сердцах крикнул Тига и кинулся вперед.</span>
+  </div>
+
+  <p class="narr reveal">В мгновение ока он приблизился к ней и начал сыпать шквалом изящных ударов своим кривым мечом. Парень бил без малейших колебаний, даже не думал просить ее сдаться… Но та лишь одним плавным взмахом снизу вверх отбила его выпад. По кабинету разнесся звон столкнувшейся стали.</p>
+
+  <p class="narr reveal">И этот звук стал сигналом. Между бойцами засверкали искры, заклубился вихрь смертоносных атак.</p>
+
+  <div class="moment moment-krusch reveal">
+    <div class="moment-text">
+      Два мечника сошлись в бою, превратили просторный кабинет в поле брани. Круш билась так, как подобает истинному рыцарю, посвятившему жизнь мечу — ее стиль остался прежним: что в давней битве с Белым Китом до потери «воспоминаний», что в недавних сражениях в Пристелле. Она била чисто, прямолинейно, ее клинок рассекал воздух безупречными росчерками.
+    </div>
+  </div>
+
+  <p class="narr reveal">А вот стиль Тиги был до боли специфичным — он то и дело припадал к полу и кружился юлой. Субару доводилось видеть немало выдающихся мечников — Юлиуса, Вильгельма, Сесилуса… Если не брать в расчет Райнхарда, который чаще пускал в ход руки и ноги, все они шли классическим, истинным путем меча. Но если их школу считать благородной, то школа Тиги была порочной: он не пытался сокрушить противника лоб в лоб. Лишь безжалостно бил по ногам и рукам, путал обманными маневрами, нападал с неожиданных углов — все ради победы, любой ценой.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Ха-а! — резко выдохнул Тига.</span>
+  </div>
+
+  <p class="narr reveal">Его зажатый обратным хватом клинок устремился к Круш по немыслимой дуге.</p>
+
+  <p class="narr reveal">Та уклонилась и попятилась назад, но следом прилетел удар длинной ноги, хлесткий, как удар кнута. Удары меча и ног сливались в единый непрерывный танец, безжалостный шторм, что обуял Круш.</p>
+
+  <p class="narr reveal">Но она, не меняясь в лице, точными движениями ног удерживала нужное расстояние. Ловя ритм, она отбивала удары один за другим и пыталась перехватить инициативу в этой сумасшедшей рубке. Казалось, в ее сапоги вшиты стальные пластины — она умудрялась отбивать пинки Тиги прямо мечом. Она ни на дюйм не уступала натиску своего непредсказуемого врага. Благородство против коварства — силы были равны.</p>
+
+  <p class="narr reveal">Противники сцепились клинками.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Отличная выучка, — подала голос Круш. — В Церкви так учат пользоваться мечом?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Увы, самоучка! С детства привык пускать в ход и руки, и ноги!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Храбрый ветер. И в нем нет лжи.</span>
+  </div>
+
+  <p class="narr reveal">Круш увернулась от очередного пинка в миллиметре от своего лица и ударила мечом сверху вниз. Тига принял удар на обратный хват кривого клинка, и бойцы замерли, давя друг на друга.</p>
+
+  <p class="narr reveal">Ни один не уступал другому. Оба были мастерами своего дела, и чаша весов не клонилась ни в чью сторону. Но тут…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-beatrice">Беатрис</span>
+    <span class="dialogue-text sp-beatrice">— Субару! Соберись, в самом деле! — подпрыгнула Беатрис и шлепнула его по щеке, чем привела в чувство.</span>
+  </div>
+
+  <p class="narr reveal">Юноша широко распахнул глаза. Он вдруг сознал, что снова выпал из мира и завороженно наблюдал за боем. Хвала Беатрис!</p>
+
+  <p class="narr reveal">Да, Субару был потрясен. Если вдуматься в происходящее, то оставаться в здравом уме было трудно. Но сейчас не время думать. Нужно действовать.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Май фрэнд… — бросил ему Тига, пока смотрел на Круш и продолжал скрещивать с ней клинки.</span>
+  </div>
+
+  <p class="narr reveal">И просил он не подмоги.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Наружу…</span>
+  </div>
+
+  <p class="narr reveal">Нужно бежать. Поднять тревогу. Остановить это безумие.</p>
+
+  <p class="narr reveal">К счастью, в столице сейчас полно надежных товарищей — и Гарфиэль, и Вильгельм, и сам Райнхард. Они в дворянском квартале. У соседних особняков наверняка есть стража и рыцари. Позвать их, скрутить Круш, и тогда…</p>
+
+  <p class="narr reveal">И тогда… что? Предать ее суду? Как государственную изменницу, убившую Миклотова?</p>
+
+  <p class="narr reveal">И вдруг над Субару просвистел порыв ветра.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Боюсь, вам придется остаться, — процедила Круш. — Я еще не решила, кто вы такие.</span>
+  </div>
+
+  <p class="narr reveal">Субару невольно втянул голову в плечи. Сорвавшийся с лезвия ветряной резак пронесся над ним, едва не задев волосы, и врезался в стену прямо над входом в кабинет. Раздался грохот, куски потолка и стены обвалились, чем наглухо засыпали дверной проем.</p>
+
+  <p class="narr reveal">Путь к отступлению был отрезан.</p>
+
+  <p class="narr reveal">Субару похолодел в осознании, что выбора у него почти не осталось. В разгар битвы никто не даст им времени разбирать завалы. Минья не настолько сильна — ей не разнести такую гору камней. Оставалось лишь два пути: смотреть или вмешаться. Смотреть сложа руки — немыслимо.</p>
+
+  <p class="narr reveal">Но вмешаться — значит… Значит, сражаться? С Круш? Это какой-то бред. Он отказывался во все это верить. Отказывался верить своим глазам.</p>
+
+  <p class="narr reveal">Ведь это же Круш Карстен. Субару искренне ее уважал. Пусть они были соперниками на Выборах, ее добродетель не вызывала сомнений. Гордая, безупречная, готовая свернуть горы ради блага людей, она была первым человеком в этом мире, в котором он разглядел задатки истинного правителя. Тот день, когда они одолели Белого Кита и она признала его заслуги, навсегда изменил жизнь Нацуки Субару. Этого не отнять никому.</p>
+
+  <p class="narr reveal">Да, он выбрал Эмилию. Но тогда, в тот самый миг, он подумал: Круш Карстен достойна стать королевой Лугуники. И потому сейчас он выбрал самый жалкий, самый бессмысленный путь.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Хватит! Прошу тебя, Круш, прекрати! — сорвался он.</span>
+  </div>
+
+  <p class="narr reveal">Но Круш даже ухом не повела — лишь продолжала ожесточенно теснить Тигу. Она смотрела только на своего противника. Но Субару не верил, что она может закрывать на него глаза. Он закричал громче:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Брось меч! Пожалуйста! Я не знаю, как все исправить! Не знаю, но давай просто поговорим! Мы что-нибудь придумаем, только давай поговорим!</span>
+  </div>
+
+  <p class="narr reveal">Сам того не замечая, Субару свободной рукой вцепился в черный шар, висевший у него на шее. С Алом он так и не успел толком поговорить — пришлось силой заткнуть его горечь.</p>
+
+  <p class="narr reveal">Смерть Присциллы, толкнувшая того на отчаянный шаг, выжгла в душе Субару чудовищный страх. Страх абсолютной, безвозвратной потери.</p>
+
+  <p class="narr reveal">Для нынешнего Нацуки Субару страшнее собственной смерти было… потерять кого-то близкого, так и не успев с ним поговорить.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Я не хочу, чтобы все так закончилось! Не хочу… потерять кого-то и так ни хрена не понять!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-beatrice">Беатрис</span>
+    <span class="dialogue-text sp-beatrice">— Субару…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Прошу! Умоляю! Пожалуйста… богом молю… остановись!</span>
+  </div>
+
+  <p class="narr reveal">Его лицо исказила мука. Беатрис не могла не смотреть на него с болью в глазах. Она закусила губу.</p>
+
+  <p class="narr reveal">Какое убожество. Какой стыд. Он — контрактор Великого Духа Беатрис, но ее великая сила сейчас ничем не могла ему помочь. Ему оставалось лишь жалко вопить.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Умоляю…</span>
+  </div>
+
+  <p class="narr reveal">Субару понимал свою беспомощность, но ничего не мог с собой поделать. Путь назад отрезан, но драться с Круш он не мог.</p>
+
+  <p class="narr reveal">В этом мире люди менялись. Такое бывало. Но обычно враги становились друзьями. Дурное оборачивалось хорошим. А чтобы наоборот — таких случаев Субару знал всего два: Тодд и Ал. И добавить в этот короткий, проклятый список еще и Круш… Он бы просто этого не вынес.</p>
+
+  <p class="narr reveal">Его отчаянные, жалкие крики тонули в грохоте клинков. Казалось, в этой битве слова Субару весили не больше пылинки и пролетали мимо ушей Круш. Но вдруг…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Похоже, в твоих словах нет лжи.</span>
+  </div>
+
+  <p class="narr reveal">Субару резко вскинул голову. Они встретились взглядами поверх плеча Тиги. Субару смотрел в янтарные глаза Круш и в его груди вспыхнула надежда: она услышала!</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Что ж, тогда с тобой я разберусь чуть позже.</span>
+  </div>
+
+  <div class="moment moment-anger reveal">
+    <div class="moment-text">
+      И тотчас чудовищный шторм смел все на своем пути. Сжатый воздух ударил по комнате, и Субару оторвало от пола. Он мгновенно понял: это Круш. Ее коронный «Один удар — сто павших». Только в этот раз она не стала помещать ветер в одно лезвие, а выпустила его во все стороны разом.
+    </div>
+  </div>
+
+  <p class="narr reveal">Ураганный вихрь прошелся по кабинету, разнося все в щепки. В воздух взлетели тяжелые книги, кипы бумаг и даже мертвое тело мудрого старца.</p>
+
+  <p class="narr reveal">И больше Субару уже не понимал происходящего.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Гха!..</span>
+  </div>
+
+  <p class="narr reveal">Его, беззащитного, с силой швырнуло к потолку. Воздух выбило из легких. Он успел лишь прижать к себе Беатрис, чтобы защитить ее от удара.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-beatrice">Беатрис</span>
+    <span class="dialogue-text sp-beatrice">— Субару! — крикнула девочка.</span>
+  </div>
+
+  <p class="narr reveal">Но в тот же миг ветер впечатал его спиной к стене, и Субару безвольно рухнул на пол. Его пронзила боль, заставившая выдавить последний вздох.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Гх…</span>
+  </div>
+
+  <p class="narr reveal">В голове разлился ледяной холод, и юноша понял: дела ужасны. Хоть и была это не «смерть», но он уже терял сознание. Он так отчаянно пытался спасти Беатрис, что совершенно забыл о себе. Словно в пробитом затылке прозияла дыра, через которую утекали мысли. Дрянь, дрянь, дрянь…</p>
+
+  <p class="thought reveal">— Нельзя.</p>
+
+  <p class="narr reveal">Если он сейчас отрубится, то кто же тогда достучится до Круш? Тига ведь ее не знает. И не знает, какая на самом деле она добрая. Он все не так понял. Нужно его остановить. Круш — хороший человек. Договориться с ней можно.</p>
+
+  <p class="narr reveal">Можно ведь…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— До… гово… рить… ся…</span>
+  </div>
+
+  <p class="italic-narr reveal">«Пожалуйста, не закрывай от меня свое сердце», — пронеслось в голове, и он с тихим плеском утонул во тьме.</p>
+
+  <p class="italic-narr reveal">Утонул… и…</p>
+
+  <!-- ══ RETURN FROM DEATH ══ -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag">Субару</span>
+    <span class="dialogue-text">— Да.</span>
+  </div>
+
+  <div class="return-block reveal">
+    <div class="return-vortex">
+      <div class="return-ring"></div>
+      <div class="return-ring"></div>
+      <div class="return-ring"></div>
+      <div class="return-ring"></div>
+    </div>
+    <div class="return-text">
+      Сознание вспыхнуло так резко, что Субару едва не потерял равновесие.<br>
+      Мозг не успел все понять: мгновение назад он лежал изломанной куклой,<br>
+      а сейчас стоял на ногах.
+    </div>
+  </div>
+
+  <p class="narr reveal">От этого чудовищного несоответствия руки и ноги на мгновение отказались повиноваться, накатила тошнота.</p>
+
+  <p class="narr reveal">Он чувствовал под ботинками пол. Он стоял. Вроде бы ничего необычного. Но так ли это? Разве секунду назад он не чувствовал, как все перевернулось вверх дном?</p>
+
+  <p class="thought reveal">«Нет».</p>
+
+  <p class="narr reveal">Сейчас важно не то, почему мир перевернулся. Важно, что к этому привело.</p>
+
+  <p class="narr reveal">А ответ был прост. Время обернулось вспять.</p>
+
+  <p class="narr reveal">Субару чудом устоял на ногах. Перед его глазами снова предстал нетронутый погромом кабинет МакМахона. Снова разрубленный флаг на трупе старца. Снова стоящая вполоборота женщина с зелеными волосами и спина юноши с кривым мечом.</p>
+
+  <p class="narr reveal">Круш и Тига. Тот самый миг.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— И прислугу, и Миклотова МакМахона зарубила я. Своими руками. Они — предатели, ибо посягнули на благо Королевства.</span>
+  </div>
+
+  <p class="narr reveal">Он вернулся к этой роковой фразе. Фразе, которая отрезала все пути к отступлению.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Это скорее про тебя, герцогиня!</span>
+  </div>
+
+  <p class="narr reveal">Кровь застыла в жилах. Тига с боевым кличем ринулся вперед.</p>
+
+  <p class="narr reveal">Снова замелькал зажатый обратным хватом шамшир, снова Круш приняла вызов. Истинный и порочный пути меча схлестнулись вновь. Снова слышался звон стали, снова виделись снопы искр.</p>
+
+  <p class="narr reveal">У Субару помутилось в глазах — на сей раз по другой причине.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Какого… хрена?.. — Он прижал ладонь ко рту, дабы подавить стон.</span>
+  </div>
+
+  <p class="narr reveal">Виски отдавались болью, подобной открытой ране, из которой хлещет кровь. Его будто кто-то бил кувалдой изнутри.</p>
+
+  <p class="italic-narr reveal">«Посмертное Возвращение». Он посмертно вернулся. В прошлый раз Круш швырнула его об стену ураганом. Он потерял сознание. А раз он очнулся здесь, значит, из того обморока он так и не вышел — он умер.</p>
+
+  <p class="narr reveal">И если он умер в отключке… значит, убила его…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-beatrice">Беатрис</span>
+    <span class="dialogue-text sp-beatrice">— Субару! Соберись, в самом деле! — сказала, как и в тот раз, Беатрис, но уже по другому поводу, и шлепнула его по щеке.</span>
+  </div>
+
+  <p class="narr reveal">Вспышка боли и жар маленькой ладошки вернули Субару в реальность.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Прости, Беатрис.</span>
+  </div>
+
+  <p class="narr reveal">Он потер ушибленную щеку тыльной стороной ладони и сжал зубы так, что они заскрежетали.</p>
+
+  <p class="narr reveal">Смерть ничего не изменила. Ужас и смятение никуда не делись. Но отрицать происходящее и рыдать от бессилия бесполезно — итог будет тем же. Если он снова струсит и начнет скулить вместо того, чтобы вмешаться в бой, он умрет. И его кровь будет на руках Круш.</p>
+
+  <div class="inner-fire reveal">
+    <p>«Не позволю».</p>
+    <p>Он этого не допустит. Круш Карстен не убьет Нацуки Субару. Он не позволит своей слабости очернить ее благородство.</p>
+    <p>Он не позволит запятнать ее руки своей кровью.</p>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Беако, помоги мне!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-beatrice">Беатрис</span>
+    <span class="dialogue-text sp-beatrice">— Само собой, я полагаю!</span>
+  </div>
+
+  <p class="narr reveal">Голова все еще металась в панике, мысли рассыпались, как кусочки мозаики. Но Субару выхватил из этого хаоса единственную ясную деталь и крепко сжал ладонь своего безгранично надежного духа.</p>
+
+  <p class="narr reveal">Бой кипел. Круш и Тига сражались на равных, никто не уступал ни дюйма.</p>
+
+  <p class="narr reveal">Субару, знавший силу Круш, мог лишь поражаться мастерству Тиги, сумевшему навязать ей борьбу. Но в долгой перспективе перевес все равно был бы на стороне герцогини — у нее в рукаве прятался всесокрушающий «Один удар — сто павших».</p>
+
+  <p class="narr reveal">Тига, знал он об этом или нет, не давал ей продыху, из-за чего та не успевала плести заклинания. Но Субару на собственной шкуре испытал, что даже в этой сумасшедшей рубке Круш умудрялась по крупицам собирать ману для удара, способного переломить ход боя. А значит…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— На магию не надейся, май фрэнд! — крикнул Субару юноше.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Да я ей и не пользуюсь, май фрэнд! — на удивление бодро ответил тот.</span>
+  </div>
+
+  <p class="narr reveal">Субару рывком прижал Беатрис к груди, и они оказались щека к щеке. Не отрывавшие глаз от сражающихся, парочка в один голос крикнула:</p>
+
+  <div class="moment moment-resolve reveal">
+    <div class="moment-text">
+      — E.M.T.!
+    </div>
+  </div>
+
+  <p class="narr reveal">И тотчас эхом по кабинету разнеслось заклинание. Вокруг Субару и Беатрис сию же секунду развернулась невидимая сфера — их коронная техника, антимагическое поле, расплетающее чужую ману и сводящее на нет любые заклинания.</p>
+
+  <p class="narr reveal">Внутри этого поля нельзя было не только колдовать, но даже использовать метеоры или инструменты, работающие на мане, — они просто, как выразилась Беатрис, «размякали». Хотя, по ее же словам, если враг поймет принцип и успеет соткать новую формулу, все может измениться, но…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-beatrice">Беатрис</span>
+    <span class="dialogue-text sp-beatrice">— Этого хватит, чтобы хорошенько вмазать Розваалю, в самом деле! — заявила Беатрис.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— А уж тому, кто видит это впервые… вообще снесет крышу!</span>
+  </div>
+
+  <p class="narr reveal">Поле накрыло не только их двоих, но и сражающихся мечников. Тиге, как он и сказал, это нисколько не мешало. А вот Круш, готовившая свой ветряной козырь, разом лишилась главного оружия.</p>
+
+  <p class="narr reveal">Услышав заклинание, она приготовилась к отражению атаки, но мигом поняла, что ее магия рассеялась. Круш краем глаза взглянула в сторону Субару. До «смерти» их взгляды уже встречались.</p>
+
+  <p class="narr reveal">Тогда его надежды рассыпались прахом, а сам он расстался с жизнью. Но сейчас…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Сдавайся, Круш! Твой козырь бит! «Удара сотни» не будет! Я его блокнул! Это конец! — кричал он так сильно, как только мог, чтобы скрыть дрожь.</span>
+  </div>
+
+  <p class="narr reveal">Он уже понял: сопливые мольбы не изменят ровным счетом ничего. Сейчас нужно ударить словами так, чтобы пробить ее броню. Слова должны нести вес. Надо вложить в них всю душу. Заставить поверить и врага, и самого себя. Заставить ее поверить, что Нацуки Субару — противник, с которым лучше не связываться.</p>
+
+  <p class="narr reveal">Он сверлил Круш темным взглядом, она отвечала ему немигающим взором янтарного глаза. Клинки с лязгом скрестились еще раз, и мечники разорвали дистанцию.</p>
+
+  <p class="narr reveal">Тига, не выходя из стойки, шагнул так, чтобы заслонить Субару с Беатрис.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— В общем, май фрэнд тебе все сказал, — сказал он, не сводя с Круш глаз. — И смею подумать, на него тебе далеко не все равно… На твоем месте я бы прислушался.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— Тига…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Буду честен: у меня нет сил выбить у тебя меч и скрутить, — признался Тига. — Придется подставиться под удар, а то и жизнью рискнуть. Но ни мне, ни ребятам кровь не нужна.</span>
+  </div>
+
+  <p class="narr reveal">Может, он просто решил подыграть Субару в надежде, что Круш даст слабину. Но благодаря Тиге он теперь мог попытаться достучаться до герцогини.</p>
+
+  <p class="narr reveal">Тига знать не знал о том, что связывало Субару и Круш. Напротив, если он хоть краем уха слышал о Выборах, то должен был считать их соперниками. Но ему хватило пары слов, чтобы понять: здесь все куда сложнее.</p>
+
+  <p class="narr reveal">И Субару ухватился за это. Он заставит ее сдаться. Заставит, а там уже видно будет. Он все уладит. Обязательно.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Я… — начала было Круш.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-beatrice">Беатрис</span>
+    <span class="dialogue-text sp-beatrice">— Минья! — крикнула Беатрис.</span>
+  </div>
+
+  <p class="narr reveal">Сидевшая на руках Субару, она выбросила ладонь вперед — и тотчас прямо под ноги герцогини ударил сгусток пурпурного света. Пол покрылся кристаллами и с хрустом треснул.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-beatrice">Беатрис</span>
+    <span class="dialogue-text sp-beatrice">— Посоветовала бы тебе не делать резких движений, я полагаю. Внутри E.M.T. колдовать могут только двое: Субару и Бетти. Думаешь, справишься с нами, пока будешь отбиваться от этого шутника, в самом деле?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Меня, конечно, задело слово «шутник», но… значит, ваша магия работает? Нечестно играете, — хмыкнул Тига.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-beatrice">Беатрис</span>
+    <span class="dialogue-text sp-beatrice">— В этом и задумка. Но суть ты уловил.</span>
+  </div>
+
+  <p class="narr reveal">Показ силы ударил в цель — Круш на миг напряглась. До этого мига она не воспринимала Субару и Беатрис как серьезную угрозу, но теперь ей пришлось поменять свое мнение.</p>
+
+  <p class="narr reveal">Субару стало больно от этого, но если она сочла их врагами — тем лучше. Стоит ей понять, что надежды нет, она должна отступить…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Ясно, — лишь сухо обронила Круш.</span>
+  </div>
+
+  <p class="narr reveal">Она вдруг сделала неуловимо быстрое движение мечом и рассекла пустоту.</p>
+
+  <p class="narr reveal">Довольно неожиданно! Но, скорее всего, Круш просто проверяла работу E.M.T. И привычного ветра от клинка не последовало, так что убедилась, что «Один удар — сто павших» правда не работает, и кивнула. А затем…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Чего ты так боишься, Нацуки Субару?</span>
+  </div>
+
+  <p class="narr reveal">И снова прозвучал этот вопрос. Но на сей раз Субару не растерялся. Он сжал зубы и выдержал ее взгляд.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Итога битвы? За свою жизнь дрожишь? За чужие? За будущее Королевства? Или… — чеканила она каждое слово, вбивала в повисшую тишину. — Или… ты боишься за мой рассудок?</span>
+  </div>
+
+  <p class="narr reveal">Субару не дрогнул. Он приложил все усилия, чтобы ни единый мускул на лице не выдал его сомнений и страха. Он смотрел на нее взглядом, полным непреклонной воли.</p>
+
+  <p class="narr reveal">Что же увидела Круш в этом отчаянном взгляде?</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Понятно, — лишь коротко бросила она.</span>
+  </div>
+
+  <p class="narr reveal">Незримая буря чувств, бушевавшая между Субару и Круш, наконец улеглась.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Герцогиня, наши условия озвучены, — вновь обратился к ней Тига, словно и не заметил ту бурю. — Что скажешь?</span>
+  </div>
+
+  <p class="narr reveal">Тон его стал жестким — это был ультиматум. Он изготовился к атаке, но Круш лишь перевела на него взгляд.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Ваша позиция мне ясна, — ответила она. — Вы лишили меня ветра, и теперь преимущество на вашей стороне. Вы предлагаете мне сложить оружие.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-tiga">Тига</span>
+    <span class="dialogue-text sp-tiga">— Именно. И теперь в бой врываемся мы с Беако, — блефовал Субару. — Шансов у тебя…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— …нет? Больно спешите, Нацуки Субару, — разрезал ледяной голос его притворство.</span>
+  </div>
+
+  <p class="narr reveal">Круш медленно подняла левую руку, не занятую мечом. Тонкие пальцы в белой перчатке легли на повязку на левом глазу. Эту повязку она носила с тех пор, как проклятие <span class="dragon-mention">Драконьей Крови</span> удалось лишь частично исцелить благодаря силе Фьоре. Субару в шоке наблюдал, как Круш одним резким движением сорвала ее. Ибо под повязкой…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-krusch">Круш</span>
+    <span class="dialogue-text sp-krusch">— Я не люблю показывать его без нужды. Как никак, я все-таки женщина, — тихо произнесла Круш.</span>
+  </div>
+
+  <!-- Dragon Eye reveal -->
+  <div class="dragon-eye-reveal reveal">
+    <span class="dragon-eye-glyph">👁</span>
+    <div class="dragon-eye-text">
+      Ее обнаженный левый глаз разительно отличался от правого янтарного.<br>
+      Он сиял ослепительным золотом. Зрачок был узким, подобно рептилии,<br>
+      и разбегался под веком сетью светящихся линий,<br>
+      словно кровеносные сосуды…
+    </div>
+  </div>
+
+  <p class="narr reveal">Стоило это увидеть, Субару словно ударило молнией.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text">— А-а…</span>
+  </div>
+
+  <div class="moment moment-shock reveal">
+    <div class="moment-text">
+      Он не знал наверняка, прав ли он… но по виду этого жуткого, нечеловеческого золотого зрачка Субару понял лишь одно — левый глаз Круш Карстен стал <span class="dragon-mention">Глазом Дракона</span>.
+    </div>
+  </div>
+
+  <!-- ──── FINAL DIVIDER ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div style="text-align:center; padding: 40px 0 80px; opacity: 0.4;" class="reveal">
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.5em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px;">Конец главы</div>
+    <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 28px; color: var(--accent);">血では汚せない</div>
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.3em; color: var(--text-dim); margin-top: 12px;">Арка 10 · Глава 13</div>
+  </div>
+
+</main>
+
+<!-- ════ NAVIGATION BUTTONS ════ -->
+<nav class="nav-buttons">
+  <a href="10-12.html" class="nav-btn nav-btn-prev">
+    <span class="nav-icon">←</span>
+    <span>Глава 12</span>
+  </a>
+  <a href="index.html" class="nav-btn nav-btn-toc">
+    <span class="nav-icon">☰</span>
+    <span>Оглавление</span>
+  </a>
+  <a href="10-14.html" class="nav-btn nav-btn-next">
+    <span>Глава 14</span>
+    <span class="nav-icon">→</span>
+  </a>
+</nav>
+
+<script>
+// ── Progress bar ──
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+});
+
+// ── Reveal on scroll ──
+const revealEls = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+// ── Ambient particle canvas ──
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function Particle() {
+  this.reset();
+}
+Particle.prototype.reset = function() {
+  this.x = Math.random() * W;
+  this.y = Math.random() * H;
+  this.vx = (Math.random() - 0.5) * 0.15;
+  this.vy = -Math.random() * 0.3 - 0.05;
+  this.r = Math.random() * 1.2 + 0.3;
+  this.alpha = Math.random() * 0.4 + 0.05;
+  this.life = 1;
+  this.decay = Math.random() * 0.002 + 0.001;
+  // Gold, green (Krusch), and purple (Beatrice) particles
+  const roll = Math.random();
+  if (roll > 0.65) {
+    this.color = `rgba(200,164,106,${this.alpha})`;
+  } else if (roll > 0.35) {
+    this.color = `rgba(90,170,122,${this.alpha * 0.7})`;
+  } else {
+    this.color = `rgba(160,100,220,${this.alpha * 0.5})`;
+  }
+};
+
+for (let i = 0; i < 80; i++) {
+  const p = new Particle();
+  p.y = Math.random() * H;
+  particles.push(p);
+}
+
+function animParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= p.decay;
+    if (p.life <= 0 || p.y < -10) p.reset();
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.life * 0.6;
+    ctx.fill();
+  });
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+
+// ── Dragon Eye dramatic entrance ──
+// When the dragon-eye-reveal becomes visible, add extra flare
+const dragonEye = document.querySelector('.dragon-eye-reveal');
+if (dragonEye) {
+  const eyeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Spawn a burst of golden particles from center
+        for (let i = 0; i < 20; i++) {
+          setTimeout(() => {
+            const burst = new Particle();
+            burst.x = W / 2 + (Math.random() - 0.5) * 200;
+            burst.y = H / 2;
+            burst.vy = -(Math.random() * 1.5 + 0.5);
+            burst.vx = (Math.random() - 0.5) * 1.2;
+            burst.alpha = 0.8;
+            burst.r = Math.random() * 2 + 1;
+            burst.color = `rgba(220,180,40,${burst.alpha})`;
+            burst.decay = 0.008;
+            particles.push(burst);
+            if (particles.length > 120) particles.splice(0, 1);
+          }, i * 60);
+        }
+        eyeObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  eyeObserver.observe(dragonEye);
+}
+
+// ── Return block: activate rings when visible ──
+const returnBlock = document.querySelector('.return-block');
+if (returnBlock) {
+  const retObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        returnBlock.querySelectorAll('.return-ring').forEach(r => {
+          r.style.opacity = '1';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  retObserver.observe(returnBlock);
+}
+</script>
+</body>
+</html>
