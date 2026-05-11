@@ -199,12 +199,13 @@ main {
 
 /* ── Reveal ── */
 .reveal {
-  opacity: 0;
+  opacity: 0 !important;
   transform: translateY(22px);
   transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
 }
 .reveal.visible {
-  opacity: 1;
+  opacity: var(--reveal-opacity, 1) !important;
   transform: translateY(0);
 }
 
@@ -604,7 +605,7 @@ p.italic-narr {
   <div class="chapters-grid">
 
     <!-- Глава 1 — пример залитой (шаблон для будущих) -->
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">01</div>
       <div class="card-body">
         <div class="card-title">Глава 1</div>
@@ -613,7 +614,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">02</div>
       <div class="card-body">
         <div class="card-title">Глава 2</div>
@@ -622,7 +623,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">03</div>
       <div class="card-body">
         <div class="card-title">Глава 3</div>
@@ -631,7 +632,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">04</div>
       <div class="card-body">
         <div class="card-title">Глава 4</div>
@@ -640,7 +641,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">05</div>
       <div class="card-body">
         <div class="card-title">Глава 5</div>
@@ -649,7 +650,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">06</div>
       <div class="card-body">
         <div class="card-title">Глава 6</div>
@@ -658,7 +659,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">07</div>
       <div class="card-body">
         <div class="card-title">Глава 7</div>
@@ -667,7 +668,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">08</div>
       <div class="card-body">
         <div class="card-title">Глава 8</div>
@@ -676,7 +677,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">09</div>
       <div class="card-body">
         <div class="card-title">Глава 9</div>
@@ -685,7 +686,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">10</div>
       <div class="card-body">
         <div class="card-title">Глава 10</div>
@@ -694,7 +695,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">11</div>
       <div class="card-body">
         <div class="card-title">Глава 11</div>
@@ -703,7 +704,7 @@ p.italic-narr {
       <div class="card-lock">⬡</div>
     </div>
 
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">12</div>
       <div class="card-body">
         <div class="card-title">Глава 12</div>
@@ -723,7 +724,7 @@ p.italic-narr {
   <div class="chapters-grid">
 
     <!-- Глава 13 — залита -->
-    <a class="chapter-card available reveal" href="10-13.html">
+    <a class="chapter-card available" href="10-13.html">
       <div class="card-num">13</div>
       <div class="card-body">
         <div class="card-title">Не запятнать кровью</div>
@@ -733,7 +734,7 @@ p.italic-narr {
     </a>
 
     <!-- Глава 14 -->
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">14</div>
       <div class="card-body">
         <div class="card-title">Мятежник</div>
@@ -743,7 +744,7 @@ p.italic-narr {
     </div>
 
     <!-- Глава 15 -->
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">15</div>
       <div class="card-body">
         <div class="card-title">С тобой хоть в ад</div>
@@ -753,7 +754,7 @@ p.italic-narr {
     </div>
 
     <!-- Глава 16 -->
-    <div class="chapter-card reveal" style="opacity:0.38; pointer-events: none;">
+    <div class="chapter-card" style="opacity:0.38; pointer-events: none;">
       <div class="card-num">16</div>
       <div class="card-body">
         <div class="card-title">Удар исподтишка</div>
@@ -763,7 +764,7 @@ p.italic-narr {
     </div>
 
     <!-- Глава 17 — залита -->
-    <a class="chapter-card available reveal" href="10-17.html">
+    <a class="chapter-card available" href="10-17.html">
       <div class="card-num">17</div>
       <div class="card-body">
         <div class="card-title">Сгорите же дотла</div>
@@ -795,15 +796,39 @@ window.addEventListener('scroll', () => {
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
   progressBar.style.width = progress + '%';
-});
+}, { passive: true });
 
 // ── Reveal on scroll ──
 const revealEls = document.querySelectorAll('.reveal');
+const isMobile = window.innerWidth <= 768;
+
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
+  // Sort by vertical position so stagger goes top→bottom
+  const visible = entries
+    .filter(e => e.isIntersecting)
+    .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+  visible.forEach((entry, i) => {
+    const el = entry.target;
+    // Stagger each newly-visible element by 60ms apart
+    const delay = i * 60;
+    el.style.transitionDelay = delay + 'ms';
+    // Use rAF so the delay is applied before the class flip
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.classList.add('visible');
+        // Clear delay after transition so it doesn't block future re-triggers
+        el.addEventListener('transitionend', () => {
+          el.style.transitionDelay = '';
+        }, { once: true });
+      });
+    });
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+}, {
+  threshold: 0.05,
+  rootMargin: isMobile ? '0px 0px -20px 0px' : '0px 0px -50px 0px'
+});
+
 revealEls.forEach(el => observer.observe(el));
 
 // ── Ambient particle canvas ──
@@ -839,26 +864,37 @@ Particle.prototype.reset = function() {
   }
 };
 
-for (let i = 0; i < 80; i++) {
+const particleCount = window.innerWidth <= 768 ? 30 : 80;
+for (let i = 0; i < particleCount; i++) {
   const p = new Particle();
   p.y = Math.random() * H;
   particles.push(p);
 }
 
+let scrolling = false;
+let scrollTimer;
+window.addEventListener('scroll', () => {
+  scrolling = true;
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => { scrolling = false; }, 150);
+}, { passive: true });
+
 function animParticles() {
-  ctx.clearRect(0, 0, W, H);
-  particles.forEach(p => {
-    p.x += p.vx;
-    p.y += p.vy;
-    p.life -= p.decay;
-    if (p.life <= 0 || p.y < -10) p.reset();
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = p.color;
-    ctx.globalAlpha = p.life * 0.6;
-    ctx.fill();
-  });
-  ctx.globalAlpha = 1;
+  if (!scrolling) {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.life -= p.decay;
+      if (p.life <= 0 || p.y < -10) p.reset();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.life * 0.6;
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+  }
   requestAnimationFrame(animParticles);
 }
 animParticles();
