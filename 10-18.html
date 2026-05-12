@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re:Zero — Арка 10, Глава 18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;600;700&family=Cormorant+Infant:ital,wght@0,400;0,600;1,400;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c14;
+  --bg2: #0e1320;
+  --bg3: #13192e;
+  --text: #ddd4c0;
+  --text-dim: #8a8070;
+  --accent: #c8a46a;
+  --accent2: #7a9cc8;
+  --divider: #2a3050;
+  --ram: #e87aaa;
+  --emilia: #aac8ec;
+  --bordeaux: #d04040;
+  --marcos: #8a9ab0;
+  --fiore: #f0c060;
+  --sakura: #c08ad0;
+  --felt: #e8a050;
+  --reinhard: #5090d8;
+  --witch: #9040a0;
+  --narrator: #ddd4c0;
+  --garfiel: #d4a030;
+  --otto: #70b870;
+  --petra: #e8905a;
+  --rem: #7ab0e0;
+  --meiili: #d07ab0;
+  --wilhelm: #c8c8c8;
+}
+
+/* ── Light theme overrides ── */
+body.light-theme {
+  --bg: #f0ebe0;
+  --bg2: #e8e2d4;
+  --bg3: #ddd7c8;
+  --text: #1a1610;
+  --text-dim: #6a5e4a;
+  --accent: #8a5e1a;
+  --accent2: #2a5888;
+  --divider: #c8bca0;
+}
+
+body.light-theme header {
+  background: linear-gradient(180deg, rgba(240,235,224,0.97) 70%, transparent);
+  border-bottom-color: rgba(138,94,26,0.15);
+}
+
+body.light-theme p.italic-narr { color: #3a3020; }
+body.light-theme p.thought { color: #4a3e2a; border-left-color: rgba(138,94,26,0.4); }
+body.light-theme .inner-fire { color: #5a3a10; border-left-color: var(--accent); }
+
+body.light-theme .moment-resolve {
+  background: rgba(240,235,220,0.7);
+  border-color: rgba(138,94,26,0.35);
+}
+body.light-theme .moment-resolve .moment-text { color: #2a1e08; }
+
+body.light-theme .moment-shock {
+  background: rgba(220,230,245,0.6);
+  border-color: rgba(60,100,180,0.3);
+}
+body.light-theme .moment-shock .moment-text { color: #1a2a3a; }
+
+body.light-theme .moment-anger {
+  background: rgba(245,225,220,0.6);
+  border-color: rgba(180,60,60,0.3);
+}
+body.light-theme .moment-anger .moment-text { color: #2a0808; }
+
+body.light-theme .moment-heavy {
+  background: rgba(220,225,235,0.6);
+  border-color: rgba(80,90,120,0.3);
+}
+body.light-theme .moment-heavy .moment-text { color: #1a1e2a; }
+
+body.light-theme .moment-warmth {
+  background: rgba(245,235,240,0.6);
+  border-color: rgba(200,100,140,0.3);
+}
+body.light-theme .moment-warmth .moment-text { color: #2a1020; }
+
+body.light-theme .nav-btn {
+  background: rgba(230,224,210,0.8);
+  border-color: rgba(138,94,26,0.25);
+  color: var(--text-dim);
+}
+
+body.light-theme .nav-btn:hover { background: rgba(215,208,192,0.95); }
+body.light-theme .chapter-kanji { color: rgba(138,94,26,0.65); }
+body.light-theme .scroll-hint,
+body.light-theme .chapter-arc { color: #8a7a60; }
+body.light-theme .chapter-subtitle { color: #2a2010; }
+body.light-theme .scroll-chevron {
+  border-right-color: rgba(100,70,20,0.5);
+  border-bottom-color: rgba(100,70,20,0.5);
+}
+body.light-theme .divider-line {
+  background: linear-gradient(90deg, transparent, rgba(138,94,26,0.5), transparent);
+}
+body.light-theme .divider-sigil { color: rgba(138,94,26,0.8); }
+body.light-theme #canvas { opacity: 0.12; }
+body.light-theme .dialogue-text { color: #1a1610 !important; }
+body.light-theme p.narr { color: #1a1610; }
+body.light-theme .scene-label,
+body.light-theme .pov-name { color: #8a7a60; }
+body.light-theme .pov-subtitle { color: rgba(138,94,26,0.55); }
+
+/* ── Settings panel light ── */
+body.light-theme #settings-panel {
+  background: rgba(240,235,224,0.97);
+  border-color: rgba(138,94,26,0.25);
+}
+body.light-theme .settings-title {
+  color: var(--accent);
+  border-bottom-color: rgba(138,94,26,0.2);
+}
+body.light-theme .settings-label { color: var(--text-dim); }
+body.light-theme .settings-btn {
+  background: rgba(220,214,200,0.8);
+  border-color: rgba(138,94,26,0.2);
+  color: var(--text);
+}
+body.light-theme .settings-btn:hover,
+body.light-theme .settings-btn.active {
+  background: rgba(138,94,26,0.15);
+  border-color: rgba(138,94,26,0.5);
+  color: var(--accent);
+}
+body.light-theme input[type="range"] { accent-color: var(--accent); }
+
+/* ── Fixed button group (theme toggle, bottom-right) ── */
+#fixed-controls {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* ── Settings button group (bottom-left) ── */
+#settings-controls {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 200;
+}
+
+/* ── Theme toggle button ── */
+#theme-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,164,106,0.3);
+  background: rgba(14,19,32,0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,164,106,0.8);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  border-color: rgba(200,164,106,0.6);
+  color: rgba(200,164,106,1);
+}
+
+#theme-toggle:active { transform: scale(0.95); }
+
+body.light-theme #theme-toggle {
+  background: rgba(230,224,210,0.92);
+  border-color: rgba(138,94,26,0.35);
+  box-shadow: 0 4px 20px rgba(100,80,40,0.2);
+  color: rgba(138,94,26,0.8);
+}
+body.light-theme #theme-toggle:hover {
+  border-color: rgba(138,94,26,0.65);
+  box-shadow: 0 6px 28px rgba(100,80,40,0.3);
+  color: rgba(138,94,26,1);
+}
+
+/* ── Settings toggle button ── */
+#settings-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,164,106,0.3);
+  background: rgba(14,19,32,0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,164,106,0.8);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+#settings-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  border-color: rgba(200,164,106,0.6);
+  color: rgba(200,164,106,1);
+}
+
+#settings-toggle:active { transform: scale(0.95); }
+#settings-toggle.active {
+  border-color: rgba(200,164,106,0.7);
+  color: rgba(200,164,106,1);
+  box-shadow: 0 0 20px rgba(200,164,106,0.2);
+}
+
+body.light-theme #settings-toggle {
+  background: rgba(230,224,210,0.92);
+  border-color: rgba(138,94,26,0.35);
+  box-shadow: 0 4px 20px rgba(100,80,40,0.2);
+  color: rgba(138,94,26,0.8);
+}
+body.light-theme #settings-toggle:hover {
+  border-color: rgba(138,94,26,0.65);
+  box-shadow: 0 6px 28px rgba(100,80,40,0.3);
+  color: rgba(138,94,26,1);
+}
+body.light-theme #settings-toggle.active {
+  border-color: rgba(138,94,26,0.7);
+  color: rgba(138,94,26,1);
+}
+
+/* ── Settings panel ── */
+#settings-panel {
+  position: fixed;
+  bottom: 110px;
+  left: 32px;
+  z-index: 199;
+  width: 300px;
+  background: rgba(8,12,20,0.96);
+  border: 1px solid rgba(200,164,106,0.2);
+  border-radius: 8px;
+  padding: 20px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  transform: translateY(12px) scale(0.97);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#settings-panel.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.settings-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(200,164,106,0.15);
+}
+
+.settings-group {
+  margin-bottom: 16px;
+}
+
+.settings-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.settings-btn-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.settings-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 6px 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(200,164,106,0.2);
+  background: rgba(20,25,40,0.8);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.settings-btn:hover {
+  background: rgba(200,164,106,0.08);
+  border-color: rgba(200,164,106,0.4);
+  color: var(--accent);
+}
+
+.settings-btn.active {
+  background: rgba(200,164,106,0.12);
+  border-color: rgba(200,164,106,0.5);
+  color: var(--accent);
+}
+
+.settings-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+  height: 3px;
+}
+
+.settings-slider-val {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  color: var(--accent);
+  min-width: 36px;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+
+/* ── Animations disabled class ── */
+body.no-anim .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+body.no-anim .chapter-kanji,
+body.no-anim .chapter-arc,
+body.no-anim .chapter-num,
+body.no-anim .chapter-subtitle {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.no-anim .scroll-hint { animation: none !important; opacity: 0.5 !important; }
+body.no-anim .divider-sigil { animation: none !important; opacity: 0.7 !important; }
+body.no-anim .moment-shock.visible { animation: none !important; }
+body.no-anim .moment-resolve.visible { animation: none !important; }
+body.no-anim .moment-anger.visible { animation: none !important; }
+body.no-anim .scroll-chevron { animation: none !important; opacity: 0.5 !important; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.85;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Ambient particles ── */
+#canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--garfiel), var(--accent), var(--reinhard));
+  width: 0%;
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ── Header ── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(8,12,20,0.96) 70%, transparent);
+  border-bottom: 1px solid rgba(200,164,106,0.1);
+}
+
+.header-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-family: 'Cormorant SC', 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.header-pov {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  transition: color 0.6s ease;
+}
+
+/* ── Chapter title block ── */
+.chapter-title-block {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.chapter-kanji {
+  font-family: serif;
+  font-size: 48px;
+  color: rgba(200,164,106,0.25);
+  letter-spacing: 0.4em;
+  margin-bottom: 32px;
+  animation: fadeSlideIn 2s ease forwards;
+}
+
+.chapter-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 2s ease 0.3s both;
+}
+
+.chapter-num {
+  font-family: 'Cormorant SC', 'Cinzel Decorative', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  animation: fadeSlideIn 2s ease 0.5s both;
+  text-shadow: 0 0 60px rgba(200,164,106,0.3);
+}
+
+.chapter-subtitle {
+  font-family: 'Cormorant Infant', 'EB Garamond', serif;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 32px);
+  color: var(--text);
+  margin-bottom: 60px;
+  animation: fadeSlideIn 2s ease 0.8s both;
+}
+
+.scroll-hint {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ── Main content ── */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 40px 160px;
+  transition: max-width 0.3s ease;
+}
+
+/* ── Paragraph reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Narration ── */
+p.narr { margin-bottom: 1.3em; color: var(--text); }
+p.italic-narr { font-style: italic; color: #c8bcaa; margin-bottom: 1.3em; }
+p.thought {
+  font-style: italic;
+  color: #b0a898;
+  padding-left: 20px;
+  border-left: 2px solid rgba(200,164,106,0.3);
+  margin: 1em 0 1.3em;
+}
+
+/* ── Dialogue ── */
+.dialogue-block { margin: 0.4em 0 1.1em; position: relative; }
+.speaker-tag { display: none; }
+.dialogue-text { font-style: normal; color: #e0d8cc; display: block; padding-left: 4px; }
+.dialogue-text.emotional { font-style: italic; }
+
+/* Speaker tag colors kept for potential future use, but not applied to dialogue text */
+.speaker-tag.sp-ram     { color: var(--ram); }
+.speaker-tag.sp-emilia  { color: var(--emilia); }
+.speaker-tag.sp-bordeaux{ color: var(--bordeaux); }
+.speaker-tag.sp-marcos  { color: var(--marcos); }
+.speaker-tag.sp-fiore   { color: var(--fiore); }
+.speaker-tag.sp-sakura  { color: var(--sakura); }
+.speaker-tag.sp-felt    { color: var(--felt); }
+.speaker-tag.sp-reinhard{ color: var(--reinhard); }
+.speaker-tag.sp-official{ color: #9aaabb; }
+.speaker-tag.sp-garfiel { color: var(--garfiel); }
+.speaker-tag.sp-otto    { color: var(--otto); }
+.speaker-tag.sp-petra   { color: var(--petra); }
+.speaker-tag.sp-rem     { color: var(--rem); }
+.speaker-tag.sp-meiili  { color: var(--meiili); }
+.speaker-tag.sp-wilhelm { color: var(--wilhelm); }
+
+/* Dialogue text uses default color regardless of speaker */
+.dialogue-text.sp-ram,
+.dialogue-text.sp-emilia,
+.dialogue-text.sp-bordeaux,
+.dialogue-text.sp-marcos,
+.dialogue-text.sp-fiore,
+.dialogue-text.sp-sakura,
+.dialogue-text.sp-felt,
+.dialogue-text.sp-reinhard,
+.dialogue-text.sp-official,
+.dialogue-text.sp-garfiel,
+.dialogue-text.sp-otto,
+.dialogue-text.sp-petra,
+.dialogue-text.sp-rem,
+.dialogue-text.sp-meiili,
+.dialogue-text.sp-wilhelm { color: #e0d8cc; }
+
+/* ── Section divider ── */
+.section-divider { text-align: center; padding: 50px 0; position: relative; }
+
+.divider-sigil {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  display: inline-block;
+  animation: sigil-pulse 3s ease-in-out infinite;
+}
+
+.divider-line {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 16px auto;
+  width: 60%;
+  opacity: 0.4;
+}
+
+/* ── Dramatic moments ── */
+.moment {
+  position: relative;
+  margin: 2.5em 0;
+  padding: 28px 32px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.moment::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.moment-label { display: none; }
+.moment-text { font-size: 20px; line-height: 1.9; }
+
+.moment-shock {
+  border: 1px solid rgba(120,160,220,0.3);
+  background: rgba(10,20,50,0.6);
+  box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08);
+}
+.moment-shock .moment-text { color: #ccd8ec; }
+.moment-shock::before { background: radial-gradient(ellipse at center, rgba(80,120,220,1), transparent 70%); }
+
+.moment-anger {
+  border: 1px solid rgba(200,60,60,0.3);
+  background: rgba(30,8,8,0.6);
+  box-shadow: inset 0 0 40px rgba(200,60,60,0.05), 0 0 30px rgba(200,60,60,0.08);
+}
+.moment-anger .moment-text { color: #f0d0d0; }
+.moment-anger::before { background: radial-gradient(ellipse at center, rgba(200,60,60,1), transparent 70%); }
+
+.moment-resolve {
+  border: 1px solid rgba(200,164,106,0.4);
+  background: rgba(20,16,8,0.7);
+  box-shadow: inset 0 0 50px rgba(200,164,106,0.06), 0 0 40px rgba(200,164,106,0.12);
+}
+.moment-resolve .moment-text { color: #f0e8d8; font-style: italic; }
+.moment-resolve::before { background: radial-gradient(ellipse at center, rgba(200,164,106,1), transparent 70%); }
+
+.moment-heavy {
+  border: 1px solid rgba(80,90,120,0.4);
+  background: rgba(8,10,18,0.8);
+  box-shadow: inset 0 0 40px rgba(40,50,80,0.1);
+}
+.moment-heavy .moment-text { color: #b0b8c8; font-style: italic; }
+
+.moment-warmth {
+  border: 1px solid rgba(232,122,170,0.3);
+  background: rgba(20,10,15,0.6);
+  box-shadow: inset 0 0 40px rgba(232,122,170,0.04), 0 0 20px rgba(232,122,170,0.07);
+}
+.moment-warmth .moment-text { color: #f0dce8; }
+
+.moment-battle {
+  border: 1px solid rgba(212,160,48,0.35);
+  background: rgba(20,14,4,0.7);
+  box-shadow: inset 0 0 50px rgba(212,160,48,0.07), 0 0 35px rgba(212,160,48,0.12);
+}
+.moment-battle .moment-text { color: #f0e4b8; }
+.moment-battle::before { background: radial-gradient(ellipse at center, rgba(212,160,48,0.8), transparent 70%); }
+
+/* ── Garfiel inner monologue ── */
+.inner-fire {
+  font-style: italic;
+  color: #d4a040;
+  border-left: 3px solid var(--garfiel);
+  padding-left: 24px;
+  margin: 1.5em 0;
+  line-height: 2;
+  font-size: 20px;
+}
+
+/* ── POV section headers ── */
+.pov-header { display: none; }
+.pov-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.pov-subtitle {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(200,164,106,0.5);
+}
+
+/* ── Scene label ── */
+.scene-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 24px 0 8px;
+  opacity: 0.6;
+}
+
+/* ── Navigation buttons ── */
+.nav-buttons {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 40px 100px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1px solid rgba(200,164,106,0.25);
+  border-radius: 3px;
+  background: rgba(8,12,20,0.7);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(200,164,106,0.06), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.nav-btn:hover::before { transform: translateX(100%); }
+
+.nav-btn:hover {
+  color: var(--accent);
+  border-color: rgba(200,164,106,0.55);
+  box-shadow: 0 0 20px rgba(200,164,106,0.1);
+  transform: translateY(-1px);
+}
+
+.nav-btn-prev { border-color: rgba(90,170,122,0.25); }
+.nav-btn-prev:hover { color: #5aaa7a; border-color: rgba(90,170,122,0.5); box-shadow: 0 0 20px rgba(90,170,122,0.1); }
+
+.nav-btn-toc { border-color: rgba(200,164,106,0.25); }
+.nav-btn-toc:hover { color: var(--accent); border-color: rgba(200,164,106,0.5); }
+
+.nav-btn-next { border-color: rgba(170,100,220,0.25); }
+.nav-btn-next:hover { color: #aa64dc; border-color: rgba(170,100,220,0.5); box-shadow: 0 0 20px rgba(170,100,220,0.1); }
+
+.nav-icon { font-size: 14px; opacity: 0.7; }
+
+/* ── Animations ── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes sigil-pulse {
+  0%, 100% { opacity: 0.4; letter-spacing: 0.3em; }
+  50% { opacity: 0.9; letter-spacing: 0.45em; }
+}
+
+@keyframes shock-flare {
+  0% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+  50% { box-shadow: inset 0 0 80px rgba(80,120,200,0.15), 0 0 60px rgba(80,120,200,0.2); }
+  100% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+}
+.moment-shock.visible { animation: shock-flare 4s ease-in-out infinite; }
+
+@keyframes resolve-glow {
+  0%, 100% { box-shadow: inset 0 0 50px rgba(200,164,106,0.06), 0 0 40px rgba(200,164,106,0.12); }
+  50% { box-shadow: inset 0 0 80px rgba(200,164,106,0.12), 0 0 70px rgba(200,164,106,0.22); }
+}
+.moment-resolve.visible { animation: resolve-glow 3.5s ease-in-out infinite; }
+
+@keyframes anger-pulse {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(200,60,60,0.05), 0 0 30px rgba(200,60,60,0.08); }
+  50% { box-shadow: inset 0 0 60px rgba(200,60,60,0.12), 0 0 50px rgba(200,60,60,0.15); }
+}
+.moment-anger.visible { animation: anger-pulse 2.5s ease-in-out infinite; }
+
+@keyframes battle-glow {
+  0%, 100% { box-shadow: inset 0 0 50px rgba(212,160,48,0.07), 0 0 35px rgba(212,160,48,0.12); }
+  50% { box-shadow: inset 0 0 80px rgba(212,160,48,0.16), 0 0 60px rgba(212,160,48,0.22); }
+}
+.moment-battle.visible { animation: battle-glow 3s ease-in-out infinite; }
+
+/* ── Scroll indicator ── */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.scroll-chevron {
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(200,164,106,0.5);
+  border-bottom: 1px solid rgba(200,164,106,0.5);
+  transform: rotate(45deg);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+  50% { transform: rotate(45deg) translateY(6px); opacity: 0.9; }
+}
+
+/* ── Witch cult name ── */
+.cult-mention {
+  color: var(--witch);
+  font-style: normal;
+  text-shadow: 0 0 8px rgba(144,64,160,0.3);
+}
+
+/* ── Footnote-style location ── */
+.location-tag {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: rgba(200,164,106,0.35);
+  padding: 8px 0 30px;
+  text-transform: uppercase;
+}
+
+/* ── Dragon Sword highlight ── */
+.dragon-sword {
+  color: #4a8fd4;
+  font-style: italic;
+  text-shadow: 0 0 10px rgba(74,143,212,0.3);
+}
+body.light-theme .dragon-sword {
+  color: #1a5fa0;
+  text-shadow: 0 0 8px rgba(26,95,160,0.2);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  main { padding: 60px 20px 100px; }
+  header { padding: 12px 20px; }
+  .header-arc { display: none; }
+  body { font-size: 17px; }
+  .nav-buttons { padding: 40px 20px 80px; gap: 12px; }
+  .nav-btn { padding: 12px 18px; font-size: 10px; }
+  .chapter-kanji { font-size: 28px; letter-spacing: 0.25em; margin-bottom: 20px; }
+  #settings-panel { width: calc(100vw - 32px); left: 16px; }
+  #fixed-controls { right: 16px; bottom: 20px; }
+  #settings-controls { left: 16px; bottom: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="canvas"></canvas>
+
+<header>
+  <span class="header-arc">Re:Zero · Арка 10</span>
+  <span class="header-title">Чудесный сон</span>
+  <span class="header-pov" id="pov-indicator">Том 45</span>
+</header>
+
+<!-- ════ TITLE SCREEN ════ -->
+<div class="chapter-title-block">
+  <div class="chapter-kanji">夢 を 見 た</div>
+  <div class="chapter-arc">Re:Zero — Жизнь с нуля в альтернативном мире · Арка 10</div>
+  <div class="chapter-num">Глава 18</div>
+  <div class="chapter-subtitle">«Чудесный сон»</div>
+  <div class="scroll-hint">↓ Читать</div>
+  <div class="scroll-down">
+    <div class="scroll-chevron"></div>
+    <div class="scroll-chevron" style="margin-top:-8px;opacity:0.5;"></div>
+  </div>
+</div>
+
+<!-- ════ MAIN CONTENT ════ -->
+<main id="main-content">
+
+  <div class="pov-header reveal" data-pov="Отто">
+    <div class="pov-name">Точка зрения</div>
+    <div class="pov-subtitle" style="color: rgba(112,184,112,0.6);">Отто · Улицы столицы</div>
+  </div>
+
+  <div class="location-tag reveal">Столица ЛугуНика · Дворянский квартал</div>
+
+  <p class="narr reveal">В тот миг, когда он ступил на мостовую, дыхание оборвалось. Не чьё-то чужое. Дыхание затаил сам мир.</p>
+
+  <p class="narr reveal">Как-то раз Гарфиэль спросил у сильнейшего воина Империи Волакия, на чем зиждется его запредельная мощь. И тот ответил:</p>
+
+  <p class="italic-narr reveal">«Мир — это сцена! Свет солнца, шум ветра, запахи земли и благоухание зелени — всё это лишь декорации, дабы актёры сияли ярче. Но зачем же миру так стараться? Расцвечивать и украшать их? Да потому, что сам мир — это самый что ни на есть преданный фанат, который с замиранием сердца ждёт от актёров ярких битв, великолепной игры, великих слов и незабываемых сцен!»</p>
+
+  <p class="narr reveal">Эти мысли шли вразрез со здравым смыслом, и, честно говоря, понять их было непросто. Но сейчас, в эту самую минуту, казалось, будто крошечная доля истины в громких словах Голубой Молнии вдруг прояснилась. Мир действительно смотрит на людей так, словно наслаждается спектаклем. Наверное, именно поэтому сейчас так остро чувствовалось, что мир затаил дыхание.</p>
+
+  <p class="narr reveal">У Гарфиэля и остальных за спиной возвышалась высокая стена, отделяющая дворянский квартал от квартала простолюдинов. А впереди, преграждая им путь, стоял человек с огненно-красными волосами и небесно-голубыми глазами.</p>
+
+  <p class="narr reveal">Не просто стоял — он воздвигся на их пути непреодолимой преградой. Да, именно преградой.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Райнхард ван Астрея… — пробормотал Отто. — Худший из всех возможных преследователей.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Согласен, Отто. Жаль, что всё так обернулось, — даже не стал скрывать Святой Меча.</span>
+  </div>
+
+  <p class="narr reveal">Теперь стало точно ясно: Райнхард ван Астрея явился по их души. Отто первым оправился от потрясения — выдержки ему было не занимать. И всё же в его голосе проскользнули чувства, которые он не смог скрыть.</p>
+
+  <p class="narr reveal">Святой Меча держался за рукоять висящего на поясе <span class="dragon-sword">Драконьего Меча</span>.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Замок приказал вас задержать, — сказал он. — Прошу, сдавайтесь.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— А если откажемся — возьмёте силой?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Придётся. Я бы не хотел… впрочем, мои желания здесь ни при чём.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Верно. Судят ведь не по чувствам, а по делам.</span>
+  </div>
+
+  <p class="narr reveal">Торговец весь подобрался, приготовился к худшему. Райнхард же с самого своего появления оставался невозмутим. Он уже всё решил. А если Святой Меча принял решение, он исполнит его до конца, и ничто в мире ему не помешает.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Господин Райнхард, да? — подала голос Рем из-за плеча Гарфиэля.</span>
+  </div>
+
+  <p class="narr reveal">Она загородила собой Петру с Мейли и бесстрашно глядела на врага. Ответ на её следующий вопрос Гарфиэлю тоже не терпелось услышать:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Вы сказали, что действуете по приказу из замка. Вы не знаете, что сейчас с моей сестрой и госпожой Эмилией?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Увы, в замке я их не видел. Но мне известно, зачем их вызвали. Скорее всего, они взяты под стражу.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Если с ними обойдутся грубо…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Не обойдутся. Стражи себе такого не позволят, ручаюсь. К тому же, ни госпожа Эмилия, ни Рам не станут поднимать лишний шум.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Вот как. Благодарю за ответ.</span>
+  </div>
+
+  <p class="narr reveal">Вести прозвучали, однако, обнадёживающе, но Рем всё же не удержалась от колкости. Райнхард лишь прикрыл один глаз. Но Отто был прав: важны не чувства, а действия.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Райнхард, всё это подстроено, это же очевидно! — горячо заговорил торговец. — Обвинения против Субару и госпожи Круш, арест Лагеря госпожи Эмилии… Да и госпожа Фельт вряд ли в безопасности! И всё равно вы…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Я — Святой Меча, — спокойно и бесстрастно ответил тот.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— …</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Мой долг — быть мечом Королевства и выполнять приказы. Повторяю: сдавайтесь. В замке вам не причинят зла. Я сделаю всё, что в моих силах, чтобы…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Вы преградили нам путь. Думаете, после этого вам можно верить? — отрезал Отто.</span>
+  </div>
+
+  <p class="narr reveal">Его суровый ответ ударил наотмашь. И так думал не только Отто — все пятеро разделяли это мнение. Сколько бы красивых слов ни произнёс Райнхард, он стоял здесь, чтобы не дать им уйти.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Что ж… — ответил Святой Меча. — Видимо, друзьями нам не стать.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Уж конечно. Я так и думал.</span>
+  </div>
+
+  <p class="narr reveal">На этом переговоры закончились. Как ни странно, оба разом поняли, что тратить слова впустую больше нет смысла.</p>
+
+  <p class="narr reveal">Отто рассудил верно. Раз их нагнал Райнхард, значит, в замке знают, где они. Если подтянется подмога, бежать станет некуда. А уж если в дело вмешается сам капитан Маркос, надежды на спасение не останется вовсе.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Других стражей не будет, — заверил Райнхард. — Я приказал оцепить район, но сюда пришёл один.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Могу узнать, почему?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Не хочу лишней крови. Я не сомневаюсь в выучке солдат, но и вас недооценивать не смею. Потому я и взялся за это дело.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Чтобы мы не покалечили стражников?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— И чтобы не покалечили вас. Мне по силам этого не допустить.</span>
+  </div>
+
+  <p class="narr reveal">При этих словах по столице прокатилась дрожь, словно мир покрылся мурашками. Непреклонная воля Райнхарда, его убеждения ощущались почти что телом.</p>
+
+  <p class="narr reveal">Но это же бред!</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Я тут, блин, молча слушал, о чём вы с братаном Отто да с Рем толковали, но кое с чем Я ни хрена не согласен, эй!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Не согласен?</span>
+  </div>
+
+  <p class="narr reveal">Гарфиэль с громким хрустом размял кулаки и надел на руки серебряные латные рукавицы. Святой Меча с прищуром взглянул на его боевую стойку, и тот щёлкнул клыками.</p>
+
+  <p class="narr reveal">Он понял, почему Райнхард пришёл один. Гарфиэль и сам не хотел лишних жертв. И всё же его это бесило. Бесило, потому что…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Говоришь, не недооцениваешь нас? Но ты, кажись, кое-что упустил! Да то, что ТЫ! ПРЯМО ЩАС! ОГРЕБЁШЬ!</span>
+  </div>
+
+  <p class="narr reveal">С яростным рёвом Гарфиэль оттолкнулся от мостовой и бросился на Райнхарда.</p>
+
+  <p class="narr reveal">В глазах Святого Меча не мелькнуло ни удивления, ни тревоги. Нет. В них читалась лишь горечь от чужого неверного выбора. Взгляд, полный жалости, — так смотрят на ребёнка, который разбил вазу и вместо того, чтобы повиниться, закапывает осколки в саду.</p>
+
+  <p class="narr reveal">И в этого человека со скорбным взором Гарфиэль метил свой кулак…</p>
+
+  <!-- ──── SECTION BREAK ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <p class="narr reveal">Всё в точности повторило их первую встречу в Пристелле, когда Гарфиэль, задавленный чужой аурой, бросился в атаку на одних рефлексах. Райнхард вскинул правую руку, дабы встретить удар, и раскрытая ладонь поймала тяжёлый кулак, чтобы легко отвести силу в сторону…</p>
+
+  <p class="narr reveal">Но ничего не вышло.</p>
+
+  <div class="moment moment-battle reveal">
+    <p class="moment-text">— У-О-О-О-О-О!!! — взревел Гарфиэль и вложил в удар всю мощь своего тела. Он не даст увести силу впустую!..</p>
+    <p class="moment-text" style="margin-top:1em;">И тотчас прямо на руке Райнхарда взорвалась ударная волна: рукав его белого мундира разорвался, а непогашенная энергия паутиной трещин разбежалась по земле под ногами Святого Меча.</p>
+  </div>
+
+  <p class="narr reveal">Райнхард широко распахнул глаза, поражённый немыслимой силой удара, а Гарфиэль хищно оскалился:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Хватит, на хрен, думать, что тут все топчутся на месте!</span>
+  </div>
+
+  <p class="narr reveal">Он резко выбросил вперёд обе ноги и пресильно ударил ими прямо в скрещенные руки Райнхарда. Взрывная волна диким вихрем прошлась по улицам столицы.</p>
+
+  <p class="italic-narr reveal">И показалось, будто мир захлопал в ладоши, словно восторженно приветствовал начало сей битвы.</p>
+
+  <!-- ──── SECTION BREAK ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="pov-header reveal" data-pov="Петра">
+    <div class="pov-name">Точка зрения</div>
+    <div class="pov-subtitle" style="color: rgba(232,144,90,0.6);">Петра</div>
+  </div>
+
+  <p class="narr reveal">Петра с крепко сжатыми кулачками не отрывала взгляда от развернувшегося сражения.</p>
+
+  <p class="narr reveal">Яростный, непрерывный натиск рычащего Гарфиэля… Он дрался как настоящий зверь: руки, ноги, когти, клыки — всё шло в ход, лишь бы вцепиться врагу в глотку. Движения юноши сливались в размытое пятно, глаза за ними не поспевали. Но Райнхард принимал удары на руки, уклонялся, гасил инерцию. Впрочем, отражал он лишь самое страшное, а непогашенные отголоски ударов вырывались наружу.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Какой Гарф сильный… бьётся с ним на равных… — невольно сорвалось с губ Петры. Девочка искренне восхищалась им.</span>
+  </div>
+
+  <p class="narr reveal">Как и любой житель Королевства, Петра ещё простой деревенской девчонкой слышала о запредельной силе Святого Меча. Говорили даже, что в Лугунике можно не знать имени короля, но не знать имени Райнхарда ван Астрея попросту невозможно.</p>
+
+  <p class="narr reveal">Когда-то давно, будучи младше нынешней Петры, Святой Меча в одиночку сорвал планы трёх соседних держав, что разом посягнули на Королевство. Этот подвиг вселил надежду в сердца людей и навсегда впечатал в народную память осознание того, сколь ужасающ нынешний Святой Меча.</p>
+
+  <p class="narr reveal">В родной деревне Петры, Алам, мальчишки боготворили его, а девочки — и Петра в их числе — порой грезили о сказке, где прекрасный рыцарь спасает простую селянку. Правда, принцем Петры стал вовсе не увенчанный славой Святой Меча, а просто самый замечательный на свете юноша.</p>
+
+  <p class="narr reveal">Так или иначе, когда она оказалась в Лагере, что политически враждует с живой легендой, Петра поняла: все слухи — лишь жалкие детские сказки по сравнению с действительностью. И потому, глядя, как Гарфиэль идёт в лобовую атаку на это непостижимое существо, Петра ощущала неуместный восторг и даже гордость.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Твою мать, никто не откликается… — процедил сквозь зубы Отто, что отчаянно следил за всем вокруг.</span>
+  </div>
+
+  <p class="narr reveal">Пока он краем глаза следил за битвой, торговец напрягал Божественную Защиту, силясь найти хоть какую-то лазейку. Но вокруг не было ни единого существа, готового прийти на помощь. Отто, казалось бы, всегда и везде умел заводить полезные знакомства среди зверья, но впервые он потерпел полное фиаско.</p>
+
+  <p class="narr reveal">Строго говоря, Райнхард настиг их именно потому, что, как выразился Отто, «насекомые обманули его». Однако глупо думать, что жуки специально устроили засаду. Значит, у противника есть свой способ подчинять живых тварей — причём куда более мощный. Такой же…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— …как Защита Мейли, — прошептала Петра и покосилась на прижавшуюся к ней девочку. Она сразу догадалась, как именно обманули Отто.</span>
+  </div>
+
+  <p class="narr reveal">Божественная Защита Духовной Речи не раз выручала их, но не столько благодаря своей силе, сколько благодаря смекалке Отто. Божественная Защита лишь позволяла понимать язык животных, а вот уговорить их помочь — это уже плод личного таланта переговорщика.</p>
+
+  <p class="narr reveal">До сих пор они полностью полагались на Отто. Но если враг может подчинять зверей напрямую, как Мейли — зверодемонов, все дипломатические ухищрения летят прахом.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meiili">Мейли</span>
+    <span class="dialogue-text sp-meiili">— Пе~ётра, если что, я… — протянула Мейли.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Даже не думай! — резко оборвала её Петра.</span>
+  </div>
+
+  <p class="narr reveal">Девочка собиралась предложить свою помощь — пустить в ход собственную Защиту, раз уж дар Отто бесполезен. Да, это могло спасти их прямо сейчас, но цена была бы непомерно высокой.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Если ты призовёшь зверодемонов, пути назад уже не будет. Все подумают, что злодей-культист Субару спелся с хозяйкой чудовищ. И что сестрица Эмилия точно заодно с <span class="cult-mention">Ведьмой Зависти</span>.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meiili">Мейли</span>
+    <span class="dialogue-text sp-meiili">— Но ведь за нами прислали самого Святого Меча! Люди в замке уже давно все решили…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Нет, ты не поняла. Главное, чтобы так не подумали простые люди — жители столицы… всего Королевства.</span>
+  </div>
+
+  <p class="narr reveal">Мейли промолчала.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Те люди, которых спасли Субару и сестрица Эмилия, обязательно поймут, что всё это — ложь. Как понимаем мы. И мы не можем лишать их этой веры.</span>
+  </div>
+
+  <p class="narr reveal">Положение и впрямь было отчаянным, но если ради сиюминутного спасения они пустятся во все тяжкие, то лишь сыграют на руку врагу. Именно поэтому они не стали пробиваться из особняка силой, хоть Гарфиэлю и Рем это было вполне по плечу. Чем опаснее выставят себя они — Лагерь Эмилии, — тем хуже придётся беглому Субару и заточённой в замке Эмилии. Этого никак нельзя было допустить.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meiili">Мейли</span>
+    <span class="dialogue-text sp-meiili">— Как же обидно… — с досадой прикусила губу Мейли, стоило понять правоту подруги.</span>
+  </div>
+
+  <p class="narr reveal">На макушке у неё, вторя хозяйке, сердито щёлкал клешнями Багровый Скорпион. Иметь силу и не сметь ею воспользоваться — это особое, горькое чувство бессилия, совсем не такое, как у Петры.</p>
+
+  <p class="thought reveal">«Я должна смотреть», — велела себе Петра.</p>
+
+  <p class="narr reveal">В отличие от Мейли и Отто, её не терзали муки выбора: применять Защиту или нет. И потому она сейчас должна думать лишь об одном. Она не знала, что именно может сделать. Но если вдруг мелькнёт хоть крошечная зацепка, она обязана её не упустить. В этом и заключалась решимость Петры Лейте, её собственный способ бросить вызов Святому Меча.</p>
+
+  <!-- ──── SECTION BREAK ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="pov-header reveal" data-pov="Гарфиэль">
+    <div class="pov-name">Точка зрения</div>
+    <div class="pov-subtitle" style="color: rgba(212,160,48,0.6);">Гарфиэль</div>
+  </div>
+
+  <p class="narr reveal">Суженное зрение. Приглушённый слух. Обострённое обоняние. Пульсирующая боль. Смутный привкус крови на губах. Жизнь по имени Гарфиэль пылала белым пламенем, позабыв обо всём на свете.</p>
+
+  <p class="narr reveal">Он превзошёл все ожидания, когда начал схватку с идеального, молниеносного броска.</p>
+
+  <p class="narr reveal">Железные кулаки, тяжёлые ноги и звериные когти, сея хаос, не давали стоящему впереди Райнхарду вздохнуть и вынуждали его уйти в глухую оборону. По сравнению с их стычкой в Пристелле, где Гарфиэля раскидали как слепого котёнка, это был невероятный успех.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— В тот раз Я тебя даже сдвинуть не смог…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— …</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Но не щас!</span>
+  </div>
+
+  <p class="narr reveal">Гарфиэль отвёл руки за спину, после чего сокрушительно ударил ими в грудь Райнхарда. Тот вскинул <span class="dragon-sword">Драконий Меч</span>, дабы принять удар на прочные ножны. Однако погасить всю силу ему не удалось: ноги Святого Меча оторвались от земли, и он сделал широкий шаг назад.</p>
+
+  <p class="narr reveal">Серией тяжёлых ударов он заставил Райнхарда отступить. Для Гарфиэля, который когда-то в полной мере ощутил пропасть между ними, это было высшей наградой. Райнхард, видимо, тоже это сознал. Его лицо едва заметно напряглось, и он поднял глаза:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Ты стал…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Че, сильнее, да?!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Именно.</span>
+  </div>
+
+  <p class="narr reveal">Но Гарфиэлю не были нужны словесные похвалы. Он жаждал вырвать признание самой победой. Юноша снова рванулся вперёд. Если Райнхард отступил, значит, удары Гарфиэля для него уже не просто лёгкий ветерок. Разумеется, он не питал иллюзий и не считал, будто превзошёл Святого Меча.</p>
+
+  <div class="inner-fire reveal">
+    <p>«Бесит, сука…»</p>
+    <p>Райнхард явился за ними, но было ясно, что вражда с Гарфиэлем, а тем более с Субару и Эмилией, ему не по душе. Он просто выполнял приказ — как и подобает Святому Меча. К тому же пришёл один, чтобы избежать случайных жертв, и даже сейчас бился с ним далеко не на всю свою чудовищную силу.</p>
+    <p>Иными словами, Гарфиэль дрался на пике своих возможностей, переполненный боевым духом, а Райнхард — без всякого желания, да ещё и сдерживаясь, чтобы не разнести всё вокруг. Только благодаря этому и возникло хрупкое равновесие.</p>
+  </div>
+
+  <div class="inner-fire reveal">
+    <p>«Как же, сука, бесит!»</p>
+    <p>Он хотел победить. Больше всего на свете.</p>
+    <p>Победить так, чтобы враг не мог оправдаться. Доказать, что он вырос, стал сильнее и превзошёл того, перед кем когда-то был бессилен. Услышать от Субару: «Ай да Гарфиэль, я знал, что ты победишь!». Заслужить уважение Отто: «На этот раз вы здорово нас выручили, Гарфиэль». Добиться признания Фредерики: «Я поражена, Гарф. Ты уже совсем взрослый». Услышать восторженный визг Мими: «Яха-а! Гарф, круто! Ваще силища!». Получить похвалу от Рам: «Ха, а ты неплох, Гарф». Он хотел увидеть их улыбки.</p>
+  </div>
+
+  <p class="narr reveal">Он собрал в кулак всю эту жажду идеальной победы, вложил всю душу в этот несправедливый, неправильный матч-реванш со Святым Меча.</p>
+
+  <div class="moment moment-battle reveal">
+    <p class="moment-text">— Г-р-р-а-а-а!!!</p>
+    <p class="moment-text" style="margin-top:0.8em;">Вверх, вниз, вправо, влево, вперёд, назад, снаружи, изнутри, сверху, снизу… Гарфиэль метался вокруг неподвижного Райнхарда, бил со всех мыслимых и немыслимых сторон, не оставлял и щели, куда могла бы проскользнуть мышь. Грохот ударов, более частый, тяжёлый и гулкий, чем барабанная дробь, безжалостно рвал в клочья тишину столицы, крушил и ломал её покой.</p>
+  </div>
+
+  <p class="narr reveal">Но так и должно быть. Иначе никак. Ведь мир в столице — ложь. Фальшивка. Дешёвая декорация.</p>
+
+  <p class="narr reveal">Где-то там Субару в смертельной опасности. Во дворце — Эмилия. А здесь, на улицах, — они сами. И Райнхард — воплощение этой слепой, жестокой угрозы.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— СДОХНИ-И-И!!!</span>
+  </div>
+
+  <p class="narr reveal">Райнхард отразил ножнами сокрушительный удар правой. В этот самый миг Гарфиэль крутанул приподнятым левым коленом и с силой впечатал ногу в землю. Накопленная энергия — сила, которую Гарфиэль ни разу не пустил в ход за всё время своей бешеной атаки, — разом вырвалась наружу.</p>
+
+  <p class="narr reveal">Всё это время он использовал Божественную Защиту лишь для укрепления собственного тела и тщательно сберегал козырь. И всё ради этого мига: дабы выбить землю из-под ног Райнхарда. Будь ты хоть трижды Святым Меча, если подлетишь в воздух, тебе останется лишь падать обратно. Лишённого опоры врага можно было бы добить серией ударов, или же использовать эту секунду, чтобы сбежать. Но…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Получай!..</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Ты и правда стал сильнее.</span>
+  </div>
+
+  <p class="narr reveal">…взметнувшуюся из-под земли мощь Райнхард одним ударом ноги впечатал обратно. Силе не осталось выхода, и она волной разошлась во все стороны от подошвы его ботинка. Мостовая вздыбилась и лопнула, ударная волна пронеслась по улице, снося здания вокруг одно за другим.</p>
+
+  <p class="narr reveal">Гарфиэль в шоке распахнул зелёные глаза.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Жители давно эвакуированы, — спокойно произнёс Райнхард. — Волноваться не о чём.</span>
+  </div>
+
+  <p class="narr reveal">Вспышка света прочертила дугу, и страшный удар наискось перечеркнул Гарфиэля, вбил его головой в землю. Из горла вырвался сдавленный хрип. Под тяжестью удара земля треснула ещё сильнее и преобразилась в огромный полукруглый кратер.</p>
+
+  <p class="narr reveal">В Империи Гарфиэль принимал на себя удары Облачного Дракона. Да, не без последствий, но он выдерживал. А сейчас… его хвалёная выносливость оказалась бессильна.</p>
+
+  <div class="moment moment-heavy reveal">
+    <p class="moment-text">Захрустели кости, закричали мышцы, онемели внутренности. Организм, потрясённый чудовищной силой удара, впал в панику: глаза чувствовали вкус, уши — боль, нос — цвет, язык — звук, а кожа — запах. Чувства смешались в дикий, бессмысленный ком. Больно? Горько? Пахнет ржавчиной? Громко? Что вообще произошло?</p>
+  </div>
+
+  <p class="narr reveal">Он пропустил сокрушительный, смертельный удар, выжегший все мысли. Пропустил. Пропустил-пропустил-пропустил…</p>
+
+  <p class="narr reveal">Сознание кружилось в водовороте, рвалось на части, распадалось в прах. И всё же сквозь эту муть он ощутил: кто-то рядом затаил дыхание. Затаил дыхание и распахнул глаза красноволосый человек. Человек с голубыми глазами. Тот, кого нужно было остановить. Правая рука этого человека только нанесла рубящий удар и теперь была намертво зажата в объятиях Гарфиэля.</p>
+
+  <p class="narr reveal">Он сделал то, что задумал. То единственное, что должен был сделать.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Г-а-а-а…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Гарфиэль, ты…</span>
+  </div>
+
+  <p class="narr reveal">Из лёгких выбило весь воздух… или из желудка? В чём там хранится воздух? Похрен. Главное — рычать, даже если внутри пусто. Рёв придаёт сил. А пока есть силы, враг не вырвет руку.</p>
+
+  <p class="narr reveal">А пока враг не может пошевелиться…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— А-А-А-А!!!</span>
+  </div>
+
+  <p class="narr reveal">…в дело вступит то зелёное пятно, которому Гарфиэль доверял как себе.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— …</span>
+  </div>
+
+  <p class="narr reveal">Райнхард перевёл взгляд. В его глазах мелькнула тревога: прямо на него, не разбирая дороги, неслось зелёное пятно.</p>
+
+  <p class="narr reveal">Нельзя было предугадать, что он выкинет. Какую ловушку приготовил. Что задумал. Расстояние стремительно сокращалось, пока не исчезло вовсе… но ничего не произошло.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Неужели… ничего?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Это лучший способ застать вас врасплох… разве нет?</span>
+  </div>
+
+  <p class="narr reveal">Свободная рука Райнхарда взметнулась в воздух и чиркнула Отто по подбородку. Юноша в зелёном, бросившийся в самоубийственную атаку с пустыми руками, безвольно рухнул на землю. И, падая, еле слышно шепнул:</p>
+
+  <p class="thought reveal">— Сейчас…</p>
+
+  <p class="narr reveal">Губы шевельнулись в почти беззвучном шёпоте. События неслись сплошным потоком, за гранью понимания, но мозг, осознававший себя Гарфиэлем, продолжал всё обдумывать. Красный стоит. Зелёный упал. Гарфиэль держит руку.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Давай!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meiili">Мейли</span>
+    <span class="dialogue-text sp-meiili">— Малыш Скорпиончик!</span>
+  </div>
+
+  <p class="narr reveal">Две белые вспышки прорезали воздух и пролетели над упавшим Отто. Они устремились прямиком к Райнхарду. Бесшумные, быстрее любой стрелы, вспышки ударили в человека, чья правая рука была занята, а левая замерла после удара. Но…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Вы меня удивили.</span>
+  </div>
+
+  <p class="narr reveal">Райнхард изогнул только что ударившую левую руку и подтолкнул локтем белые ножны висевшего на поясе меча. Меч повернулся в воздухе, идеально отбив обе вспышки… С влажным звуком, похожим на всплеск воды, свет разлетелся вдребезги — совместная атака Петры и Мейли не достигла цели.</p>
+
+  <p class="narr reveal">Отчаянный рывок Гарфиэля, самопожертвование Отто, скрытый удар Петры и Мейли — всё оказалось тщетно…</p>
+
+  <p class="narr reveal">Но тут шипастый стальной шар на бешеной скорости врезался прямо в грудь Райнхарда.</p>
+
+  <!-- ──── SECTION BREAK ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="pov-header reveal" data-pov="Рем">
+    <div class="pov-name">Точка зрения</div>
+    <div class="pov-subtitle" style="color: rgba(122,176,224,0.6);">Рем</div>
+  </div>
+
+  <p class="narr reveal">Затаивши дыхание, Рем вложила всю себя в один-единственный миг. Она подавила страх, волнение и чрезмерный азарт — всё, что могло ослабить удар или сбить прицел.</p>
+
+  <p class="narr reveal">Гарфиэль пошёл в лобовую, Отто отвлёк внимание, Петра и Мейли ударили исподтишка. Но чтобы пробить абсолютную защиту Райнхарда, Рем пришлось пойти на унизительную хитрость. Она знала, что враг не воспринимал её всерьёз, и воспользовалась этим.</p>
+
+  <p class="narr reveal">Гордость осталась позади, и Рем вложила всю душу в этот бросок.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Х-а-а-а-а!</span>
+  </div>
+
+  <p class="narr reveal">Под звон натянутой цепи шипастый моргенштерн со свистом распорол воздух и устремился прямо в грудь Святого Меча.</p>
+
+  <p class="narr reveal">Прямое попадание такой тяжеленной шипастой гири неминуемо обратило бы человека в кровавое месиво. Но Рем не колебалась ни секунды — она знала, кто перед ней. Ударь она его со всей силы по голове со спины, Райнхард всё равно бы выжил. Это благоговейное доверие к нечеловеческой мощи врага направляло её чёрное оружие. Железный шар почти достиг цели…</p>
+
+  <p class="narr reveal">Но в тот миг, когда Рем уже решила, что попала, её правое плечо дёрнуло так сильно, что сустав едва не выскочил из сумки.</p>
+
+  <p class="thought reveal">«Что за…» — она в шоке распахнула глаза.</p>
+
+  <p class="narr reveal">Райнхард, стоя на месте, высоко вскинул длинную ногу. Нет, не просто вскинул — это был удар. На самом кончике вытянутой к небу ноги замер подброшенный в воздух моргенштерн. Райнхард отбил его одним неуловимым движением. Цепь резко натянулась, и отдача едва не вырвала Рем руку.</p>
+
+  <p class="narr reveal">Ещё до того, как тело пронзила боль, отчаяние захлестнуло разум. Она промахнулась. Гарфиэль сражался на пределе сил, Отто изобразил отчаянный бросок, Петра с Мейли отвлекли внимание… Все они старались лишь для того, чтобы открыть путь для её атаки. И эта единственная надежда, добытая общими усилиями пятерых…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Не достала…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-wilhelm">Вильгельм</span>
+    <span class="dialogue-text sp-wilhelm">— Нет. Достанем, — незнакомый мужской голос начисто смыл её отчаяние.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— …</span>
+  </div>
+
+  <p class="narr reveal">Все присутствующие поражённо обернулись. Владельцем голоса был седовласый старик в костюме дворецкого, что в руках сжимал сверкающие парные мечи.</p>
+
+  <p class="narr reveal">Источавший чудовищную ауру меча, он произнёс:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-wilhelm">Вильгельм</span>
+    <span class="dialogue-text sp-wilhelm">— Ради спасения своей госпожи… Демон Меча Вильгельм Триас пришёл, дабы помочь.</span>
+  </div>
+
+  <!-- ──── SECTION BREAK ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <p class="narr reveal">Сразу за этими словами последовала мгновенная череда атак.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Дедушка… — с болью и удивлением выдохнул Райнхард.</span>
+  </div>
+
+  <p class="narr reveal">И тотчас в его расширившихся глазах отразился Демон Меча: пригнувшийся к самой земле Вильгельм рванулся вперёд, словно пуля. Старик оттолкнулся от развороченной мостовой и в мгновение ока преодолел расстояние между ними. Он занёс мечи на уровне бедра, приготовился нанести смертоносный удар.</p>
+
+  <p class="narr reveal">И в этот ничтожный зазор, за долю секунды до удара…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Куда зыришь, а?!</span>
+  </div>
+
+  <p class="narr reveal">С налитыми кровью глазами Гарфиэль, всё ещё намертво вцепившийся в правую руку противника, вздыбил землю, на которой лежал. Глыбы камня обрушились на Райнхарда. Атака была слепой и неуклюжей — юноша просто ударил по площади, дабы зацепить врага. Но Святой Меча взмахнул левой рукой и отбил камни мощной ударной волной. Осколки брызнули во все стороны.</p>
+
+  <p class="narr reveal">И тут, опережая выпад Вильгельма…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— А-а-а-а!!! — с пронзительным криком Рем изо всех сил рванула правую руку вниз.</span>
+  </div>
+
+  <p class="narr reveal">На её лбу слабо засветился рог. Девушка-Демон, чьё тело теперь работало за гранью человеческих возможностей, остановила взлетевший в воздух моргенштерн и с силой направила его прямо на голову врага.</p>
+
+  <p class="narr reveal">Райнхард отвлёкся на каменные глыбы и на летящего прямо на него Демона Меча. Атака сверху, которую он уже отбил, должна была стать идеальным сюрпризом. Однако…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Вот, значит, на что вы способны.</span>
+  </div>
+
+  <p class="narr reveal">…он подбросил <span class="dragon-sword">Драконий Меч</span>, что недавно отстегнулся от пояса после атаки Петры, поймал его левой рукой — той самой, которой только что разбил камни, — и принял удар моргенштерна на ножны.</p>
+
+  <p class="narr reveal">Невероятная, чудовищная сила. Он отбил все атаки на одних лишь сверхчеловеческих рефлексах. Но наконец…</p>
+
+  <div class="moment moment-resolve reveal">
+    <p class="moment-text">— Р-и-а-а-а-а!!! — с оглушительным боевым кличем парные мечи Демона Меча прочертили серебряные дуги.</p>
+    <p class="moment-text" style="margin-top:0.8em;">Это была не очередная уловка. Это был удар мастера, посвятившего мечу всю свою жизнь.</p>
+  </div>
+
+  <p class="narr reveal">Левая рука с <span class="dragon-sword">Драконьим Мечом</span> занята железом Рем. Правая намертво зажата Гарфиэлем. Казалось, теперь Райнхарду точно не уйти. Если бы только он плавно не повёл правой рукой… и не поднял её вместе с висящим на ней Гарфиэлем.</p>
+
+  <p class="narr reveal">Светловолосый юноша поперхнулся воздухом. Райнхард собирался отбить атаку Вильгельма им самим! И помешать этому Гарфиэль не мог. Если отпустить руку — Райнхард просто ударит старика. Пусть уж лучше он сам послужит живым щитом, скуёт движения врага. Но если Вильгельм прервёт атаку, дабы не задеть Гарфиэля, малая надежда будет тотчас упущена…</p>
+
+  <p class="narr reveal">И в ту же секунду их взгляды встретились. Гарфиэль всё понял. И с готовностью принял решение старика.</p>
+
+  <p class="narr reveal">Ответ Демона Меча был неумолим.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Не может быть… — Райнхард ошарашенно расширил глаза.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-wilhelm">Вильгельм</span>
+    <span class="dialogue-text sp-wilhelm">— Твоя дурная привычка. Ты всегда недооцениваешь, на что другие готовы пойти.</span>
+  </div>
+
+  <p class="narr reveal">Синие, спокойные как лесное озеро глаза Вильгельма смотрели прямо на внука.</p>
+
+  <p class="narr reveal">И тотчас сверкнул клинок. Он прочертил полукруг и распорол бок висящему Гарфиэлю, после чего лезвие, пройдя юношу насквозь, глубоко вонзилось в ногу Райнхарда.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-wilhelm">Вильгельм</span>
+    <span class="dialogue-text sp-wilhelm">— Наконец-то… достали…</span>
+  </div>
+
+  <p class="narr reveal">Пожертвовали малым, дабы нанести смертельный удар. Опыт совместного боя в Пристелле помог им понять друг друга без слов. Райнхард считал, что дед остановит клинок, стоит увидеть перед собой союзника. Но Демон Меча понял замысел Гарфиэля. Понадеявшийся на регенерацию зверочеловека, он рубанул прямо сквозь него.</p>
+
+  <p class="narr reveal">Райнхард судорожно выдохнул от боли в ноге, и Гарфиэль наконец-то выскользнул из его хватки. Зажав рану на боку, юноша из последних сил пустил в ход исцеляющую магию, пока отчаянно цеплялся за ускользающее сознание. Магия текла туго, но он влил в неё все остатки сил.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-wilhelm">Вильгельм</span>
+    <span class="dialogue-text sp-wilhelm">— Блестящая работа.</span>
+  </div>
+
+  <p class="narr reveal">Прежде чем Гарфиэль рухнул на землю, его подхватил Вильгельм. Старик уже успел спрятать мечи в ножны и теперь держал юношу под одной мышкой, а бессознательного Отто — под другой. Старик холодно посмотрел на Райнхарда:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-wilhelm">Вильгельм</span>
+    <span class="dialogue-text sp-wilhelm">— Даже тебе не залечить такую рану в один миг.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Дедушка, подождите! Они… госпожа Круш…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-wilhelm">Вильгельм</span>
+    <span class="dialogue-text sp-wilhelm">— Я больше не доверю свой меч Королевству, — оборвал он внука на полуслове и мощным прыжком отлетел назад.</span>
+  </div>
+
+  <p class="narr reveal">Райнхард потрясённо уставился ему вслед. Старик был прав: рана оказалась слишком глубокой, и Святой Меча не мог броситься в погоню прямо сейчас.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-wilhelm">Вильгельм</span>
+    <span class="dialogue-text sp-wilhelm">— Госпожа Рем! — крикнул Вильгельм очнувшейся девушке. — Забирайте девочек!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Да, незнакомый дедушка!</span>
+  </div>
+
+  <p class="narr reveal">Рем молниеносно подскочила к пискнувшим от неожиданности Петре и Мейли и подхватила их на руки. Отто, болтающийся под мышкой у Вильгельма, слабо пошевелился:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Вдоль стены… на запад…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Отто! Вы живы…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Ещё бы… На западе нет ни жуков, ни их следов. Там… нас не обманут.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-wilhelm">Вильгельм</span>
+    <span class="dialogue-text sp-wilhelm">— Понял вас, — кивнул Вильгельм.</span>
+  </div>
+
+  <p class="narr reveal">Раз враг использовал животных против них, Отто решил бежать туда, где нет живых существ — чтобы избежать новых засад. Вильгельм и Рем обменялись кивками и сорвались с места, унося ноги прочь от раненого Райнхарда.</p>
+
+  <p class="narr reveal">Гарфиэль раскачивался под мышкой у Демона Меча. Он с трудом повернул голову. Посреди разрушенной улицы Райнхард остался совсем один. Мыслей было много. Не то чтобы Гарфиэль ненавидел Святого Меча. И всё же он испытал облегчение и гордость, ибо преодолел эту несокрушимую преграду…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— И всё же я — меч Королевства.</span>
+  </div>
+
+  <p class="narr reveal">И в этот миг он почувствовал, как сам мир затаил дыхание. Не просто задержал, а именно затаил в ужасе. Воздух тихо задрожал.</p>
+
+  <p class="narr reveal"><span class="dragon-sword">Драконий Меч Рейд</span> покинул ножны, блеснул холодным голубоватым светом.</p>
+
+  <!-- ──── SECTION BREAK ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="moment moment-shock reveal">
+    <p class="moment-text"><em>Драконий Меч Рейд</em>. Один из десяти священных и магических клинков этого мира. Легендарный меч, который передавался из поколения в поколение и повиновался лишь Святому Меча Драконьего Королевства Лугуника. О его чудовищной мощи ходили легенды, но поскольку меч сам выбирал, когда его можно обнажить, мало кто видел его в деле.</p>
+  </div>
+
+  <p class="narr reveal">А уж с тех пор, как он попал в руки Райнхарда ван Астрея, его и вовсе перестали извлекать из ножен. Случаи, когда клинок выходил на свет, можно было пересчитать по пальцам одной руки. И неудивительно — ведь сам Райнхард был настолько силён, что ни один враг просто не стоил того, чтобы обнажать против него <span class="dragon-sword">Драконий Меч</span>.</p>
+
+  <p class="narr reveal">Стоило клинку обнажиться, и мир понимал: случилось нечто непоправимое. Условия, при которых меч покидал ножны, оставались загадкой даже для знатоков истории и самого рода Святых Меча. Ясно было лишь одно: если <span class="dragon-sword">Драконий Меч Рейд</span> обнажён, он обязательно достигнет цели. Исключений не бывает.</p>
+
+  <p class="narr reveal">Холодная волна ужаса окатила Гарфиэля с ног до головы. <em>Нельзя. Нельзя. Нельзя! Нельзя! Нельзя! Этим мечом ни в коем случае нельзя бить!</em></p>
+
+  <p class="narr reveal">Зубы юноши громко лязгнули. Зря обернулся, зря смотрит. Когда он увидел обнажённый клинок, то волосы тотчас встали дыбом. Рем и старик не оборачивались — им было не до того. Но они наверняка ощутили спиной, душой, всем своим существом эту воистину чудовищную ауру меча.</p>
+
+  <p class="narr reveal">И всё же они, превозмогая леденящий страх, продолжали бежать. Гарфиэль искренне ими восхищался. Он бы так не смог. Как им удаётся сохранять самообладание?</p>
+
+  <p class="thought reveal">«Надо брать с них пример. Сделать то, что должен. Хоть мне потом и влетит. Сделать то, что должен. Стать в один ряд с теми, кто всегда выкладывается на полную».</p>
+
+  <p class="narr reveal">Он готов был пойти до конца. Но…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meiili">Мейли</span>
+    <span class="dialogue-text sp-meiili">— Вылезайте, Песчаные Червячки!</span>
+  </div>
+
+  <p class="narr reveal">В следующее мгновение земля под ногами в буквальном смысле содрогнулась. Мощный толчок сотряс столицу.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Мейли?! — Петра, болтавшаяся под мышкой у Рем и судорожно искавшая выход из положения, в ужасе уставилась на подругу. Та нарушила её строгий запрет.</span>
+  </div>
+
+  <p class="narr reveal">Мейли виновато показала язык:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meiili">Мейли</span>
+    <span class="dialogue-text sp-meiili">— Прости~и. Знаю, что мы так подставим братика Субару и сестрёнку Эмилию… Но мы же не можем тут умере~ть, правда?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Дурочка! Какая же ты дурочка! — расплакалась Петра. — Ведь тебя… тебя только-только простили…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meiili">Мейли</span>
+    <span class="dialogue-text sp-meiili">— Ах вот ты о чё~ем… — улыбнулась та.</span>
+  </div>
+
+  <p class="narr reveal">Мейли всё поняла. Вызов зверодемонов навредил бы репутации Лагеря Эмилии — но Петра переживала не только из-за этого. Некогда простили её прошлое убийцы, и Петра до слёз не хотела, чтобы Королевство вновь сочло подругу опасной преступницей.</p>
+
+  <div class="moment moment-warmth reveal">
+    <p class="moment-text">— Ничего стра~ашного. Я хотя бы… успела увидеть хороший сон.</p>
+    <p class="moment-text" style="margin-top:0.8em;">Ей и впрямь начало казаться, что однажды её простят. Что она сможет жить нормальной жизнью вместе с теми, кто был добр к ней. И от одной лишь мысли об этом на душе становилось так же тепло, как когда-то рядом с хлопотливой сестрой. Да, это был чудесный сон.</p>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meiili">Мейли</span>
+    <span class="dialogue-text sp-meiili">— Сможешь ли ты нас догнать, братец Святой Меча?! — крикнула Мейли. — Я выпустила по Червячку у всех ворот столицы — на западе, востоке, юге и севере. Там, наверно, все ужасно испугались!</span>
+  </div>
+
+  <p class="narr reveal">Черви Песчаных Дюн Аугрии были невероятно огромны. Мейли заранее приказала им тайком следовать за ней под землёй и прятаться в столице. И теперь, пустив в ход Защиту, она приказала им посеять как можно больше паники.</p>
+
+  <p class="narr reveal">Если Райнхард не вмешается, погибнут люди. Но Мейли было плевать. Главное, чтобы не пострадали Субару, Беатрис, Эмилия и остальные. Пусть умрут все, кроме тех, кто дорог ей и кому дорога она.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-reinhard">Райнхард</span>
+    <span class="dialogue-text sp-reinhard">— Мейли… — далеко позади Райнхард, держа в руках <span class="dragon-sword">Драконий Меч</span>, еле слышно произнёс её имя.</span>
+  </div>
+
+  <p class="narr reveal">Мейли путешествовала в Башню Плеяд вместе с ним и Фельт. Она помнила, как Райнхард заботился о ней. Но до Субару и остальных ему было далеко.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meiili">Мейли</span>
+    <span class="dialogue-text sp-meiili">— Я же плохая девочка, — горько усмехнулась Мейли и помахала тому рукой.</span>
+  </div>
+
+  <p class="narr reveal">Из её глаз выкатились горячие слёзы, но сама она их не замечала. Слёзы видели лишь Святой Меча, что мог видеть остро даже так далеко, да плачущая Петра, висевшая на руках у бегущей Рем.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Мейли… дурочка… прости… прости меня… — всхлипывала Петра.</span>
+  </div>
+
+  <p class="narr reveal">И после этого отчаянного выбора…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— …</span>
+  </div>
+
+  <div class="moment moment-shock reveal">
+    <p class="moment-text" style="font-style:italic; text-align:center;">Впервые с тех пор, как <span class="dragon-sword">Драконий Меч Рейд</span> попал в руки Райнхарда ван Астрея, он вернулся в ножны, так и не поразив цель.</p>
+  </div>
+
+  <!-- ──── FINAL DIVIDER ──── -->
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div style="text-align:center; padding: 40px 0 80px; opacity: 0.4;" class="reveal">
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.5em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px;">Конец главы</div>
+    <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 28px; color: var(--accent);">夢を見た</div>
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.3em; color: var(--text-dim); margin-top: 12px;">Арка 10 · Глава 18</div>
+  </div>
+
+</main>
+
+<!-- ════ FIXED CONTROLS ════ -->
+<div id="fixed-controls">
+
+  <!-- Theme toggle -->
+  <button id="theme-toggle" title="Сменить тему" aria-label="Переключить тему">
+    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  </button>
+
+</div>
+
+<!-- ════ SETTINGS CONTROLS (bottom-left) ════ -->
+<div id="settings-controls">
+  <button id="settings-toggle" title="Настройки" aria-label="Открыть настройки">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+  </button>
+</div>
+<div id="settings-panel" role="dialog" aria-label="Настройки чтения">
+  <div class="settings-title">Настройки чтения</div>
+
+  <!-- Font selector -->
+  <div class="settings-group">
+    <span class="settings-label">Шрифт</span>
+    <div class="settings-btn-row" id="font-btns">
+      <button class="settings-btn active" data-font="EB Garamond">Garamond</button>
+      <button class="settings-btn" data-font="Merriweather">Merriweather</button>
+      <button class="settings-btn" data-font="Lora">Lora</button>
+      <button class="settings-btn" data-font="PT Serif">PT Serif</button>
+      <button class="settings-btn" data-font="Libre Baskerville">Baskerville</button>
+      <button class="settings-btn" data-font="Source Serif 4">Source Serif</button>
+      <button class="settings-btn" data-font="Nunito">Nunito</button>
+      <button class="settings-btn" data-font="Comic Neue">Comic Sans</button>
+    </div>
+  </div>
+
+  <!-- Font size -->
+  <div class="settings-group">
+    <span class="settings-label">Размер текста</span>
+    <div class="settings-slider-row">
+      <input type="range" id="font-size-slider" min="14" max="28" step="1" value="19">
+      <span class="settings-slider-val" id="font-size-val">19px</span>
+    </div>
+  </div>
+
+  <!-- Container width -->
+  <div class="settings-group">
+    <span class="settings-label">Ширина текста</span>
+    <div class="settings-slider-row">
+      <input type="range" id="width-slider" min="480" max="1100" step="20" value="760">
+      <span class="settings-slider-val" id="width-val">760px</span>
+    </div>
+  </div>
+
+  <!-- Animation toggle -->
+  <div class="settings-group" style="margin-bottom:0">
+    <span class="settings-label">Анимация появления текста</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="anim-on">Включена</button>
+      <button class="settings-btn" id="anim-off">Выключена</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════ NAVIGATION BUTTONS ════ -->
+<nav class="nav-buttons">
+  <a href="10-17.html" class="nav-btn nav-btn-prev">
+    <span class="nav-icon">←</span>
+    <span>Глава 17</span>
+  </a>
+  <a href="index.html" class="nav-btn nav-btn-toc">
+    <span class="nav-icon">☰</span>
+    <span>Оглавление</span>
+  </a>
+  <a href="10-19.html" class="nav-btn nav-btn-next">
+    <span>Глава 19</span>
+    <span class="nav-icon">→</span>
+  </a>
+</nav>
+
+<script>
+// ── Helpers ──
+const STORAGE_KEY = 'rezero-settings';
+
+function saveSettings(obj) {
+  try {
+    const cur = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({...cur, ...obj}));
+  } catch(e) {}
+}
+
+function loadSettings() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { return {}; }
+}
+
+// ── Theme toggle ──
+const themeBtn = document.getElementById('theme-toggle');
+const iconSun  = document.getElementById('icon-sun');
+const iconMoon = document.getElementById('icon-moon');
+const THEME_KEY = 'rezero-theme';
+
+function applyTheme(theme) {
+  if (theme === 'light') {
+    document.body.classList.add('light-theme');
+    iconSun.style.display  = 'block';
+    iconMoon.style.display = 'none';
+  } else {
+    document.body.classList.remove('light-theme');
+    iconSun.style.display  = 'none';
+    iconMoon.style.display = 'block';
+  }
+}
+
+const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+applyTheme(savedTheme);
+
+themeBtn.addEventListener('click', () => {
+  const isLight = document.body.classList.contains('light-theme');
+  const next = isLight ? 'dark' : 'light';
+  applyTheme(next);
+  localStorage.setItem(THEME_KEY, next);
+});
+</script>
+
+<script>
+// ── Settings panel toggle ──
+const settingsToggle = document.getElementById('settings-toggle');
+const settingsPanel  = document.getElementById('settings-panel');
+
+settingsToggle.addEventListener('click', () => {
+  const open = settingsPanel.classList.toggle('open');
+  settingsToggle.classList.toggle('active', open);
+});
+
+// Close panel when clicking outside
+document.addEventListener('click', (e) => {
+  if (!settingsPanel.contains(e.target) && e.target !== settingsToggle && !settingsToggle.contains(e.target)) {
+    settingsPanel.classList.remove('open');
+    settingsToggle.classList.remove('active');
+  }
+});
+
+// ── Font selector ──
+const fontBtns = document.querySelectorAll('#font-btns .settings-btn');
+const mainEl   = document.getElementById('main-content');
+
+function applyFont(fontName) {
+  document.body.style.fontFamily = `'${fontName}', Georgia, serif`;
+  fontBtns.forEach(b => b.classList.toggle('active', b.dataset.font === fontName));
+}
+
+fontBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyFont(btn.dataset.font);
+    saveSettings({ font: btn.dataset.font });
+  });
+});
+
+// ── Font size ──
+const fontSizeSlider = document.getElementById('font-size-slider');
+const fontSizeVal    = document.getElementById('font-size-val');
+
+function applyFontSize(size) {
+  document.body.style.fontSize = size + 'px';
+  fontSizeVal.textContent = size + 'px';
+  fontSizeSlider.value = size;
+}
+
+fontSizeSlider.addEventListener('input', () => {
+  applyFontSize(parseInt(fontSizeSlider.value));
+  saveSettings({ fontSize: fontSizeSlider.value });
+});
+
+// ── Container width ──
+const widthSlider = document.getElementById('width-slider');
+const widthVal    = document.getElementById('width-val');
+
+function applyWidth(w) {
+  const style = `${w}px`;
+  document.getElementById('main-content').style.maxWidth = style;
+  document.querySelector('.nav-buttons').style.maxWidth = style;
+  widthVal.textContent = style;
+  widthSlider.value = w;
+}
+
+widthSlider.addEventListener('input', () => {
+  applyWidth(parseInt(widthSlider.value));
+  saveSettings({ width: widthSlider.value });
+});
+
+// ── Animation toggle ──
+const animOn  = document.getElementById('anim-on');
+const animOff = document.getElementById('anim-off');
+
+function applyAnim(enabled) {
+  if (enabled) {
+    document.body.classList.remove('no-anim');
+    animOn.classList.add('active');
+    animOff.classList.remove('active');
+  } else {
+    document.body.classList.add('no-anim');
+    // Make all hidden elements visible immediately
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    animOff.classList.add('active');
+    animOn.classList.remove('active');
+  }
+}
+
+animOn.addEventListener('click', () => { applyAnim(true); saveSettings({ anim: true }); });
+animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim: false }); });
+
+// ── Load persisted settings ──
+(function() {
+  const s = loadSettings();
+  if (s.font) applyFont(s.font);
+  if (s.fontSize) applyFontSize(parseInt(s.fontSize));
+  if (s.width) applyWidth(parseInt(s.width));
+  if (s.anim === false) applyAnim(false);
+})();
+</script>
+
+<script>
+// ── Progress bar ──
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+});
+
+// ── Reveal on scroll ──
+const revealEls = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+// ── Ambient particle canvas ──
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function Particle() { this.reset(); }
+Particle.prototype.reset = function() {
+  this.x = Math.random() * W;
+  this.y = Math.random() * H;
+  this.vx = (Math.random() - 0.5) * 0.15;
+  this.vy = -Math.random() * 0.3 - 0.05;
+  this.r = Math.random() * 1.2 + 0.3;
+  this.alpha = Math.random() * 0.4 + 0.05;
+  this.life = 1;
+  this.decay = Math.random() * 0.002 + 0.001;
+  // Gold, blue, amber for battle chapter
+  const roll = Math.random();
+  if (roll > 0.65) {
+    this.color = `rgba(200,164,106,${this.alpha})`;
+  } else if (roll > 0.35) {
+    this.color = `rgba(80,144,216,${this.alpha})`;
+  } else {
+    this.color = `rgba(212,160,48,${this.alpha * 0.8})`;
+  }
+};
+
+for (let i = 0; i < 80; i++) {
+  const p = new Particle();
+  p.y = Math.random() * H;
+  particles.push(p);
+}
+
+function animParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= p.decay;
+    if (p.life <= 0 || p.y < -10) p.reset();
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.life * 0.6;
+    ctx.fill();
+  });
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+</script>
+</body>
+</html>
