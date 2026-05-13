@@ -1772,6 +1772,15 @@ body.light-theme .dragon-sword {
     </div>
   </div>
 
+  <!-- Text align -->
+  <div class="settings-group">
+    <span class="settings-label">Выравнивание текста</span>
+    <div class="settings-btn-row" id="align-btns">
+      <button class="settings-btn active" data-align="left">По левому</button>
+      <button class="settings-btn" data-align="justify">По ширине</button>
+    </div>
+  </div>
+
   <!-- Animation toggle -->
   <div class="settings-group" style="margin-bottom:0">
     <span class="settings-label">Анимация появления текста</span>
@@ -1929,6 +1938,22 @@ function applyAnim(enabled) {
 animOn.addEventListener('click', () => { applyAnim(true); saveSettings({ anim: true }); });
 animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim: false }); });
 
+// ── Text alignment ──
+const alignBtns = document.querySelectorAll('#align-btns .settings-btn');
+
+function applyAlign(align) {
+  const content = document.getElementById('main-content');
+  content.querySelectorAll('p').forEach(p => { p.style.textAlign = align; });
+  alignBtns.forEach(b => b.classList.toggle('active', b.dataset.align === align));
+}
+
+alignBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyAlign(btn.dataset.align);
+    saveSettings({ align: btn.dataset.align });
+  });
+});
+
 // ── Load persisted settings ──
 (function() {
   const s = loadSettings();
@@ -1936,6 +1961,7 @@ animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim:
   if (s.fontSize) applyFontSize(parseInt(s.fontSize));
   if (s.width) applyWidth(parseInt(s.width));
   if (s.anim === false) applyAnim(false);
+  if (s.align) applyAlign(s.align);
 })();
 </script>
 
