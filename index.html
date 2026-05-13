@@ -882,6 +882,15 @@ p.italic-narr {
   margin-bottom: 1.3em;
 }
 
+body.justify-text .synopsis-text,
+body.justify-text p.narr,
+body.justify-text p.italic-narr,
+body.justify-text .arc-quote {
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+}
+
 /* ── Footer mark ── */
 .arc-end-mark {
   text-align: center;
@@ -1015,6 +1024,14 @@ p.italic-narr {
     <div class="settings-slider-row">
       <input type="range" id="width-slider" min="480" max="1100" step="20" value="800">
       <span class="settings-slider-val" id="width-val">800px</span>
+    </div>
+  </div>
+
+  <div class="settings-group">
+    <span class="settings-label">Выравнивание текста</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="align-left">Слева</button>
+      <button class="settings-btn" id="align-justify">По ширине</button>
     </div>
   </div>
 
@@ -1418,6 +1435,20 @@ widthSlider.addEventListener('input', () => {
   saveSettings({ width: widthSlider.value });
 });
 
+// ── Text alignment ──
+const alignLeft = document.getElementById('align-left');
+const alignJustify = document.getElementById('align-justify');
+
+function applyTextAlign(mode) {
+  const justify = mode === 'justify';
+  document.body.classList.toggle('justify-text', justify);
+  alignJustify.classList.toggle('active', justify);
+  alignLeft.classList.toggle('active', !justify);
+}
+
+alignLeft.addEventListener('click', () => { applyTextAlign('left'); saveSettings({ textAlign: 'left' }); });
+alignJustify.addEventListener('click', () => { applyTextAlign('justify'); saveSettings({ textAlign: 'justify' }); });
+
 // ── Animation toggle ──
 const animOn  = document.getElementById('anim-on');
 const animOff = document.getElementById('anim-off');
@@ -1444,6 +1475,7 @@ animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim:
   if (s.font) applyFont(s.font);
   if (s.fontSize) applyFontSize(parseInt(s.fontSize));
   if (s.width) applyWidth(parseInt(s.width));
+  if (s.textAlign) applyTextAlign(s.textAlign);
   if (s.anim === false) applyAnim(false);
 })();
 
