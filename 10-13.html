@@ -755,8 +755,8 @@ p.thought {
   z-index: 1;
   margin: 0;
   color: var(--text);
-  font-family: 'EB Garamond', 'PT Serif', serif;
-  font-size: 19px;
+  font-family: inherit;
+  font-size: 1em;
   line-height: 1.78;
   letter-spacing: 0.01em;
   text-shadow: none;
@@ -849,7 +849,7 @@ p.thought {
   border-radius: 0 12px 12px 0;
   background: rgba(212, 160, 64, 0.08);
   color: var(--text);
-  font-size: 19px;
+  font-size: 1em;
   line-height: 1.85;
   font-style: normal;
 }
@@ -891,6 +891,45 @@ body.light-theme .inner-fire { color: #2a2010; background: rgba(212, 160, 64, 0.
 .dragon-eye-glyph,
 .return-kanji {
   animation: none !important;
+}
+
+
+body.plain-moments .moment,
+body.plain-moments .dragon-eye-reveal,
+body.plain-moments .return-block,
+body.plain-moments .inner-fire {
+  margin: 1em 0;
+  padding: 0;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+  text-align: inherit;
+}
+
+body.plain-moments .moment::before,
+body.plain-moments .moment::after,
+body.plain-moments .dragon-eye-reveal::before,
+body.plain-moments .dragon-eye-reveal::after,
+body.plain-moments .return-block::before,
+body.plain-moments .return-block::after,
+body.plain-moments .dragon-eye-glyph,
+body.plain-moments .return-vortex,
+body.plain-moments .return-ring,
+body.plain-moments .return-kanji,
+body.plain-moments .return-label {
+  display: none !important;
+}
+
+body.plain-moments .moment-text,
+body.plain-moments .dragon-eye-text,
+body.plain-moments .return-text {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
 }
 
 /* ── POV section headers ── */
@@ -1115,7 +1154,6 @@ body.light-theme .inner-fire { color: #2a2010; background: rgba(212, 160, 64, 0.
   .dragon-eye-text,
   .return-text,
   .inner-fire {
-    font-size: 18px;
     line-height: 1.72;
   }
 }
@@ -1199,11 +1237,20 @@ body.light-theme .inner-fire { color: #2a2010; background: rgba(212, 160, 64, 0.
   </div>
 
   <!-- Animation toggle -->
-  <div class="settings-group" style="margin-bottom:0">
+  <div class="settings-group">
     <span class="settings-label">Анимация появления текста</span>
     <div class="settings-btn-row">
       <button class="settings-btn active" id="anim-on">Включена</button>
       <button class="settings-btn" id="anim-off">Выключена</button>
+    </div>
+  </div>
+
+  <!-- Emotional blocks toggle -->
+  <div class="settings-group" style="margin-bottom:0">
+    <span class="settings-label">Эмоциональные блоки</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="moments-on">Карточки</button>
+      <button class="settings-btn" id="moments-off">Обычный текст</button>
     </div>
   </div>
 </div>
@@ -2013,12 +2060,25 @@ function applyAnim(enabled) {
 animOn.addEventListener('click', () => { applyAnim(true); saveSettings({ anim: true }); });
 animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim: false }); });
 
+// ── Emotional blocks toggle ──
+const momentsOn  = document.getElementById('moments-on');
+const momentsOff = document.getElementById('moments-off');
+
+function applyMomentBlocks(enabled) {
+  document.body.classList.toggle('plain-moments', !enabled);
+  momentsOn.classList.toggle('active', enabled);
+  momentsOff.classList.toggle('active', !enabled);
+}
+
+momentsOn.addEventListener('click', () => { applyMomentBlocks(true); saveSettings({ momentBlocks: true }); });
+momentsOff.addEventListener('click', () => { applyMomentBlocks(false); saveSettings({ momentBlocks: false }); });
+
 // ── Text alignment ──
 const alignBtns = document.querySelectorAll('#align-btns .settings-btn');
 
 function applyAlign(align) {
   const content = document.getElementById('main-content');
-  content.querySelectorAll('p').forEach(p => { p.style.textAlign = align; });
+  content.querySelectorAll('p, .moment-text, .dragon-eye-text, .return-text, .inner-fire').forEach(el => { el.style.textAlign = align; });
   alignBtns.forEach(b => b.classList.toggle('active', b.dataset.align === align));
 }
 
@@ -2036,6 +2096,7 @@ alignBtns.forEach(btn => {
   if (s.fontSize) applyFontSize(parseInt(s.fontSize));
   if (s.width) applyWidth(parseInt(s.width));
   if (s.anim === false) applyAnim(false);
+  if (s.momentBlocks === false) applyMomentBlocks(false);
   if (s.align) applyAlign(s.align);
 })();
 </script>
