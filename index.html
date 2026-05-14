@@ -1036,11 +1036,19 @@ body.justify-text .arc-quote {
     </div>
   </div>
 
-  <div class="settings-group" style="margin-bottom:0">
+  <div class="settings-group">
     <span class="settings-label">Анимация появления текста</span>
     <div class="settings-btn-row">
       <button class="settings-btn active" id="anim-on">Включена</button>
       <button class="settings-btn" id="anim-off">Выключена</button>
+    </div>
+  </div>
+
+  <div class="settings-group" style="margin-bottom:0">
+    <span class="settings-label">Эмоциональные блоки</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="moments-on">Карточки</button>
+      <button class="settings-btn" id="moments-off">Обычный текст</button>
     </div>
   </div>
 </div>
@@ -1470,6 +1478,19 @@ function applyAnim(enabled) {
 animOn.addEventListener('click', () => { applyAnim(true); saveSettings({ anim: true }); });
 animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim: false }); });
 
+// ── Emotional blocks toggle ──
+const momentsOn  = document.getElementById('moments-on');
+const momentsOff = document.getElementById('moments-off');
+
+function applyMomentBlocks(enabled) {
+  document.body.classList.toggle('plain-moments', !enabled);
+  momentsOn.classList.toggle('active', enabled);
+  momentsOff.classList.toggle('active', !enabled);
+}
+
+momentsOn.addEventListener('click', () => { applyMomentBlocks(true); saveSettings({ momentBlocks: true }); });
+momentsOff.addEventListener('click', () => { applyMomentBlocks(false); saveSettings({ momentBlocks: false }); });
+
 // ── Load persisted settings ──
 (function() {
   const s = loadSettings();
@@ -1478,6 +1499,7 @@ animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim:
   if (s.width) applyWidth(parseInt(s.width));
   if (s.textAlign) applyTextAlign(s.textAlign);
   if (s.anim === false) applyAnim(false);
+  if (s.momentBlocks === false) applyMomentBlocks(false);
 })();
 
 // ── Ambient particle canvas ──
