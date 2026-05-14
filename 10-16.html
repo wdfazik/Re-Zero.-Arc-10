@@ -1,0 +1,2606 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re:Zero — Арка 10, Глава 16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;600;700&family=Cormorant+Infant:ital,wght@0,400;0,600;1,400;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c14;
+  --bg2: #0e1320;
+  --bg3: #13192e;
+  --text: #ddd4c0;
+  --text-dim: #8a8070;
+  --accent: #c8a46a;
+  --accent2: #7a9cc8;
+  --divider: #2a3050;
+  --ram: #e87aaa;
+  --emilia: #aac8ec;
+  --bordeaux: #d04040;
+  --marcos: #8a9ab0;
+  --fiore: #f0c060;
+  --sakura: #c08ad0;
+  --felt: #e8a050;
+  --reinhard: #5090d8;
+  --witch: #9040a0;
+  --narrator: #ddd4c0;
+  --krusch: #5aaa7a;
+  --tiga: #d4a060;
+  --beatrice: #b08adc;
+  --subaru: #90b8e0;
+}
+
+/* ── Light theme overrides ── */
+body.light-theme {
+  --bg: #f0ebe0;
+  --bg2: #e8e2d4;
+  --bg3: #ddd7c8;
+  --text: #1a1610;
+  --text-dim: #6a5e4a;
+  --accent: #8a5e1a;
+  --accent2: #2a5888;
+  --divider: #c8bca0;
+}
+
+body.light-theme header {
+  background: linear-gradient(180deg, rgba(240,235,224,0.97) 70%, transparent);
+  border-bottom-color: rgba(138,94,26,0.15);
+}
+
+body.light-theme p.italic-narr {
+  color: #3a3020;
+}
+
+body.light-theme p.thought {
+  color: #4a3e2a;
+  border-left-color: rgba(138,94,26,0.4);
+}
+
+body.light-theme .inner-fire {
+  color: #5a3a10;
+  border-left-color: var(--accent);
+}
+
+body.light-theme .moment-resolve {
+  background: rgba(240,235,220,0.7);
+  border-color: rgba(138,94,26,0.35);
+}
+body.light-theme .moment-resolve .moment-text { color: #2a1e08; }
+
+body.light-theme .moment-shock {
+  background: rgba(220,230,245,0.6);
+  border-color: rgba(60,100,180,0.3);
+}
+body.light-theme .moment-shock .moment-text { color: #1a2a3a; }
+
+body.light-theme .moment-anger {
+  background: rgba(245,225,220,0.6);
+  border-color: rgba(180,60,60,0.3);
+}
+body.light-theme .moment-anger .moment-text { color: #2a0808; }
+
+body.light-theme .moment-heavy {
+  background: rgba(220,225,235,0.6);
+  border-color: rgba(80,90,120,0.3);
+}
+body.light-theme .moment-heavy .moment-text { color: #1a1e2a; }
+
+body.light-theme .moment-warmth {
+  background: rgba(245,235,240,0.6);
+  border-color: rgba(200,100,140,0.3);
+}
+body.light-theme .moment-warmth .moment-text { color: #2a1020; }
+
+body.light-theme .moment-krusch {
+  background: rgba(220,240,230,0.6);
+  border-color: rgba(60,140,90,0.3);
+}
+body.light-theme .moment-krusch .moment-text { color: #0a2a18; }
+
+body.light-theme .dragon-eye-reveal {
+  background: rgba(245,240,220,0.9);
+  border-color: rgba(160,120,20,0.4);
+}
+
+body.light-theme .dragon-eye-text {
+  color: #7a5000;
+  text-shadow: 0 0 8px rgba(160,100,0,0.2);
+}
+
+body.light-theme .return-block {
+  background: rgba(230,225,245,0.85);
+  border-color: rgba(100,60,180,0.3);
+}
+
+body.light-theme .return-kanji {
+  color: rgba(100,60,180,0.85);
+  text-shadow: 0 0 20px rgba(100,60,180,0.4);
+}
+
+body.light-theme .return-label {
+  color: rgba(100,60,180,0.6);
+}
+
+body.light-theme .return-text {
+  color: #2a1a4a;
+}
+
+body.light-theme .nav-btn {
+  background: rgba(230,224,210,0.8);
+  border-color: rgba(138,94,26,0.25);
+  color: var(--text-dim);
+}
+
+body.light-theme .nav-btn:hover {
+  background: rgba(215,208,192,0.95);
+}
+
+body.light-theme .chapter-kanji {
+  color: rgba(138,94,26,0.65);
+}
+
+body.light-theme .location-tag {
+  color: rgba(138,94,26,0.7);
+}
+
+body.light-theme .scroll-hint,
+body.light-theme .chapter-arc {
+  color: #8a7a60;
+}
+
+body.light-theme .chapter-subtitle {
+  color: #2a2010;
+}
+
+body.light-theme .scroll-chevron {
+  border-right-color: rgba(100,70,20,0.5);
+  border-bottom-color: rgba(100,70,20,0.5);
+}
+
+body.light-theme .divider-line {
+  background: linear-gradient(90deg, transparent, rgba(138,94,26,0.5), transparent);
+}
+
+body.light-theme .divider-sigil {
+  color: rgba(138,94,26,0.8);
+}
+
+body.light-theme #canvas {
+  opacity: 0.12;
+}
+
+/* Dialogue text — override the hardcoded !important */
+body.light-theme .dialogue-text {
+  color: #1a1610 !important;
+}
+
+/* Narration colours */
+body.light-theme p.narr {
+  color: #1a1610;
+}
+
+body.light-theme p.italic-narr {
+  color: #3a3020;
+}
+
+body.light-theme p.thought {
+  color: #4a3e2a;
+  border-left-color: rgba(138,94,26,0.4);
+}
+
+/* Scene / pov labels */
+body.light-theme .scene-label,
+body.light-theme .pov-name {
+  color: #8a7a60;
+}
+
+body.light-theme .pov-subtitle {
+  color: rgba(138,94,26,0.55);
+}
+
+/* Dragon & cult inline mentions */
+body.light-theme .dragon-mention {
+  color: #8a5a00;
+  text-shadow: 0 0 6px rgba(138,90,0,0.2);
+}
+
+body.light-theme .cult-mention {
+  color: #6a3080;
+  text-shadow: 0 0 6px rgba(106,48,128,0.2);
+}
+
+/* ── Settings panel light ── */
+body.light-theme #settings-panel {
+  background: rgba(240,235,224,0.97);
+  border-color: rgba(138,94,26,0.25);
+}
+body.light-theme .settings-title {
+  color: var(--accent);
+  border-bottom-color: rgba(138,94,26,0.2);
+}
+body.light-theme .settings-label { color: var(--text-dim); }
+body.light-theme .settings-btn {
+  background: rgba(220,214,200,0.8);
+  border-color: rgba(138,94,26,0.2);
+  color: var(--text);
+}
+body.light-theme .settings-btn:hover,
+body.light-theme .settings-btn.active {
+  background: rgba(138,94,26,0.15);
+  border-color: rgba(138,94,26,0.5);
+  color: var(--accent);
+}
+body.light-theme input[type="range"] { accent-color: var(--accent); }
+
+/* ── Settings button group (bottom-left) ── */
+#settings-controls {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 200;
+}
+
+/* ── Settings toggle button ── */
+#settings-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,164,106,0.3);
+  background: rgba(14,19,32,0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,164,106,0.8);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+#settings-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  border-color: rgba(200,164,106,0.6);
+  color: rgba(200,164,106,1);
+}
+
+#settings-toggle:active { transform: scale(0.95); }
+#settings-toggle.active {
+  border-color: rgba(200,164,106,0.7);
+  color: rgba(200,164,106,1);
+  box-shadow: 0 0 20px rgba(200,164,106,0.2);
+}
+
+body.light-theme #settings-toggle {
+  background: rgba(230,224,210,0.92);
+  border-color: rgba(138,94,26,0.35);
+  box-shadow: 0 4px 20px rgba(100,80,40,0.2);
+  color: rgba(138,94,26,0.8);
+}
+body.light-theme #settings-toggle:hover {
+  border-color: rgba(138,94,26,0.65);
+  box-shadow: 0 6px 28px rgba(100,80,40,0.3);
+  color: rgba(138,94,26,1);
+}
+body.light-theme #settings-toggle.active {
+  border-color: rgba(138,94,26,0.7);
+  color: rgba(138,94,26,1);
+}
+
+/* ── Settings panel ── */
+#settings-panel {
+  position: fixed;
+  bottom: 110px;
+  left: 32px;
+  z-index: 199;
+  width: 300px;
+  background: rgba(8,12,20,0.96);
+  border: 1px solid rgba(200,164,106,0.2);
+  border-radius: 8px;
+  padding: 20px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  transform: translateY(12px) scale(0.97);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#settings-panel.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.settings-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(200,164,106,0.15);
+}
+
+.settings-group {
+  margin-bottom: 16px;
+}
+
+.settings-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.settings-btn-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.settings-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 6px 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(200,164,106,0.2);
+  background: rgba(20,25,40,0.8);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.settings-btn:hover {
+  background: rgba(200,164,106,0.08);
+  border-color: rgba(200,164,106,0.4);
+  color: var(--accent);
+}
+
+.settings-btn.active {
+  background: rgba(200,164,106,0.12);
+  border-color: rgba(200,164,106,0.5);
+  color: var(--accent);
+}
+
+.settings-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+  height: 3px;
+}
+
+.settings-slider-val {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  color: var(--accent);
+  min-width: 36px;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+
+/* ── Animations disabled class ── */
+body.no-anim .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+body.no-anim .chapter-kanji,
+body.no-anim .chapter-arc,
+body.no-anim .chapter-num,
+body.no-anim .chapter-subtitle {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.no-anim .scroll-hint { animation: none !important; opacity: 0.5 !important; }
+body.no-anim .divider-sigil { animation: none !important; opacity: 0.7 !important; }
+body.no-anim .moment-shock.visible { animation: none !important; }
+body.no-anim .moment-resolve.visible { animation: none !important; }
+body.no-anim .moment-anger.visible { animation: none !important; }
+body.no-anim .scroll-chevron { animation: none !important; opacity: 0.5 !important; }
+
+/* ── Theme toggle button ── */
+#theme-toggle {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 200;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,164,106,0.3);
+  background: rgba(14,19,32,0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,164,106,0.8);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  border-color: rgba(200,164,106,0.6);
+  color: rgba(200,164,106,1);
+}
+
+#theme-toggle:active {
+  transform: scale(0.95);
+}
+
+body.light-theme #theme-toggle {
+  background: rgba(230,224,210,0.92);
+  border-color: rgba(138,94,26,0.35);
+  box-shadow: 0 4px 20px rgba(100,80,40,0.2);
+  color: rgba(138,94,26,0.8);
+}
+
+body.light-theme #theme-toggle:hover {
+  border-color: rgba(138,94,26,0.65);
+  box-shadow: 0 6px 28px rgba(100,80,40,0.3);
+  color: rgba(138,94,26,1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.85;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Ambient particles ── */
+#canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--krusch), var(--accent), var(--beatrice));
+  width: 0%;
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ── Header ── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(8,12,20,0.96) 70%, transparent);
+  border-bottom: 1px solid rgba(200,164,106,0.1);
+}
+
+.header-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-family: 'Cormorant SC', 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.header-pov {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  transition: color 0.6s ease;
+}
+
+/* ── Chapter title block ── */
+.chapter-title-block {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.chapter-kanji {
+  font-family: serif;
+  font-size: 48px;
+  color: rgba(200,164,106,0.25);
+  letter-spacing: 0.4em;
+  margin-bottom: 32px;
+  animation: fadeSlideIn 2s ease forwards;
+}
+
+.chapter-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 2s ease 0.3s both;
+}
+
+.chapter-num {
+  font-family: 'Cormorant SC', 'Cinzel Decorative', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  animation: fadeSlideIn 2s ease 0.5s both;
+  text-shadow: 0 0 60px rgba(200,164,106,0.3);
+}
+
+.chapter-subtitle {
+  font-family: 'Cormorant Infant', 'EB Garamond', serif;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 32px);
+  color: var(--text);
+  margin-bottom: 60px;
+  animation: fadeSlideIn 2s ease 0.8s both;
+}
+
+.scroll-hint {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ── Main content ── */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 40px 160px;
+}
+
+/* ── Paragraph reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Narration ── */
+p.narr {
+  margin-bottom: 1.3em;
+  color: var(--text);
+}
+
+p.italic-narr {
+  font-style: italic;
+  color: #c8bcaa;
+  margin-bottom: 1.3em;
+}
+
+p.thought {
+  font-style: italic;
+  color: #b0a898;
+  padding-left: 20px;
+  border-left: 2px solid rgba(200,164,106,0.3);
+  margin: 1em 0 1.3em;
+}
+
+/* ── Dialogue ── */
+.dialogue-block {
+  margin: 0.4em 0 1.1em;
+  position: relative;
+}
+
+.speaker-tag {
+  display: none;
+}
+
+.dialogue-text {
+  font-style: normal;
+  color: #e0d8cc;
+  display: block;
+  padding-left: 4px;
+}
+
+.dialogue-text.emotional {
+  font-style: italic;
+}
+
+.sp-ram { color: var(--ram); }
+.sp-emilia { color: var(--emilia); }
+.sp-bordeaux { color: var(--bordeaux); }
+.sp-marcos { color: var(--marcos); }
+.sp-fiore { color: var(--fiore); }
+.sp-sakura { color: var(--sakura); }
+.sp-felt { color: var(--felt); }
+.sp-reinhard { color: var(--reinhard); }
+.sp-official { color: #9aaabb; }
+.sp-krusch { color: var(--krusch); }
+.sp-tiga { color: var(--tiga); }
+.sp-beatrice { color: var(--beatrice); }
+.sp-subaru { color: var(--subaru); }
+.sp-otto { color: #8cc878; }
+.sp-garfiel { color: #d8b060; }
+.sp-rem { color: #8ac8e8; }
+.sp-petra { color: #e8b0c8; }
+.sp-meili { color: #c8a0e8; }
+
+
+/* ── Character colors stripped: dialogue colour-neutral ── */
+.dialogue-text { color: #e0d8cc !important; }
+/* ── Section divider ── */
+.section-divider {
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+.divider-sigil {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  display: inline-block;
+  animation: sigil-pulse 3s ease-in-out infinite;
+}
+
+.divider-line {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 16px auto;
+  width: 60%;
+  opacity: 0.4;
+}
+
+/* ── Dramatic moments ── */
+.moment,
+.dragon-eye-reveal,
+.return-block {
+  --moment-accent: var(--accent);
+  --moment-bg: rgba(15, 19, 32, 0.72);
+  --moment-border: rgba(200, 164, 106, 0.22);
+  position: relative;
+  margin: 2.2em auto;
+  padding: 24px 28px 24px 32px;
+  max-width: 780px;
+  border: 1px solid var(--moment-border);
+  border-left: 4px solid var(--moment-accent);
+  border-radius: 14px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--moment-accent) 14%, transparent), transparent 42%),
+    var(--moment-bg);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  text-align: left;
+}
+
+.moment::before,
+.dragon-eye-reveal::before,
+.return-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), transparent 55%);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.moment::after,
+.dragon-eye-reveal::after,
+.return-block::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 34px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--moment-accent);
+  opacity: 0.45;
+}
+
+.moment-label { display: none; }
+
+.moment-text,
+.dragon-eye-text,
+.return-text {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.78;
+  letter-spacing: 0.01em;
+  text-shadow: none;
+}
+
+.moment-text + .moment-text,
+.moment-text[style*="margin-top"] {
+  margin-top: 0.85em !important;
+}
+
+.moment-shock { --moment-accent: #7a9cc8; --moment-bg: rgba(12, 22, 38, 0.76); --moment-border: rgba(122,156,200,0.28); }
+.moment-anger { --moment-accent: #d06a6a; --moment-bg: rgba(36, 17, 17, 0.74); --moment-border: rgba(208,106,106,0.26); }
+.moment-resolve { --moment-accent: #c8a46a; --moment-bg: rgba(32, 27, 17, 0.74); --moment-border: rgba(200,164,106,0.32); }
+.moment-heavy { --moment-accent: #8a9ab0; --moment-bg: rgba(14, 17, 28, 0.78); --moment-border: rgba(138,154,176,0.25); }
+.moment-warmth { --moment-accent: #e87aaa; --moment-bg: rgba(34, 18, 27, 0.72); --moment-border: rgba(232,122,170,0.25); }
+.moment-krusch { --moment-accent: #5aaa7a; --moment-bg: rgba(10, 28, 18, 0.74); --moment-border: rgba(90,170,122,0.27); }
+.moment-battle { --moment-accent: #d4a030; --moment-bg: rgba(35, 24, 7, 0.76); --moment-border: rgba(212,160,48,0.30); }
+
+.moment-shock .moment-text,
+.moment-anger .moment-text,
+.moment-resolve .moment-text,
+.moment-heavy .moment-text,
+.moment-warmth .moment-text,
+.moment-krusch .moment-text,
+.moment-battle .moment-text {
+  color: var(--text);
+  font-style: normal;
+}
+
+/* ── Dragon Eye reveal ── */
+.dragon-eye-reveal {
+  --moment-accent: #d6ad3f;
+  --moment-bg: rgba(26, 22, 12, 0.80);
+  --moment-border: rgba(214, 173, 63, 0.35);
+}
+
+.dragon-eye-glyph {
+  display: none;
+}
+
+.dragon-eye-text {
+  color: #f1dfb2;
+  font-style: normal;
+}
+
+/* ── Return from death animation ── */
+.return-block {
+  --moment-accent: #9d77df;
+  --moment-bg: rgba(18, 14, 34, 0.82);
+  --moment-border: rgba(157, 119, 223, 0.34);
+  padding-top: 28px;
+}
+
+.return-vortex,
+.return-ring {
+  display: none;
+}
+
+.return-kanji {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 10px;
+  color: rgba(205, 184, 244, 0.75);
+  font-size: 30px;
+  letter-spacing: 0.16em;
+  text-shadow: none;
+}
+
+.return-label {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+  color: rgba(205, 184, 244, 0.72);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-shadow: none;
+}
+
+.return-text {
+  color: var(--text);
+}
+
+/* ── Garfiel inner monologue ── */
+.inner-fire {
+  position: relative;
+  margin: 1.8em auto;
+  padding: 18px 24px 18px 28px;
+  max-width: 760px;
+  border-left: 4px solid var(--garfiel, var(--accent));
+  border-radius: 0 12px 12px 0;
+  background: rgba(212, 160, 64, 0.08);
+  color: var(--text);
+  font-size: 1em;
+  line-height: 1.85;
+  font-style: normal;
+}
+
+body.light-theme .moment,
+body.light-theme .dragon-eye-reveal,
+body.light-theme .return-block {
+  --moment-bg: rgba(255, 252, 244, 0.78);
+  --moment-border: color-mix(in srgb, var(--moment-accent) 38%, rgba(138,94,26,0.22));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--moment-accent) 12%, transparent), transparent 42%),
+    var(--moment-bg);
+  box-shadow: 0 10px 26px rgba(90, 70, 40, 0.12);
+}
+
+body.light-theme .moment-text,
+body.light-theme .dragon-eye-text,
+body.light-theme .return-text,
+body.light-theme .moment-shock .moment-text,
+body.light-theme .moment-anger .moment-text,
+body.light-theme .moment-resolve .moment-text,
+body.light-theme .moment-heavy .moment-text,
+body.light-theme .moment-warmth .moment-text,
+body.light-theme .moment-krusch .moment-text,
+body.light-theme .moment-battle .moment-text {
+  color: #1a1610;
+}
+
+body.light-theme .dragon-eye-text { color: #3c2b05; }
+body.light-theme .return-kanji,
+body.light-theme .return-label { color: rgba(76, 43, 132, 0.72); text-shadow: none; }
+body.light-theme .inner-fire { color: #2a2010; background: rgba(212, 160, 64, 0.12); border-left-color: var(--accent); }
+
+.moment-shock.visible,
+.moment-resolve.visible,
+.moment-anger.visible,
+.moment-krusch.visible,
+.moment-battle.visible,
+.dragon-eye-glyph,
+.return-kanji {
+  animation: none !important;
+}
+
+
+body.plain-moments .moment,
+body.plain-moments .dragon-eye-reveal,
+body.plain-moments .return-block,
+body.plain-moments .inner-fire {
+  margin: 1em 0;
+  padding: 0;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+  text-align: inherit;
+}
+
+body.plain-moments .moment::before,
+body.plain-moments .moment::after,
+body.plain-moments .dragon-eye-reveal::before,
+body.plain-moments .dragon-eye-reveal::after,
+body.plain-moments .return-block::before,
+body.plain-moments .return-block::after,
+body.plain-moments .dragon-eye-glyph,
+body.plain-moments .return-vortex,
+body.plain-moments .return-ring,
+body.plain-moments .return-kanji,
+body.plain-moments .return-label {
+  display: none !important;
+}
+
+body.plain-moments .moment-text,
+body.plain-moments .dragon-eye-text,
+body.plain-moments .return-text {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+/* ── POV section headers ── */
+.pov-header {
+  display: none;
+}
+.pov-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.pov-subtitle {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(200,164,106,0.5);
+}
+
+/* ── Scene label ── */
+.scene-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 24px 0 8px;
+  opacity: 0.6;
+}
+
+/* ── Navigation buttons ── */
+.nav-buttons {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 40px 100px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1px solid rgba(200,164,106,0.25);
+  border-radius: 3px;
+  background: rgba(8,12,20,0.7);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(200,164,106,0.06), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.nav-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.nav-btn:hover {
+  color: var(--accent);
+  border-color: rgba(200,164,106,0.55);
+  box-shadow: 0 0 20px rgba(200,164,106,0.1);
+  transform: translateY(-1px);
+}
+
+.nav-btn-prev { border-color: rgba(90,170,122,0.25); }
+.nav-btn-prev:hover { color: var(--krusch); border-color: rgba(90,170,122,0.5); box-shadow: 0 0 20px rgba(90,170,122,0.1); }
+
+.nav-btn-toc { border-color: rgba(200,164,106,0.25); }
+.nav-btn-toc:hover { color: var(--accent); border-color: rgba(200,164,106,0.5); }
+
+.nav-btn-next { border-color: rgba(170,100,220,0.25); }
+.nav-btn-next:hover { color: var(--beatrice); border-color: rgba(170,100,220,0.5); box-shadow: 0 0 20px rgba(170,100,220,0.1); }
+
+.nav-icon {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ── Animations ── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes sigil-pulse {
+  0%, 100% { opacity: 0.4; letter-spacing: 0.3em; }
+  50% { opacity: 0.9; letter-spacing: 0.45em; }
+}
+
+@keyframes shock-flare {
+  0% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+  50% { box-shadow: inset 0 0 80px rgba(80,120,200,0.15), 0 0 60px rgba(80,120,200,0.2); }
+  100% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+}
+
+.moment-shock.visible { animation: shock-flare 4s ease-in-out infinite; }
+
+@keyframes resolve-glow {
+  0%, 100% { box-shadow: inset 0 0 50px rgba(200,164,106,0.06), 0 0 40px rgba(200,164,106,0.12); }
+  50% { box-shadow: inset 0 0 80px rgba(200,164,106,0.12), 0 0 70px rgba(200,164,106,0.22); }
+}
+.moment-resolve.visible { animation: resolve-glow 3.5s ease-in-out infinite; }
+
+@keyframes anger-pulse {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(200,60,60,0.05), 0 0 30px rgba(200,60,60,0.08); }
+  50% { box-shadow: inset 0 0 60px rgba(200,60,60,0.12), 0 0 50px rgba(200,60,60,0.15); }
+}
+.moment-anger.visible { animation: anger-pulse 2.5s ease-in-out infinite; }
+
+@keyframes krusch-glow {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(90,170,122,0.05), 0 0 30px rgba(90,170,122,0.08); }
+  50% { box-shadow: inset 0 0 70px rgba(90,170,122,0.12), 0 0 50px rgba(90,170,122,0.15); }
+}
+.moment-krusch.visible { animation: krusch-glow 3s ease-in-out infinite; }
+
+@keyframes eye-pulse {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(255,200,40,0.6)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 30px rgba(255,220,60,0.95)) drop-shadow(0 0 50px rgba(200,140,0,0.5)); transform: scale(1.06); }
+}
+
+@keyframes return-glow {
+  0%, 100% { text-shadow: 0 0 30px rgba(160,80,220,0.7), 0 0 60px rgba(80,40,140,0.4); }
+  50% { text-shadow: 0 0 50px rgba(180,100,255,1), 0 0 90px rgba(100,50,180,0.7), 0 0 4px #fff; }
+}
+
+@keyframes ring-expand {
+  0%   { width: 60px; height: 60px; opacity: 0.8; border-color: rgba(160,80,220,0.7); }
+  100% { width: 320px; height: 320px; opacity: 0; border-color: rgba(80,20,140,0); }
+}
+
+/* ── Scroll indicator ── */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.scroll-chevron {
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(200,164,106,0.5);
+  border-bottom: 1px solid rgba(200,164,106,0.5);
+  transform: rotate(45deg);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+  50% { transform: rotate(45deg) translateY(6px); opacity: 0.9; }
+}
+
+/* ── Witch cult / Dragon ── */
+.cult-mention {
+  color: var(--witch);
+  font-style: normal;
+  text-shadow: 0 0 8px rgba(144,64,160,0.3);
+}
+
+.dragon-mention {
+  color: #d4a020;
+  text-shadow: 0 0 8px rgba(200,150,0,0.3);
+}
+
+/* ── Footnote-style location ── */
+.location-tag {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: rgba(200,164,106,0.35);
+  padding: 8px 0 30px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  main { padding: 60px 20px 100px; }
+  header { padding: 12px 20px; }
+  .header-arc { display: none; }
+  body { font-size: 17px; }
+  .nav-buttons { padding: 40px 20px 80px; gap: 12px; }
+  .nav-btn { padding: 12px 18px; font-size: 10px; }
+  .chapter-kanji { font-size: 28px; letter-spacing: 0.25em; margin-bottom: 20px; }
+  .moment,
+  .dragon-eye-reveal,
+  .return-block {
+    margin: 1.7em 0;
+    padding: 20px 20px 20px 24px;
+    border-radius: 12px;
+  }
+  .moment-text,
+  .dragon-eye-text,
+  .return-text,
+  .inner-fire {
+    line-height: 1.72;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="canvas"></canvas>
+
+<!-- Theme toggle -->
+<button id="theme-toggle" aria-label="Переключить тему">
+  <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+  </svg>
+  <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1" x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1" y1="12" x2="3" y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+  </svg>
+</button>
+
+<!-- ════ SETTINGS CONTROLS (bottom-left) ════ -->
+<div id="settings-controls">
+  <button id="settings-toggle" title="Настройки" aria-label="Открыть настройки">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+  </button>
+</div>
+<div id="settings-panel" role="dialog" aria-label="Настройки чтения">
+  <div class="settings-title">Настройки чтения</div>
+
+  <!-- Font selector -->
+  <div class="settings-group">
+    <span class="settings-label">Шрифт</span>
+    <div class="settings-btn-row" id="font-btns">
+      <button class="settings-btn active" data-font="EB Garamond">Garamond</button>
+      <button class="settings-btn" data-font="Merriweather">Merriweather</button>
+      <button class="settings-btn" data-font="Lora">Lora</button>
+      <button class="settings-btn" data-font="PT Serif">PT Serif</button>
+      <button class="settings-btn" data-font="Libre Baskerville">Baskerville</button>
+      <button class="settings-btn" data-font="Source Serif 4">Source Serif</button>
+      <button class="settings-btn" data-font="Nunito">Nunito</button>
+      <button class="settings-btn" data-font="Comic Sans MS">Comic Sans</button>
+    </div>
+  </div>
+
+  <!-- Font size -->
+  <div class="settings-group">
+    <span class="settings-label">Размер текста</span>
+    <div class="settings-slider-row">
+      <input type="range" id="font-size-slider" min="14" max="28" step="1" value="19">
+      <span class="settings-slider-val" id="font-size-val">19px</span>
+    </div>
+  </div>
+
+  <!-- Container width -->
+  <div class="settings-group">
+    <span class="settings-label">Ширина текста</span>
+    <div class="settings-slider-row">
+      <input type="range" id="width-slider" min="480" max="1100" step="20" value="760">
+      <span class="settings-slider-val" id="width-val">760px</span>
+    </div>
+  </div>
+
+  <!-- Text align -->
+  <div class="settings-group">
+    <span class="settings-label">Выравнивание текста</span>
+    <div class="settings-btn-row" id="align-btns">
+      <button class="settings-btn active" data-align="left">По левому</button>
+      <button class="settings-btn" data-align="justify">По ширине</button>
+    </div>
+  </div>
+
+  <!-- Animation toggle -->
+  <div class="settings-group">
+    <span class="settings-label">Анимация появления текста</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="anim-on">Включена</button>
+      <button class="settings-btn" id="anim-off">Выключена</button>
+    </div>
+  </div>
+
+  <!-- Emotional blocks toggle -->
+  <div class="settings-group" style="margin-bottom:0">
+    <span class="settings-label">Эмоциональные блоки</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="moments-on">Карточки</button>
+      <button class="settings-btn" id="moments-off">Обычный текст</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <span class="header-arc">Re:Zero · Арка 10</span>
+  <span class="header-title">Удар исподтишка</span>
+  <span class="header-pov" id="pov-indicator">Том 45</span>
+</header>
+
+<!-- ════ TITLE SCREEN ════ -->
+<div class="chapter-title-block">
+  <div class="chapter-kanji">騙し討ち</div>
+  <div class="chapter-arc">Re:Zero — Жизнь с нуля в альтернативном мире · Арка 10</div>
+  <div class="chapter-num">Глава 16</div>
+  <div class="chapter-subtitle">«Удар исподтишка»</div>
+  <div class="scroll-hint">↓ Читать</div>
+  <div class="scroll-down">
+    <div class="scroll-chevron"></div>
+    <div class="scroll-chevron" style="margin-top:-8px;opacity:0.5;"></div>
+  </div>
+</div>
+
+<!-- ════ MAIN CONTENT ════ -->
+<main id="main-content">
+
+  <div class="pov-header reveal" data-pov="Гарфиэль">
+    <div class="pov-name">Точка зрения</div>
+    <div class="pov-subtitle" style="color: rgba(216,176,96,0.6);">Гарфиэль</div>
+  </div>
+
+  <div class="location-tag reveal">Гостевой особняк Эмилии · Дворянский квартал · ЛугуНика</div>
+
+  <div class="moment moment-shock reveal">
+    <p class="moment-text">— Субару…</p>
+    <p class="moment-text" style="margin-top:1em;">— <span class="cult-mention">Архиепископ Греха</span>?..</p>
+  </div>
+
+  <p class="narr reveal">Подозрение казалось совершенно нелепым. Даже произнесенное вслух, оно не обрело ни капли смысла. Настолько дикое заявление, что если враг решил выбить их из колеи, то преуспел блестяще — впору было рассмеяться.</p>
+
+  <p class="narr reveal">Но отмахнуться от этой нелепицы как от дурной шутки мешал исполин по имени Маркос: уж слишком сурово он на них смотрел. По крайней мере, для Гарфиэля, который был в ответе за защиту Лагеря, не было и речи о том, чтобы расслабиться в присутствии этого человека.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— …</span>
+  </div>
+
+  <p class="narr reveal">Он тихонько фыркнул и принюхался к повисшему в гостевом особняке тяжелому напряжению. Гарфиэль чуял сдерживаемую жажду крови, тревогу и недоверие, за которыми прятался едкий, резкий запах страха.</p>
+
+  <p class="narr reveal">В Империи Волакия ему часто доводилось чуять подобное. Гарфиэль прекрасно знал: так пахнет склад огненных мана-кристаллов за миг до взрыва. А значит…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text sp-marcos">— Решили со Мной и моими друзьями сцепиться, что ль?! — заскрипел Гарфиэль зубами. Он сверлил взглядом высоченного Маркоса.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Следует ли понимать это как отказ от нашего требования? — спросил в ответ мужчина в латах.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— А-а?! Сами же первыми плюнули нам в лицо, а теперь строите из себя невинных обиженок!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Стой, — прервала Эмилия. — Не бросайся на него, Гарфиэль. Пожалуйста.</span>
+  </div>
+
+  <p class="narr reveal">И слова девушки все же заставили его отступить. Раз уж она сказала «пожалуйста», ему оставалось лишь унять свой пыл. Полуэльфийка бросила тихое «спасибо» и уверенно подняла голову.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Прошу прощения за него, — сказала она. — Я так сильно растерялась, что не нашла слов, вот он и разозлился вместо меня.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Значит ли это, что вы, госпожа Эмилия, разделяете его гнев?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Ну… да, пожалуй. Я ужасно потрясена и никак не возьму в толк, зачем говорить такие нелепости. Внутри все так и кипит от злости. Но… — Эмилия умолкла и прижала руку к груди. Пальцы скользнули по висящему на шее зеленому мана-кристаллу: его твердость словно помогала собраться с мыслями. — Если я сейчас закачу истерику, Субару это никак не поможет. Получится, что я злюсь просто потому, что мне так хочется. А этого допускать нельзя.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Вот как. Вы говорите об этом прямо, глядя мне в глаза.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text sp-subaru">— С нашей прошлой встречи мы с вами почти не общались. Я чуточку изменилась, стала сильнее. И все благодаря Субару.</span>
+  </div>
+
+  <p class="narr reveal">Эмилия отвечала спокойно, не поддавалась чувствам и не давала загнать себя в угол. Маркос прищурился — явно о чем-то задумался.</p>
+
+  <p class="narr reveal">Слушая Эмилию, Гарфиэль тоже почувствовал, как кровь отливает от головы. И хотя он по-прежнему был напряжен как пружина, парень расслабляться не собирался.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— По правде говоря, сами ваши подозрения звучат как полная чушь, — вмешался Отто. — Господин Нацуки связан с <span class="cult-mention">Культом Ведьмы</span>? Да еще и в ранге <span class="cult-mention">Архиепископа Греха</span>? Это даже не смешно.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Именно! — поддержала Петра. — Субару столько раз мешал Культу! Он сам побеждал Архиепископов, спас меня и всю деревню… Прекратите нести этот бред!</span>
+  </div>
+
+  <p class="narr reveal">Поддерживали их товарища что надо, и Гарфиэль яростно закивал:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Во-во, точняк!</span>
+  </div>
+
+  <p class="italic-narr reveal"><span class="cult-mention">Архиепископы Греха</span> Лени, Жадности и Чревоугодия… Субару лично вел в бой людей, которые убили их или пленили, чем сильно ударили по <span class="cult-mention">Культу Ведьмы</span>. Кроме того, он внес огромный вклад в уничтожение Белого Кита и Великого Кролика — Великих Зверодемонов. Считать после этого Субару адептом Культа — неслыханная глупость.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Уж не хотите ль вы сказать, что он со своими же передрался? Если мы с братаном Отто посремся, я ж его в мясо не изобью. Хотя мы с ним и так никогда не сцепимся!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Сравнение с вами, конечно, такое себе, но и я думаю, что обвинения тут на пустом месте, — произнесла Рем. — Не верю, что этот человек способен на подобную подлость.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meili">Мейли</span>
+    <span class="dialogue-text sp-meili">— Ага-а, — протянула Мейли. — Братик, конечно, вечно лезет в неприятности, но только потому, что сначала делает, а потом думает.</span>
+  </div>
+
+  <p class="narr reveal">Несмотря на колкость Рем и замечание Мейли, все они были солидарны с Гарфиэлем. Таково было общее мнение их Лагеря во главе с Эмилией.</p>
+
+  <p class="narr reveal">Весь разговор Маркос не менялся в лице, подобном камню. Дослушав, он ответил:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Я принял к сведению, что Лагерь всецело доверяет рыцарю Нацуки Субару. И все же я вновь требую, чтобы госпожа Эмилия проследовала со мной в замок, — остался все так же настойчив Маркос.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Мне нужно будет повторить все то же самое людям во дворце? — Эмилия задумчиво опустила аметистовые глаза.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— А также честно ответить на наши вопросы. Смею заметить: полное сотрудничество — лучший способ развеять все подозрения.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Позвольте спросить, — вдруг вмешалась Рем. Она, как и Гарфиэль, настороженно следила за окружившими их солдатами Королевства. — А разве тот, о ком идет речь… Нацуки Субару… не должен пойти с вами?</span>
+  </div>
+
+  <p class="narr reveal">В тот же миг воздух вокруг солдат заледенел.</p>
+
+  <p class="narr reveal">Чувства, направленные на Лагерь, разом обострились, и у Гарфиэля волоски встали дыбом. Хотя мечи оставались в ножнах, давящие взгляды пронзали не хуже клинков. Напряжение в гостевой комнате достигло предела. Словно кто-то грубо растоптал гладь воды и пустил по ней зловещую рябь гнева и враждебности. Еще мгновение, одна неверная искра — и прогремит взрыв…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Успокоиться.</span>
+  </div>
+
+  <div class="moment moment-heavy reveal">
+    <p class="moment-text">Всего одно слово… нет, скорее, сама неистовая воля мечника вмиг смела эту бурю чувств и грубой силой подавила назревающую вспышку.</p>
+    <p class="moment-text" style="margin-top:1em;">Гарфиэль охнул. Ему показалось, будто его пригвоздило к полу гигантской ладонью размером с гору. По телу пробежал мороз, и он лишь чудовищным усилием воли подавил рвущийся наружу инстинкт превращения в зверя.</p>
+    <p class="moment-text" style="margin-top:1em;">Аура меча, исходившая от Маркоса, не шла ни в какое сравнение с жаждой крови простых солдат — она таила в себе чудовищную мощь, от которой звериное чутье Гарфиэля заходилось в панике.</p>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text sp-marcos">— Прошу прощения за поведение моих подчиненных, — Маркос склонил голову. — И приношу отдельные извинения вашему воину.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— А? Только мне? — удивился Гарфиэль.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Солдат</span>
+    <span class="dialogue-text sp-official">— Я собирался успокоить лишь солдат, но зацепил и вас. Вижу, вы превосходно натренированы.</span>
+  </div>
+
+  <p class="narr reveal">Гарфиэль огляделся и понял, что остальные члены Лагеря в недоумении хмурят брови: они не почувствовали ни капли той страшной ауры. Похоже, Маркос говорил правду: давление ощутили лишь солдаты и Гарфиэль.</p>
+
+  <p class="narr reveal">И тут до него дошло… Маркос Гилдарк. Пусть его мастерство терялось в тени невообразимой мощи Святого Меча, Райнхарда ван Астрея, но он по праву стоял на вершине Рыцарского Ордена Лугуники. Его сила не была пустым звуком.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Ваша реакция показалась мне о-о-очень странной, — Эмилия задумчиво прищурилась и даже не заметила, как в зеленых глазах Гарфиэля плещутся страх и настороженность. — Вы ответите на вопрос Рем? Где сейчас Субару и Беатрис?</span>
+  </div>
+
+  <p class="narr reveal">Тени на лице Маркоса сгустились.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Значит, госпожа Эмилия, вам неизвестно о передвижениях рыцаря Нацуки Субару?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Сегодня он пошел на встречу с Миклотовым. Один… то есть вдвоем с Беатрис. Он сказал, что они договорились поговорить…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Господин Миклотов МакМахон мертв.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Что?..</span>
+  </div>
+
+  <p class="narr reveal">Сухая сводка оборвала Эмилию на полуслове, она резанула по воздуху гостевой комнаты с такой силой, что никто даже не подумал возмутиться ее бестактности.</p>
+
+  <p class="narr reveal">Имя Миклотова МакМахона, конечно же, было знакомо Гарфиэлю. Субару не просто ушел с ним на встречу — это была ключевая фигура в Королевских Выборах. Член Совета Мудрецов. Весть о его смерти прозвучала как гром среди ясного неба.</p>
+
+  <p class="narr reveal">Но по-настоящему ударили всех ребят следующие слова Маркоса:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text sp-subaru">— В настоящее время Королевство разыскивает рыцаря Нацуки Субару и кандидата на трон, герцогиню Круш Карстен, по подозрению в сговоре и причастности к убийству господина МакМахона.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text sp-subaru">— Постойте! Как это понимать? Субару и Круш… причастны к смерти Миклотова?!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text sp-subaru">— Раны на теле лорда МакМахона полностью совпадают с профилем рыцарского меча с гербом дома Карстен, который нашли на месте преступления. Кроме того, поступил рапорт, что господин МакМахон пал от руки герцогини Карстен, а рыцарь Нацуки Субару помог ей скрыться.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарф</span>
+    <span class="dialogue-text sp-garfiel">— Че за… — У Гарфиэля потемнело в глазах от этой жестокой, скрупулезно выверенной лжи.</span>
+  </div>
+
+  <p class="narr reveal">Убит важный человек уровня Миклотова, убила Круш, а Субару ей помог? Какой-то абсурдный, бредовый поклеп.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Эта герцогиня… да чтоб она…</span>
+  </div>
+
+  <p class="narr reveal">Даже если забыть о нелепых обвинениях в адрес Субару, Гарфиэль отказывался верить, что Круш способна на такое злодеяние. Они были знакомы всего полтора дня в Пристелле. Но они сражались плечом к плечу, спасали город от <span class="cult-mention">Культа Ведьмы</span> и стали боевыми товарищами.</p>
+
+  <p class="narr reveal">Гарфиэль знал: она из тех, кто искренне бьется ради других. Знал он и о цене, которую ей пришлось за это заплатить, и всей душой желал хоть чем-то помочь. И хотя он не видел этого сам, но, узнав, что некое «Таинство» Церкви Божественного <span class="dragon-mention">Дракон</span>а исцелило ее тело, Гарфиэль отбросил все политические дрязги и просто порадовался за нее.</p>
+
+  <p class="narr reveal">И чтобы эта Круш пошла на убийство, а Субару ей в этом помог?! Чушь собачья.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Позвольте уточнить, — вдруг раздался ровный, лишенный всяких чувств голос, что любил цепляться за факты.</span>
+  </div>
+
+  <p class="narr reveal">Говорил, разумеется, Отто — мозговой центр Лагеря.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Раз вы их разыскиваете, значит, господин Нацуки и Круш Карстен до сих пор в бегах?</span>
+  </div>
+
+  <p class="narr reveal">Эмилия, силясь унять дрожь, перевела на него взгляд:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Отто…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Это крайне важно. То, что сам командир Рыцарского Ордена явился сюда лично, говорит не столько об уважении к госпоже Эмилии, сколько о мерах предосторожности.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Думаете, мы набросимся на них с кулаками? — спросила Рем.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— И это тоже не исключено, — ответил Отто. — Но главная опасность для них — что господин Нацуки вернется к нам и мы его спрячем. Оцепление выставлено именно ради этого. Я прав?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Раскрытие тактических замыслов нарушит воинский устав, поэтому я вынужден воздержаться от ответа.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Ясно, — кивнул Отто. — Того, что вы не стали этого отрицать, вполне достаточно.</span>
+  </div>
+
+  <p class="narr reveal">Гарфиэль отчаянно пытался подавить бурлящие внутри гнев и смятение и от разговора этих двоих почувствовал глубокое уважение. В такие минуты он как никогда радовался, что Отто с ними.</p>
+
+  <p class="narr reveal">Какие бы хитрые интриги ни плели враги, Гарфиэль знал: Отто распутает этот клубок и узнает то, что нужно. А сам Гарфиэль сможет всецело посвятить себя роли щита. Поэтому он решил не поддаваться чувствам и твердо стоять на своем.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Довольно сомнительно, что смерть господина МакМахона связана с тем, что тот человек может быть из <span class="cult-mention">Культа Ведьмы</span>…— заметила Рем. — Требовать из-за этого допроса госпожи Эмилии — это уж слишком.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text sp-subaru">— Я уже сказал: лучшее, что можно сделать, — проследовать в королевский замок и ответить на наши вопросы. Ваш отказ мы будем вынуждены расценить как нежелание госпожи Эмилии и всего вашего Лагеря опровергать обвинения в адрес рыцаря Нацуки Субару.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Это же принуждение чистой воды! — возмутилась Петра. — Вы совсем не оставляете сестрице Эмилии выбора!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text sp-subaru">— Никакого принуждения. Однако, если вы откажетесь сотрудничать, подозрения так и останутся подозрениями, и Королевство сделает соответствующие выводы насчет рыцаря Нацуки Субару.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— …</span>
+  </div>
+
+  <p class="narr reveal">Низкий бесстрастный голос Маркоса монотонно твердил одно и то же. Уговаривать его было бесполезно — он стоял как скала, и сдвинуть его было невозможно. Воздух в комнате сгустился до предела, обстановка накалилась с обеих сторон, как вдруг…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Поняла. Я поеду в замок. Выслушайте меня там и позвольте рассказать о Субару, — все же уступила Эмилия. Накал страстей мог привести к беде.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text sp-marcos">— Мудрое решение, — кивнул Маркос.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text sp-marcos">— Тогда… я быстро соберу вас, — произнесла Петра. Она презрительно взглянула на Маркоса и бросилась собирать вещи для поездки в замок.</span>
+  </div>
+
+  <p class="narr reveal">Но Отто остановил ее:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Нет.</span>
+  </div>
+
+  <p class="narr reveal">Он прищурился, кивнул изумленной девочке и повернулся к Маркосу:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Сопровождающих нужно тщательно отбирать… я прав?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Вы весьма дальновидны. Это упрощает дело.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Что вы имеете в виду? — нахмурилась Эмилия.</span>
+  </div>
+
+  <p class="narr reveal">Эмилия переводила взгляд с Отто на Маркоса. Командир выпрямил и без того идеально прямую спину, после чего ответил:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Госпожа Эмилия, всему вашему Лагерю не дозволяется сопровождать вас в замок. Из-за подозрений в адрес рыцаря Нацуки Субару мы не можем доверять всем вашим сторонникам. Дабы показания были независимы, с вами может поехать лишь один слуга.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Всего один?!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Прошу проявить понимание и пойти нам навстречу.</span>
+  </div>
+
+  <p class="narr reveal">Маркос ничуть не изменился в лице — похоже, он ожидал их возмущения.</p>
+
+  <p class="narr reveal">Гарфиэль покосился на Отто. Судя по слегка сведенным бровям друга, тот тоже предвидел такой исход. Беда в том, что, даже зная об этом заранее, Лагерь оказывался в крайне невыгодном положении.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Да пусти ты хоть меня… — напрашивался Гарфиэль.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Не советую. Понимаю ваше желание выступить в роли телохранителя, однако вы представляете собой серьезную боевую единицу. Если госпожа Эмилия, которую и так подозревают, явится в замок с вооруженным эскортом, это сочтут не попыткой оправдаться, а демонстрацией силы.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Че за бред…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Именно так это воспримут многие.</span>
+  </div>
+
+  <p class="narr reveal">Враг безжалостно давил их аргументами — извернуться никак не выходило. Гарфиэль отчаянно искал выход, но раз уж даже Отто молчал, значит, возразить было нечего. Маркос говорил дело. Однако…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Если брать слугу…</span>
+  </div>
+
+  <p class="narr reveal">В их нынешнем положении выбор сводился к двум кандидатурам: Петре и Рем. Будь здесь Фредерика, Гарфиэль со спокойной душой поручил бы все сестре, но ее не было.</p>
+
+  <p class="narr reveal">Рем не вернула «воспоминания», и отправлять ее с Эмилией слишком рискованно. А Петра, хоть и сообразительна, все же ребенок, чтобы взваливать на нее такое бремя. Как же поступить? Внезапно…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Тогда решено. С госпожой Эмилией поедет Рам.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Рам?!</span>
+  </div>
+
+  <div class="moment moment-warmth reveal">
+    <p class="moment-text">В дверях вдруг появилась розоволосая горничная, и Гарфиэль вытаращил на нее глаза. Переодетая в привычную униформу горничной, с неизменным волевым выражением лица, она поразила своим появлением не только юношу, но и Эмилию с остальными. Ведь после изматывающего похода к Башне Плеяд Рам так переутомилась, что была почти прикована к постели. Она даже не собиралась ехать с ними в Пристеллу и должна была дожидаться возвращения Гарфиэля и остальных в столице.</p>
+    <p class="moment-text" style="margin-top:1em;">И вот теперь она уверенно и гордо стояла рядом с Эмилией. Повергнув всех в шок, Рам слегка приподняла подол юбки в изящном реверансе:</p>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Прошу прощения за опоздание. Я столь тщательно проверяла, насколько матрас мягкий, что не сразу услышала о визите гостей.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— А как там… матрас? С ним уже все в порядке? — робко спросила Эмилия.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Вполне. Думаю, на тройку с плюсом.</span>
+  </div>
+
+  <p class="narr reveal">Рам чуть пожала плечами. На ее лице не было и тени усталости, но Гарфиэль знал: она просто мастерски прячет боль. О полном выздоровлении не шло и речи. Их диалог о матрасе был лишь завуалированным вопросом о ее здоровье, и повод для беспокойства, безусловно, оставался. Однако…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Сестрица… — подала голос голубоволосая горничная.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Рем, я поручаю тебе эту кучку недотеп. Они же шагу ступить не могут без заботы прелестных и талантливых сестер Рам и Рем. Разве что Петра еще хоть на что-то да годится.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Да. Я поняла, — кивнула Рем. Старавшаяся изо всех сил скрыть тревогу за сестру, она еле сдерживала подступающие слезы.</span>
+  </div>
+
+  <p class="narr reveal">Рам же с присущей ей естественностью взяла все в свои руки.</p>
+
+  <p class="narr reveal">Гарфиэль перевел взгляд на Отто. Самоуправство Рам могло сорвать планы, но Отто лишь произнес:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Да, согласен. Рам подходит лучше всего. Вы позаботитесь о госпоже Эмилии?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарф</span>
+    <span class="dialogue-text sp-garfiel">— Мог бы и не спрашивать, — отозвалась Рам. — А ты, Отто, прекращай тут раскисать. И ты, Гарф, постарайся хоть как-то помочь.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— И без тебя знаю…</span>
+  </div>
+
+  <p class="narr reveal">Эмилия, Рем и даже Отто с уважением отнеслись к выбору Рам. Все они ответили ей с твердостью, но вот в голосе Гарфиэля проскользнула слабина. Ему стало стыдно, но светло-красные глаза Рам слегка потеплели.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарф</span>
+    <span class="dialogue-text sp-garfiel">— Дурак, — строго, но нежно произнесла она, чем развеяла неуверенность Гарфиэля.</span>
+  </div>
+
+  <p class="narr reveal">Эмилия же обвела всех взглядом и сказала:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Ну, мы пошли.</span>
+  </div>
+
+  <p class="narr reveal">Теперь, когда Лагерь единогласно утвердил кандидатуру Рам, она смогла полностью настроиться.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-subaru">Субару</span>
+    <span class="dialogue-text sp-subaru">— Я все им объясню и добьюсь, чтобы с Субару сняли эти нелепые обвинения.</span>
+  </div>
+
+  <p class="narr reveal">Сказать по правде, положение складывалось отвратительное, хуже некуда. Терпеть удары и не давать сдачи в таком положении — верный путь к поражению. В настоящей драке, если позволишь врагу делать что вздумается, долго не протянешь. Чтобы победить, нужно разгадать замысел противника, сорвать его планы и навязать свою игру.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Как и всегда, мне нужна ваша помощь. Прошу вас, помогите, — Эмилия низко поклонилась перед своими союзниками.</span>
+  </div>
+
+  <div class="moment moment-resolve reveal">
+    <p class="moment-text">Она была главой Лагеря, кандидатом на трон, носила высокий титул, но при этом ни капли не колебалась, когда склоняла голову и просила о помощи. Именно за это Гарфиэль… да и все они готовы были горы свернуть ради Эмилии и Субару.</p>
+    <p class="moment-text" style="margin-top:1em;">Поэтому…</p>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Ясен пень! Не волнуйся, госпожа Эмилия!</span>
+  </div>
+
+  <p class="narr reveal">Гарфиэль победно вскинул кулак и заорал во всю глотку в надежде хоть немного разогнать тревогу Эмилии и Рам перед отправкой в замок.</p>
+
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="pov-header reveal" data-pov="Гарфиэль">
+    <div class="pov-name">Точка зрения</div>
+    <div class="pov-subtitle" style="color: rgba(216,176,96,0.6);">Гарфиэль</div>
+  </div>
+
+  <div class="location-tag reveal">Гостевой особняк Эмилии · После отъезда Эмилии и Рам</div>
+
+  <p class="narr reveal">Они проводили Эмилию и Рам, которых Маркос со своими людьми увел в королевский замок.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Всем собрать вещи, берите только самое необходимое. Выступаем через пять минут, — скомандовал Отто оставшимся в особняке.</span>
+  </div>
+
+  <p class="narr reveal">Под предлогом того, что им нужно посовещаться, они выпроводили стражу из комнаты, и Отто сразу выдал этот приказ. Гарфиэль даже вылупился на него от удивления.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Пять минут? А мы че, не будем ждать госпожу Эмилию?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Не будем. Нельзя терять ни минуты. Обвинения против господина Нацуки, это жесткое требование явиться в замок… их цель очевидна.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Они хотят выкинуть ее из Королевских Выборов? — спросила Петра.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Почти наверняка, — ответил им обоим Отто и поднял палец. Его обычно мягкие черты лица сейчас заострились, в глазах мелькнул холодный расчет. — Послушайте. Все сложилось слишком уж вовремя. Именно в тот день, когда господин МакМахон вызывает его к себе, господин Нацуки оказывается втянут в поножовщину. И убийцей называют не кого-нибудь, а саму Круш, кандидатку на трон. За этим стоят весьма влиятельные силы.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Значит, они хотят разом убрать и госпожу Эмилию, и госпожу Круш… — произнесла Рем. — А тот человек стал лишь пешкой в их игре.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Судя по всему, так оно и есть. Что касается Круш, ее участие в Выборах уже висело на волоске после того, как ей помогла Церковь Божественного <span class="dragon-mention">Дракон</span>а…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meili">Мейли</span>
+    <span class="dialogue-text sp-meili">— Ну-у, я, конечно, понимаю, что вам хочется поболтать, но разве у нас так много времени? Будет плохо, если тот каменный дядька вернется, да-а? — вклинилась Мейли. Она накручивала на палец косичку, а сидевший у нее на макушке Багровый Скорпион щелкал клешнями.</span>
+  </div>
+
+  <p class="narr reveal">«Каменный Дядька» — это, должно быть, про Маркоса. Действительно, Маркос отбыл в королевский замок вместе с Эмилией, и сейчас его здесь не было. Особняк оцепили солдаты Королевства, и по факту Гарфиэль с остальными оказались под домашним арестом. Однако…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-marcos">Маркос</span>
+    <span class="dialogue-text sp-marcos">— Если мы будем сидеть сложа руки, то лишимся всех козырей. Нужно уходить, пока Маркос не вернулся, — твердо заявил Отто.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Мы пойдем искать того человека? — спросила Рем.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Господина Нацуки и Круш. Нам нужно узнать, что там произошло и что они видели в особняке господина МакМахона. Без этого мы ничего не добьемся.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Вы уверены, что на него можно положиться?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Даже если господин Нацуки сплохует, с ним Беатрис. Эта малышка куда надежнее своего так называемого хозяина, — Отто ободряюще улыбнулся.</span>
+  </div>
+
+  <p class="narr reveal">Рем чуть опустила брови, и хотя ее лицо не говорило о спокойствии, она приняла его заботу. От вида сплоченности товарищей Гарфиэль прогнал прочь сомнения и с размаху хлопнул себя ладонями по щекам:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Понял. Я тоже готов! Братан Отто, когда мы свалим, госпоже Эмилии и Рам ниче не грозит?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Им ничто не угрожает. Никто не посмеет причинить вред кандидатке на трон в обход всех законов. Они будут играть по правилам. В любом случае, их главная цель — заточить госпожу Эмилию в замке.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Тц, ясно! Ну, тогда я щас раскидаю всю стражу, и под шумок мы…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Никаких драк, — отрезал Отто, покачав головой.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— А?</span>
+  </div>
+
+  <p class="narr reveal">Гарфиэль только-только хрустнул костяшками, готовясь к бою, как Отто тотчас сбил с него весь боевой пыл. Торговец серьезно посмотрел на оторопевшего парня:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Солдаты лишь выполняют приказ, они нам не враги. Мы не должны их калечить. В идеале нужно все провернуть так, чтобы они даже мечи не успели достать. Мы убегаем, чтобы доказать свою невиновность, а не ради войны.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Если мы по ним ударим, то сделаем только хуже госпоже Эмилии, сестре и… тому человеку, — добавила Рем.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Именно так, — Отто поправил шляпу.</span>
+  </div>
+
+  <div class="moment moment-heavy reveal">
+    <p class="moment-text">Гарфиэль лишь скрипнул зубами. Он понимал. Головой все прекрасно понимал. Но что делать-то? Ясное дело, что если Маркос вернется, сбежать из гостевого особняка будет нереально. Пока его нет, можно было бы пробиться силой. Но раз силу применять нельзя, что тогда остается?</p>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Я могу узнать у птиц и насекомых, где постов поменьше, — размышлял вслух Отто. — Можно даже попросить их отвлечь стражу. Хотя гарантий никаких…</span>
+  </div>
+
+  <p class="narr reveal">Он собирался, как всегда, прибегнуть к своей Божественной Защите, как вдруг…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— Тогда у меня есть план! — резко вскинула Петра руку.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Правда, Петра? — округлила глаза Рем. Она удивленно глазела на девочку.</span>
+  </div>
+
+  <div class="moment moment-anger reveal">
+    <p class="moment-text">Та сжала кулачки:</p>
+    <p class="moment-text" style="margin-top:1em;">— Да! Я ужасно зла! — аж раскраснелась Петра. — Субару подозревают, на сестрицу Эмилию косо смотрят, сестрицу Рам заставляют напрягаться! Я ни за что не буду плясать под их дудку!</p>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Звучит жутковато, но надежно, — хмыкнул Гарфиэль. — Так че делать будем?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— У меня есть суперплан. Используем особый навык Отто! — Петра указала на того пальцем.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Мой… особый навык? — Отто непонимающе склонил голову.</span>
+  </div>
+
+  <p class="narr reveal">Девочка, казалось, ничуть не сомневалась в успехе своей затеи.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-petra">Петра</span>
+    <span class="dialogue-text sp-petra">— И что же ты заду~умала, Петра? — спросила Мейли.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарф</span>
+    <span class="dialogue-text sp-garfiel">— И Мейли, и Гарф тоже это знают. Слушайте… — поманила Петра всех рукой.</span>
+  </div>
+
+  <p class="narr reveal">И когда те склонились к ней, она с гордым видом посвятила их в детали своего секретного плана. А именно…</p>
+
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="pov-header reveal" data-pov="Гарфиэль">
+    <div class="pov-name">Точка зрения</div>
+    <div class="pov-subtitle" style="color: rgba(216,176,96,0.6);">Гарфиэль</div>
+  </div>
+
+  <div class="location-tag reveal">Гостевой особняк Эмилии · Кухня и служебные коридоры</div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">Солдат</span>
+    <span class="dialogue-text sp-official">— Пожар!! — разорвал тишину истошный крик солдата, и в гостевом особняке вспыхнула паника.</span>
+  </div>
+
+  <p class="narr reveal">Из кухни валил густой, черный дым. Когда почувствовался жар и запах гари, многие храбрые солдаты тут же бросились тушить огонь. Они ворвались в помещение и пытались понять, что же загорелось. Стражники собирались быстро погасить пламя и тем самым пресечь панику на корню. Однако…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Огонь под полом, а дым идет из забитой трубы… Потушить будет непросто.</span>
+  </div>
+
+  <p class="narr reveal">Все пошло по плану, и Петра, автор идеи с пожаром и всех деталей, довольно улыбнулась. Обычно такая улыбка показалась бы милой, но у Гарфиэля отчего-то пробежал мороз по коже.</p>
+
+  <p class="narr reveal">В любом случае…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Я категорически не согласен с тем, что поджог зданий — это мой особый навык! — возмущался Отто.</span>
+  </div>
+
+  <p class="narr reveal">Но несмотря на его протесты, операция сработала на ура. Солдаты Королевства не могли допустить, чтобы важное здание и находящиеся под стражей люди пострадали, поэтому все их силы ушли на борьбу с дымом, а о Гарфиэле и остальных они напрочь забыли.</p>
+
+  <p class="narr reveal">Тем временем двое солдат все же не покинули пост у задней двери.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Звиняйте, но вам придется малех вздремнуть!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Простите. Я зла на вас… только из-за сестры.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Гх…</span>
+  </div>
+
+  <p class="narr reveal">Гарфиэль с Рем быстро их вырубили — путь освобожден. Те даже не успели обнажить мечи. Условия Отто были выполнены, и боевая парочка обменялась кивками.</p>
+
+  <p class="narr reveal">Затем Отто, Петра, Мейли и остальные покинули здание.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-meili">Мейли</span>
+    <span class="dialogue-text sp-meili">— Если вам так уж хотелось пошуметь, я могла бы натравить своих зверюшек, и все было бы в ажу~уре, — протянула Мейли.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-emilia">Эмилия</span>
+    <span class="dialogue-text sp-emilia">— Ни за что! — ответила Петра. — Тогда все точно поверят в тот бред! Скажут: Субару — <span class="cult-mention">Архиепископ Греха</span>, госпожа Эмилия связана с <span class="cult-mention">Ведьмой Зависти</span>, Мейли кошмарит всех монстрами, а Отто сжигает один дом за другим!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Насчет последнего… — встрял Отто, — у меня есть алиби! И тогда, и сейчас со мной была Петра!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Ну ладно-ладно, с наклонностями братца Отто или без, я поняла~а, — пожала плечами Мейли, пока бежала рядом и держала приподнятым подол юбки.</span>
+  </div>
+
+  <p class="narr reveal">Гарфиэль понимал: за этой беспечностью скрывается досада. У Мейли была сила. Но пусти она ее в ход — и навредит тем, кого хочет защитить. Точно палка о двух концах. Потому Мейли и бесилась.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Не парься. Раз тебе нельзя в бой, я поработаю за двоих, — Гарфиэль поравнялся с девочкой и потрепал ее по макушке.</span>
+  </div>
+
+  <p class="narr reveal">Мейли скривилась и смерила его таким презрительным взглядом, что тот аж скрипнул зубами.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Братан Отто найдет Босса ушами, а я — носом. А ты пока… во, точно! Подбадривай нас! Подбадривай давай!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Подбадривать? Типа… «давай-дава~ай»?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Во-во! Одобрение, знаешь ли, дает сил!</span>
+  </div>
+
+  <p class="narr reveal">Мейли посмотрела на него с сомнением, но Гарфиэлю это чувство было хорошо знакомо.</p>
+
+  <p class="narr reveal">Там, в Пристелле, куда они так и не добрались, он смог выстоять в бою с восставшим из мертвых Восьмируким Курганом только благодаря младшим брату и сестре, а также жителям города, в которых вдохнула надежду речь Субару.</p>
+
+  <p class="narr reveal">Да, именно так. Гарфиэль победил благодаря поддержке. А люди нашли в себе силы поддержать его лишь потому, что их воодушевил Субару. Отчаяние, что принес <span class="cult-mention">Культ Ведьмы</span>, Нацуки Субару выжег пламенем надежды.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— И чтоб Босс оказался <span class="cult-mention">Архиепископом Греха</span>?! Да хрен там плавал!</span>
+  </div>
+
+  <p class="narr reveal">В Гарфиэле клокотала глухая ярость: он словно чувствовал, как грязью обливают спину того, кого он безмерно уважал. Сама мысль о подозрениях казалась полным бредом.</p>
+
+  <p class="narr reveal">И дело не только в Пристелле. Было Святилище, где Гарфиэль жил с бабушкой; деревня Алам, откуда родом Петра, спасенная от <span class="cult-mention">Культа Ведьмы</span>; воины, сразившие вместе с Субару Белого Кита… Множество людей знали, какое у Нацуки Субару доброе сердце.</p>
+
+  <p class="narr reveal">И сильнее всех верила в Субару именно Эмилия.</p>
+
+  <p class="narr reveal">По словам Отто, вызов в замок был лишь предлогом, чтобы взять ее под стражу, а допрос для снятия обвинений с Субару — фикцией. Но если у них есть хоть капля желания докопаться до правды, никто не сможет замолвить за Субару слово лучше, чем Эмилия, которая вложит в свой рассказ всю душу.</p>
+
+  <div class="moment moment-anger reveal">
+    <p class="moment-text">— Дерьмо, — сквозь зубы выплюнул Гарфиэль.</p>
+    <p class="moment-text" style="margin-top:1em;">Обидно. Как же до чертиков обидно. Обида жгла изнутри нестерпимым огнем. Субару ведь так старался! Рвал жилы, только чтобы стать опорой для любимой Эмилии и защитить всех, кто ему дорог!</p>
+    <p class="moment-text" style="margin-top:1em;">Почему же никто не хочет выслушать тех, кто знает о его подвигах? Дай они им хоть шанс, и все бы сразу прояснилось. Всем стало бы ясно: Нацуки Субару — это тот, кто изо всех сил бьется за недостижимые идеалы. Самый крутой парень на свете, которым Гарфиэль гордится, как старшим братом.</p>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарф</span>
+    <span class="dialogue-text sp-garfiel">— Братик Гарф…</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Ниче! «Курган врага и без рук завалит!» Не время сопли жевать!</span>
+  </div>
+
+  <p class="narr reveal">Хотел подбодрить Мейли, а в итоге сам чуть не раскис. Громким криком и лязгом клыков Гарфиэль разогнал хандру и уверенно уставился вперед.</p>
+
+  <p class="narr reveal">Мейли слегка прищурилась.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарф</span>
+    <span class="dialogue-text sp-garfiel">— А вы и правда… хорошие друзья братика Субару и сестренки Эмилии, да-а… — протянула она слова, что прозвучали для Гарфиэля высшей похвалой.</span>
+  </div>
+
+  <p class="narr reveal">Рем поравнялась с бегущим впереди Отто и спросила:</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Господин Отто, что дальше?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Сюда, — махнул рукой торговец. — Для начала нам нужно затаиться, чтобы запутать следы. Очень скоро они заметят, что мы сбежали. Надо поскорее выбраться из дворянского квартала. И в этом нам помогут они.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Ясно… — лишь сдержанно кивнула та.</span>
+  </div>
+
+  <div class="location-tag reveal">Переулки дворянского квартала · ЛугуНика</div>
+
+  <p class="narr reveal">Отто вел их по переулкам, прячась в тенях, подальше от гостевого особняка. Его взгляд был прикован к копошащимся вокруг насекомым.</p>
+
+  <p class="narr reveal">У Гарфиэля тоже были не лучшие воспоминания о временах, когда Отто вел переговоры с жуками Зодда — тогда ему крепко от них досталось. Но теперь, когда они были на одной стороне, более надежных союзников — как среди людей, так и среди насекомых — сыскать было трудно.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Если нас остановят на пропускном пункте, нам конец. Поэтому… Гарфиэль!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Понял! Эй, держитесь крепче!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— А-а-а!</span>
+  </div>
+
+  <p class="narr reveal">Гарфиэль подхватил Мейли и Петру, закинул каждую под мышку и оттолкнулся от массивной стены, что разделяла квартал аристократов и квартал простолюдинов, и перемахнул на ту сторону. Для защиты столицы эта преграда играла важнейшую роль, но для ног Гарфиэля перепрыгнуть ее было раз плюнуть.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Ждите здесь. Ща перекину братана Отто и Рем.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарф</span>
+    <span class="dialogue-text sp-garfiel">— Понятно, но… Гарф, нельзя же так внезапно хватать девочек! Я чуть со страху не умерла!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— А? Че за глупости… Эй, не смотри на меня так жутко! Ладно, ладно, виноват!</span>
+  </div>
+
+  <p class="narr reveal">Петра сверлила его таким немигающим взглядом, что Гарфиэль невольно поежился и извинился. Он разбежался, готовясь снова перепрыгнуть стену, но тут…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Извини. Обошлись без твоей помощи.</span>
+  </div>
+
+  <p class="narr reveal">Гарфиэль остолбенел. Прямо перед ним только что сама приземлилась Рем. И дело было не только в том, что она сама перемахнула через стену. Гораздо больше его поразило другое.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Надо же, братик Отто даже не завизжа~ал, — хмыкнула Мейли.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Был близок к этому… Рем, опустите меня на землю. Иначе господин Нацуки меня прибьет.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— А? При чем здесь вообще тот человек? Не понимаю.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— С таким лицом так не говорят!</span>
+  </div>
+
+  <p class="narr reveal">Стоило оказаться на руках у Рем, как Отто сжался под ее суровым взглядом и взмолился о пощаде. Наконец девушка опустила его на землю, и Петра с Мейли тут же принялись над ним подшучивать. Глядя на эту сцену, Гарфиэль шумно выдохнул — бушующие чувства наконец успокоились.</p>
+
+  <p class="narr reveal">Без сомнений, все было очень плохо. Возможно, даже хуже, чем когда их втянули в гражданскую войну в Империи. Но Субару наверняка цел и невредим вместе с Беатрис. Эмилия с Рам тоже не станут пороть горячку и сделают все возможное. А здесь, рядом с Гарфиэлем, надежные друзья: Отто, Рем, Петра и Мейли. И он станет для них щитом.</p>
+
+  <p class="narr reveal">Да, все плохо. Но они могут смеяться. А раз могут — значит, еще не загнаны в угол.</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Братан Отто, в следующий раз я тебя понесу.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— О да, буду только рад.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Ага. И че теперь? Ты там говорил че-то про спрятаться?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Да. Для начала пойдем в какое-нибудь безлюдное…</span>
+  </div>
+
+  <div class="moment moment-shock reveal">
+    <p class="moment-text">Медленно осматривая окрестности, Отто вдруг замолк. Он растерянно заморгал, а затем принялся лихорадочно обшаривать взглядом здания и тени у стены.</p>
+    <p class="moment-text" style="margin-top:1em;">Гарфиэль почуял неладное: Отто охватила паника.</p>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Братан Отто?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-otto">Отто</span>
+    <span class="dialogue-text sp-otto">— Никого, — Отто в ужасе развернулся к ним. Его лицо исказилось.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Кого — никого? — переспросил Гарфиэль, и Отто судорожно вцепился ему в руку.</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-garfiel">Гарфиэль</span>
+    <span class="dialogue-text sp-garfiel">— Жуков Зодда… Нет, не только Зодда. Всех насекомых, которые вели нас досюда… Они все исчезли… Быть не может! — хрипел он срывающимся от паники голосом. — Мы попались! Я не знаю как, но… насекомые нас обманули!</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-rem">Рем</span>
+    <span class="dialogue-text sp-rem">— Насекомые? — опешила Рем. — Обманули… вас? Разве так бывает?</span>
+  </div>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Еще как! Нас заманили в ловушку! Здесь негде спрятаться! Нужно…</span>
+  </div>
+
+  <p class="narr reveal">Их «безопасная зона» обернулась мышеловкой. Отто не мог поверить, что насекомые предали его, но он отчаянно пытался предупредить остальных о надвигающейся беде.</p>
+
+  <p class="narr reveal">Гарфиэль мигом стряхнул оцепенение и приготовился выполнить приказ, как вдруг…</p>
+
+  <div class="dialogue-block reveal">
+    <span class="speaker-tag sp-official">—</span>
+    <span class="dialogue-text sp-official">— Достаточно.</span>
+  </div>
+
+  <p class="narr reveal">Худший из всех возможных преследователей нагнал их именно в этот миг.</p>
+
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div style="text-align:center; padding: 40px 0 80px; opacity: 0.4;" class="reveal">
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.5em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px;">Конец главы</div>
+    <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 28px; color: var(--accent);">騙し討ち</div>
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.3em; color: var(--text-dim); margin-top: 12px;">Арка 10 · Глава 16</div>
+  </div>
+
+</main>
+
+<!-- ════ NAVIGATION BUTTONS ════ -->
+<nav class="nav-buttons">
+  <a href="10-15.html" class="nav-btn nav-btn-prev">
+    <span class="nav-icon">←</span>
+    <span>Глава 15</span>
+  </a>
+  <a href="index.html" class="nav-btn nav-btn-toc">
+    <span class="nav-icon">☰</span>
+    <span>Оглавление</span>
+  </a>
+  <a href="10-17.html" class="nav-btn nav-btn-next">
+    <span>Глава 17</span>
+    <span class="nav-icon">→</span>
+  </a>
+</nav>
+
+<script>
+// ── Helpers ──
+const STORAGE_KEY = 'rezero-settings';
+
+function saveSettings(obj) {
+  try {
+    const cur = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({...cur, ...obj}));
+  } catch(e) {}
+}
+
+function loadSettings() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { return {}; }
+}
+
+// ── Theme toggle ──
+const themeBtn = document.getElementById('theme-toggle');
+const iconSun  = document.getElementById('icon-sun');
+const iconMoon = document.getElementById('icon-moon');
+const THEME_KEY = 'rezero-theme';
+
+function applyTheme(theme) {
+  if (theme === 'light') {
+    document.body.classList.add('light-theme');
+    iconSun.style.display  = 'block';
+    iconMoon.style.display = 'none';
+  } else {
+    document.body.classList.remove('light-theme');
+    iconSun.style.display  = 'none';
+    iconMoon.style.display = 'block';
+  }
+}
+
+const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+applyTheme(savedTheme);
+
+themeBtn.addEventListener('click', () => {
+  const isLight = document.body.classList.contains('light-theme');
+  const next = isLight ? 'dark' : 'light';
+  applyTheme(next);
+  localStorage.setItem(THEME_KEY, next);
+});
+</script>
+
+<script>
+// ── Settings panel toggle ──
+const settingsToggle = document.getElementById('settings-toggle');
+const settingsPanel  = document.getElementById('settings-panel');
+
+settingsToggle.addEventListener('click', () => {
+  const open = settingsPanel.classList.toggle('open');
+  settingsToggle.classList.toggle('active', open);
+});
+
+// Close panel when clicking outside
+document.addEventListener('click', (e) => {
+  if (!settingsPanel.contains(e.target) && e.target !== settingsToggle && !settingsToggle.contains(e.target)) {
+    settingsPanel.classList.remove('open');
+    settingsToggle.classList.remove('active');
+  }
+});
+
+// ── Font selector ──
+const fontBtns = document.querySelectorAll('#font-btns .settings-btn');
+const mainEl   = document.getElementById('main-content');
+
+function applyFont(fontName) {
+  document.body.style.fontFamily = `'${fontName}', Georgia, serif`;
+  fontBtns.forEach(b => b.classList.toggle('active', b.dataset.font === fontName));
+}
+
+fontBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyFont(btn.dataset.font);
+    saveSettings({ font: btn.dataset.font });
+  });
+});
+
+// ── Font size ──
+const fontSizeSlider = document.getElementById('font-size-slider');
+const fontSizeVal    = document.getElementById('font-size-val');
+
+function applyFontSize(size) {
+  document.body.style.fontSize = size + 'px';
+  fontSizeVal.textContent = size + 'px';
+  fontSizeSlider.value = size;
+}
+
+fontSizeSlider.addEventListener('input', () => {
+  applyFontSize(parseInt(fontSizeSlider.value));
+  saveSettings({ fontSize: fontSizeSlider.value });
+});
+
+// ── Container width ──
+const widthSlider = document.getElementById('width-slider');
+const widthVal    = document.getElementById('width-val');
+
+function applyWidth(w) {
+  const style = `${w}px`;
+  document.getElementById('main-content').style.maxWidth = style;
+  document.querySelector('.nav-buttons').style.maxWidth = style;
+  widthVal.textContent = style;
+  widthSlider.value = w;
+}
+
+widthSlider.addEventListener('input', () => {
+  applyWidth(parseInt(widthSlider.value));
+  saveSettings({ width: widthSlider.value });
+});
+
+// ── Animation toggle ──
+const animOn  = document.getElementById('anim-on');
+const animOff = document.getElementById('anim-off');
+
+function applyAnim(enabled) {
+  if (enabled) {
+    document.body.classList.remove('no-anim');
+    animOn.classList.add('active');
+    animOff.classList.remove('active');
+  } else {
+    document.body.classList.add('no-anim');
+    // Make all hidden elements visible immediately
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    animOff.classList.add('active');
+    animOn.classList.remove('active');
+  }
+}
+
+animOn.addEventListener('click', () => { applyAnim(true); saveSettings({ anim: true }); });
+animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim: false }); });
+
+// ── Emotional blocks toggle ──
+const momentsOn  = document.getElementById('moments-on');
+const momentsOff = document.getElementById('moments-off');
+
+function applyMomentBlocks(enabled) {
+  document.body.classList.toggle('plain-moments', !enabled);
+  momentsOn.classList.toggle('active', enabled);
+  momentsOff.classList.toggle('active', !enabled);
+}
+
+momentsOn.addEventListener('click', () => { applyMomentBlocks(true); saveSettings({ momentBlocks: true }); });
+momentsOff.addEventListener('click', () => { applyMomentBlocks(false); saveSettings({ momentBlocks: false }); });
+
+// ── Text alignment ──
+const alignBtns = document.querySelectorAll('#align-btns .settings-btn');
+
+function applyAlign(align) {
+  const content = document.getElementById('main-content');
+  content.querySelectorAll('p, .moment-text, .dragon-eye-text, .return-text, .inner-fire').forEach(el => { el.style.textAlign = align; });
+  alignBtns.forEach(b => b.classList.toggle('active', b.dataset.align === align));
+}
+
+alignBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyAlign(btn.dataset.align);
+    saveSettings({ align: btn.dataset.align });
+  });
+});
+
+// ── Load persisted settings ──
+(function() {
+  const s = loadSettings();
+  if (s.font) applyFont(s.font);
+  if (s.fontSize) applyFontSize(parseInt(s.fontSize));
+  if (s.width) applyWidth(parseInt(s.width));
+  if (s.anim === false) applyAnim(false);
+  if (s.momentBlocks === false) applyMomentBlocks(false);
+  if (s.align) applyAlign(s.align);
+})();
+</script>
+
+<script>
+// ── Progress bar ──
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+});
+
+// ── Reveal on scroll ──
+const revealEls = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+// ── Ambient particle canvas ──
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function Particle() {
+  this.reset();
+}
+Particle.prototype.reset = function() {
+  this.x = Math.random() * W;
+  this.y = Math.random() * H;
+  this.vx = (Math.random() - 0.5) * 0.15;
+  this.vy = -Math.random() * 0.3 - 0.05;
+  this.r = Math.random() * 1.2 + 0.3;
+  this.alpha = Math.random() * 0.4 + 0.05;
+  this.life = 1;
+  this.decay = Math.random() * 0.002 + 0.001;
+  // Gold, green (Krusch), and purple (Beatrice) particles
+  const roll = Math.random();
+  if (roll > 0.65) {
+    this.color = `rgba(200,164,106,${this.alpha})`;
+  } else if (roll > 0.35) {
+    this.color = `rgba(90,170,122,${this.alpha * 0.7})`;
+  } else {
+    this.color = `rgba(160,100,220,${this.alpha * 0.5})`;
+  }
+};
+
+for (let i = 0; i < 80; i++) {
+  const p = new Particle();
+  p.y = Math.random() * H;
+  particles.push(p);
+}
+
+function animParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= p.decay;
+    if (p.life <= 0 || p.y < -10) p.reset();
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.life * 0.6;
+    ctx.fill();
+  });
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+
+// ── Dragon Eye dramatic entrance ──
+// When the dragon-eye-reveal becomes visible, add extra flare
+const dragonEye = document.querySelector('.dragon-eye-reveal');
+if (dragonEye) {
+  const eyeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Spawn a burst of golden particles from center
+        for (let i = 0; i < 20; i++) {
+          setTimeout(() => {
+            const burst = new Particle();
+            burst.x = W / 2 + (Math.random() - 0.5) * 200;
+            burst.y = H / 2;
+            burst.vy = -(Math.random() * 1.5 + 0.5);
+            burst.vx = (Math.random() - 0.5) * 1.2;
+            burst.alpha = 0.8;
+            burst.r = Math.random() * 2 + 1;
+            burst.color = `rgba(220,180,40,${burst.alpha})`;
+            burst.decay = 0.008;
+            particles.push(burst);
+            if (particles.length > 120) particles.splice(0, 1);
+          }, i * 60);
+        }
+        eyeObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  eyeObserver.observe(dragonEye);
+}
+
+// ── Return block: activate rings when visible ──
+const returnBlock = document.querySelector('.return-block');
+if (returnBlock) {
+  const retObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        returnBlock.querySelectorAll('.return-ring').forEach(r => {
+          r.style.opacity = '1';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  retObserver.observe(returnBlock);
+}
+</script>
+</body>
+</html>
