@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re:Zero — Арка 10, Глава 23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;600;700&family=Cormorant+Infant:ital,wght@0,400;0,600;1,400;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c14;
+  --bg2: #0e1320;
+  --bg3: #13192e;
+  --text: #ddd4c0;
+  --text-dim: #8a8070;
+  --accent: #c8a46a;
+  --accent2: #7a9cc8;
+  --divider: #2a3050;
+  --ram: #e87aaa;
+  --emilia: #aac8ec;
+  --bordeaux: #d04040;
+  --marcos: #8a9ab0;
+  --fiore: #f0c060;
+  --sakura: #c08ad0;
+  --felt: #e8a050;
+  --reinhard: #5090d8;
+  --witch: #9040a0;
+  --narrator: #ddd4c0;
+  --krusch: #5aaa7a;
+  --tiga: #d4a060;
+  --beatrice: #b08adc;
+  --subaru: #90b8e0;
+}
+
+/* ── Light theme overrides ── */
+body.light-theme {
+  --bg: #f0ebe0;
+  --bg2: #e8e2d4;
+  --bg3: #ddd7c8;
+  --text: #1a1610;
+  --text-dim: #6a5e4a;
+  --accent: #8a5e1a;
+  --accent2: #2a5888;
+  --divider: #c8bca0;
+}
+
+body.light-theme header {
+  background: linear-gradient(180deg, rgba(240,235,224,0.97) 70%, transparent);
+  border-bottom-color: rgba(138,94,26,0.15);
+}
+
+body.light-theme p.italic-narr {
+  color: #3a3020;
+}
+
+body.light-theme p.thought {
+  color: #4a3e2a;
+  border-left-color: rgba(138,94,26,0.4);
+}
+
+body.light-theme .inner-fire {
+  color: #5a3a10;
+  border-left-color: var(--accent);
+}
+
+body.light-theme .moment-resolve {
+  background: rgba(240,235,220,0.7);
+  border-color: rgba(138,94,26,0.35);
+}
+body.light-theme .moment-resolve .moment-text { color: #2a1e08; }
+
+body.light-theme .moment-shock {
+  background: rgba(220,230,245,0.6);
+  border-color: rgba(60,100,180,0.3);
+}
+body.light-theme .moment-shock .moment-text { color: #1a2a3a; }
+
+body.light-theme .moment-anger {
+  background: rgba(245,225,220,0.6);
+  border-color: rgba(180,60,60,0.3);
+}
+body.light-theme .moment-anger .moment-text { color: #2a0808; }
+
+body.light-theme .moment-heavy {
+  background: rgba(220,225,235,0.6);
+  border-color: rgba(80,90,120,0.3);
+}
+body.light-theme .moment-heavy .moment-text { color: #1a1e2a; }
+
+body.light-theme .moment-warmth {
+  background: rgba(245,235,240,0.6);
+  border-color: rgba(200,100,140,0.3);
+}
+body.light-theme .moment-warmth .moment-text { color: #2a1020; }
+
+body.light-theme .moment-krusch {
+  background: rgba(220,240,230,0.6);
+  border-color: rgba(60,140,90,0.3);
+}
+body.light-theme .moment-krusch .moment-text { color: #0a2a18; }
+
+body.light-theme .dragon-eye-reveal {
+  background: rgba(245,240,220,0.9);
+  border-color: rgba(160,120,20,0.4);
+}
+
+body.light-theme .dragon-eye-text {
+  color: #7a5000;
+  text-shadow: 0 0 8px rgba(160,100,0,0.2);
+}
+
+body.light-theme .return-block {
+  background: rgba(230,225,245,0.85);
+  border-color: rgba(100,60,180,0.3);
+}
+
+body.light-theme .return-kanji {
+  color: rgba(100,60,180,0.85);
+  text-shadow: 0 0 20px rgba(100,60,180,0.4);
+}
+
+body.light-theme .return-label {
+  color: rgba(100,60,180,0.6);
+}
+
+body.light-theme .return-text {
+  color: #2a1a4a;
+}
+
+body.light-theme .nav-btn {
+  background: rgba(230,224,210,0.8);
+  border-color: rgba(138,94,26,0.25);
+  color: var(--text-dim);
+}
+
+body.light-theme .nav-btn:hover {
+  background: rgba(215,208,192,0.95);
+}
+
+body.light-theme .chapter-kanji {
+  color: rgba(138,94,26,0.65);
+}
+
+body.light-theme .location-tag {
+  color: rgba(138,94,26,0.7);
+}
+
+body.light-theme .scroll-hint,
+body.light-theme .chapter-arc {
+  color: #8a7a60;
+}
+
+body.light-theme .chapter-subtitle {
+  color: #2a2010;
+}
+
+body.light-theme .scroll-chevron {
+  border-right-color: rgba(100,70,20,0.5);
+  border-bottom-color: rgba(100,70,20,0.5);
+}
+
+body.light-theme .divider-line {
+  background: linear-gradient(90deg, transparent, rgba(138,94,26,0.5), transparent);
+}
+
+body.light-theme .divider-sigil {
+  display: inline-block;
+  text-align: center;
+  color: rgba(138,94,26,0.8);
+}
+
+body.light-theme #canvas {
+  opacity: 0.12;
+}
+
+/* Dialogue text — override the hardcoded !important */
+body.light-theme .dialogue-text {
+  color: #1a1610 !important;
+}
+
+/* Narration colours */
+body.light-theme p.narr {
+  color: #1a1610;
+}
+
+body.light-theme p.italic-narr {
+  color: #3a3020;
+}
+
+body.light-theme p.thought {
+  color: #4a3e2a;
+  border-left-color: rgba(138,94,26,0.4);
+}
+
+/* Scene / pov labels */
+body.light-theme .scene-label,
+body.light-theme .pov-name {
+  color: #8a7a60;
+}
+
+body.light-theme .pov-subtitle {
+  color: rgba(138,94,26,0.55);
+}
+
+/* Dragon & cult inline mentions */
+body.light-theme .dragon-mention {
+  color: #8a5a00;
+  text-shadow: 0 0 6px rgba(138,90,0,0.2);
+}
+
+body.light-theme .cult-mention {
+  color: #6a3080;
+  text-shadow: 0 0 6px rgba(106,48,128,0.2);
+}
+
+
+.archbishop-sloth { color: #9d77df; text-shadow: 0 0 8px rgba(157,119,223,0.28); }
+.org-six-tongues { color: #d4a840; letter-spacing: 0.02em; text-shadow: 0 0 8px rgba(212,168,64,0.25); }
+
+body.light-theme .archbishop-sloth { color: #6f3fc0; }
+body.light-theme .org-six-tongues { color: #8a5e1a; }
+
+/* ── Settings panel light ── */
+body.light-theme #settings-panel {
+  background: rgba(240,235,224,0.97);
+  border-color: rgba(138,94,26,0.25);
+}
+body.light-theme .settings-title {
+  color: var(--accent);
+  border-bottom-color: rgba(138,94,26,0.2);
+}
+body.light-theme .settings-label { color: var(--text-dim); }
+body.light-theme .settings-btn {
+  background: rgba(220,214,200,0.8);
+  border-color: rgba(138,94,26,0.2);
+  color: var(--text);
+}
+body.light-theme .settings-btn:hover,
+body.light-theme .settings-btn.active {
+  background: rgba(138,94,26,0.15);
+  border-color: rgba(138,94,26,0.5);
+  color: var(--accent);
+}
+body.light-theme input[type="range"] { accent-color: var(--accent); }
+
+/* ── Settings button group (bottom-left) ── */
+#settings-controls {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 200;
+}
+
+/* ── Settings toggle button ── */
+#settings-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,164,106,0.3);
+  background: rgba(14,19,32,0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,164,106,0.8);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+#settings-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  border-color: rgba(200,164,106,0.6);
+  color: rgba(200,164,106,1);
+}
+
+#settings-toggle:active { transform: scale(0.95); }
+#settings-toggle.active {
+  border-color: rgba(200,164,106,0.7);
+  color: rgba(200,164,106,1);
+  box-shadow: 0 0 20px rgba(200,164,106,0.2);
+}
+
+body.light-theme #settings-toggle {
+  background: rgba(230,224,210,0.92);
+  border-color: rgba(138,94,26,0.35);
+  box-shadow: 0 4px 20px rgba(100,80,40,0.2);
+  color: rgba(138,94,26,0.8);
+}
+body.light-theme #settings-toggle:hover {
+  border-color: rgba(138,94,26,0.65);
+  box-shadow: 0 6px 28px rgba(100,80,40,0.3);
+  color: rgba(138,94,26,1);
+}
+body.light-theme #settings-toggle.active {
+  border-color: rgba(138,94,26,0.7);
+  color: rgba(138,94,26,1);
+}
+
+/* ── Settings panel ── */
+#settings-panel {
+  position: fixed;
+  bottom: 110px;
+  left: 32px;
+  z-index: 199;
+  width: 300px;
+  background: rgba(8,12,20,0.96);
+  border: 1px solid rgba(200,164,106,0.2);
+  border-radius: 8px;
+  padding: 20px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  transform: translateY(12px) scale(0.97);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#settings-panel.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.settings-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(200,164,106,0.15);
+}
+
+.settings-group {
+  margin-bottom: 16px;
+}
+
+.settings-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.settings-btn-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.settings-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 6px 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(200,164,106,0.2);
+  background: rgba(20,25,40,0.8);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.settings-btn:hover {
+  background: rgba(200,164,106,0.08);
+  border-color: rgba(200,164,106,0.4);
+  color: var(--accent);
+}
+
+.settings-btn.active {
+  background: rgba(200,164,106,0.12);
+  border-color: rgba(200,164,106,0.5);
+  color: var(--accent);
+}
+
+.settings-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+  height: 3px;
+}
+
+.settings-slider-val {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  color: var(--accent);
+  min-width: 36px;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+
+/* ── Animations disabled class ── */
+body.no-anim .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+body.no-anim .chapter-kanji,
+body.no-anim .chapter-arc,
+body.no-anim .chapter-num,
+body.no-anim .chapter-subtitle {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.no-anim .scroll-hint { animation: none !important; opacity: 0.5 !important; }
+body.no-anim .divider-sigil {
+  display: inline-block;
+  text-align: center; animation: none !important; opacity: 0.7 !important; }
+body.no-anim .moment-shock.visible { animation: none !important; }
+body.no-anim .moment-resolve.visible { animation: none !important; }
+body.no-anim .moment-anger.visible { animation: none !important; }
+body.no-anim .scroll-chevron { animation: none !important; opacity: 0.5 !important; }
+
+/* ── Theme toggle button ── */
+#theme-toggle {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 200;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,164,106,0.3);
+  background: rgba(14,19,32,0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,164,106,0.8);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  border-color: rgba(200,164,106,0.6);
+  color: rgba(200,164,106,1);
+}
+
+#theme-toggle:active {
+  transform: scale(0.95);
+}
+
+body.light-theme #theme-toggle {
+  background: rgba(230,224,210,0.92);
+  border-color: rgba(138,94,26,0.35);
+  box-shadow: 0 4px 20px rgba(100,80,40,0.2);
+  color: rgba(138,94,26,0.8);
+}
+
+body.light-theme #theme-toggle:hover {
+  border-color: rgba(138,94,26,0.65);
+  box-shadow: 0 6px 28px rgba(100,80,40,0.3);
+  color: rgba(138,94,26,1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.85;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Ambient particles ── */
+#canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--krusch), var(--accent), var(--beatrice));
+  width: 0%;
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ── Header ── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(8,12,20,0.96) 70%, transparent);
+  border-bottom: 1px solid rgba(200,164,106,0.1);
+}
+
+.header-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-family: 'Cormorant SC', 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.header-pov {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  transition: color 0.6s ease;
+}
+
+/* ── Chapter title block ── */
+.chapter-title-block {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.chapter-kanji {
+  font-family: serif;
+  font-size: 48px;
+  color: rgba(200,164,106,0.25);
+  letter-spacing: 0.4em;
+  margin-bottom: 32px;
+  animation: fadeSlideIn 2s ease forwards;
+}
+
+.chapter-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 2s ease 0.3s both;
+}
+
+.chapter-num {
+  font-family: 'Cormorant SC', 'Cinzel Decorative', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  animation: fadeSlideIn 2s ease 0.5s both;
+  text-shadow: 0 0 60px rgba(200,164,106,0.3);
+}
+
+.chapter-subtitle {
+  font-family: 'Cormorant Infant', 'EB Garamond', serif;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 32px);
+  color: var(--text);
+  margin-bottom: 60px;
+  animation: fadeSlideIn 2s ease 0.8s both;
+}
+
+.scroll-hint {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ── Main content ── */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 40px 160px;
+}
+
+/* ── Paragraph reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Narration ── */
+p.narr {
+  margin-bottom: 1.3em;
+  color: var(--text);
+}
+
+p.italic-narr {
+  font-style: italic;
+  color: #c8bcaa;
+  margin-bottom: 1.3em;
+}
+
+p.thought {
+  font-style: italic;
+  color: #b0a898;
+  padding-left: 20px;
+  border-left: 2px solid rgba(200,164,106,0.3);
+  margin: 1em 0 1.3em;
+}
+
+/* ── Dialogue ── */
+.dialogue-block {
+  margin: 0.4em 0 1.1em;
+  position: relative;
+}
+
+.speaker-tag {
+  display: none;
+}
+
+.dialogue-text {
+  font-style: normal;
+  color: #e0d8cc;
+  display: block;
+  padding-left: 4px;
+}
+
+.dialogue-text.emotional {
+  font-style: italic;
+}
+
+.sp-ram { color: var(--ram); }
+.sp-emilia { color: var(--emilia); }
+.sp-bordeaux { color: var(--bordeaux); }
+.sp-marcos { color: var(--marcos); }
+.sp-fiore { color: var(--fiore); }
+.sp-sakura { color: var(--sakura); }
+.sp-felt { color: var(--felt); }
+.sp-reinhard { color: var(--reinhard); }
+.sp-official { color: #9aaabb; }
+.sp-krusch { color: var(--krusch); }
+.sp-tiga { color: var(--tiga); }
+.sp-beatrice { color: var(--beatrice); }
+.sp-subaru { color: var(--subaru); }
+.sp-otto { color: #8cc878; }
+.sp-garfiel { color: #d8b060; }
+.sp-rem { color: #8ac8e8; }
+.sp-petra { color: #e8b0c8; }
+.sp-meili { color: #c8a0e8; }
+
+
+/* ── Character colors stripped: dialogue colour-neutral ── */
+.dialogue-text { color: #e0d8cc !important; }
+/* ── Section divider ── */
+.section-divider {
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+.divider-sigil {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  display: inline-block;
+  animation: sigil-pulse 3s ease-in-out infinite;
+}
+
+.divider-line {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 16px auto;
+  width: 60%;
+  opacity: 0.4;
+}
+
+/* ── Dramatic moments ── */
+.moment,
+.dragon-eye-reveal,
+.return-block {
+  --moment-accent: var(--accent);
+  --moment-bg: rgba(15, 19, 32, 0.72);
+  --moment-border: rgba(200, 164, 106, 0.22);
+  position: relative;
+  margin: 2.2em auto;
+  padding: 24px 28px 24px 32px;
+  max-width: 780px;
+  border: 1px solid var(--moment-border);
+  border-left: 4px solid var(--moment-accent);
+  border-radius: 14px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--moment-accent) 14%, transparent), transparent 42%),
+    var(--moment-bg);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  text-align: left;
+}
+
+.moment::before,
+.dragon-eye-reveal::before,
+.return-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), transparent 55%);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.moment::after,
+.dragon-eye-reveal::after,
+.return-block::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 34px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--moment-accent);
+  opacity: 0.45;
+}
+
+.moment-label { display: none; }
+
+.moment-text,
+.dragon-eye-text,
+.return-text {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.78;
+  letter-spacing: 0.01em;
+  text-shadow: none;
+}
+
+.moment-text + .moment-text,
+.moment-text[style*="margin-top"] {
+  margin-top: 0.85em !important;
+}
+
+.moment-shock { --moment-accent: #7a9cc8; --moment-bg: rgba(12, 22, 38, 0.76); --moment-border: rgba(122,156,200,0.28); }
+.moment-anger { --moment-accent: #d06a6a; --moment-bg: rgba(36, 17, 17, 0.74); --moment-border: rgba(208,106,106,0.26); }
+.moment-resolve { --moment-accent: #c8a46a; --moment-bg: rgba(32, 27, 17, 0.74); --moment-border: rgba(200,164,106,0.32); }
+.moment-heavy { --moment-accent: #8a9ab0; --moment-bg: rgba(14, 17, 28, 0.78); --moment-border: rgba(138,154,176,0.25); }
+.moment-warmth { --moment-accent: #e87aaa; --moment-bg: rgba(34, 18, 27, 0.72); --moment-border: rgba(232,122,170,0.25); }
+.moment-krusch { --moment-accent: #5aaa7a; --moment-bg: rgba(10, 28, 18, 0.74); --moment-border: rgba(90,170,122,0.27); }
+.moment-battle { --moment-accent: #d4a030; --moment-bg: rgba(35, 24, 7, 0.76); --moment-border: rgba(212,160,48,0.30); }
+
+.moment-shock .moment-text,
+.moment-anger .moment-text,
+.moment-resolve .moment-text,
+.moment-heavy .moment-text,
+.moment-warmth .moment-text,
+.moment-krusch .moment-text,
+.moment-battle .moment-text {
+  color: var(--text);
+  font-style: normal;
+}
+
+/* ── Dragon Eye reveal ── */
+.dragon-eye-reveal {
+  --moment-accent: #d6ad3f;
+  --moment-bg: rgba(26, 22, 12, 0.80);
+  --moment-border: rgba(214, 173, 63, 0.35);
+}
+
+.dragon-eye-glyph {
+  display: none;
+}
+
+.dragon-eye-text {
+  color: #f1dfb2;
+  font-style: normal;
+}
+
+/* ── Return from death animation ── */
+.return-block {
+  --moment-accent: #9d77df;
+  --moment-bg: rgba(18, 14, 34, 0.82);
+  --moment-border: rgba(157, 119, 223, 0.34);
+  padding-top: 28px;
+}
+
+.return-vortex,
+.return-ring {
+  display: none;
+}
+
+.return-kanji {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 10px;
+  color: rgba(205, 184, 244, 0.75);
+  font-size: 30px;
+  letter-spacing: 0.16em;
+  text-shadow: none;
+}
+
+.return-label {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+  color: rgba(205, 184, 244, 0.72);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-shadow: none;
+}
+
+.return-text {
+  color: var(--text);
+}
+
+/* ── Garfiel inner monologue ── */
+.inner-fire {
+  position: relative;
+  margin: 1.8em auto;
+  padding: 18px 24px 18px 28px;
+  max-width: 760px;
+  border-left: 4px solid var(--garfiel, var(--accent));
+  border-radius: 0 12px 12px 0;
+  background: rgba(212, 160, 64, 0.08);
+  color: var(--text);
+  font-size: 1em;
+  line-height: 1.85;
+  font-style: normal;
+}
+
+body.light-theme .moment,
+body.light-theme .dragon-eye-reveal,
+body.light-theme .return-block {
+  --moment-bg: rgba(255, 252, 244, 0.78);
+  --moment-border: color-mix(in srgb, var(--moment-accent) 38%, rgba(138,94,26,0.22));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--moment-accent) 12%, transparent), transparent 42%),
+    var(--moment-bg);
+  box-shadow: 0 10px 26px rgba(90, 70, 40, 0.12);
+}
+
+body.light-theme .moment-text,
+body.light-theme .dragon-eye-text,
+body.light-theme .return-text,
+body.light-theme .moment-shock .moment-text,
+body.light-theme .moment-anger .moment-text,
+body.light-theme .moment-resolve .moment-text,
+body.light-theme .moment-heavy .moment-text,
+body.light-theme .moment-warmth .moment-text,
+body.light-theme .moment-krusch .moment-text,
+body.light-theme .moment-battle .moment-text {
+  color: #1a1610;
+}
+
+body.light-theme .dragon-eye-text { color: #3c2b05; }
+body.light-theme .return-kanji,
+body.light-theme .return-label { color: rgba(76, 43, 132, 0.72); text-shadow: none; }
+body.light-theme .inner-fire { color: #2a2010; background: rgba(212, 160, 64, 0.12); border-left-color: var(--accent); }
+
+.moment-shock.visible,
+.moment-resolve.visible,
+.moment-anger.visible,
+.moment-krusch.visible,
+.moment-battle.visible,
+.dragon-eye-glyph,
+.return-kanji {
+  animation: none !important;
+}
+
+
+body.plain-moments .moment,
+body.plain-moments .dragon-eye-reveal,
+body.plain-moments .return-block,
+body.plain-moments .inner-fire {
+  margin: 1em 0;
+  padding: 0;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+  text-align: inherit;
+}
+
+body.plain-moments .moment::before,
+body.plain-moments .moment::after,
+body.plain-moments .dragon-eye-reveal::before,
+body.plain-moments .dragon-eye-reveal::after,
+body.plain-moments .return-block::before,
+body.plain-moments .return-block::after,
+body.plain-moments .dragon-eye-glyph,
+body.plain-moments .return-vortex,
+body.plain-moments .return-ring,
+body.plain-moments .return-kanji,
+body.plain-moments .return-label {
+  display: none !important;
+}
+
+body.plain-moments .moment-text,
+body.plain-moments .dragon-eye-text,
+body.plain-moments .return-text {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+/* ── POV section headers ── */
+.pov-header {
+  display: none;
+}
+.pov-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.pov-subtitle {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(200,164,106,0.5);
+}
+
+/* ── Scene label ── */
+.scene-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 24px 0 8px;
+  opacity: 0.6;
+}
+
+/* ── Navigation buttons ── */
+.nav-buttons {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 40px 100px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1px solid rgba(200,164,106,0.25);
+  border-radius: 3px;
+  background: rgba(8,12,20,0.7);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(200,164,106,0.06), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.nav-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.nav-btn:hover {
+  color: var(--accent);
+  border-color: rgba(200,164,106,0.55);
+  box-shadow: 0 0 20px rgba(200,164,106,0.1);
+  transform: translateY(-1px);
+}
+
+.nav-btn-prev { border-color: rgba(90,170,122,0.25); }
+.nav-btn-prev:hover { color: var(--krusch); border-color: rgba(90,170,122,0.5); box-shadow: 0 0 20px rgba(90,170,122,0.1); }
+
+.nav-btn-toc { border-color: rgba(200,164,106,0.25); }
+.nav-btn-toc:hover { color: var(--accent); border-color: rgba(200,164,106,0.5); }
+
+.nav-btn-next { border-color: rgba(170,100,220,0.25); }
+.nav-btn-next:hover { color: var(--beatrice); border-color: rgba(170,100,220,0.5); box-shadow: 0 0 20px rgba(170,100,220,0.1); }
+
+.nav-icon {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ── Animations ── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes sigil-pulse {
+  0%, 100% { opacity: 0.4; letter-spacing: 0.3em; }
+  50% { opacity: 0.9; letter-spacing: 0.45em; }
+}
+
+@keyframes shock-flare {
+  0% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+  50% { box-shadow: inset 0 0 80px rgba(80,120,200,0.15), 0 0 60px rgba(80,120,200,0.2); }
+  100% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+}
+
+.moment-shock.visible { animation: shock-flare 4s ease-in-out infinite; }
+
+@keyframes resolve-glow {
+  0%, 100% { box-shadow: inset 0 0 50px rgba(200,164,106,0.06), 0 0 40px rgba(200,164,106,0.12); }
+  50% { box-shadow: inset 0 0 80px rgba(200,164,106,0.12), 0 0 70px rgba(200,164,106,0.22); }
+}
+.moment-resolve.visible { animation: resolve-glow 3.5s ease-in-out infinite; }
+
+@keyframes anger-pulse {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(200,60,60,0.05), 0 0 30px rgba(200,60,60,0.08); }
+  50% { box-shadow: inset 0 0 60px rgba(200,60,60,0.12), 0 0 50px rgba(200,60,60,0.15); }
+}
+.moment-anger.visible { animation: anger-pulse 2.5s ease-in-out infinite; }
+
+@keyframes krusch-glow {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(90,170,122,0.05), 0 0 30px rgba(90,170,122,0.08); }
+  50% { box-shadow: inset 0 0 70px rgba(90,170,122,0.12), 0 0 50px rgba(90,170,122,0.15); }
+}
+.moment-krusch.visible { animation: krusch-glow 3s ease-in-out infinite; }
+
+@keyframes eye-pulse {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(255,200,40,0.6)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 30px rgba(255,220,60,0.95)) drop-shadow(0 0 50px rgba(200,140,0,0.5)); transform: scale(1.06); }
+}
+
+@keyframes return-glow {
+  0%, 100% { text-shadow: 0 0 30px rgba(160,80,220,0.7), 0 0 60px rgba(80,40,140,0.4); }
+  50% { text-shadow: 0 0 50px rgba(180,100,255,1), 0 0 90px rgba(100,50,180,0.7), 0 0 4px #fff; }
+}
+
+@keyframes ring-expand {
+  0%   { width: 60px; height: 60px; opacity: 0.8; border-color: rgba(160,80,220,0.7); }
+  100% { width: 320px; height: 320px; opacity: 0; border-color: rgba(80,20,140,0); }
+}
+
+/* ── Scroll indicator ── */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.scroll-chevron {
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(200,164,106,0.5);
+  border-bottom: 1px solid rgba(200,164,106,0.5);
+  transform: rotate(45deg);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+  50% { transform: rotate(45deg) translateY(6px); opacity: 0.9; }
+}
+
+/* ── Witch cult / Dragon ── */
+.cult-mention {
+  color: var(--witch);
+  font-style: normal;
+  text-shadow: 0 0 8px rgba(144,64,160,0.3);
+}
+
+.dragon-mention {
+  color: #d4a020;
+  text-shadow: 0 0 8px rgba(200,150,0,0.3);
+}
+
+/* ── Footnote-style location ── */
+.location-tag {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: rgba(200,164,106,0.35);
+  padding: 8px 0 30px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  main { padding: 60px 20px 100px; }
+  header { padding: 12px 20px; }
+  .header-arc { display: none; }
+  body { font-size: 17px; }
+  .nav-buttons { padding: 40px 20px 80px; gap: 12px; }
+  .nav-btn { padding: 12px 18px; font-size: 10px; }
+  .chapter-kanji { font-size: 28px; letter-spacing: 0.25em; margin-bottom: 20px; }
+  .moment,
+  .dragon-eye-reveal,
+  .return-block {
+    margin: 1.7em 0;
+    padding: 20px 20px 20px 24px;
+    border-radius: 12px;
+  }
+  .moment-text,
+  .dragon-eye-text,
+  .return-text,
+  .inner-fire {
+    line-height: 1.72;
+  }
+}
+
+.jp-minute{margin:28px 0;padding:14px 16px;border-left:3px solid var(--accent2);background:rgba(120,140,180,.08);border-radius:8px;}
+.jp-minute-toggle{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:12px;width:100%;font-family:"Nunito",sans-serif;font-weight:600;color:var(--accent2);}
+.jp-minute-content{margin-top:10px;overflow:hidden;max-height:0;opacity:0;transition:max-height .38s ease,opacity .28s ease;}
+.jp-minute.open .jp-minute-content{opacity:1;}
+.jp-minute-arrow{transition:transform .22s ease;}
+.jp-minute.open .jp-minute-arrow{transform:rotate(180deg);}
+
+.battle-beat{position:relative;padding-left:14px;border-left:2px solid rgba(210,90,70,.35);}
+.battle-beat::before{content:"";position:absolute;left:-5px;top:0.8em;width:7px;height:7px;border-radius:50%;background:rgba(240,120,90,.55);box-shadow:0 0 12px rgba(240,120,90,.35);}
+.battle-beat .moment-text{letter-spacing:.01em;}
+.battle-spark{background:linear-gradient(90deg,rgba(210,90,70,.12),transparent 70%);border-radius:6px;padding:2px 6px;animation:sparkPulse 2.8s ease-in-out infinite;}
+@keyframes sparkPulse{0%,100%{box-shadow:none;}50%{box-shadow:0 0 10px rgba(210,90,70,.22);}}
+body.no-anim .battle-spark{animation:none;}
+
+.archbishop-gluttony { color: #c8a070; text-shadow: 0 0 8px rgba(200,160,112,0.28); }
+body.light-theme .archbishop-gluttony { color: #8a6040; }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="canvas"></canvas>
+
+<!-- Theme toggle -->
+<button id="theme-toggle" aria-label="Переключить тему">
+  <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+  </svg>
+  <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1" x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1" y1="12" x2="3" y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+  </svg>
+</button>
+
+<!-- ════ SETTINGS CONTROLS (bottom-left) ════ -->
+<div id="settings-controls">
+  <button id="settings-toggle" title="Настройки" aria-label="Открыть настройки">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+  </button>
+</div>
+<div id="settings-panel" role="dialog" aria-label="Настройки чтения">
+  <div class="settings-title">Настройки чтения</div>
+
+  <!-- Font selector -->
+  <div class="settings-group">
+    <span class="settings-label">Шрифт</span>
+    <div class="settings-btn-row" id="font-btns">
+      <button class="settings-btn active" data-font="EB Garamond">Garamond</button>
+      <button class="settings-btn" data-font="Merriweather">Merriweather</button>
+      <button class="settings-btn" data-font="Lora">Lora</button>
+      <button class="settings-btn" data-font="PT Serif">PT Serif</button>
+      <button class="settings-btn" data-font="Libre Baskerville">Baskerville</button>
+      <button class="settings-btn" data-font="Source Serif 4">Source Serif</button>
+      <button class="settings-btn" data-font="Nunito">Nunito</button>
+      <button class="settings-btn" data-font="Comic Sans MS">Comic Sans</button>
+    </div>
+  </div>
+
+  <!-- Font size -->
+  <div class="settings-group">
+    <span class="settings-label">Размер текста</span>
+    <div class="settings-slider-row">
+      <input type="range" id="font-size-slider" min="14" max="28" step="1" value="19">
+      <span class="settings-slider-val" id="font-size-val">19px</span>
+    </div>
+  </div>
+
+  <!-- Container width -->
+  <div class="settings-group">
+    <span class="settings-label">Ширина текста</span>
+    <div class="settings-slider-row">
+      <input type="range" id="width-slider" min="480" max="1100" step="20" value="760">
+      <span class="settings-slider-val" id="width-val">760px</span>
+    </div>
+  </div>
+
+  <!-- Text align -->
+  <div class="settings-group">
+    <span class="settings-label">Выравнивание текста</span>
+    <div class="settings-btn-row" id="align-btns">
+      <button class="settings-btn active" data-align="left">По левому</button>
+      <button class="settings-btn" data-align="justify">По ширине</button>
+    </div>
+  </div>
+
+  <!-- Animation toggle -->
+  <div class="settings-group">
+    <span class="settings-label">Анимация появления текста</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="anim-on">Включена</button>
+      <button class="settings-btn" id="anim-off">Выключена</button>
+    </div>
+  </div>
+
+  <!-- Emotional blocks toggle -->
+  <div class="settings-group" style="margin-bottom:0">
+    <span class="settings-label">Эмоциональные блоки</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="moments-on">Карточки</button>
+      <button class="settings-btn" id="moments-off">Обычный текст</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <span class="header-arc">Re:Zero · Арка 10</span>
+  <span class="header-title">Как найти лучший выбор</span>
+  <span class="header-pov" id="pov-indicator">Том 45</span>
+</header>
+
+<!-- ════ TITLE SCREEN ════ -->
+<div class="chapter-title-block">
+  <div class="chapter-kanji">最善の模索</div>
+  <div class="chapter-arc">Re:Zero — Жизнь с нуля в альтернативном мире · Арка 10</div>
+  <div class="chapter-num">Глава 23</div>
+  <div class="chapter-subtitle">«Как найти лучший выбор»</div>
+  <div class="scroll-hint">↓ Читать</div>
+  <div class="scroll-down">
+    <div class="scroll-chevron"></div>
+    <div class="scroll-chevron" style="margin-top:-8px;opacity:0.5;"></div>
+  </div>
+</div>
+
+<!-- ════ MAIN CONTENT ════ -->
+<main id="main-content">
+
+  <div class="location-tag reveal">Королевская столица · Торговый квартал</div>
+
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">※※※※※※※※※※※</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <p class="narr reveal">Королевский замок Лугуника, на который он смотрел уже столько раз, казался таким далеким. Белокаменное здание словно тонуло в вечернем небе.</p>
+  <div class="moment moment-heavy reveal"><p class="moment-text">— Эмилия… — тихо произнес Субару, и его сердце тотчас болезненно сжалось.</p></div>
+  <p class="narr reveal">Она осталась там, запертая в замке на вершине столицы. Субару всем сердцем желал однажды усадить ее на трон в этом самом месте, но уж точно не собирался бросать ее в темницу.</p>
+  <p class="narr reveal">— Эмилия — кандидатка на трон, я полагаю. По крайней мере, на людях с ней должны обращаться почтительно, так что вряд ли ее бросят в темницу, в самом деле.</p>
+  <p class="narr reveal">— Я знаю. Знаю. Но дело не в этом…</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">— А, прости… Ты ведь пытаешься меня подбодрить.</p>
+  <p class="narr reveal">— Все хорошо, я полагаю. Подбадривать Субару, когда он совсем раскис, — это привилегия партнера. Петра и Рем бы сейчас расплакались от зависти, в самом деле.</p>
+  <p class="narr reveal">— Насчет Петры согласен, но вот Рем… Вряд ли бы она расстроилась.</p>
+  <p class="narr reveal">Субару горько усмехнулся и тут же удивился тому, что вообще способен на усмешку. Еще мгновения назад грудь разрывалась от осознания собственной беспомощности и того, что Эмилию придется оставить. Но Беатрис рядом — и от этого уже легче.</p>
+  <p class="narr reveal">Он скользнул по ней взглядом. Девочка состроила милую и донельзя самодовольную мордашку, и Субару снова тихо выдохнул.</p>
+  <p class="narr reveal">Они вдвоем и остальные присутствующие в убежище члены <span class="org-six-tongues">Шести Языков</span> под руководством Рассела готовились уехать точно по плану. Убежищем служил, как ни дерзко это было, один из самых больших складов в торговом квартале. Он находился совсем рядом с крепостной стеной, граничащей с кварталом аристократов. Субару снова подивился: как глубоко и незаметно <span class="org-six-tongues">Шесть Языков</span> вросли в столицу.</p>
+  <p class="narr reveal">Сейчас они вышли на задний двор склада. До самой последней минуты, пока не придет время бежать, они смотрели на замок Лугуника, где осталась Эмилия.</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">Круш так и не пришла в себя и продолжала спать. Рачинс, в отличие от Субару и Беатрис, не противился побегу из столицы. Еще здесь были Белая Овечка и Черный Пес, а руководил всеми Рассел. Помимо этой основной группы, несколько человек занимались маскировкой и распускали ложные слухи.</p>
+  <p class="narr reveal">Не зря <span class="org-six-tongues">Шесть Языков</span> подчинялись напрямую королевской семье — размах их действий поражал.</p>
+  <p class="narr reveal">— У них столько сил, но их все равно застали врасплох, я полагаю.</p>
+  <p class="narr reveal">— Но мы не сдались, — решительно ответил юноша. — Мы отступаем, чтобы потом взять разбег и ударить снова.</p>
+  <div class="moment moment-heavy reveal"><p class="moment-text">— Это просто разбег, в самом деле. И все же Бетти немного удивлена… — Беатрис сжала руку Субару покрепче и немного погодя тихо произнесла: — тому, как быстро ты решил покинуть столицу, я полагаю. Оставить Эмилию и не пытаться встретиться с Отто и остальными — это наверняка был тяжелый выбор, в самом деле.</p></div>
+  <p class="narr reveal">— Так и есть… и мне до сих пор тяжело. Перед тем как пойти к Миклотову, мы с Эмилией-тан обсуждали, что будем есть на обед. Она сказала, что они с Рем и Петрой приготовят еду, и велела ждать… А теперь вон как все обернулось.</p>
+  <p class="narr reveal">— Субару…</p>
+  <p class="narr reveal">— Больно и тошно. Но раз ты не стала возражать, Беако, значит, тоже понимаешь, что это лучший выход, да? — поник он головой.</p>
+  <p class="narr reveal">Беатрис помолчала, а затем кивнула. Она не стала ничего говорить тогда, на совете. Она тоже понимала: если они останутся в столице, то лишь ввяжутся в заведомо проигрышную битву. И все же девочка не торопила Субару. Это была ее забота. Она хотела, чтобы он все осознал сам.</p>
+  <p class="narr reveal">Не смирился из-под палки, а выбрал этот путь добровольно.</p>
+  <p class="narr reveal">— Моя Беако милая, но строгая.</p>
+  <p class="narr reveal">— К тому же эта милота и строгость идут с пожизненной гарантией, я полагаю.</p>
+  <p class="narr reveal">— Какая выгода. Как же здорово, что я оформил страховку «Беако».</p>
+  <p class="narr reveal">Субару с силой взъерошил ей волосы. Да, надежность партнерши лечила душу. Обычно она бы тут же завопила «А ну прекрати!» и вырвалась, но сейчас покорно терпела — еще одно проявление ее заботы.</p>
+  <p class="narr reveal">И тут к ним подошли:</p>
+  <p class="narr reveal">— Мы почти готовы к отправлению. Как вы?</p>
+  <p class="narr reveal">Это была Белая Овечка. Поверх черного делового костюма она накинула белый балахон — точно такая же мантия «отвода глаз», как у Субару с Беатрис. Распущенные волосы слегка изменили ее облик.</p>
+  <p class="narr reveal">«Отвод глаз» в сочетании с легкой маскировкой — отличный способ скрыть личность.</p>
+  <p class="narr reveal">— Ого, — удивился Субару.</p>
+  <p class="narr reveal">— Ч-что такое? Со мной что-то не так?</p>
+  <p class="narr reveal">— А, нет-нет, все нормально. Просто без костюма ты выглядишь совсем иначе. Сейчас ты теперь и правда похожа на Белую Овечку.</p>
+  <p class="narr reveal">— Наверное… вы правы. До того как меня подобрал Серебряный Лис… когда я еще жила с Мамой, я чаще всего носила похожую одежду.</p>
+  <p class="narr reveal">— Ой, прости. Напомнил о плохом.</p>
+  <p class="narr reveal">Субару виновато сжался, но Белая Овечка лишь слабо улыбнулась и ответила:</p>
+  <p class="narr reveal">— Все хорошо, —погладила она свои длинные темно-синие волосы. — Это вы меня простите.</p>
+  <p class="narr reveal">— За что?</p>
+  <p class="narr reveal">— Это нам нужно было срочно уезжать, и мы вас поторопили… Хотя на самом деле вам, Нацуки Субару, хотелось бы обдумать все как следует.</p>
+  <p class="narr reveal">Она опустила глаза. Казалось, ей куда больнее, чем ему. Субару невольно усмехнулся.</p>
+  <p class="narr reveal">Раньше она служила Капелле как одна из <span class="cult-mention">Любимых Детей</span>, а теперь стала агентом <span class="org-six-tongues">Шести Языков</span> под началом Рассела. Но ее природная доброта никуда не делась: она совершенно не годилась ни в приспешницы злодея, ни в шпионки. Надо же, взяла на себя вину за то, что не дала ему как следует подумать.</p>
+  <p class="narr reveal">— Не бери на себя мои заботы. Никто меня не торопил. Наоборот, спасибо, что рассказали обо всем, чтобы я мог все решить.</p>
+  <p class="narr reveal">— Нацуки Субару…</p>
+  <p class="narr reveal">— Но если тебе все равно неловко, то сделай одолжение — прекрати.</p>
+  <p class="narr reveal">— Что?</p>
+  <p class="narr reveal">— Я про это твое «Нацуки Субару» полным именем. Зови меня просто Нацуки или Субару, как больше нравится. А то я каждый раз напрягаюсь, — пожал юноша плечами. Он старался говорить как можно непринужденнее.</p>
+  <p class="narr reveal">И от такой просьбы Белая Овечка округлила глаза и захлопала ресницами. А Беатрис тяжело вздохнула:</p>
+  <p class="narr reveal">— Не нужно искать скрытый смысл, в самом деле. Он имеет в виду ровно то, что говорит, я полагаю.</p>
+  <p class="narr reveal">— К чему тут эти пояснения? Какой еще скрытый смысл? — возмутился Субару.</p>
+  <p class="narr reveal">— Понятия не имею, в самом деле. И ни за что не скажу, я полагаю!</p>
+  <p class="narr reveal">— Да ты сама все прекрасно понимаешь!</p>
+  <p class="narr reveal">Беатрис закрыла уши руками и отвернулась, а Субару обиженно надул губы. Эта перепалка мгновенно сбила градус напряжения, и плечи Белой Овечки расслабленно опустились.</p>
+  <p class="narr reveal">— Тогда… Субару и Беатрис. Так подойдет?</p>
+  <p class="narr reveal">— Да, отлично. Можешь даже звать ее Бетти.</p>
+  <p class="narr reveal">— Вот уж дудки! Меня даже Субару так никогда не называл, в самом деле!</p>
+  <p class="narr reveal">— В-вы, кажется, против, так что я остановлюсь на первом варианте…</p>
+  <p class="narr reveal">Белая Овечка скромно уступила историческое право называть Беатрис «Бетти». Она совершенно не расстроилась, но посмотрела на Субару с затаенной печалью в глазах.</p>
+  <p class="narr reveal">— Эм, Субару, скажите…</p>
+  <p class="narr reveal">Он нахмурился, и девушка приоткрыла было рот, чтобы что-то сказать, но…</p>
+  <p class="narr reveal">— Эй! Долго вы там еще копаться будете?! — хрипло срывался голос. — А ну живо сюда!</p>
+  <p class="narr reveal">…во двор ворвался Рачинс. Его и без того острый взгляд исподлобья стал еще злее. Белая Овечка испуганно пискнула и втянула голову в плечи. Тотчас Субару заслонил ее собой и смерил Рачинса взглядом.</p>
+  <p class="narr reveal">— Эта мантия тебе вообще не идет, — подколол черноволосый юноша.</p>
+  <p class="narr reveal">— Заткнись, без тебя знаю! Какого хрена я вообще должен плясать под дудку этого Рассела Феллоу?! Пусть запрягает тех, у кого с ним рабский контракт!</p>
+  <p class="narr reveal">— Эт-то вовсе не рабский контракт!</p>
+  <p class="narr reveal">— Не отвечай ему так горячо, а то звучит слишком правдоподобно…</p>
+  <p class="narr reveal">Субару остановил Белую Овечку, которая принялась всерьез спорить с грубияном Рачинсом. Он снова посмотрел вдаль, на замок, и протяжно выдохнул. Оставалось лишь молиться, чтобы с ней все было хорошо.</p>
+  <p class="narr reveal">— Эмилия наверняка молится о том же ради тебя, я полагаю.</p>
+  <p class="narr reveal">Беатрис, должно быть, читала его мысли по одному лишь взгляду.</p>
+  <p class="narr reveal">— Не только меня — ради нас. Так мне будет куда приятнее, да и на Эмилию это больше похоже, — стряхнул Субару тоску.</p>
+  <p class="narr reveal">Он отвернулся от замка и зашагал вперед. Они прошли через склад к драконьей повозке на улице, на которой собирались уехать. В почти опустевшем помещении Субару заметил спину в мантии: человек пытался вытащить ящик размером в обхват.</p>
+  <p class="narr reveal">Что внутри — неизвестно, но груз явно был неподъемным.</p>
+  <p class="narr reveal">— Это нужно отнести в повозку?</p>
+  <p class="narr reveal">— А…</p>
+  <p class="narr reveal">Субару быстро шагнул к человеку и легко поднял ящик. Ну, или не совсем легко — тяжесть оказалась приличной, пришлось поднапрячься.</p>
+  <p class="narr reveal">Но он справился в одиночку и не ударил в грязь лицом. Человек в глубоко натянутом капюшоне растерянно замер.</p>
+  <p class="narr reveal">— Все в порядке? — Субару склонил голову набок.</p>
+  <p class="narr reveal">Капюшон скрывал лицо, но по фигуре было видно — человек худощавый. Впрочем, Черный Пес выглядел куда подозрительнее, так что прятать лицо здесь было в порядке вещей.</p>
+  <p class="narr reveal">Субару удивило лишь то, как незнакомец неловко удивился. Однако выяснять причину не было времени: человек торопливо поклонился и поспешил прочь.</p>
+  <p class="narr reveal">— Каков грубиян — ушел и даже спасибо не сказал, я полагаю.</p>
+  <p class="narr reveal">— Люди бывают робкими. Не все такие дружелюбные и милые, как Гарфиэль.</p>
+  <p class="narr reveal">— К чему тут вообще Гарфиэль… хотя, не могу не согласиться, в самом деле.</p>
+  <p class="narr reveal">Обаяние — это не только лицо, но и то, как держишься с людьми.</p>
+  <p class="narr reveal">Пока Субару и Беатрис дружно кивали друг другу, сходясь во мнениях, к ним подошла Белая Овечка. При виде юноши с ящиком она виновато улыбнулась.</p>
+  <p class="narr reveal">— Простите… Вы не должны были это нести. Я потом поговорю с Синим Змеем.</p>
+  <p class="narr reveal">— Да брось, мне не трудно… Погоди, тот парень — Синий Змей? Это он вылечил мои ожоги?</p>
+  <p class="narr reveal">— Ой, да. Он очень хороший целитель.</p>
+  <p class="narr reveal">Субару сразу вспомнил позывной. Овечка, пес, лиса… а теперь вот змея. Иронично для лекаря. В его мире медицина и змеи шли рука об руку. Взять хотя бы посох Асклепия из греческих мифов.</p>
+  <p class="narr reveal">Впрочем, здесь это наверняка было лишь совпадением.</p>
+  <p class="narr reveal">— Тогда это я должен сказать спасибо. Потаскать коробки — малая цена за спасение.</p>
+  <p class="narr reveal">— Боюсь, это будет непросто. Синий Змей не любит общаться с людьми… Серебряный Лис приказал нам уважать эту причуду.</p>
+  <p class="narr reveal">— Хм. Доктор-мизантроп… звучит как примета настоящего гения.</p>
+  <p class="narr reveal">Талантливый, но эксцентричный врач — классика из манги и аниме.</p>
+  <p class="narr reveal">Субару принял объяснение и решил пока не лезть к Синему Змею. Вместо этого он пообещал себе помогать таскать тяжести при каждом удобном случае — так и отплатит за лечение.</p>
+  <div class="moment moment-resolve reveal"><p class="moment-text">— Идем. Мы вернемся.</p></div>
+  <p class="narr reveal">Субару произнес это словно клятву самому себе. Он вышел из склада вместе с Беатрис, готовый шагнуть навстречу неизвестности.</p>
+
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <p class="narr reveal">— Принцип работы «отвода глаз» в том, что он слегка меняет восприятие человека и подавляет желание обращать на него внимание, — объяснял Рассел. Он сидел напротив Субару в драконьей повозке. — Но…</p>
+  <p class="narr reveal">— Но?</p>
+  <p class="narr reveal">— При тщательном досмотре «отвод глаз» вряд ли поможет. Не стоит на него полагаться.</p>
+  <p class="narr reveal">В ответ черноволосый юноша коротко кивнул и на всякий случай натянул капюшон поглубже на себя и Беатрис.</p>
+  <p class="narr reveal">Подготовка <span class="org-six-tongues">Шести Языков</span> завершилась. Теперь они ехали в колонне повозок и выдавали себя за торговый караван, покидающий столицу. Повозки выбрали самые простые, без лишних украшений — на таких обычно ездят уличные торговцы, а не богатые купцы. Караван состоял из доброго десятка повозок. Субару немного тревожился, не привлечет ли такой размах лишнего внимания.</p>
+  <p class="narr reveal">— Не беспокойтесь. Сейчас в столице неспокойно. Многие решат переждать бурю за стенами. Мы просто затеряемся в толпе.</p>
+  <p class="narr reveal">— Неспокойно, значит…</p>
+  <p class="narr reveal">— Разумеется. Город полнится слухами об опасных преступниках. Поднято немало солдат, патрули снуют повсюду. Смерть МакМахона скрывают от горожан, но утаить весь этот настрой ЧП невозможно.</p>
+  <p class="narr reveal">— Это уж точно… Люди наверняка перепуганы.</p>
+  <p class="narr reveal">Субару стало жаль жителей столицы, невольно втянутых в игры Похоти. Рассел слегка прищурился.</p>
+  <p class="narr reveal">— Вы переживаете не только за госпожу Эмилию и своих товарищей, но даже за простых горожан, господин Нацуки?</p>
+  <p class="narr reveal">— А? Ну, не то чтобы прямо переживаю, но невольно задумываюсь, все ли с ними хорошо. Не хотелось бы верить, что Капелла начнет превращать людей просто забавы ради… хотя она ведь может.</p>
+  <p class="narr reveal">Если ты хочешь захватить власть, логично подмять под себя верхушку: Совет Мудрецов и знатных аристократов. Превращать обычных горожан — бессмысленная жестокость, но именно этого и стоило ждать от Капеллы. В Пристелле она сделала нечто подобное, чтобы заявить о себе и связать руки защитникам города.</p>
+  <p class="narr reveal">Субару осекся — глава <span class="org-six-tongues">Шести Языков</span> вдруг замолчал.</p>
+  <p class="narr reveal">— Господин Рассел?</p>
+  <p class="narr reveal">Тот погладил бороду и прикрыл один глаз.</p>
+  <p class="narr reveal">— Вы волнуетесь почем зря, — коротко бросил он. — Не знаю, утешит ли, но <span class="org-six-tongues">Шесть Языков</span> не бросают столицу. Многие наши люди остались, чтобы собирать информацию и сеять смуту. Доверьтесь им.</p>
+  <p class="narr reveal">— Да, простите. Тут я могу полагаться только на вас. Было бы у меня десять рук и пять тел, я бы принес куда больше пользы…</p>
+  <p class="narr reveal">— Нелепое сравнение, я полагаю. Ты и так справляешься на ура, в самом деле.</p>
+  <p class="narr reveal">— Спасибо на добром слове… В общем, Рассел, мы надеемся на вас. Покажите нам, как сильна разведка Королевства.</p>
+  <p class="narr reveal">Субару крепко сжал кулак, и Рассел кивнул. Следом взгляд черноволосого юноши пал назад, на остальные повозки каравана.</p>
+  <p class="narr reveal">Люди <span class="org-six-tongues">Шести Языков</span> рассредоточились по десятку телег. Субару и Рассел ехали в первой. Больше всего юношу, конечно же, тревожила Круш, которая так и не очнулась с тех пор, как они сбежали из убежища. С тех пор как она уснула в канализации, герцогиня больше не открывала глаз. Перед сном она упомянула влияние <span class="dragon-mention">Глаза Дракона</span>, но так решила она сама. Что это за глаз на самом деле, никто не знал.</p>
+  <p class="narr reveal">Беатрис уверяла, дескать, дело лишь в усталости, но…</p>
+  <p class="narr reveal">— Вас тревожит госпожа Круш?</p>
+  <p class="narr reveal">— Конечно. Но и вас тоже, да? Вы ведь хотите, чтобы она помогла вам с Любимыми Детьми.</p>
+  <p class="narr reveal">— Тревожит, не скрою. Однако лучший из наших лекарей подтвердил: здоровью госпожи Круш ничто не угрожает. Но конечно, этот <span class="dragon-mention">Глаз Дракона</span> тоже подозрителен…</p>
+  <p class="narr reveal">— Остается только беречь ее и ждать, пока она проснется?</p>
+  <p class="narr reveal">— Именно так.</p>
+  <p class="narr reveal">Рассел отвечал спокойно, но Субару лишь тяжело вздохнул, ибо понимал, как мало от него зависит.</p>
+  <p class="narr reveal"><span class="org-six-tongues">Шесть Языков</span> пеклись о Круш больше всех, и они наверняка сделают все возможное. Для этого и приставили к ней лучшего лекаря…</p>
+  <p class="narr reveal">— Кстати, Синий Змей же, да? Мы встретились с ним прямо перед отъездом. Это он следит за Круш?</p>
+  <p class="narr reveal">— Вы виделись с Синим Змеем?..</p>
+  <p class="narr reveal">— А? Ну да, столкнулись в коридоре. Он и слова не сказал. Белая Овечка сказала, что он не любит общаться.</p>
+  <p class="narr reveal">— Да. В целом, это правда. Синий Змей присматривает за госпожой Круш. Насчет этого не волнуйтесь.</p>
+  <p class="narr reveal">Рассел впервые за все время запнулся перед ответом. Видимо, нелюдимость Синего Змея была хорошо известна, и его встреча с Субару стала для главы <span class="org-six-tongues">Шести Языков</span> сюрпризом.</p>
+  <p class="narr reveal">Но теперь юноша был спокоен — за Круш ухаживает врач… но тут же он вспомнил про другого человека.</p>
+  <p class="narr reveal">«Феррис наверняка сходит с ума от тревоги».</p>
+  <p class="narr reveal">Круш лишила его звания Первого Рыцаря. Субару пытался их помирить, но Феррис отверг помощь. Где он теперь, после расставания на кладбище, Субару не знал. Но он точно остался в столице и наверняка уже слышал о творящемся хаосе.</p>
+  <p class="narr reveal">Главное, чтобы он встретился с Вильгельмом и не натворил глупостей…</p>
+  <p class="narr reveal">— Мы остановились?</p>
+  <p class="narr reveal">Повозка вдруг дернулась и замерла. Субару тотчас напрягся и невольно прижал к себе Беатрис, готовясь к бою.</p>
+  <p class="narr reveal">Но Рассел напротив лишь усмехнулся:</p>
+  <p class="narr reveal">— Не тревожьтесь. Мы у главных ворот столицы, встали в очередь на досмотр. Здесь и в обычные дни людно, а сегодня придется подождать.</p>
+  <p class="narr reveal">— Но ведь уже вечер. Неужели столько людей бегут из города?</p>
+  <p class="narr reveal">— Те, кто умеет слушать, быстро думать и считать выгоду, не смотрят, день на дворе или ночь. Завтра паники будет лишь больше, как и беглецов.</p>
+  <p class="narr reveal">— Прямо как тогда, в Империи, в самом деле. Люди тоже массово бежали из столицы, я полагаю.</p>
+  <p class="narr reveal">— Я как раз об этом подумал. Не хотелось бы повторения того кошмара.</p>
+  <p class="narr reveal">Субару вспомнил Рапгану, столицу Волакии… Город нежити, поднятый Сфинкс. Великое переселение имперцев под командованием Авеля… Но там работала жесткая имперская иерархия. В Лугунике провернуть такое будет сложнее.</p>
+  <p class="narr reveal">Особенно когда врага невозможно отличить от обычного человека.</p>
+  <div class="moment moment-resolve reveal"><p class="moment-text">— Для этого нам и нужна защита госпожи Круш, — произнес Рассел уже тише, но куда тверже. — И для этого нужны мы. Господин Нацуки, вы наверняка и сами это знаете, но прошу вас… всегда ищите лучший выбор.</p></div>
+  <p class="narr reveal">Субару посмотрел ему прямо в глаза. Сейчас перед ним сидел не торговец, а глава разведывательной службы. И говорил он это в первую очередь себе.</p>
+  <p class="narr reveal">— Лучший… выбор.</p>
+  <p class="narr reveal">— Да. Ради Королевства, ради будущего, ради тех, кто вам дорог, ради цели… всегда ищите лучший путь. И будьте готовы сделать выбор, даже если от него вам будет больно.</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">В его словах не было жара или надрыва. Но это не значило, что они не задели Субару.</p>
+  <p class="narr reveal">Пламенные речи, как правило, трогают сердце. Рассел говорил без жара — потому что его воля была уже выкована и закалена. Железо куют, пока оно горячо, придают ему форму, но бить по уже остывшему, готовому клинку смысла нет — он лишь сломается.</p>
+  <p class="narr reveal">Тем временем повозка то трогалась, то снова замирала. Спустя некоторое время кучер постучал в окошко.</p>
+  <p class="narr reveal">— Похоже, мы подъехали. Я улажу дела, а вы подождите здесь, — наказал Рассел и вышел на улицу.</p>
+  <p class="narr reveal">Субару с тяжелым вздохом проводил его взглядом, как Беатрис тут же подала голос:</p>
+  <p class="narr reveal">— Сплошная головная боль, в самом деле. Этот человек — друг Розвааля, так что все логично, я полагаю.</p>
+  <p class="narr reveal">— Точно, Беако. Цели у них разные, но подход один в один. Искать лучший выбор, значит…</p>
+  <p class="narr reveal">— Субару всегда так и делает, в самом деле. Я могу за тебя поручиться, я полагаю.</p>
+  <p class="narr reveal">Беатрис насупилась, словно кто-то обвинил Субару в безделье. Рассел, конечно, ничего такого не имел в виду, и девочка это понимала. Как понимала и то, что сильные люди всегда несут на плечах подобный груз.</p>
+  <p class="narr reveal">Встав, Субару приоткрыл дверцу к кучеру и выглянул на улицу.</p>
+  <p class="narr reveal">— Стражи как-то многовато, — произнес он.</p>
+  <p class="narr reveal">— В самом деле? — тотчас пристроилась к нему Беатрис.</p>
+  <p class="narr reveal">У главных ворот возвели временные смотровые вышки и шатры в дополнение к обычным пропускным пунктам. Стража тщательно проверяла подорожные грамоты и накладные. Раньше въехать в столицу было куда проще. Строгие правила, которые обычно действовали только на границе квартала аристократов, теперь распространились на весь город.</p>
+  <p class="narr reveal">Неподалеку слышался разговор стражника с Расселом.</p>
+  <p class="narr reveal">— Прекрасно понимаю вас, но для торговца время — деньги. Бумаги в полном порядке. Печати на груз уже проставлены, но, если желаете, можете осмотреть.</p>
+  <p class="narr reveal">Рядом с ним стояла Белая Овечка в своей мантии. Рассел уверенно, одну за другой, протягивал стражнику грамоты. От такого напора тот слегка растерялся:</p>
+  <p class="narr reveal">— С бумагами и правда все чисто, печать гильдии на месте. А что везете?.. В основном медикаменты?</p>
+  <p class="narr reveal">— Да. Скорость доставки — вопрос жизни и смерти.</p>
+  <p class="narr reveal">Рассел давил авторитетом торговой гильдии и бил в самое больное место: в человечность. Стражник не нашел, к чему придраться.</p>
+  <p class="narr reveal">И тут в дело вступила Белая Овечка:</p>
+  <p class="narr reveal">— Прошу вас! Без этих лекарств жители моей деревни…</p>
+  <p class="narr reveal">Она схватила стражника за руку. Голос ее дрожал, и это не выглядело как дешевая игра. Стражник окончательно сдался — он смущенно откашлялся, не отнимая руки.</p>
+  <p class="narr reveal">— Х-хорошо. Все в порядке. Проезжайте…</p>
+  <p class="narr reveal">Стражник уже было дал добро, а Белая Овечка собиралась рассыпаться в благодарностях, как вдруг…</p>
+  <p class="narr reveal">— Стоять! Кто разрешил нарушать процедуру?!</p>
+  <p class="narr reveal">— !..</p>
+  <p class="narr reveal">…вмешался мужчина постарше. Судя по всему, начальник смены. Он выскочил из шатра, вырвал бумаги у подчиненного и пробежался по ним глазами.</p>
+  <p class="narr reveal">— Печать гильдии, досмотренный груз. Все так. Но правила есть правила.</p>
+  <p class="narr reveal">— Звучит благородно, но неужели сейчас время для бумажной волокиты?</p>
+  <p class="narr reveal">— Говоришь как торгаш. У вас свои законы, а у нас, стражи, — своя гордость.</p>
+  <p class="narr reveal">— Понимаю. Воля ваша.</p>
+  <p class="narr reveal">Стражник вытянулся по струнке перед начальником, а Рассел спокойно кивнул. Было видно, как напряглась и Белая Овечка.</p>
+  <p class="narr reveal">Да и Субару с Беатрис тоже. У них были идеальные фальшивые документы и повозки-обманки, но…</p>
+  <p class="narr reveal">— Дело дрянь… Беако! Быстро прыгай ко мне в карман!</p>
+  <p class="narr reveal">— Ты слишком паникуешь, в самом деле! Какой бы миниатюрной и миленькой я ни была, я туда не влезу, я полагаю! А ну держи себя в руках…</p>
+  <p class="narr reveal">Они заметались по повозке. Тотчас Рассел словно почувствовал их панику: он обернулся и незаметно махнул рукой — приказывал успокоиться.</p>
+  <p class="narr reveal">Субару выдохнул: значит, у разведчика был запасной план. Но в следующее мгновение…</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">Раздался сильный грохот, земля дрогнула, а позади очереди раздалось море криков.</p>
+
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <p class="narr reveal">Сначала Субару показалось, что повозка тронулась с места, колеса скрипнули, а люди радостно закричали.</p>
+  <p class="narr reveal">Все произошло слишком внезапно.</p>
+  <p class="narr reveal">— Что стряслось?!</p>
+  <p class="narr reveal">Субару схватил Беатрис, запрыгнул на сиденье и выглянул в заднее окно повозки. Очередь смешалась. В небо поднимался столб пыли, из которого в панике выбегали люди. Рядом виднелось полуразрушенное здание.</p>
+  <p class="narr reveal">— Это… авария?</p>
+  <p class="narr reveal">— Похоже на то, я полагаю. У одной из повозок сломалась ось, и остальные врезались друг в друга, в самом деле.</p>
+  <p class="narr reveal">— И влетели в дом на обочине. Плохо дело, там полно раненых.</p>
+  <p class="narr reveal">Из-за паники ворота были забиты битком. Авария в такой толпе привела к страшной давке. Неизвестно, сколько людей пострадало. Надо срочно вытаскивать их оттуда…</p>
+  <p class="narr reveal">Вдруг в повозку заглянул Рассел:</p>
+  <p class="narr reveal">— Господин Нацуки, нам дали разрешение. Садитесь, мы уезжаем.</p>
+  <p class="narr reveal">В ответ юноша ошарашенно посмотрел на него:</p>
+  <p class="narr reveal">— А? Что вы сказали? Мы уезжаем?</p>
+  <p class="narr reveal">— Да. Стража бросилась разбирать завал. Раз с бумагами все в порядке, нас пропустили, чтобы мы не загораживали проезд.</p>
+  <p class="narr reveal">— Нет, постойте…</p>
+  <p class="narr reveal">— Но там же есть раненые, я полагаю. Ты сам говорил, что мы везем лекарства, в самом деле.</p>
+  <p class="narr reveal">— Это лишь прикрытие. Внутри не только то, что указано в бумагах. Откроем груз — и нас раскроют. Я же говорил: всегда ищите лучший выбор.</p>
+  <p class="narr reveal">На лице Рассела не дрогнул ни один мускул. Его голос был спокойным, но резал, как нож.</p>
+  <p class="narr reveal">Субару сжал челюсти. Слова Рассела били в цель. Он все понимал. Понимал…</p>
+  <p class="narr reveal">Послышался тяжелый вздох — Рассел больше не мог терпеть упрямое молчание Субару.</p>
+  <p class="narr reveal">— Белая Овечка, объясни господину Нацуки, — бросил он через плечо приказ девушке, стоявшей неподалеку.</p>
+  <p class="narr reveal">Она задохнулась от волнения и посмотрела на Рассела полными слез глазами. Тот не обернулся, лишь повторил ее имя.</p>
+  <p class="narr reveal">Девушка подалась вперед, положила дрожащую руку поверх руки Субару, сжимавшей оконную раму, и прошептала:</p>
+  <p class="narr reveal">— Субару… пожалуйста, послушайте его. Все будет хорошо. Стража обязательно им поможет. Все… будет хорошо.</p>
+  <p class="narr reveal">— Белая Овечка…</p>
+  <p class="narr reveal">Она подчинилась жестокому приказу Рассела, но ее дрожащие руки выдавали ее с головой. Ей тоже хотелось броситься на помощь.</p>
+  <p class="narr reveal">Она отчаянно пыталась поступить правильно, выбрать тот самый «лучший выбор». Так что же теперь делать Субару?</p>
+  <p class="narr reveal">— Субару, — позвала его Беатрис у него на руках.</p>
+  <p class="narr reveal">В ее глазах горела непоколебимая вера. Она пойдет за ним, что бы он ни выбрал. Точно так же, как тогда, в канализации, когда она пообещала спуститься с ним в самый ад… Даже если этот выбор будет ошибкой, Беатрис не отступит.</p>
+  <p class="narr reveal">Субару медленно опустил руку, и Рассел одобрительно кивнул:</p>
+  <p class="narr reveal">— Мудрый выбор, господин Нацуки. В данном случае это и есть лучший выбор.</p>
+  <p class="narr reveal">Да. Да, Рассел прав. Надо его послушать.</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">Аварию можно назвать удачей — их чуть не раскрыли при досмотре, и стража отвлеклась, так что теперь они могут спокойно уехать. Все это — ради спасения столицы. Ради спасения Королевства. Поэтому…</p>
+  <p class="narr reveal">— А?</p>
+  <p class="narr reveal">Субару попытался убедить себя, что поступает правильно. Но он не мог оторвать взгляд от окна. И вдруг увидел…</p>
+  <p class="narr reveal">Человека в белой мантии. Синего Змея. Лекарь со всех ног мчался прямо к месту аварии.</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">Какой же ты идиот, Нацуки Субару.</p>
+  <p class="narr reveal">— Вы же говорили, Рассел, что всегда нужно искать лучший выбор.</p>
+  <p class="narr reveal">— Верно. И вы приняли правильное. Отправляемся немедленно. Мы…</p>
+  <p class="narr reveal">— Тогда!</p>
+  <p class="narr reveal">— !?..</p>
+  <div class="moment moment-resolve reveal"><p class="moment-text">— Тогда мой лучший выбор — не бросать тех, кому я могу помочь здесь и сейчас!!! — громко крикнул Субару и снова ухватился за оконную раму.</p></div>
+  <p class="narr reveal">Он стряхнул руку потрясенной Белой Овечки.</p>
+  <p class="narr reveal">— Уж простите! — крикнул он Расселу и выпрыгнул из повозки. — За мной, Беако! Пропаду без тебя!</p>
+  <p class="narr reveal">— Еще бы, в самом деле!</p>
+  <p class="narr reveal">Субару приземлился на мостовую с Беатрис на руках. Позади раздался крик Рассела, но он не остановился. Он не мог остановиться.</p>
+  <p class="narr reveal">Авария — это удача? Бред собачий! Авария — это трагедия. Ничего хорошего в ней нет и быть не может.</p>
+  <p class="narr reveal">«Ты был прав! А я ошибся!»</p>
+  <p class="narr reveal">Если бы он не увидел спину убегающего целителя, то так бы и сбежал.</p>
+  <p class="narr reveal">Синий Змей поступал правильно на все сто, и Субару сгорал от стыда.</p>
+  <p class="narr reveal">Какой же он идиот! Как он мог забыть?! Даже если кто-то готов добровольно пожертвовать собой, его собственные принципы от этого не меняются. Он остается собой.</p>
+  <p class="narr reveal">Субару подбежал прямо к облаку пыли.</p>
+  <p class="narr reveal">— Эй, ты куда?! — вытаращил на него глаза начальник стражи, прикрывавший рот рукой. — Туда нельзя! Всем гражданским…</p>
+  <p class="narr reveal">— Там раненые! Я помогу вытащить их из-под завалов!</p>
+  <p class="narr reveal">Неудивительно, что строгий страж крикнул ему это. Еще бы: откуда ни возьмись выскочил парень с маленькой девочкой на руках и полез в самое пекло. Но Субару не собирался отступать.</p>
+  <p class="narr reveal">— У нас есть магия! Мы можем помочь! Позвольте нам!</p>
+  <p class="narr reveal">— Фиг с ним, лишние руки не помешают! За мной!</p>
+  <p class="narr reveal">Стражник колебался лишь мгновение — жизнь людей была для него важнее инструкций, и Субару с Беатрис бросились в гущу событий.</p>
+  <p class="narr reveal">Пыль стояла столбом. Со всех сторон доносились стоны боли, детский плач, крики стражи и испуганное ржание земляных драконов. У одной из повозок сломалась ось, остальные врезались в нее, снесли стену соседнего здания, и крыша обрушилась прямо на улицу.</p>
+  <p class="narr reveal">Кровь, неподвижные тела… Субару лихорадочно озирался, не зная, за что хвататься.</p>
+  <p class="narr reveal">— Сюда! Помогите мне здесь! — прорвался крик сквозь весь шум и ударил Субару по ушам.</p>
+  <p class="narr reveal">В клубах пыли, прямо на земле, сидел человек в белом балахоне. Синий Змей. Он протягивал руки к пострадавшему, которого придавило обломками. Субару подбежал ближе и похолодел: из груди раненого торчал кусок деревянной балки. Кровь хлестала не переставая.</p>
+  <p class="narr reveal">— Пусть Беатрис магией сделает балку легче! — крикнул Змей. — Вытащим ее! Сможешь?!</p>
+  <p class="narr reveal">— Да, смогу! Но откуда ты…</p>
+  <p class="narr reveal">— А-а, да чтоб тебя! Какой же ты тугодум!</p>
+  <p class="narr reveal">Лекарь в сердцах дернул за капюшон и отбросил его назад. Показались льняные волосы, доходящие до шеи, и пушистые кошачьи ушки…</p>
+  <p class="narr reveal">— Феррис?.. — ошарашенно выдохнул Субару.</p>
+  <p class="narr reveal">Он никак не ожидал встретить здесь старого знакомого. Именно он, «Синий» Феррис, лучший целитель Королевства, бросился спасать жизни быстрее всех остальных.</p>
+
+</main>
+
+<!-- ════ NAVIGATION BUTTONS ════ -->
+<nav class="nav-buttons">
+  <a href="10-22.html" class="nav-btn nav-btn-prev">
+    <span class="nav-icon">←</span>
+    <span>Глава 22</span>
+  </a>
+  <a href="index.html" class="nav-btn nav-btn-toc">
+    <span class="nav-icon">☰</span>
+    <span>Оглавление</span>
+  </a>
+</nav>
+
+<script>
+// ── Helpers ──
+const STORAGE_KEY = 'rezero-settings';
+
+function saveSettings(obj) {
+  try {
+    const cur = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({...cur, ...obj}));
+  } catch(e) {}
+}
+
+function loadSettings() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { return {}; }
+}
+
+// ── Theme toggle ──
+const themeBtn = document.getElementById('theme-toggle');
+const iconSun  = document.getElementById('icon-sun');
+const iconMoon = document.getElementById('icon-moon');
+const THEME_KEY = 'rezero-theme';
+
+function applyTheme(theme) {
+  if (theme === 'light') {
+    document.body.classList.add('light-theme');
+    iconSun.style.display  = 'block';
+    iconMoon.style.display = 'none';
+  } else {
+    document.body.classList.remove('light-theme');
+    iconSun.style.display  = 'none';
+    iconMoon.style.display = 'block';
+  }
+}
+
+const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+applyTheme(savedTheme);
+
+themeBtn.addEventListener('click', () => {
+  const isLight = document.body.classList.contains('light-theme');
+  const next = isLight ? 'dark' : 'light';
+  applyTheme(next);
+  localStorage.setItem(THEME_KEY, next);
+});
+</script>
+
+<script>
+// ── Settings panel toggle ──
+const settingsToggle = document.getElementById('settings-toggle');
+const settingsPanel  = document.getElementById('settings-panel');
+
+settingsToggle.addEventListener('click', () => {
+  const open = settingsPanel.classList.toggle('open');
+  settingsToggle.classList.toggle('active', open);
+});
+
+// Close panel when clicking outside
+document.addEventListener('click', (e) => {
+  if (!settingsPanel.contains(e.target) && e.target !== settingsToggle && !settingsToggle.contains(e.target)) {
+    settingsPanel.classList.remove('open');
+    settingsToggle.classList.remove('active');
+  }
+});
+
+// ── Font selector ──
+const fontBtns = document.querySelectorAll('#font-btns .settings-btn');
+const mainEl   = document.getElementById('main-content');
+
+function applyFont(fontName) {
+  document.body.style.fontFamily = `'${fontName}', Georgia, serif`;
+  fontBtns.forEach(b => b.classList.toggle('active', b.dataset.font === fontName));
+}
+
+fontBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyFont(btn.dataset.font);
+    saveSettings({ font: btn.dataset.font });
+  });
+});
+
+// ── Font size ──
+const fontSizeSlider = document.getElementById('font-size-slider');
+const fontSizeVal    = document.getElementById('font-size-val');
+
+function applyFontSize(size) {
+  document.body.style.fontSize = size + 'px';
+  fontSizeVal.textContent = size + 'px';
+  fontSizeSlider.value = size;
+}
+
+fontSizeSlider.addEventListener('input', () => {
+  applyFontSize(parseInt(fontSizeSlider.value));
+  saveSettings({ fontSize: fontSizeSlider.value });
+});
+
+// ── Container width ──
+const widthSlider = document.getElementById('width-slider');
+const widthVal    = document.getElementById('width-val');
+
+function applyWidth(w) {
+  const style = `${w}px`;
+  document.getElementById('main-content').style.maxWidth = style;
+  document.querySelector('.nav-buttons').style.maxWidth = style;
+  widthVal.textContent = style;
+  widthSlider.value = w;
+}
+
+widthSlider.addEventListener('input', () => {
+  applyWidth(parseInt(widthSlider.value));
+  saveSettings({ width: widthSlider.value });
+});
+
+// ── Animation toggle ──
+const animOn  = document.getElementById('anim-on');
+const animOff = document.getElementById('anim-off');
+
+function applyAnim(enabled) {
+  if (enabled) {
+    document.body.classList.remove('no-anim');
+    animOn.classList.add('active');
+    animOff.classList.remove('active');
+  } else {
+    document.body.classList.add('no-anim');
+    // Make all hidden elements visible immediately
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    animOff.classList.add('active');
+    animOn.classList.remove('active');
+  }
+}
+
+animOn.addEventListener('click', () => { applyAnim(true); saveSettings({ anim: true }); });
+animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim: false }); });
+
+// ── Emotional blocks toggle ──
+const momentsOn  = document.getElementById('moments-on');
+const momentsOff = document.getElementById('moments-off');
+
+function applyMomentBlocks(enabled) {
+  document.body.classList.toggle('plain-moments', !enabled);
+  momentsOn.classList.toggle('active', enabled);
+  momentsOff.classList.toggle('active', !enabled);
+}
+
+momentsOn.addEventListener('click', () => { applyMomentBlocks(true); saveSettings({ momentBlocks: true }); });
+momentsOff.addEventListener('click', () => { applyMomentBlocks(false); saveSettings({ momentBlocks: false }); });
+
+// ── Text alignment ──
+const alignBtns = document.querySelectorAll('#align-btns .settings-btn');
+
+function applyAlign(align) {
+  const content = document.getElementById('main-content');
+  content.querySelectorAll('p, .moment-text, .dragon-eye-text, .return-text, .inner-fire').forEach(el => { el.style.textAlign = align; });
+  alignBtns.forEach(b => b.classList.toggle('active', b.dataset.align === align));
+}
+
+alignBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyAlign(btn.dataset.align);
+    saveSettings({ align: btn.dataset.align });
+  });
+});
+
+// ── Load persisted settings ──
+(function() {
+  const s = loadSettings();
+  if (s.font) applyFont(s.font);
+  if (s.fontSize) applyFontSize(parseInt(s.fontSize));
+  if (s.width) applyWidth(parseInt(s.width));
+  if (s.anim === false) applyAnim(false);
+  if (s.momentBlocks === false) applyMomentBlocks(false);
+  if (s.align) applyAlign(s.align);
+})();
+</script>
+
+<script>
+// ── Progress bar ──
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+});
+
+// ── Reveal on scroll ──
+const revealEls = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+// ── Ambient particle canvas ──
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function Particle() {
+  this.reset();
+}
+Particle.prototype.reset = function() {
+  this.x = Math.random() * W;
+  this.y = Math.random() * H;
+  this.vx = (Math.random() - 0.5) * 0.15;
+  this.vy = -Math.random() * 0.3 - 0.05;
+  this.r = Math.random() * 1.2 + 0.3;
+  this.alpha = Math.random() * 0.4 + 0.05;
+  this.life = 1;
+  this.decay = Math.random() * 0.002 + 0.001;
+  // Gold, green (Krusch), and purple (Beatrice) particles
+  const roll = Math.random();
+  if (roll > 0.65) {
+    this.color = `rgba(200,164,106,${this.alpha})`;
+  } else if (roll > 0.35) {
+    this.color = `rgba(90,170,122,${this.alpha * 0.7})`;
+  } else {
+    this.color = `rgba(160,100,220,${this.alpha * 0.5})`;
+  }
+};
+
+for (let i = 0; i < 80; i++) {
+  const p = new Particle();
+  p.y = Math.random() * H;
+  particles.push(p);
+}
+
+function animParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= p.decay;
+    if (p.life <= 0 || p.y < -10) p.reset();
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.life * 0.6;
+    ctx.fill();
+  });
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+
+// ── Dragon Eye dramatic entrance ──
+// When the dragon-eye-reveal becomes visible, add extra flare
+const dragonEye = document.querySelector('.dragon-eye-reveal');
+if (dragonEye) {
+  const eyeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Spawn a burst of golden particles from center
+        for (let i = 0; i < 20; i++) {
+          setTimeout(() => {
+            const burst = new Particle();
+            burst.x = W / 2 + (Math.random() - 0.5) * 200;
+            burst.y = H / 2;
+            burst.vy = -(Math.random() * 1.5 + 0.5);
+            burst.vx = (Math.random() - 0.5) * 1.2;
+            burst.alpha = 0.8;
+            burst.r = Math.random() * 2 + 1;
+            burst.color = `rgba(220,180,40,${burst.alpha})`;
+            burst.decay = 0.008;
+            particles.push(burst);
+            if (particles.length > 120) particles.splice(0, 1);
+          }, i * 60);
+        }
+        eyeObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  eyeObserver.observe(dragonEye);
+}
+
+// ── Return block: activate rings when visible ──
+const returnBlock = document.querySelector('.return-block');
+if (returnBlock) {
+  const retObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        returnBlock.querySelectorAll('.return-ring').forEach(r => {
+          r.style.opacity = '1';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  retObserver.observe(returnBlock);
+}
+</script>
+<script>document.querySelectorAll(".jp-minute-toggle").forEach(btn=>{const box=btn.closest(".jp-minute");const content=box.querySelector(".jp-minute-content");btn.setAttribute("aria-expanded","false");content.style.maxHeight="0px";btn.addEventListener("click",()=>{const open=btn.getAttribute("aria-expanded")==="true";btn.setAttribute("aria-expanded",String(!open));box.classList.toggle("open",!open);if(!open){content.style.maxHeight=content.scrollHeight+"px";}else{content.style.maxHeight=content.scrollHeight+"px";requestAnimationFrame(()=>{content.style.maxHeight="0px";});}});});</script>
+</body>
+</html>
