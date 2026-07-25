@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re:Zero — Арка 10, Глава 25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;600;700&family=Cormorant+Infant:ital,wght@0,400;0,600;1,400;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c14;
+  --bg2: #0e1320;
+  --bg3: #13192e;
+  --text: #ddd4c0;
+  --text-dim: #8a8070;
+  --accent: #c8a46a;
+  --accent2: #7a9cc8;
+  --divider: #2a3050;
+  --ram: #e87aaa;
+  --emilia: #aac8ec;
+  --bordeaux: #d04040;
+  --marcos: #8a9ab0;
+  --fiore: #f0c060;
+  --sakura: #c08ad0;
+  --felt: #e8a050;
+  --reinhard: #5090d8;
+  --witch: #9040a0;
+  --narrator: #ddd4c0;
+  --krusch: #5aaa7a;
+  --tiga: #d4a060;
+  --beatrice: #b08adc;
+  --subaru: #90b8e0;
+}
+
+/* ── Light theme overrides ── */
+body.light-theme {
+  --bg: #f0ebe0;
+  --bg2: #e8e2d4;
+  --bg3: #ddd7c8;
+  --text: #1a1610;
+  --text-dim: #6a5e4a;
+  --accent: #8a5e1a;
+  --accent2: #2a5888;
+  --divider: #c8bca0;
+}
+
+body.light-theme header {
+  background: rgba(240,235,224,0.97);
+  border-bottom-color: rgba(138,94,26,0.15);
+}
+
+body.light-theme p.italic-narr {
+  color: #3a3020;
+}
+
+body.light-theme p.thought {
+  color: #4a3e2a;
+  border-left-color: rgba(138,94,26,0.4);
+}
+
+body.light-theme .inner-fire {
+  color: #5a3a10;
+  border-left-color: var(--accent);
+}
+
+body.light-theme .moment-resolve {
+  background: rgba(240,235,220,0.7);
+  border-color: rgba(138,94,26,0.35);
+}
+body.light-theme .moment-resolve .moment-text { color: #2a1e08; }
+
+body.light-theme .moment-shock {
+  background: rgba(220,230,245,0.6);
+  border-color: rgba(60,100,180,0.3);
+}
+body.light-theme .moment-shock .moment-text { color: #1a2a3a; }
+
+body.light-theme .moment-anger {
+  background: rgba(245,225,220,0.6);
+  border-color: rgba(180,60,60,0.3);
+}
+body.light-theme .moment-anger .moment-text { color: #2a0808; }
+
+body.light-theme .moment-heavy {
+  background: rgba(220,225,235,0.6);
+  border-color: rgba(80,90,120,0.3);
+}
+body.light-theme .moment-heavy .moment-text { color: #1a1e2a; }
+
+body.light-theme .moment-warmth {
+  background: rgba(245,235,240,0.6);
+  border-color: rgba(200,100,140,0.3);
+}
+body.light-theme .moment-warmth .moment-text { color: #2a1020; }
+
+body.light-theme .moment-krusch {
+  background: rgba(220,240,230,0.6);
+  border-color: rgba(60,140,90,0.3);
+}
+body.light-theme .moment-krusch .moment-text { color: #0a2a18; }
+
+body.light-theme .dragon-eye-reveal {
+  background: rgba(245,240,220,0.9);
+  border-color: rgba(160,120,20,0.4);
+}
+
+body.light-theme .dragon-eye-text {
+  color: #7a5000;
+  text-shadow: 0 0 8px rgba(160,100,0,0.2);
+}
+
+body.light-theme .return-block {
+  background: rgba(230,225,245,0.85);
+  border-color: rgba(100,60,180,0.3);
+}
+
+body.light-theme .return-kanji {
+  color: rgba(100,60,180,0.85);
+  text-shadow: 0 0 20px rgba(100,60,180,0.4);
+}
+
+body.light-theme .return-label {
+  color: rgba(100,60,180,0.6);
+}
+
+body.light-theme .return-text {
+  color: #2a1a4a;
+}
+
+body.light-theme .nav-btn {
+  background: rgba(230,224,210,0.8);
+  border-color: rgba(138,94,26,0.25);
+  color: var(--text-dim);
+}
+
+body.light-theme .nav-btn:hover {
+  background: rgba(215,208,192,0.95);
+}
+
+body.light-theme .chapter-kanji {
+  color: rgba(138,94,26,0.65);
+}
+
+body.light-theme .location-tag {
+  color: rgba(138,94,26,0.7);
+}
+
+body.light-theme .scroll-hint,
+body.light-theme .chapter-arc {
+  color: #8a7a60;
+}
+
+body.light-theme .chapter-subtitle {
+  color: #2a2010;
+}
+
+body.light-theme .scroll-chevron {
+  border-right-color: rgba(100,70,20,0.5);
+  border-bottom-color: rgba(100,70,20,0.5);
+}
+
+body.light-theme .divider-line {
+  background: linear-gradient(90deg, transparent, rgba(138,94,26,0.5), transparent);
+}
+
+body.light-theme .divider-sigil {
+  display: inline-block;
+  text-align: center;
+  color: rgba(138,94,26,0.8);
+}
+
+body.light-theme #canvas {
+  opacity: 0.12;
+}
+
+/* Dialogue text — override the hardcoded !important */
+body.light-theme .dialogue-text {
+  color: #1a1610 !important;
+}
+
+/* Narration colours */
+body.light-theme p.narr {
+  color: #1a1610;
+}
+
+body.light-theme p.italic-narr {
+  color: #3a3020;
+}
+
+body.light-theme p.thought {
+  color: #4a3e2a;
+  border-left-color: rgba(138,94,26,0.4);
+}
+
+/* Scene / pov labels */
+body.light-theme .scene-label,
+body.light-theme .pov-name {
+  color: #8a7a60;
+}
+
+body.light-theme .pov-subtitle {
+  color: rgba(138,94,26,0.55);
+}
+
+/* Dragon & cult inline mentions */
+body.light-theme .dragon-mention {
+  color: #8a5a00;
+  text-shadow: 0 0 6px rgba(138,90,0,0.2);
+}
+
+body.light-theme .cult-mention {
+  color: #6a3080;
+  text-shadow: 0 0 6px rgba(106,48,128,0.2);
+}
+
+
+.archbishop-sloth { color: #9d77df; text-shadow: 0 0 8px rgba(157,119,223,0.28); }
+.org-six-tongues { color: #d4a840; letter-spacing: 0.02em; text-shadow: 0 0 8px rgba(212,168,64,0.25); }
+
+body.light-theme .archbishop-sloth { color: #6f3fc0; }
+body.light-theme .org-six-tongues { color: #8a5e1a; }
+
+/* ── Settings panel light ── */
+body.light-theme #settings-panel {
+  background: rgba(240,235,224,0.97);
+  border-color: rgba(138,94,26,0.25);
+}
+body.light-theme .settings-title {
+  color: var(--accent);
+  border-bottom-color: rgba(138,94,26,0.2);
+}
+body.light-theme .settings-label { color: var(--text-dim); }
+body.light-theme .settings-btn {
+  background: rgba(220,214,200,0.8);
+  border-color: rgba(138,94,26,0.2);
+  color: var(--text);
+}
+body.light-theme .settings-btn:hover,
+body.light-theme .settings-btn.active {
+  background: rgba(138,94,26,0.15);
+  border-color: rgba(138,94,26,0.5);
+  color: var(--accent);
+}
+body.light-theme input[type="range"] { accent-color: var(--accent); }
+
+/* ── Settings button group (bottom-left) ── */
+#settings-controls {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 200;
+}
+
+/* ── Settings toggle button ── */
+#settings-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,164,106,0.3);
+  background: rgba(14,19,32,0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,164,106,0.8);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+#settings-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  border-color: rgba(200,164,106,0.6);
+  color: rgba(200,164,106,1);
+}
+
+#settings-toggle:active { transform: scale(0.95); }
+#settings-toggle.active {
+  border-color: rgba(200,164,106,0.7);
+  color: rgba(200,164,106,1);
+  box-shadow: 0 0 20px rgba(200,164,106,0.2);
+}
+
+body.light-theme #settings-toggle {
+  background: rgba(230,224,210,0.92);
+  border-color: rgba(138,94,26,0.35);
+  box-shadow: 0 4px 20px rgba(100,80,40,0.2);
+  color: rgba(138,94,26,0.8);
+}
+body.light-theme #settings-toggle:hover {
+  border-color: rgba(138,94,26,0.65);
+  box-shadow: 0 6px 28px rgba(100,80,40,0.3);
+  color: rgba(138,94,26,1);
+}
+body.light-theme #settings-toggle.active {
+  border-color: rgba(138,94,26,0.7);
+  color: rgba(138,94,26,1);
+}
+
+/* ── Settings panel ── */
+#settings-panel {
+  position: fixed;
+  bottom: 110px;
+  left: 32px;
+  z-index: 199;
+  width: 300px;
+  background: rgba(8,12,20,0.96);
+  border: 1px solid rgba(200,164,106,0.2);
+  border-radius: 8px;
+  padding: 20px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  transform: translateY(12px) scale(0.97);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#settings-panel.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.settings-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(200,164,106,0.15);
+}
+
+.settings-group {
+  margin-bottom: 16px;
+}
+
+.settings-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.settings-btn-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.settings-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 6px 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(200,164,106,0.2);
+  background: rgba(20,25,40,0.8);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.settings-btn:hover {
+  background: rgba(200,164,106,0.08);
+  border-color: rgba(200,164,106,0.4);
+  color: var(--accent);
+}
+
+.settings-btn.active {
+  background: rgba(200,164,106,0.12);
+  border-color: rgba(200,164,106,0.5);
+  color: var(--accent);
+}
+
+.settings-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+  height: 3px;
+}
+
+.settings-slider-val {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  color: var(--accent);
+  min-width: 36px;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+
+/* ── Animations disabled class ── */
+body.no-anim .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+body.no-anim .chapter-kanji,
+body.no-anim .chapter-arc,
+body.no-anim .chapter-num,
+body.no-anim .chapter-subtitle {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.no-anim .scroll-hint { animation: none !important; opacity: 0.5 !important; }
+body.no-anim .divider-sigil {
+  display: inline-block;
+  text-align: center; animation: none !important; opacity: 0.7 !important; }
+body.no-anim .moment-shock.visible { animation: none !important; }
+body.no-anim .moment-resolve.visible { animation: none !important; }
+body.no-anim .moment-anger.visible { animation: none !important; }
+body.no-anim .scroll-chevron { animation: none !important; opacity: 0.5 !important; }
+
+/* ── Theme toggle button ── */
+#theme-toggle {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 200;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,164,106,0.3);
+  background: rgba(14,19,32,0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,164,106,0.8);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  border-color: rgba(200,164,106,0.6);
+  color: rgba(200,164,106,1);
+}
+
+#theme-toggle:active {
+  transform: scale(0.95);
+}
+
+body.light-theme #theme-toggle {
+  background: rgba(230,224,210,0.92);
+  border-color: rgba(138,94,26,0.35);
+  box-shadow: 0 4px 20px rgba(100,80,40,0.2);
+  color: rgba(138,94,26,0.8);
+}
+
+body.light-theme #theme-toggle:hover {
+  border-color: rgba(138,94,26,0.65);
+  box-shadow: 0 6px 28px rgba(100,80,40,0.3);
+  color: rgba(138,94,26,1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.85;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Ambient particles ── */
+#canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--krusch), var(--accent), var(--beatrice));
+  width: 0%;
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ── Header ── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8,12,20,0.96);
+  border-bottom: 1px solid rgba(200,164,106,0.1);
+}
+
+.header-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-family: 'Cormorant SC', 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.header-pov {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  transition: color 0.6s ease;
+}
+
+/* ── Chapter title block ── */
+.chapter-title-block {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.chapter-kanji {
+  font-family: serif;
+  font-size: 48px;
+  color: rgba(200,164,106,0.25);
+  letter-spacing: 0.4em;
+  margin-bottom: 32px;
+  animation: fadeSlideIn 2s ease forwards;
+}
+
+.chapter-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 2s ease 0.3s both;
+}
+
+.chapter-num {
+  font-family: 'Cormorant SC', 'Cinzel Decorative', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  animation: fadeSlideIn 2s ease 0.5s both;
+  text-shadow: 0 0 60px rgba(200,164,106,0.3);
+}
+
+.chapter-subtitle {
+  font-family: 'Cormorant Infant', 'EB Garamond', serif;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 32px);
+  color: var(--text);
+  margin-bottom: 60px;
+  animation: fadeSlideIn 2s ease 0.8s both;
+}
+
+.scroll-hint {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ── Main content ── */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 40px 160px;
+}
+
+/* ── Paragraph reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Narration ── */
+p.narr {
+  margin-bottom: 1.3em;
+  color: var(--text);
+}
+
+p.italic-narr {
+  font-style: italic;
+  color: #c8bcaa;
+  margin-bottom: 1.3em;
+}
+
+p.thought {
+  font-style: italic;
+  color: #b0a898;
+  padding-left: 20px;
+  border-left: 2px solid rgba(200,164,106,0.3);
+  margin: 1em 0 1.3em;
+}
+
+/* ── Dialogue ── */
+.dialogue-block {
+  margin: 0.4em 0 1.1em;
+  position: relative;
+}
+
+.speaker-tag {
+  display: none;
+}
+
+.dialogue-text {
+  font-style: normal;
+  color: #e0d8cc;
+  display: block;
+  padding-left: 4px;
+}
+
+.dialogue-text.emotional {
+  font-style: italic;
+}
+
+.sp-ram { color: var(--ram); }
+.sp-emilia { color: var(--emilia); }
+.sp-bordeaux { color: var(--bordeaux); }
+.sp-marcos { color: var(--marcos); }
+.sp-fiore { color: var(--fiore); }
+.sp-sakura { color: var(--sakura); }
+.sp-felt { color: var(--felt); }
+.sp-reinhard { color: var(--reinhard); }
+.sp-official { color: #9aaabb; }
+.sp-krusch { color: var(--krusch); }
+.sp-tiga { color: var(--tiga); }
+.sp-beatrice { color: var(--beatrice); }
+.sp-subaru { color: var(--subaru); }
+.sp-otto { color: #8cc878; }
+.sp-garfiel { color: #d8b060; }
+.sp-rem { color: #8ac8e8; }
+.sp-petra { color: #e8b0c8; }
+.sp-meili { color: #c8a0e8; }
+
+/* ── Chapter illustrations ── */
+.chapter-illustration {
+  margin: 2.4em auto;
+  text-align: center;
+}
+
+.chapter-illustration img {
+  display: block;
+  width: min(100%, 720px);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.36);
+}
+
+/* ── Character colors stripped: dialogue colour-neutral ── */
+.dialogue-text { color: #e0d8cc !important; }
+/* ── Section divider ── */
+.section-divider {
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+.divider-sigil {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  display: inline-block;
+  animation: sigil-pulse 3s ease-in-out infinite;
+}
+
+.divider-line {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 16px auto;
+  width: 60%;
+  opacity: 0.4;
+}
+
+/* ── Dramatic moments ── */
+.moment,
+.dragon-eye-reveal,
+.return-block {
+  --moment-accent: var(--accent);
+  --moment-bg: rgba(15, 19, 32, 0.72);
+  --moment-border: rgba(200, 164, 106, 0.22);
+  position: relative;
+  margin: 2.2em auto;
+  padding: 24px 28px 24px 32px;
+  max-width: 780px;
+  border: 1px solid var(--moment-border);
+  border-left: 4px solid var(--moment-accent);
+  border-radius: 14px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--moment-accent) 14%, transparent), transparent 42%),
+    var(--moment-bg);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  text-align: left;
+}
+
+.moment::before,
+.dragon-eye-reveal::before,
+.return-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), transparent 55%);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.moment::after,
+.dragon-eye-reveal::after,
+.return-block::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 34px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--moment-accent);
+  opacity: 0.45;
+}
+
+.moment-label { display: none; }
+
+.moment-text,
+.dragon-eye-text,
+.return-text {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.78;
+  letter-spacing: 0.01em;
+  text-shadow: none;
+}
+
+.moment-text + .moment-text,
+.moment-text[style*="margin-top"] {
+  margin-top: 0.85em !important;
+}
+
+.moment-shock { --moment-accent: #7a9cc8; --moment-bg: rgba(12, 22, 38, 0.76); --moment-border: rgba(122,156,200,0.28); }
+.moment-anger { --moment-accent: #d06a6a; --moment-bg: rgba(36, 17, 17, 0.74); --moment-border: rgba(208,106,106,0.26); }
+.moment-resolve { --moment-accent: #c8a46a; --moment-bg: rgba(32, 27, 17, 0.74); --moment-border: rgba(200,164,106,0.32); }
+.moment-heavy { --moment-accent: #8a9ab0; --moment-bg: rgba(14, 17, 28, 0.78); --moment-border: rgba(138,154,176,0.25); }
+.moment-warmth { --moment-accent: #e87aaa; --moment-bg: rgba(34, 18, 27, 0.72); --moment-border: rgba(232,122,170,0.25); }
+.moment-krusch { --moment-accent: #5aaa7a; --moment-bg: rgba(10, 28, 18, 0.74); --moment-border: rgba(90,170,122,0.27); }
+.moment-battle { --moment-accent: #d4a030; --moment-bg: rgba(35, 24, 7, 0.76); --moment-border: rgba(212,160,48,0.30); }
+
+.moment-shock .moment-text,
+.moment-anger .moment-text,
+.moment-resolve .moment-text,
+.moment-heavy .moment-text,
+.moment-warmth .moment-text,
+.moment-krusch .moment-text,
+.moment-battle .moment-text {
+  color: var(--text);
+  font-style: normal;
+}
+
+/* ── Dragon Eye reveal ── */
+.dragon-eye-reveal {
+  --moment-accent: #d6ad3f;
+  --moment-bg: rgba(26, 22, 12, 0.80);
+  --moment-border: rgba(214, 173, 63, 0.35);
+}
+
+.dragon-eye-glyph {
+  display: none;
+}
+
+.dragon-eye-text {
+  color: #f1dfb2;
+  font-style: normal;
+}
+
+/* ── Return from death animation ── */
+.return-block {
+  --moment-accent: #9d77df;
+  --moment-bg: rgba(18, 14, 34, 0.82);
+  --moment-border: rgba(157, 119, 223, 0.34);
+  padding-top: 28px;
+}
+
+.return-vortex,
+.return-ring {
+  display: none;
+}
+
+.return-kanji {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 10px;
+  color: rgba(205, 184, 244, 0.75);
+  font-size: 30px;
+  letter-spacing: 0.16em;
+  text-shadow: none;
+}
+
+.return-label {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+  color: rgba(205, 184, 244, 0.72);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-shadow: none;
+}
+
+.return-text {
+  color: var(--text);
+}
+
+/* ── Garfiel inner monologue ── */
+.inner-fire {
+  position: relative;
+  margin: 1.8em auto;
+  padding: 18px 24px 18px 28px;
+  max-width: 760px;
+  border-left: 4px solid var(--garfiel, var(--accent));
+  border-radius: 0 12px 12px 0;
+  background: rgba(212, 160, 64, 0.08);
+  color: var(--text);
+  font-size: 1em;
+  line-height: 1.85;
+  font-style: normal;
+}
+
+body.light-theme .moment,
+body.light-theme .dragon-eye-reveal,
+body.light-theme .return-block {
+  --moment-bg: rgba(255, 252, 244, 0.78);
+  --moment-border: color-mix(in srgb, var(--moment-accent) 38%, rgba(138,94,26,0.22));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--moment-accent) 12%, transparent), transparent 42%),
+    var(--moment-bg);
+  box-shadow: 0 10px 26px rgba(90, 70, 40, 0.12);
+}
+
+body.light-theme .moment-text,
+body.light-theme .dragon-eye-text,
+body.light-theme .return-text,
+body.light-theme .moment-shock .moment-text,
+body.light-theme .moment-anger .moment-text,
+body.light-theme .moment-resolve .moment-text,
+body.light-theme .moment-heavy .moment-text,
+body.light-theme .moment-warmth .moment-text,
+body.light-theme .moment-krusch .moment-text,
+body.light-theme .moment-battle .moment-text {
+  color: #1a1610;
+}
+
+body.light-theme .dragon-eye-text { color: #3c2b05; }
+body.light-theme .return-kanji,
+body.light-theme .return-label { color: rgba(76, 43, 132, 0.72); text-shadow: none; }
+body.light-theme .inner-fire { color: #2a2010; background: rgba(212, 160, 64, 0.12); border-left-color: var(--accent); }
+
+.moment-shock.visible,
+.moment-resolve.visible,
+.moment-anger.visible,
+.moment-krusch.visible,
+.moment-battle.visible,
+.dragon-eye-glyph,
+.return-kanji {
+  animation: none !important;
+}
+
+
+body.plain-moments .moment,
+body.plain-moments .dragon-eye-reveal,
+body.plain-moments .return-block,
+body.plain-moments .inner-fire {
+  margin: 1em 0;
+  padding: 0;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+  text-align: inherit;
+}
+
+body.plain-moments .moment::before,
+body.plain-moments .moment::after,
+body.plain-moments .dragon-eye-reveal::before,
+body.plain-moments .dragon-eye-reveal::after,
+body.plain-moments .return-block::before,
+body.plain-moments .return-block::after,
+body.plain-moments .dragon-eye-glyph,
+body.plain-moments .return-vortex,
+body.plain-moments .return-ring,
+body.plain-moments .return-kanji,
+body.plain-moments .return-label {
+  display: none !important;
+}
+
+body.plain-moments .moment-text,
+body.plain-moments .dragon-eye-text,
+body.plain-moments .return-text {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+/* ── POV section headers ── */
+.pov-header {
+  display: none;
+}
+.pov-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.pov-subtitle {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(200,164,106,0.5);
+}
+
+/* ── Scene label ── */
+.scene-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 24px 0 8px;
+  opacity: 0.6;
+}
+
+/* ── Navigation buttons ── */
+.nav-buttons {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 40px 100px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1px solid rgba(200,164,106,0.25);
+  border-radius: 3px;
+  background: rgba(8,12,20,0.7);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(200,164,106,0.06), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.nav-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.nav-btn:hover {
+  color: var(--accent);
+  border-color: rgba(200,164,106,0.55);
+  box-shadow: 0 0 20px rgba(200,164,106,0.1);
+  transform: translateY(-1px);
+}
+
+.nav-btn-prev { border-color: rgba(90,170,122,0.25); }
+.nav-btn-prev:hover { color: var(--krusch); border-color: rgba(90,170,122,0.5); box-shadow: 0 0 20px rgba(90,170,122,0.1); }
+
+.nav-btn-toc { border-color: rgba(200,164,106,0.25); }
+.nav-btn-toc:hover { color: var(--accent); border-color: rgba(200,164,106,0.5); }
+
+.nav-btn-next { border-color: rgba(170,100,220,0.25); }
+.nav-btn-next:hover { color: var(--beatrice); border-color: rgba(170,100,220,0.5); box-shadow: 0 0 20px rgba(170,100,220,0.1); }
+
+.nav-icon {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ── Animations ── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes sigil-pulse {
+  0%, 100% { opacity: 0.4; letter-spacing: 0.3em; }
+  50% { opacity: 0.9; letter-spacing: 0.45em; }
+}
+
+@keyframes shock-flare {
+  0% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+  50% { box-shadow: inset 0 0 80px rgba(80,120,200,0.15), 0 0 60px rgba(80,120,200,0.2); }
+  100% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+}
+
+.moment-shock.visible { animation: shock-flare 4s ease-in-out infinite; }
+
+@keyframes resolve-glow {
+  0%, 100% { box-shadow: inset 0 0 50px rgba(200,164,106,0.06), 0 0 40px rgba(200,164,106,0.12); }
+  50% { box-shadow: inset 0 0 80px rgba(200,164,106,0.12), 0 0 70px rgba(200,164,106,0.22); }
+}
+.moment-resolve.visible { animation: resolve-glow 3.5s ease-in-out infinite; }
+
+@keyframes anger-pulse {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(200,60,60,0.05), 0 0 30px rgba(200,60,60,0.08); }
+  50% { box-shadow: inset 0 0 60px rgba(200,60,60,0.12), 0 0 50px rgba(200,60,60,0.15); }
+}
+.moment-anger.visible { animation: anger-pulse 2.5s ease-in-out infinite; }
+
+@keyframes krusch-glow {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(90,170,122,0.05), 0 0 30px rgba(90,170,122,0.08); }
+  50% { box-shadow: inset 0 0 70px rgba(90,170,122,0.12), 0 0 50px rgba(90,170,122,0.15); }
+}
+.moment-krusch.visible { animation: krusch-glow 3s ease-in-out infinite; }
+
+@keyframes eye-pulse {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(255,200,40,0.6)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 30px rgba(255,220,60,0.95)) drop-shadow(0 0 50px rgba(200,140,0,0.5)); transform: scale(1.06); }
+}
+
+@keyframes return-glow {
+  0%, 100% { text-shadow: 0 0 30px rgba(160,80,220,0.7), 0 0 60px rgba(80,40,140,0.4); }
+  50% { text-shadow: 0 0 50px rgba(180,100,255,1), 0 0 90px rgba(100,50,180,0.7), 0 0 4px #fff; }
+}
+
+@keyframes ring-expand {
+  0%   { width: 60px; height: 60px; opacity: 0.8; border-color: rgba(160,80,220,0.7); }
+  100% { width: 320px; height: 320px; opacity: 0; border-color: rgba(80,20,140,0); }
+}
+
+/* ── Scroll indicator ── */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.scroll-chevron {
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(200,164,106,0.5);
+  border-bottom: 1px solid rgba(200,164,106,0.5);
+  transform: rotate(45deg);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+  50% { transform: rotate(45deg) translateY(6px); opacity: 0.9; }
+}
+
+/* ── Witch cult / Dragon ── */
+.cult-mention {
+  color: var(--witch);
+  font-style: normal;
+  text-shadow: 0 0 8px rgba(144,64,160,0.3);
+}
+
+.dragon-mention {
+  color: #d4a020;
+  text-shadow: 0 0 8px rgba(200,150,0,0.3);
+}
+
+/* ── Footnote-style location ── */
+.location-tag {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: rgba(200,164,106,0.35);
+  padding: 8px 0 30px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  main { padding: 60px 20px 100px; }
+  header { padding: 12px 20px; }
+  .header-arc { display: none; }
+  body { font-size: 17px; }
+  .nav-buttons { padding: 40px 20px 80px; gap: 12px; }
+  .nav-btn { padding: 12px 18px; font-size: 10px; }
+  .chapter-kanji { font-size: 28px; letter-spacing: 0.25em; margin-bottom: 20px; }
+  .moment,
+  .dragon-eye-reveal,
+  .return-block {
+    margin: 1.7em 0;
+    padding: 20px 20px 20px 24px;
+    border-radius: 12px;
+  }
+  .moment-text,
+  .dragon-eye-text,
+  .return-text,
+  .inner-fire {
+    line-height: 1.72;
+  }
+}
+
+.jp-minute{margin:28px 0;padding:14px 16px;border-left:3px solid var(--accent2);background:rgba(120,140,180,.08);border-radius:8px;}
+.jp-minute-toggle{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:12px;width:100%;font-family:"Nunito",sans-serif;font-weight:600;color:var(--accent2);}
+.jp-minute-content{margin-top:10px;overflow:hidden;max-height:0;opacity:0;transition:max-height .38s ease,opacity .28s ease;}
+.jp-minute.open .jp-minute-content{opacity:1;}
+.jp-minute-arrow{transition:transform .22s ease;}
+.jp-minute.open .jp-minute-arrow{transform:rotate(180deg);}
+
+.battle-beat{position:relative;padding-left:14px;border-left:2px solid rgba(210,90,70,.35);}
+.battle-beat::before{content:"";position:absolute;left:-5px;top:0.8em;width:7px;height:7px;border-radius:50%;background:rgba(240,120,90,.55);box-shadow:0 0 12px rgba(240,120,90,.35);}
+.battle-beat .moment-text{letter-spacing:.01em;}
+.battle-spark{background:linear-gradient(90deg,rgba(210,90,70,.12),transparent 70%);border-radius:6px;padding:2px 6px;animation:sparkPulse 2.8s ease-in-out infinite;}
+@keyframes sparkPulse{0%,100%{box-shadow:none;}50%{box-shadow:0 0 10px rgba(210,90,70,.22);}}
+body.no-anim .battle-spark{animation:none;}
+
+.archbishop-gluttony { color: #c8a070; text-shadow: 0 0 8px rgba(200,160,112,0.28); }
+body.light-theme .archbishop-gluttony { color: #8a6040; }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="canvas"></canvas>
+
+<!-- Theme toggle -->
+<button id="theme-toggle" aria-label="Переключить тему">
+  <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+  </svg>
+  <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1" x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1" y1="12" x2="3" y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+  </svg>
+</button>
+
+<!-- ════ SETTINGS CONTROLS (bottom-left) ════ -->
+<div id="settings-controls">
+  <button id="settings-toggle" title="Настройки" aria-label="Открыть настройки">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+  </button>
+</div>
+<div id="settings-panel" role="dialog" aria-label="Настройки чтения">
+  <div class="settings-title">Настройки чтения</div>
+
+  <!-- Font selector -->
+  <div class="settings-group">
+    <span class="settings-label">Шрифт</span>
+    <div class="settings-btn-row" id="font-btns">
+      <button class="settings-btn active" data-font="EB Garamond">Garamond</button>
+      <button class="settings-btn" data-font="Merriweather">Merriweather</button>
+      <button class="settings-btn" data-font="Lora">Lora</button>
+      <button class="settings-btn" data-font="PT Serif">PT Serif</button>
+      <button class="settings-btn" data-font="Libre Baskerville">Baskerville</button>
+      <button class="settings-btn" data-font="Source Serif 4">Source Serif</button>
+      <button class="settings-btn" data-font="Nunito">Nunito</button>
+      <button class="settings-btn" data-font="Comic Sans MS">Comic Sans</button>
+    </div>
+  </div>
+
+  <!-- Font size -->
+  <div class="settings-group">
+    <span class="settings-label">Размер текста</span>
+    <div class="settings-slider-row">
+      <input type="range" id="font-size-slider" min="14" max="28" step="1" value="19">
+      <span class="settings-slider-val" id="font-size-val">19px</span>
+    </div>
+  </div>
+
+  <!-- Container width -->
+  <div class="settings-group">
+    <span class="settings-label">Ширина текста</span>
+    <div class="settings-slider-row">
+      <input type="range" id="width-slider" min="480" max="1100" step="20" value="760">
+      <span class="settings-slider-val" id="width-val">760px</span>
+    </div>
+  </div>
+
+  <!-- Text align -->
+  <div class="settings-group">
+    <span class="settings-label">Выравнивание текста</span>
+    <div class="settings-btn-row" id="align-btns">
+      <button class="settings-btn active" data-align="left">По левому</button>
+      <button class="settings-btn" data-align="justify">По ширине</button>
+    </div>
+  </div>
+
+  <!-- Animation toggle -->
+  <div class="settings-group">
+    <span class="settings-label">Анимация появления текста</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="anim-on">Включена</button>
+      <button class="settings-btn" id="anim-off">Выключена</button>
+    </div>
+  </div>
+
+  <!-- Emotional blocks toggle -->
+  <div class="settings-group" style="margin-bottom:0">
+    <span class="settings-label">Эмоциональные блоки</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="moments-on">Карточки</button>
+      <button class="settings-btn" id="moments-off">Обычный текст</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <span class="header-arc">Re:Zero · Арка 10</span>
+  <span class="header-title">Клятва Первого Рыцаря</span>
+  <span class="header-pov" id="pov-indicator">Том 45</span>
+</header>
+
+<!-- ════ TITLE SCREEN ════ -->
+<div class="chapter-title-block">
+  <div class="chapter-kanji">君の笑顔を愛したい</div>
+  <div class="chapter-arc">Re:Zero — Жизнь с нуля в альтернативном мире · Арка 10</div>
+  <div class="chapter-num">Глава 25</div>
+  <div class="chapter-subtitle">«Так хочу любить твою улыбку»</div>
+  <div class="scroll-hint">↓ Читать</div>
+  <div class="scroll-down">
+    <div class="scroll-chevron"></div>
+    <div class="scroll-chevron" style="margin-top:-8px;opacity:0.5;"></div>
+  </div>
+</div>
+
+<!-- ════ MAIN CONTENT ════ -->
+<main id="main-content">
+  <div class="location-tag reveal">Приграничный город · Трактир</div>
+  <p class="narr reveal">Я-то думал, что час расплаты за накопившиеся долги наступает куда более драматично.</p>
+  <p class="narr reveal">— Хейнкель Астрея, выдан приказ о вашей доставке в столицу. Просим вас проследовать за нами.</p>
+  <p class="narr reveal">В окружении рыцарей в белых мундирах Королевской Гвардии Хейнкель оказался посреди белого дня. Он сидел в углу таверны с кружкой дешевого пойла и тоскливо ломал голову над тем, до чего же беспросветно его будущее.</p>
+  <p class="narr reveal">Эти рыцари отлично знали, с кем имеют дело, но все равно выкрикивали приказ о сдаче, отчего Хейнкель глубоко им сочувствовал. Парням явно досталась работа не из приятных.</p>
+  <p class="narr reveal">— В столицу, значит?.. И в чем же меня обвиняют? За что волочете?</p>
+  <p class="narr reveal">— К сожалению, мы не можем вам об этом сказать. Но если вы собираетесь воспротивиться…</p>
+  <p class="narr reveal">Рыцари заметно подобрались, напряжение возросло.</p>
+  <p class="narr reveal">Хейнкель выдохнул пропитанный перегаром воздух. Хмель еще не окончательно затуманил разум. Чутье подсказывало: помимо этих троих, снаружи поджидает целый отряд. Короче говоря, они готовы применить силу. А у Хейнкеля попросту не хватило бы умения, чтобы сломить их служебный пыл. И главное…</p>
+  <p class="thought reveal">«Бежать-то все равно некуда…»</p>
+  <p class="narr reveal">Не то чтобы он глушил дешевую выпивку от беспросветной безнадеги. Прежде чем прислониться к стойке, Хейнкель до судорог в мозгах пытался найти хоть какой-то выход. А в таверну его привело нежелание признавать очевидное: ходов больше нет. Всякие средства исчерпаны.</p>
+  <p class="narr reveal">Хейнкель стиснул зубы и уставился на кружку, где оставалось еще пол-очка мутного пойла.</p>
+  <p class="narr reveal">Две цели, ради которых он жил, требовали одного — возможности влиять на Королевские Выборы. Сначала все вышло случайно: он сошелся с Присциллой и получил место подле нее. Лишь потеряв его, он осознал, каким сокровищем владел. Сделать новый ход в другом месте оставалось единственным спасением. В Лагерь Круш, где обретался отец, или Фельт, где находился сын, ему дорога была закрыта. Оставались лишь двое кандидатов.</p>
+  <p class="thought reveal">«К госпоже Эмилии путь закрыт. А к той… госпоже Анастасии из Карараги…»</p>
+  <p class="narr reveal">Даже Хейнкель понимал, насколько это нереально.</p>
+  <p class="narr reveal">Он еще питал смутные надежды на прагматизм торговки, но события в Империи Волакия показали: Анастасия слишком сблизилась с Эмилией. Вне сомнений, та уже напела ей во всех подробностях о том, какое позорище он устроил. Да и без того Хейнкель прекрасно знал, какая у него паршивая репутация.</p>
+  <p class="narr reveal">Ни один из кандидатов на престол не подпустил бы его и на выстрел. Едва затеплившийся луч надежды погас и окончательно его раздавил.</p>
+  <p class="narr reveal">— Господин Хейнкель Астрея. Каков ваш ответ?</p>
+  <p class="narr reveal">Рыцари ждали решения, не ослабляя хватки. Хейнкель одним махом допил остатки пойла и опустил руку.</p>
+  <p class="narr reveal">Потянуться к верному мечу у него не возникло ни малейшего позыва.</p>
+  <div class="section-divider reveal">
+    <span class="divider-line"></span>
+    <span class="divider-sigil">△▼△▼△▼△</span>
+    <span class="divider-line"></span>
+  </div>
+  <div class="location-tag reveal"></div>
+  <p class="narr reveal">Всю дорогу до столицы его не стали связывать — просто затолкнули в драконью повозку, что довольно сильно Хейнкеля озадачило. Он-то уже приготовился к скотскому обращению и пинкам.</p>
+  <p class="narr reveal">— И все-таки, под каким предлогом вы меня везете?</p>
+  <p class="narr reveal">Конвоиры по-прежнему хранили молчание. Сидя между ними, Хейнкель перебирал в уме собственные грехи — а их хватало с лихвой.</p>
+  <p class="narr reveal">Он бросил должность вице-капитана Королевской Гвардии и свои земли, давно забив на обязанности владетеля дома Астрея. Его вполне могли обвинить во вмешательстве во внутренние дела Империи Волакия. А уж свежее участие в заговоре Альдебарана… Хотя тот план накрылся медным тазом еще до того, как Хейнкель успел хоть что-то сделать, но ему было бы впору накричать: «Мы так не договаривались!» Однако винить Ала у него желания не возникало. Когда у человека что-то не выходит, винить его — последнее дело. Если уж на то пошло, самого Хейнкеля за все провалы стоило бы утопить сотню раз, и то было бы мало.</p>
+  <p class="narr reveal">Все снова вернулось на круги своя. И попытка скинуть Райнхарда с пьедестала Святого Меча, и надежда разбудить жену, спящую почти двадцать лет… Все нужно начинать с нуля.</p>
+  <p class="narr reveal">Может, пришла пора? У него отобрали последний повод цепляться за жизнь — будто сунули в лицо суровую правду: смирись уже, идиот. Будь оно так, оставалось бы только горько расхохотаться.</p>
+  <p class="thought reveal">«Хотя что-то тут не так…»</p>
+  <p class="narr reveal">Путь до столицы занял несколько дней. Когда под охраной молчаливых рыцарей Хейнкель наконец выбрался из драконьей повозки, он с удивлением обнаружил, что его привезли вовсе не в королевский замок, не в казармы гвардии и уж тем более не в казематы.</p>
+  <p class="narr reveal">Перед ним стояла старая церковь в одном из кварталов столицы — Церковь <span class="dragon-mention">Божественного Дракона</span>. Здание, на которое Хейнкелю было тяжело смотреть.</p>
+  <p class="narr reveal">Эта Церковь являлась главной святыней Лугуники. Неважно, насколько истово веровал человек, большинство жителей Королевства так или иначе возносили мольбы <span class="dragon-mention">Божественному Дракону</span> именно здесь.</p>
+  <p class="narr reveal">Когда-то и Хейнкель приходил сюда снова и снова и молил о пробуждении спящей жены. Но после той роковой ночи он зарекся переступать этот порог. Он считал, что больше не имеет на это никакого права.</p>
+  <p class="narr reveal">И вот теперь, когда его буквально втолкнули в двери храма, навстречу ему поднялась девушка в одеянии монахини — с длинными золотистыми волосами и алыми глазами.</p>
+  <p class="narr reveal">Девушка лишь завидела его издалека, но тотчас с шумом грохнула стулом, на котором сидела, и словно на крыльях подлетела к нему:</p>
+  <p class="narr reveal">— Ах! Я так ждала вас, господин Хейнкель!</p>
+  <p class="narr reveal">На ее лице сияла широкая, искренняя улыбка. От такой напористости Хейнкель поневоле отступил на полшага.</p>
+  <p class="narr reveal">Угрозы от нее не исходило — только симпатия. Но им овладело глубокое сомнение. Он смерил девчонку взглядом с головы до ног, и догадка моментально оформилась в его голове.</p>
+  <p class="narr reveal">Роскошные золотые волосы, алые глаза, подобные пылающим самоцветам… Этих черт здесь просто не могло быть.</p>
+  <p class="narr reveal">— Меня зовут Фьоре Лугуника. Рада нашей встрече, господин Хейнкель! Я так ждала вас!</p>
+  <p class="narr reveal">— Фь… Фьоре?..</p>
+  <p class="narr reveal">— Хм? Ну да, Фьоре. Это мое имя… Ах, ну конечно! Любой на вашем месте удивился бы. В последнее время вокруг меня такая беготня, что я совсем выжила из ума и забыла про приличия, — девушка смущенно показала кончик языка.</p>
+  <p class="narr reveal">Потрясение Хейнкеля трудно было описать словами. Двух людей с таким именем на белом свете быть просто не могло…</p>
+  <p class="narr reveal">— И вам огромное спасибо за помощь! — обратилась Фьоре к рыцарям, стоявшим у входа. — Дракон непременно возрадуется вашему усердию. «Мечом разит рука человека, но жизнью правит лишь Дракон. Пречист тот путь, что выбран им, пусть даже кровью он окроплен», — так гласит Писание.</p>
+  <p class="narr reveal">Рыцари переглянулись. Естественно, им совсем не хотелось оставлять Фьоре наедине с Хейнкелем. Но девушка лишь задорно махнула рукой.</p>
+  <p class="narr reveal">— Не волнуйтесь! — воскликнула она и стукнула себя кулачком в грудь. — Перед нами человек из рода Святого Меча, которого избрал сам Божественный Дракон! Я лично за него ручаюсь! Для всего Королевства эта встреча станет роковой!</p>
+  <p class="narr reveal">Рыцари опешили еще сильнее. Что до Хейнкеля, то ее слова задели за больно. Он онемел от ее слов и лишь сейчас наконец пришел в себя после первого шока.</p>
+  <p class="narr reveal">— Если что-нибудь случится, сразу зовите, — сказали рыцари. — Мы будем снаружи.</p>
+  <p class="narr reveal">Судя по всему, это был предел их уступок. Конвоиры смерили Хейнкеля напоследок тяжелым взглядом и закрыли за собой массивные двери храма. Как только они скрылись из виду, Фьоре скрестила руки и вздохнула:</p>
+  <p class="narr reveal">— Ну что за упрямцы, — потерла она подбородок. — Эх, но их можно понять, обстановка сейчас непростая… Но дела не ждут! Итак, господин Хейнкель Астрея, я беспредельно счастлива…</p>
+  <p class="narr reveal">— Что за ахинею ты только что несла? — перебил ее Хейнкель. Он шагнул вперед и навис над девчонкой.</p>
+  <p class="narr reveal">Фьоре хлопнула длинными ресницами и вытаращила на него алые глаза.</p>
+  <p class="narr reveal">До чего же невыносимый взгляд… Ее черты до ужаса напоминали королевский род Лугуника. Но этого просто быть не могло!</p>
+  <p class="narr reveal">— Фьоре Лугуника — это принцесса, она пропала из замка пятнадцать лет назад. Ее отыскали в трущобах, и сейчас она участвует в Королевских Выборах…</p>
+  <p class="narr reveal">— А-а, вы про Фельт! — кивнула Фьоре. — Да, до меня доходили слухи, будто ее считают той самой принцессой. Но мы решили, что это не так уж и важно.</p>
+  <p class="narr reveal">— Что?..</p>
+  <p class="narr reveal">— Я или она — кто-то из нас и правда мог быть той малышкой, которая пропала из замка пятнадцать лет назад. Нам обеим примерно по пятнадцать лет, совпадение просто поразительное! Но разве это имеет значение?</p>
+  <p class="narr reveal">— Ты… ты хоть понимаешь, какую чушь мелешь?! — от возмущения у Хейнкеля перехватило дыхание.</p>
+  <p class="narr reveal">Это звучало абсолютно дико. Из-за той давней трагедии судьбы множества людей пошли наперекосяк. И сам Хейнкель увяз в этом по самые уши!</p>
+  <p class="narr reveal">— Все, что произошло той ночью пятнадцать лет назад… — зарычал он. — И все эти твои бредни про род Святого Меча и то, что меня избрал Дракон…</p>
+  <div class="moment moment-shock reveal"><p class="moment-text">— Но ведь пятнадцать лет назад вы попали под брызги Драконьей Крови в замке и не просто выжили, а усвоили ее силу, ибо веровали в чудо?</p></div>
+  <p class="narr reveal">— Ч-что?!.</p>
+  <p class="narr reveal">— Ой, об этом же нельзя распространяться, да? — Фьоре торопливо прикрыла рот ладошкой. — Вообще-то я случайно вычитала это в секретных архивах церкви и только потом сообразила, что болтать не стоит.</p>
+  <p class="narr reveal">Хейнкель остолбенел. Одно дело — коснуться событий той ночи, но знать про Драконью Кровь?! Да еще и вычитать это в секретных церковных записях?! Откуда?! Да, он ходил в храм, но святошей никогда не был и душу ни в каких исповедальнях не изливал. А самое главное — то, что случилось пятнадцать лет назад, должно остаться похороненным навечно. Случись огласка — виной не расплатится он один. Гнев обрушится на весь дом Астрея и на все Королевство Лугуника. И одним его вырванным сердцем дело не закончится.</p>
+  <p class="narr reveal">Поэтому Хейнкель скривил губы в ехидной ухмылке и со злобой выплюнул:</p>
+  <p class="narr reveal">— Ха! Понятия не имею, о чем ты лепечешь, фальшивая принцесса.</p>
+  <p class="narr reveal">Фьоре замерла с широко раскрытыми глазами. Похоже, она искренне не ожидала, что он станет отпираться. Какая наивная дурочка.</p>
+  <p class="narr reveal">— Думаешь, — продолжил он, — если прешь напролом, то все само собой сложится? Ну и глупый же у тебя подход. Мир устроен куда хуже.</p>
+  <p class="narr reveal">— Господин Хейнкель…</p>
+  <p class="narr reveal">— Засунь свои чины себе в!.. Чего ты от меня ждала? «Избранник <span class="dragon-mention">Божественного Дракона</span>»? Просто умора! Род Святого Меча — вот что тебе нужно? Замок и Церковь всегда держались друг от друга подальше! Для вас, святош, Райнхард — словно кость в горле, ведь его боготворят больше вашего Дракона!</p>
+  <p class="narr reveal">Слова вылетали изо рта сами собой, а внутри разрасталась жгучая ядовитая желчь. Он говорил первое, что пришло в голову, но чем дальше, тем правдоподобнее это казалось. Слава Райнхарда как Святого Меча гремела на все Королевство и едва ли не затмевала веру в Дракона. Конечно, Церковь видела в нем конкурента! И использовать отца против сына — вполне в их духе. От этой мысли Хейнкеля обдало тошнотворной липкой мерзостью.</p>
+  <div class="moment moment-resolve reveal"><p class="moment-text">— Я разыскала вас, господин Хейнкель, только ради одного: я хочу, чтобы вы стали моим рыцарем.</p></div>
+  <div class="moment moment-shock reveal"><p class="moment-text">— …?!</p></div>
+  <p class="narr reveal">Ему показалось, будто от злости у него зазвенело в ушах.</p>
+  <p class="narr reveal">— Чего?..</p>
+  <p class="narr reveal">Но Фьоре не обратила внимания на его ошарашенный вид — она подняла голову и посмотрела прямо в его голубые глаза:</p>
+  <p class="narr reveal">— Господин Хейнкель Астрея, я хочу, чтобы вы стали моим рыцарем. Первым Рыцарем Фьоре Лугуника, что с опозданием вступает в Королевские Выборы!</p>
+  <p class="narr reveal">— Ты… ты с ума сошла?!</p>
+  <p class="narr reveal">— Ой, как невежливо! Между прочим, когда мы скрепим наш союз клятвой, вам придется поработать над манерами!</p>
+  <p class="narr reveal">— Кто тебе это внушил?! Неужели Райнхард?! Он тебе что-то наплел?!</p>
+  <p class="narr reveal">— Что за глупости! — возмутилась Фьоре. — С какой стати я стала бы делать нечто судьбоносное по чьей-то указке? Я все решила сама!</p>
+  <p class="narr reveal">— Тогда у тебя вообще нет мозгов! Ты хоть с кем-то советовалась? Да хотя бы с рыцарями снаружи! Вокруг же куча народа!</p>
+  <p class="narr reveal">— Советовалась, конечно. Все ходили с мрачными минами и в один голос говорили мне передумать.</p>
+  <p class="narr reveal">— Так слушайся их! Передумай!</p>
+  <p class="narr reveal">— Я и передумывала! Но сколько бы ни взвешивала «за» и «против», все равно получалось, что вы — лучший кандидат!</p>
+  <p class="narr reveal">Дар речи потерялся сам собой перед этой упертой девчонкой. Присцилла тоже отличалась несгибаемым упрямством, но ее решения подкреплялись такой абсолютной уверенностью и силой, что возразить было нечего. Она была взрослой женщиной. А Фьоре — глупое дитя. И если ребенок творит глупости, взрослый обязан его остановить.</p>
+  <p class="narr reveal">Даже если сам этот взрослый — жалкий, никчемный, опустившийся слизняк, не имеющий права давать советы.</p>
+  <div class="moment moment-anger reveal"><p class="moment-text">— Мечтать не вредно, девчонка, но то, во что ты лезешь, — чистой воды кошмар. И тебе все твердят об этом, а ты затыкаешь уши. Я в этом фарсе участвовать не собираюсь.</p></div>
+  <p class="narr reveal">Хейнкель мысленно усмехнулся собственной глупости.</p>
+  <p class="narr reveal">Только что он упивался тоской оттого, что остался ни с чем, а когда ему протянули спасительную соломинку — отказался ее хватать. Будь для него цель поистине важна, он бы вцепился в эту возможность зубами и пренебрег моралью. Раз он колеблется даже спустя двадцать лет — значит, не так уж сильно ему это и нужно…</p>
+  <p class="narr reveal">Все это — лишь призраки прошлого, а сам он давно пуст внутри…</p>
+  <p class="thought reveal">«До чего же вы милый, Хейнкель!» — внезапно в тишине его разума прозвучал чистый, звонкий голос, заставивший затрепетать всю его душу.</p>
+  <p class="narr reveal">— Луанна…</p>
+  <p class="narr reveal">Он не слышал ее голоса почти двадцать лет.</p>
+  <p class="narr reveal">Но стоило закрыть глаза и вспомнить ее улыбку, как этот голос звучал так четко, словно она стояла прямо за спиной. И неудивительно — ведь он любил ее всем сердцем.</p>
+  <p class="narr reveal">Пусть сам Хейнкель и опустел, но теплота, которую вложила в него Луанна, была настоящей. Ни на миг, ни на единую секунду это чувство не угасало.</p>
+  <p class="narr reveal">— Я приняла титул «Святой» Церкви <span class="dragon-mention">Божественного Дракона</span>, — произнесла Фьоре тихо, но с удивительной внутренней силой.</p>
+  <p class="narr reveal">Хейнкель поднял взгляд. Она смотрела на него все так же прямо, но дурашливость с нее как рукой сняло. Каждое слово звучало веско, наполнено глубоким смыслом и искренней верой.</p>
+  <p class="narr reveal">— Моя цель на Королевских Выборах — сгладить разногласия между замком и Церковью и избавиться от всего, что может помешать спасать людей.</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">— Господин Хейнкель, я знаю про вашу жену, — продолжала она. — Вы уже больше десяти лет неустанно ищете способ ее разбудить. Это заслуживает величайшего уважения.</p>
+  <p class="narr reveal">— Заслуживает уважения?.. Прекрати. Какое уж тут уважение… Ничего ведь до сих пор не вышло. Луанна так и не очнулась…</p>
+  <div class="moment moment-warmth reveal"><p class="moment-text">— Нет, заслуживает! Пусть никто вас не хвалит, но я считаю ваш поступок великим! Далеко не каждый на такое способен. Несгибаемая воля… Нет, вы наверняка ломались, и не раз. Но каждый раз находили в себе силы подняться — вот что действительно поразительно!</p></div>
+  <p class="narr reveal">Хейнкель онемел.</p>
+  <p class="narr reveal">— И именно такого человека я хочу видеть своим рыцарем! То, что вас отметил Дракон — важный знак для Святой, не спорю. Но куда важнее другое: вы из тех, кто до последнего борется ради любимого человека. Мы с вами обязательно поймем друг друга!</p>
+  <p class="narr reveal">Фьоре протянула ему изящную белую ладонь. Ее алые глаза горели пламенным призывом.</p>
+  <p class="thought reveal">«Вот же глупая девчонка…» — подумал он.</p>
+  <p class="narr reveal">При выборе Первого Рыцаря претендентка вверяет ему не только свою жизнь, но и политическое будущее. Хейнкель — ходячий позор, способный уничтожить авторитет любой Святой. У нее не было ни единой причины брать его к себе.</p>
+  <p class="narr reveal">Нужно отказаться. Ради нее же самой. Чтобы эту добрую, чистую душой девчонку не подняли на смех. Он обязан был отказаться! И все же…</p>
+  <p class="narr reveal">— Ответь мне на один вопрос, — сорвалось с губ прежде, чем он успел развернуться и уйти.</p>
+  <p class="narr reveal">В ответ — ни насмешки, ни проклятий. Простая готовность слушать.  Фьоре чуть наклонила голову:</p>
+  <p class="narr reveal">— На какой?</p>
+  <p class="narr reveal">— Ходят слухи, будто у вашей Церкви есть тайное искусство лечения, которое запрещено открывать мирянам. Если… если это правда…</p>
+  <p class="narr reveal">— Вы про Таинство?</p>
+  <p class="narr reveal">— Оно есть?!.. — вырвалось у Хейнкеля.</p>
+  <p class="narr reveal">Фьоре с удивлением посмотрела на него и опустила глаза.</p>
+  <p class="narr reveal">Этот жест подтверждал: Таинство существует, но гарантий, что оно поможет пробудить спящую супругу, нет.</p>
+  <p class="narr reveal">— Есть, — тихо ответила она после паузы, качнув головой. — Но я не уверена, сработает ли оно в случае вашей жены.</p>
+  <p class="narr reveal">Ожидаемый ответ. Однако Хейнкель не впал в отчаяние. Ему не привыкать к тому, как рушатся надежды. Он сотни раз падал в пропасть и научился выживать.</p>
+  <p class="narr reveal">— Вот как. Понятно… Ну да, разумеется.</p>
+  <p class="narr reveal">Хватит с него позора. Разумный человек не стал бы задавать таких вопросов. Попробовал — и снова ударился о стену. На этом все…</p>
+  <div class="moment moment-resolve reveal"><p class="moment-text">— Значит, мы обязаны попробовать! — вдруг вдохновенно воскликнула Фьоре. — Мне хоть и прожужжали все уши, мол, не смей разбазаривать силы, но ведь речь о спасении человека! Так что все в порядке!</p></div>
+  <p class="narr reveal">— Ч-чего?..</p>
+  <p class="narr reveal">— Ой, только я говорю сразу: гарантировать ничего не могу. Таинство — не панацея, все зависит от состояния души… Но у Церкви есть и другие тайные способы! — сжала она свободную руку. В ее голосе прозвучал прежний запал. — Главное — не сдаваться, и выход обязательно найдется!</p>
+  <p class="narr reveal">Хейнкель хлопал глазами и хрипло выдыхал воздух.</p>
+  <p class="narr reveal">Фьоре не обещала невозможного. Не давала пустых клятв, что непременно спасет Луанну. Она просто пообещала бок о бок искать путь и не сдаваться.</p>
+  <p class="narr reveal">Двадцать лет Хейнкель жил в полном одиночестве, терпел насмешки и упреки в глупости. И вдруг эта девочка с поразительной естественностью признала правоту его борьбы. Он ведь и сам… глядя в зеркало, в глубине души уже сомневался, не безнадежно ли все это.</p>
+  <p class="narr reveal">— Господин Хейнкель, ведите! — бодро зашагала к выходу Фьоре, но тут же приостановилась. — Хотя я примерно представляю, где находится поместье Астрея, врываться туда без хозяина как-то неловко. К тому же с Фельт у нас все непросто…</p>
+  <p class="narr reveal">Она обернулась и замерла от изумления. Перед ней на одном колене стоял Хейнкель. Он склонил голову до самого пола.</p>
+  <p class="narr reveal">— Господин… Хейнкель?..</p>
+  <p class="narr reveal">— Прошу прощения за мою непростительную дерзость, госпожа Фьоре, — произнес он ровным, собранным голосом.</p>
+  <p class="narr reveal">Хейнкель станет рыцарем кандидатки, вновь вернется в игру под названием Королевские Выборы.</p>
+  <p class="narr reveal">Святая, способная повелевать церковными таинствами, сможет помочь Луанне. Принцесса с королевской кровью откроет доступ к древним фолиантам или даже к самой крови Дракона.</p>
+  <p class="narr reveal">Холодный расчет давал сотни причин преклонить колено. Но ни одна из них не была главной.</p>
+  <p class="thought reveal">«И все-таки… мне до сих пор хочется поиграть в рыцаря?»</p>
+  <div class="moment moment-resolve reveal"><p class="moment-text">— Я принимаю ваше предложение. Сделайте меня своим рыцарем, госпожа Фьоре.</p></div>
+  <p class="narr reveal">Девушка расцвела в яркой улыбке.</p>
+  <p class="narr reveal">— Вы еще пожалеете о своем выборе…</p>
+  <div class="moment moment-warmth reveal"><p class="moment-text">— Ни за что на свете! — воскликнула Фьоре.</p></div>
+  <p class="narr reveal">Хейнкель поморщился и прикусил щеку изнутри.</p>
+  <p class="narr reveal">Не вставая с колена, он отстегнул меч, положил его на пол и принес высшую рыцарскую клятву. Прямая осанка, угол наклона головы перед сюзереном, ритуал поднесения клинка — двадцать лет позора и пьянства так и не смогли вытравить из него врожденную выучку.</p>
+  <p class="narr reveal">То, что осталось от рыцаря, когда-то присягавшего королевскому дому, вновь корчил из себя защитника. Убогое зрелище. Поистине убогое.</p>
+  <p class="narr reveal">И вот, с ног до головы облепленный этим фарсом, Хейнкель Астрея стал Первым Рыцарем новой кандидатки на престол — Фьоре Лугуника.</p>
+  <p class="narr reveal">Так в тот день и родился союз между Святой и Вероломом Меча.</p>
+
+  <div class="section-divider reveal"><span class="divider-line"></span><span class="divider-sigil">△▼△▼△▼△</span><span class="divider-line"></span></div>
+
+  <div style="text-align:center; padding: 40px 0 80px; opacity: 0.4;" class="reveal">
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.5em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px;">Конец главы</div>
+    <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 28px; color: var(--accent);">君の笑顔を愛したい</div>
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.3em; color: var(--text-dim); margin-top: 12px;">Арка 10 · Глава 25</div>
+  </div>
+
+</main>
+
+<!-- ════ NAVIGATION BUTTONS ════ -->
+<nav class="nav-buttons">
+  <a href="10-24.html" class="nav-btn nav-btn-prev">
+    <span class="nav-icon">←</span>
+    <span>Глава 24</span>
+  </a>
+  <a href="index.html" class="nav-btn nav-btn-toc">
+    <span class="nav-icon">☰</span>
+    <span>Оглавление</span>
+  </a>
+</nav>
+
+<script>
+// ── Helpers ──
+const STORAGE_KEY = 'rezero-settings';
+
+function saveSettings(obj) {
+  try {
+    const cur = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({...cur, ...obj}));
+  } catch(e) {}
+}
+
+function loadSettings() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { return {}; }
+}
+
+// ── Theme toggle ──
+const themeBtn = document.getElementById('theme-toggle');
+const iconSun  = document.getElementById('icon-sun');
+const iconMoon = document.getElementById('icon-moon');
+const THEME_KEY = 'rezero-theme';
+
+function applyTheme(theme) {
+  if (theme === 'light') {
+    document.body.classList.add('light-theme');
+    iconSun.style.display  = 'block';
+    iconMoon.style.display = 'none';
+  } else {
+    document.body.classList.remove('light-theme');
+    iconSun.style.display  = 'none';
+    iconMoon.style.display = 'block';
+  }
+}
+
+const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+applyTheme(savedTheme);
+
+themeBtn.addEventListener('click', () => {
+  const isLight = document.body.classList.contains('light-theme');
+  const next = isLight ? 'dark' : 'light';
+  applyTheme(next);
+  localStorage.setItem(THEME_KEY, next);
+});
+</script>
+
+<script>
+// ── Settings panel toggle ──
+const settingsToggle = document.getElementById('settings-toggle');
+const settingsPanel  = document.getElementById('settings-panel');
+
+settingsToggle.addEventListener('click', () => {
+  const open = settingsPanel.classList.toggle('open');
+  settingsToggle.classList.toggle('active', open);
+});
+
+// Close panel when clicking outside
+document.addEventListener('click', (e) => {
+  if (!settingsPanel.contains(e.target) && e.target !== settingsToggle && !settingsToggle.contains(e.target)) {
+    settingsPanel.classList.remove('open');
+    settingsToggle.classList.remove('active');
+  }
+});
+
+// ── Font selector ──
+const fontBtns = document.querySelectorAll('#font-btns .settings-btn');
+const mainEl   = document.getElementById('main-content');
+
+function applyFont(fontName) {
+  document.body.style.fontFamily = `'${fontName}', Georgia, serif`;
+  fontBtns.forEach(b => b.classList.toggle('active', b.dataset.font === fontName));
+}
+
+fontBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyFont(btn.dataset.font);
+    saveSettings({ font: btn.dataset.font });
+  });
+});
+
+// ── Font size ──
+const fontSizeSlider = document.getElementById('font-size-slider');
+const fontSizeVal    = document.getElementById('font-size-val');
+
+function applyFontSize(size) {
+  document.body.style.fontSize = size + 'px';
+  fontSizeVal.textContent = size + 'px';
+  fontSizeSlider.value = size;
+}
+
+fontSizeSlider.addEventListener('input', () => {
+  applyFontSize(parseInt(fontSizeSlider.value));
+  saveSettings({ fontSize: fontSizeSlider.value });
+});
+
+// ── Container width ──
+const widthSlider = document.getElementById('width-slider');
+const widthVal    = document.getElementById('width-val');
+
+function applyWidth(w) {
+  const style = `${w}px`;
+  document.getElementById('main-content').style.maxWidth = style;
+  document.querySelector('.nav-buttons').style.maxWidth = style;
+  widthVal.textContent = style;
+  widthSlider.value = w;
+}
+
+widthSlider.addEventListener('input', () => {
+  applyWidth(parseInt(widthSlider.value));
+  saveSettings({ width: widthSlider.value });
+});
+
+// ── Animation toggle ──
+const animOn  = document.getElementById('anim-on');
+const animOff = document.getElementById('anim-off');
+
+function applyAnim(enabled) {
+  if (enabled) {
+    document.body.classList.remove('no-anim');
+    animOn.classList.add('active');
+    animOff.classList.remove('active');
+  } else {
+    document.body.classList.add('no-anim');
+    // Make all hidden elements visible immediately
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    animOff.classList.add('active');
+    animOn.classList.remove('active');
+  }
+}
+
+animOn.addEventListener('click', () => { applyAnim(true); saveSettings({ anim: true }); });
+animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim: false }); });
+
+// ── Emotional blocks toggle ──
+const momentsOn  = document.getElementById('moments-on');
+const momentsOff = document.getElementById('moments-off');
+
+function applyMomentBlocks(enabled) {
+  document.body.classList.toggle('plain-moments', !enabled);
+  momentsOn.classList.toggle('active', enabled);
+  momentsOff.classList.toggle('active', !enabled);
+}
+
+momentsOn.addEventListener('click', () => { applyMomentBlocks(true); saveSettings({ momentBlocks: true }); });
+momentsOff.addEventListener('click', () => { applyMomentBlocks(false); saveSettings({ momentBlocks: false }); });
+
+// ── Text alignment ──
+const alignBtns = document.querySelectorAll('#align-btns .settings-btn');
+
+function applyAlign(align) {
+  const content = document.getElementById('main-content');
+  content.querySelectorAll('p, .moment-text, .dragon-eye-text, .return-text, .inner-fire').forEach(el => { el.style.textAlign = align; });
+  alignBtns.forEach(b => b.classList.toggle('active', b.dataset.align === align));
+}
+
+alignBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyAlign(btn.dataset.align);
+    saveSettings({ align: btn.dataset.align });
+  });
+});
+
+// ── Load persisted settings ──
+(function() {
+  const s = loadSettings();
+  if (s.font) applyFont(s.font);
+  if (s.fontSize) applyFontSize(parseInt(s.fontSize));
+  if (s.width) applyWidth(parseInt(s.width));
+  if (s.anim === false) applyAnim(false);
+  if (s.momentBlocks === false) applyMomentBlocks(false);
+  if (s.align) applyAlign(s.align);
+})();
+</script>
+
+<script>
+// ── Progress bar ──
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+});
+
+// ── Reveal on scroll ──
+const revealEls = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+// ── Ambient particle canvas ──
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function Particle() {
+  this.reset();
+}
+Particle.prototype.reset = function() {
+  this.x = Math.random() * W;
+  this.y = Math.random() * H;
+  this.vx = (Math.random() - 0.5) * 0.15;
+  this.vy = -Math.random() * 0.3 - 0.05;
+  this.r = Math.random() * 1.2 + 0.3;
+  this.alpha = Math.random() * 0.4 + 0.05;
+  this.life = 1;
+  this.decay = Math.random() * 0.002 + 0.001;
+  // Gold, green (Krusch), and purple (Beatrice) particles
+  const roll = Math.random();
+  if (roll > 0.65) {
+    this.color = `rgba(200,164,106,${this.alpha})`;
+  } else if (roll > 0.35) {
+    this.color = `rgba(90,170,122,${this.alpha * 0.7})`;
+  } else {
+    this.color = `rgba(160,100,220,${this.alpha * 0.5})`;
+  }
+};
+
+for (let i = 0; i < 80; i++) {
+  const p = new Particle();
+  p.y = Math.random() * H;
+  particles.push(p);
+}
+
+function animParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= p.decay;
+    if (p.life <= 0 || p.y < -10) p.reset();
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.life * 0.6;
+    ctx.fill();
+  });
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+
+// ── Dragon Eye dramatic entrance ──
+// When the dragon-eye-reveal becomes visible, add extra flare
+const dragonEye = document.querySelector('.dragon-eye-reveal');
+if (dragonEye) {
+  const eyeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Spawn a burst of golden particles from center
+        for (let i = 0; i < 20; i++) {
+          setTimeout(() => {
+            const burst = new Particle();
+            burst.x = W / 2 + (Math.random() - 0.5) * 200;
+            burst.y = H / 2;
+            burst.vy = -(Math.random() * 1.5 + 0.5);
+            burst.vx = (Math.random() - 0.5) * 1.2;
+            burst.alpha = 0.8;
+            burst.r = Math.random() * 2 + 1;
+            burst.color = `rgba(220,180,40,${burst.alpha})`;
+            burst.decay = 0.008;
+            particles.push(burst);
+            if (particles.length > 120) particles.splice(0, 1);
+          }, i * 60);
+        }
+        eyeObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  eyeObserver.observe(dragonEye);
+}
+
+// ── Return block: activate rings when visible ──
+const returnBlock = document.querySelector('.return-block');
+if (returnBlock) {
+  const retObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        returnBlock.querySelectorAll('.return-ring').forEach(r => {
+          r.style.opacity = '1';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  retObserver.observe(returnBlock);
+}
+</script>
+<script>document.querySelectorAll(".jp-minute-toggle").forEach(btn=>{const box=btn.closest(".jp-minute");const content=box.querySelector(".jp-minute-content");btn.setAttribute("aria-expanded","false");content.style.maxHeight="0px";btn.addEventListener("click",()=>{const open=btn.getAttribute("aria-expanded")==="true";btn.setAttribute("aria-expanded",String(!open));box.classList.toggle("open",!open);if(!open){content.style.maxHeight=content.scrollHeight+"px";}else{content.style.maxHeight=content.scrollHeight+"px";requestAnimationFrame(()=>{content.style.maxHeight="0px";});}});});</script>
+</body>
+</html>
