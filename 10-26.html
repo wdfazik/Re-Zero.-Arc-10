@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re:Zero — Арка 10, Глава 26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;600;700&family=Cormorant+Infant:ital,wght@0,400;0,600;1,400;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c14;
+  --bg2: #0e1320;
+  --bg3: #13192e;
+  --text: #ddd4c0;
+  --text-dim: #8a8070;
+  --accent: #c8a46a;
+  --accent2: #7a9cc8;
+  --divider: #2a3050;
+  --ram: #e87aaa;
+  --emilia: #aac8ec;
+  --bordeaux: #d04040;
+  --marcos: #8a9ab0;
+  --fiore: #f0c060;
+  --sakura: #c08ad0;
+  --felt: #e8a050;
+  --reinhard: #5090d8;
+  --witch: #9040a0;
+  --narrator: #ddd4c0;
+  --krusch: #5aaa7a;
+  --tiga: #d4a060;
+  --beatrice: #b08adc;
+  --subaru: #90b8e0;
+}
+
+/* ── Light theme overrides ── */
+body.light-theme {
+  --bg: #f0ebe0;
+  --bg2: #e8e2d4;
+  --bg3: #ddd7c8;
+  --text: #1a1610;
+  --text-dim: #6a5e4a;
+  --accent: #8a5e1a;
+  --accent2: #2a5888;
+  --divider: #c8bca0;
+}
+
+body.light-theme header {
+  background: rgba(240,235,224,0.97);
+  border-bottom-color: rgba(138,94,26,0.15);
+}
+
+body.light-theme p.italic-narr {
+  color: #3a3020;
+}
+
+body.light-theme p.thought {
+  color: #4a3e2a;
+  border-left-color: rgba(138,94,26,0.4);
+}
+
+body.light-theme .inner-fire {
+  color: #5a3a10;
+  border-left-color: var(--accent);
+}
+
+body.light-theme .moment-resolve {
+  background: rgba(240,235,220,0.7);
+  border-color: rgba(138,94,26,0.35);
+}
+body.light-theme .moment-resolve .moment-text { color: #2a1e08; }
+
+body.light-theme .moment-shock {
+  background: rgba(220,230,245,0.6);
+  border-color: rgba(60,100,180,0.3);
+}
+body.light-theme .moment-shock .moment-text { color: #1a2a3a; }
+
+body.light-theme .moment-anger {
+  background: rgba(245,225,220,0.6);
+  border-color: rgba(180,60,60,0.3);
+}
+body.light-theme .moment-anger .moment-text { color: #2a0808; }
+
+body.light-theme .moment-heavy {
+  background: rgba(220,225,235,0.6);
+  border-color: rgba(80,90,120,0.3);
+}
+body.light-theme .moment-heavy .moment-text { color: #1a1e2a; }
+
+body.light-theme .moment-warmth {
+  background: rgba(245,235,240,0.6);
+  border-color: rgba(200,100,140,0.3);
+}
+body.light-theme .moment-warmth .moment-text { color: #2a1020; }
+
+body.light-theme .moment-krusch {
+  background: rgba(220,240,230,0.6);
+  border-color: rgba(60,140,90,0.3);
+}
+body.light-theme .moment-krusch .moment-text { color: #0a2a18; }
+
+body.light-theme .dragon-eye-reveal {
+  background: rgba(245,240,220,0.9);
+  border-color: rgba(160,120,20,0.4);
+}
+
+body.light-theme .dragon-eye-text {
+  color: #7a5000;
+  text-shadow: 0 0 8px rgba(160,100,0,0.2);
+}
+
+body.light-theme .return-block {
+  background: rgba(230,225,245,0.85);
+  border-color: rgba(100,60,180,0.3);
+}
+
+body.light-theme .return-kanji {
+  color: rgba(100,60,180,0.85);
+  text-shadow: 0 0 20px rgba(100,60,180,0.4);
+}
+
+body.light-theme .return-label {
+  color: rgba(100,60,180,0.6);
+}
+
+body.light-theme .return-text {
+  color: #2a1a4a;
+}
+
+body.light-theme .nav-btn {
+  background: rgba(230,224,210,0.8);
+  border-color: rgba(138,94,26,0.25);
+  color: var(--text-dim);
+}
+
+body.light-theme .nav-btn:hover {
+  background: rgba(215,208,192,0.95);
+}
+
+body.light-theme .chapter-kanji {
+  color: rgba(138,94,26,0.65);
+}
+
+body.light-theme .location-tag {
+  color: rgba(138,94,26,0.7);
+}
+
+body.light-theme .scroll-hint,
+body.light-theme .chapter-arc {
+  color: #8a7a60;
+}
+
+body.light-theme .chapter-subtitle {
+  color: #2a2010;
+}
+
+body.light-theme .scroll-chevron {
+  border-right-color: rgba(100,70,20,0.5);
+  border-bottom-color: rgba(100,70,20,0.5);
+}
+
+body.light-theme .divider-line {
+  background: linear-gradient(90deg, transparent, rgba(138,94,26,0.5), transparent);
+}
+
+body.light-theme .divider-sigil {
+  display: inline-block;
+  text-align: center;
+  color: rgba(138,94,26,0.8);
+}
+
+body.light-theme #canvas {
+  opacity: 0.12;
+}
+
+/* Dialogue text — override the hardcoded !important */
+body.light-theme .dialogue-text {
+  color: #1a1610 !important;
+}
+
+/* Narration colours */
+body.light-theme p.narr {
+  color: #1a1610;
+}
+
+body.light-theme p.italic-narr {
+  color: #3a3020;
+}
+
+body.light-theme p.thought {
+  color: #4a3e2a;
+  border-left-color: rgba(138,94,26,0.4);
+}
+
+/* Scene / pov labels */
+body.light-theme .scene-label,
+body.light-theme .pov-name {
+  color: #8a7a60;
+}
+
+body.light-theme .pov-subtitle {
+  color: rgba(138,94,26,0.55);
+}
+
+/* Dragon & cult inline mentions */
+body.light-theme .dragon-mention {
+  color: #8a5a00;
+  text-shadow: 0 0 6px rgba(138,90,0,0.2);
+}
+
+body.light-theme .cult-mention {
+  color: #6a3080;
+  text-shadow: 0 0 6px rgba(106,48,128,0.2);
+}
+
+
+.archbishop-sloth { color: #9d77df; text-shadow: 0 0 8px rgba(157,119,223,0.28); }
+.org-six-tongues { color: #d4a840; letter-spacing: 0.02em; text-shadow: 0 0 8px rgba(212,168,64,0.25); }
+
+body.light-theme .archbishop-sloth { color: #6f3fc0; }
+body.light-theme .org-six-tongues { color: #8a5e1a; }
+
+/* ── Settings panel light ── */
+body.light-theme #settings-panel {
+  background: rgba(240,235,224,0.97);
+  border-color: rgba(138,94,26,0.25);
+}
+body.light-theme .settings-title {
+  color: var(--accent);
+  border-bottom-color: rgba(138,94,26,0.2);
+}
+body.light-theme .settings-label { color: var(--text-dim); }
+body.light-theme .settings-btn {
+  background: rgba(220,214,200,0.8);
+  border-color: rgba(138,94,26,0.2);
+  color: var(--text);
+}
+body.light-theme .settings-btn:hover,
+body.light-theme .settings-btn.active {
+  background: rgba(138,94,26,0.15);
+  border-color: rgba(138,94,26,0.5);
+  color: var(--accent);
+}
+body.light-theme input[type="range"] { accent-color: var(--accent); }
+
+/* ── Settings button group (bottom-left) ── */
+#settings-controls {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 200;
+}
+
+/* ── Settings toggle button ── */
+#settings-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,164,106,0.3);
+  background: rgba(14,19,32,0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,164,106,0.8);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+#settings-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  border-color: rgba(200,164,106,0.6);
+  color: rgba(200,164,106,1);
+}
+
+#settings-toggle:active { transform: scale(0.95); }
+#settings-toggle.active {
+  border-color: rgba(200,164,106,0.7);
+  color: rgba(200,164,106,1);
+  box-shadow: 0 0 20px rgba(200,164,106,0.2);
+}
+
+body.light-theme #settings-toggle {
+  background: rgba(230,224,210,0.92);
+  border-color: rgba(138,94,26,0.35);
+  box-shadow: 0 4px 20px rgba(100,80,40,0.2);
+  color: rgba(138,94,26,0.8);
+}
+body.light-theme #settings-toggle:hover {
+  border-color: rgba(138,94,26,0.65);
+  box-shadow: 0 6px 28px rgba(100,80,40,0.3);
+  color: rgba(138,94,26,1);
+}
+body.light-theme #settings-toggle.active {
+  border-color: rgba(138,94,26,0.7);
+  color: rgba(138,94,26,1);
+}
+
+/* ── Settings panel ── */
+#settings-panel {
+  position: fixed;
+  bottom: 110px;
+  left: 32px;
+  z-index: 199;
+  width: 300px;
+  background: rgba(8,12,20,0.96);
+  border: 1px solid rgba(200,164,106,0.2);
+  border-radius: 8px;
+  padding: 20px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  transform: translateY(12px) scale(0.97);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#settings-panel.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.settings-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(200,164,106,0.15);
+}
+
+.settings-group {
+  margin-bottom: 16px;
+}
+
+.settings-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.settings-btn-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.settings-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 6px 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(200,164,106,0.2);
+  background: rgba(20,25,40,0.8);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.settings-btn:hover {
+  background: rgba(200,164,106,0.08);
+  border-color: rgba(200,164,106,0.4);
+  color: var(--accent);
+}
+
+.settings-btn.active {
+  background: rgba(200,164,106,0.12);
+  border-color: rgba(200,164,106,0.5);
+  color: var(--accent);
+}
+
+.settings-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+  height: 3px;
+}
+
+.settings-slider-val {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  color: var(--accent);
+  min-width: 36px;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+
+/* ── Animations disabled class ── */
+body.no-anim .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+body.no-anim .chapter-kanji,
+body.no-anim .chapter-arc,
+body.no-anim .chapter-num,
+body.no-anim .chapter-subtitle {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.no-anim .scroll-hint { animation: none !important; opacity: 0.5 !important; }
+body.no-anim .divider-sigil {
+  display: inline-block;
+  text-align: center; animation: none !important; opacity: 0.7 !important; }
+body.no-anim .moment-shock.visible { animation: none !important; }
+body.no-anim .moment-resolve.visible { animation: none !important; }
+body.no-anim .moment-anger.visible { animation: none !important; }
+body.no-anim .scroll-chevron { animation: none !important; opacity: 0.5 !important; }
+
+/* ── Theme toggle button ── */
+#theme-toggle {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 200;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,164,106,0.3);
+  background: rgba(14,19,32,0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200,164,106,0.8);
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  border-color: rgba(200,164,106,0.6);
+  color: rgba(200,164,106,1);
+}
+
+#theme-toggle:active {
+  transform: scale(0.95);
+}
+
+body.light-theme #theme-toggle {
+  background: rgba(230,224,210,0.92);
+  border-color: rgba(138,94,26,0.35);
+  box-shadow: 0 4px 20px rgba(100,80,40,0.2);
+  color: rgba(138,94,26,0.8);
+}
+
+body.light-theme #theme-toggle:hover {
+  border-color: rgba(138,94,26,0.65);
+  box-shadow: 0 6px 28px rgba(100,80,40,0.3);
+  color: rgba(138,94,26,1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.85;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Ambient particles ── */
+#canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--krusch), var(--accent), var(--beatrice));
+  width: 0%;
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ── Header ── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8,12,20,0.96);
+  border-bottom: 1px solid rgba(200,164,106,0.1);
+}
+
+.header-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-family: 'Cormorant SC', 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.header-pov {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  transition: color 0.6s ease;
+}
+
+/* ── Chapter title block ── */
+.chapter-title-block {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.chapter-kanji {
+  font-family: serif;
+  font-size: 48px;
+  color: rgba(200,164,106,0.25);
+  letter-spacing: 0.4em;
+  margin-bottom: 32px;
+  animation: fadeSlideIn 2s ease forwards;
+}
+
+.chapter-arc {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 2s ease 0.3s both;
+}
+
+.chapter-num {
+  font-family: 'Cormorant SC', 'Cinzel Decorative', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  animation: fadeSlideIn 2s ease 0.5s both;
+  text-shadow: 0 0 60px rgba(200,164,106,0.3);
+}
+
+.chapter-subtitle {
+  font-family: 'Cormorant Infant', 'EB Garamond', serif;
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 32px);
+  color: var(--text);
+  margin-bottom: 60px;
+  animation: fadeSlideIn 2s ease 0.8s both;
+}
+
+.scroll-hint {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ── Main content ── */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 40px 160px;
+}
+
+/* ── Paragraph reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Narration ── */
+p.narr {
+  margin-bottom: 1.3em;
+  color: var(--text);
+}
+
+p.italic-narr {
+  font-style: italic;
+  color: #c8bcaa;
+  margin-bottom: 1.3em;
+}
+
+p.thought {
+  font-style: italic;
+  color: #b0a898;
+  padding-left: 20px;
+  border-left: 2px solid rgba(200,164,106,0.3);
+  margin: 1em 0 1.3em;
+}
+
+/* ── Dialogue ── */
+.dialogue-block {
+  margin: 0.4em 0 1.1em;
+  position: relative;
+}
+
+.speaker-tag {
+  display: none;
+}
+
+.dialogue-text {
+  font-style: normal;
+  color: #e0d8cc;
+  display: block;
+  padding-left: 4px;
+}
+
+.dialogue-text.emotional {
+  font-style: italic;
+}
+
+.sp-ram { color: var(--ram); }
+.sp-emilia { color: var(--emilia); }
+.sp-bordeaux { color: var(--bordeaux); }
+.sp-marcos { color: var(--marcos); }
+.sp-fiore { color: var(--fiore); }
+.sp-sakura { color: var(--sakura); }
+.sp-felt { color: var(--felt); }
+.sp-reinhard { color: var(--reinhard); }
+.sp-official { color: #9aaabb; }
+.sp-krusch { color: var(--krusch); }
+.sp-tiga { color: var(--tiga); }
+.sp-beatrice { color: var(--beatrice); }
+.sp-subaru { color: var(--subaru); }
+.sp-otto { color: #8cc878; }
+.sp-garfiel { color: #d8b060; }
+.sp-rem { color: #8ac8e8; }
+.sp-petra { color: #e8b0c8; }
+.sp-meili { color: #c8a0e8; }
+
+/* ── Chapter illustrations ── */
+.chapter-illustration {
+  margin: 2.4em auto;
+  text-align: center;
+}
+
+.chapter-illustration img {
+  display: block;
+  width: min(100%, 720px);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.36);
+}
+
+/* ── Character colors stripped: dialogue colour-neutral ── */
+.dialogue-text { color: #e0d8cc !important; }
+/* ── Section divider ── */
+.section-divider {
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+.divider-sigil {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  display: inline-block;
+  animation: sigil-pulse 3s ease-in-out infinite;
+}
+
+.divider-line {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 16px auto;
+  width: 60%;
+  opacity: 0.4;
+}
+
+/* ── Dramatic moments ── */
+.moment,
+.dragon-eye-reveal,
+.return-block {
+  --moment-accent: var(--accent);
+  --moment-bg: rgba(15, 19, 32, 0.72);
+  --moment-border: rgba(200, 164, 106, 0.22);
+  position: relative;
+  margin: 2.2em auto;
+  padding: 24px 28px 24px 32px;
+  max-width: 780px;
+  border: 1px solid var(--moment-border);
+  border-left: 4px solid var(--moment-accent);
+  border-radius: 14px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--moment-accent) 14%, transparent), transparent 42%),
+    var(--moment-bg);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  text-align: left;
+}
+
+.moment::before,
+.dragon-eye-reveal::before,
+.return-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), transparent 55%);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.moment::after,
+.dragon-eye-reveal::after,
+.return-block::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 34px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--moment-accent);
+  opacity: 0.45;
+}
+
+.moment-label { display: none; }
+
+.moment-text,
+.dragon-eye-text,
+.return-text {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.78;
+  letter-spacing: 0.01em;
+  text-shadow: none;
+}
+
+.moment-text + .moment-text,
+.moment-text[style*="margin-top"] {
+  margin-top: 0.85em !important;
+}
+
+.moment-shock { --moment-accent: #7a9cc8; --moment-bg: rgba(12, 22, 38, 0.76); --moment-border: rgba(122,156,200,0.28); }
+.moment-anger { --moment-accent: #d06a6a; --moment-bg: rgba(36, 17, 17, 0.74); --moment-border: rgba(208,106,106,0.26); }
+.moment-resolve { --moment-accent: #c8a46a; --moment-bg: rgba(32, 27, 17, 0.74); --moment-border: rgba(200,164,106,0.32); }
+.moment-heavy { --moment-accent: #8a9ab0; --moment-bg: rgba(14, 17, 28, 0.78); --moment-border: rgba(138,154,176,0.25); }
+.moment-warmth { --moment-accent: #e87aaa; --moment-bg: rgba(34, 18, 27, 0.72); --moment-border: rgba(232,122,170,0.25); }
+.moment-krusch { --moment-accent: #5aaa7a; --moment-bg: rgba(10, 28, 18, 0.74); --moment-border: rgba(90,170,122,0.27); }
+.moment-battle { --moment-accent: #d4a030; --moment-bg: rgba(35, 24, 7, 0.76); --moment-border: rgba(212,160,48,0.30); }
+
+.moment-shock .moment-text,
+.moment-anger .moment-text,
+.moment-resolve .moment-text,
+.moment-heavy .moment-text,
+.moment-warmth .moment-text,
+.moment-krusch .moment-text,
+.moment-battle .moment-text {
+  color: var(--text);
+  font-style: normal;
+}
+
+/* ── Dragon Eye reveal ── */
+.dragon-eye-reveal {
+  --moment-accent: #d6ad3f;
+  --moment-bg: rgba(26, 22, 12, 0.80);
+  --moment-border: rgba(214, 173, 63, 0.35);
+}
+
+.dragon-eye-glyph {
+  display: none;
+}
+
+.dragon-eye-text {
+  color: #f1dfb2;
+  font-style: normal;
+}
+
+/* ── Return from death animation ── */
+.return-block {
+  --moment-accent: #9d77df;
+  --moment-bg: rgba(18, 14, 34, 0.82);
+  --moment-border: rgba(157, 119, 223, 0.34);
+  padding-top: 28px;
+}
+
+.return-vortex,
+.return-ring {
+  display: none;
+}
+
+.return-kanji {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 10px;
+  color: rgba(205, 184, 244, 0.75);
+  font-size: 30px;
+  letter-spacing: 0.16em;
+  text-shadow: none;
+}
+
+.return-label {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+  color: rgba(205, 184, 244, 0.72);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-shadow: none;
+}
+
+.return-text {
+  color: var(--text);
+}
+
+/* ── Garfiel inner monologue ── */
+.inner-fire {
+  position: relative;
+  margin: 1.8em auto;
+  padding: 18px 24px 18px 28px;
+  max-width: 760px;
+  border-left: 4px solid var(--garfiel, var(--accent));
+  border-radius: 0 12px 12px 0;
+  background: rgba(212, 160, 64, 0.08);
+  color: var(--text);
+  font-size: 1em;
+  line-height: 1.85;
+  font-style: normal;
+}
+
+body.light-theme .moment,
+body.light-theme .dragon-eye-reveal,
+body.light-theme .return-block {
+  --moment-bg: rgba(255, 252, 244, 0.78);
+  --moment-border: color-mix(in srgb, var(--moment-accent) 38%, rgba(138,94,26,0.22));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--moment-accent) 12%, transparent), transparent 42%),
+    var(--moment-bg);
+  box-shadow: 0 10px 26px rgba(90, 70, 40, 0.12);
+}
+
+body.light-theme .moment-text,
+body.light-theme .dragon-eye-text,
+body.light-theme .return-text,
+body.light-theme .moment-shock .moment-text,
+body.light-theme .moment-anger .moment-text,
+body.light-theme .moment-resolve .moment-text,
+body.light-theme .moment-heavy .moment-text,
+body.light-theme .moment-warmth .moment-text,
+body.light-theme .moment-krusch .moment-text,
+body.light-theme .moment-battle .moment-text {
+  color: #1a1610;
+}
+
+body.light-theme .dragon-eye-text { color: #3c2b05; }
+body.light-theme .return-kanji,
+body.light-theme .return-label { color: rgba(76, 43, 132, 0.72); text-shadow: none; }
+body.light-theme .inner-fire { color: #2a2010; background: rgba(212, 160, 64, 0.12); border-left-color: var(--accent); }
+
+.moment-shock.visible,
+.moment-resolve.visible,
+.moment-anger.visible,
+.moment-krusch.visible,
+.moment-battle.visible,
+.dragon-eye-glyph,
+.return-kanji {
+  animation: none !important;
+}
+
+
+body.plain-moments .moment,
+body.plain-moments .dragon-eye-reveal,
+body.plain-moments .return-block,
+body.plain-moments .inner-fire {
+  margin: 1em 0;
+  padding: 0;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+  text-align: inherit;
+}
+
+body.plain-moments .moment::before,
+body.plain-moments .moment::after,
+body.plain-moments .dragon-eye-reveal::before,
+body.plain-moments .dragon-eye-reveal::after,
+body.plain-moments .return-block::before,
+body.plain-moments .return-block::after,
+body.plain-moments .dragon-eye-glyph,
+body.plain-moments .return-vortex,
+body.plain-moments .return-ring,
+body.plain-moments .return-kanji,
+body.plain-moments .return-label {
+  display: none !important;
+}
+
+body.plain-moments .moment-text,
+body.plain-moments .dragon-eye-text,
+body.plain-moments .return-text {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+/* ── POV section headers ── */
+.pov-header {
+  display: none;
+}
+.pov-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.pov-subtitle {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(200,164,106,0.5);
+}
+
+/* ── Scene label ── */
+.scene-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 24px 0 8px;
+  opacity: 0.6;
+}
+
+/* ── Navigation buttons ── */
+.nav-buttons {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 40px 100px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1px solid rgba(200,164,106,0.25);
+  border-radius: 3px;
+  background: rgba(8,12,20,0.7);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(200,164,106,0.06), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.nav-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.nav-btn:hover {
+  color: var(--accent);
+  border-color: rgba(200,164,106,0.55);
+  box-shadow: 0 0 20px rgba(200,164,106,0.1);
+  transform: translateY(-1px);
+}
+
+.nav-btn-prev { border-color: rgba(90,170,122,0.25); }
+.nav-btn-prev:hover { color: var(--krusch); border-color: rgba(90,170,122,0.5); box-shadow: 0 0 20px rgba(90,170,122,0.1); }
+
+.nav-btn-toc { border-color: rgba(200,164,106,0.25); }
+.nav-btn-toc:hover { color: var(--accent); border-color: rgba(200,164,106,0.5); }
+
+.nav-btn-next { border-color: rgba(170,100,220,0.25); }
+.nav-btn-next:hover { color: var(--beatrice); border-color: rgba(170,100,220,0.5); box-shadow: 0 0 20px rgba(170,100,220,0.1); }
+
+.nav-icon {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ── Animations ── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes sigil-pulse {
+  0%, 100% { opacity: 0.4; letter-spacing: 0.3em; }
+  50% { opacity: 0.9; letter-spacing: 0.45em; }
+}
+
+@keyframes shock-flare {
+  0% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+  50% { box-shadow: inset 0 0 80px rgba(80,120,200,0.15), 0 0 60px rgba(80,120,200,0.2); }
+  100% { box-shadow: inset 0 0 40px rgba(80,120,200,0.05), 0 0 30px rgba(80,120,200,0.08); }
+}
+
+.moment-shock.visible { animation: shock-flare 4s ease-in-out infinite; }
+
+@keyframes resolve-glow {
+  0%, 100% { box-shadow: inset 0 0 50px rgba(200,164,106,0.06), 0 0 40px rgba(200,164,106,0.12); }
+  50% { box-shadow: inset 0 0 80px rgba(200,164,106,0.12), 0 0 70px rgba(200,164,106,0.22); }
+}
+.moment-resolve.visible { animation: resolve-glow 3.5s ease-in-out infinite; }
+
+@keyframes anger-pulse {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(200,60,60,0.05), 0 0 30px rgba(200,60,60,0.08); }
+  50% { box-shadow: inset 0 0 60px rgba(200,60,60,0.12), 0 0 50px rgba(200,60,60,0.15); }
+}
+.moment-anger.visible { animation: anger-pulse 2.5s ease-in-out infinite; }
+
+@keyframes krusch-glow {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(90,170,122,0.05), 0 0 30px rgba(90,170,122,0.08); }
+  50% { box-shadow: inset 0 0 70px rgba(90,170,122,0.12), 0 0 50px rgba(90,170,122,0.15); }
+}
+.moment-krusch.visible { animation: krusch-glow 3s ease-in-out infinite; }
+
+@keyframes eye-pulse {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(255,200,40,0.6)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 30px rgba(255,220,60,0.95)) drop-shadow(0 0 50px rgba(200,140,0,0.5)); transform: scale(1.06); }
+}
+
+@keyframes return-glow {
+  0%, 100% { text-shadow: 0 0 30px rgba(160,80,220,0.7), 0 0 60px rgba(80,40,140,0.4); }
+  50% { text-shadow: 0 0 50px rgba(180,100,255,1), 0 0 90px rgba(100,50,180,0.7), 0 0 4px #fff; }
+}
+
+@keyframes ring-expand {
+  0%   { width: 60px; height: 60px; opacity: 0.8; border-color: rgba(160,80,220,0.7); }
+  100% { width: 320px; height: 320px; opacity: 0; border-color: rgba(80,20,140,0); }
+}
+
+/* ── Scroll indicator ── */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.scroll-chevron {
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(200,164,106,0.5);
+  border-bottom: 1px solid rgba(200,164,106,0.5);
+  transform: rotate(45deg);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+  50% { transform: rotate(45deg) translateY(6px); opacity: 0.9; }
+}
+
+/* ── Witch cult / Dragon ── */
+.cult-mention {
+  color: var(--witch);
+  font-style: normal;
+  text-shadow: 0 0 8px rgba(144,64,160,0.3);
+}
+
+.dragon-mention {
+  color: #d4a020;
+  text-shadow: 0 0 8px rgba(200,150,0,0.3);
+}
+
+/* ── Footnote-style location ── */
+.location-tag {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: rgba(200,164,106,0.35);
+  padding: 8px 0 30px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  main { padding: 60px 20px 100px; }
+  header { padding: 12px 20px; }
+  .header-arc { display: none; }
+  body { font-size: 17px; }
+  .nav-buttons { padding: 40px 20px 80px; gap: 12px; }
+  .nav-btn { padding: 12px 18px; font-size: 10px; }
+  .chapter-kanji { font-size: 28px; letter-spacing: 0.25em; margin-bottom: 20px; }
+  .moment,
+  .dragon-eye-reveal,
+  .return-block {
+    margin: 1.7em 0;
+    padding: 20px 20px 20px 24px;
+    border-radius: 12px;
+  }
+  .moment-text,
+  .dragon-eye-text,
+  .return-text,
+  .inner-fire {
+    line-height: 1.72;
+  }
+}
+
+.jp-minute{margin:28px 0;padding:14px 16px;border-left:3px solid var(--accent2);background:rgba(120,140,180,.08);border-radius:8px;}
+.jp-minute-toggle{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:12px;width:100%;font-family:"Nunito",sans-serif;font-weight:600;color:var(--accent2);}
+.jp-minute-content{margin-top:10px;overflow:hidden;max-height:0;opacity:0;transition:max-height .38s ease,opacity .28s ease;}
+.jp-minute.open .jp-minute-content{opacity:1;}
+.jp-minute-arrow{transition:transform .22s ease;}
+.jp-minute.open .jp-minute-arrow{transform:rotate(180deg);}
+
+.battle-beat{position:relative;padding-left:14px;border-left:2px solid rgba(210,90,70,.35);}
+.battle-beat::before{content:"";position:absolute;left:-5px;top:0.8em;width:7px;height:7px;border-radius:50%;background:rgba(240,120,90,.55);box-shadow:0 0 12px rgba(240,120,90,.35);}
+.battle-beat .moment-text{letter-spacing:.01em;}
+.battle-spark{background:linear-gradient(90deg,rgba(210,90,70,.12),transparent 70%);border-radius:6px;padding:2px 6px;animation:sparkPulse 2.8s ease-in-out infinite;}
+@keyframes sparkPulse{0%,100%{box-shadow:none;}50%{box-shadow:0 0 10px rgba(210,90,70,.22);}}
+body.no-anim .battle-spark{animation:none;}
+
+.archbishop-gluttony { color: #c8a070; text-shadow: 0 0 8px rgba(200,160,112,0.28); }
+body.light-theme .archbishop-gluttony { color: #8a6040; }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<canvas id="canvas"></canvas>
+
+<!-- Theme toggle -->
+<button id="theme-toggle" aria-label="Переключить тему">
+  <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+  </svg>
+  <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1" x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1" y1="12" x2="3" y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+  </svg>
+</button>
+
+<!-- ════ SETTINGS CONTROLS (bottom-left) ════ -->
+<div id="settings-controls">
+  <button id="settings-toggle" title="Настройки" aria-label="Открыть настройки">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+  </button>
+</div>
+<div id="settings-panel" role="dialog" aria-label="Настройки чтения">
+  <div class="settings-title">Настройки чтения</div>
+
+  <!-- Font selector -->
+  <div class="settings-group">
+    <span class="settings-label">Шрифт</span>
+    <div class="settings-btn-row" id="font-btns">
+      <button class="settings-btn active" data-font="EB Garamond">Garamond</button>
+      <button class="settings-btn" data-font="Merriweather">Merriweather</button>
+      <button class="settings-btn" data-font="Lora">Lora</button>
+      <button class="settings-btn" data-font="PT Serif">PT Serif</button>
+      <button class="settings-btn" data-font="Libre Baskerville">Baskerville</button>
+      <button class="settings-btn" data-font="Source Serif 4">Source Serif</button>
+      <button class="settings-btn" data-font="Nunito">Nunito</button>
+      <button class="settings-btn" data-font="Comic Sans MS">Comic Sans</button>
+    </div>
+  </div>
+
+  <!-- Font size -->
+  <div class="settings-group">
+    <span class="settings-label">Размер текста</span>
+    <div class="settings-slider-row">
+      <input type="range" id="font-size-slider" min="14" max="28" step="1" value="19">
+      <span class="settings-slider-val" id="font-size-val">19px</span>
+    </div>
+  </div>
+
+  <!-- Container width -->
+  <div class="settings-group">
+    <span class="settings-label">Ширина текста</span>
+    <div class="settings-slider-row">
+      <input type="range" id="width-slider" min="480" max="1100" step="20" value="760">
+      <span class="settings-slider-val" id="width-val">760px</span>
+    </div>
+  </div>
+
+  <!-- Text align -->
+  <div class="settings-group">
+    <span class="settings-label">Выравнивание текста</span>
+    <div class="settings-btn-row" id="align-btns">
+      <button class="settings-btn active" data-align="left">По левому</button>
+      <button class="settings-btn" data-align="justify">По ширине</button>
+    </div>
+  </div>
+
+  <!-- Animation toggle -->
+  <div class="settings-group">
+    <span class="settings-label">Анимация появления текста</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="anim-on">Включена</button>
+      <button class="settings-btn" id="anim-off">Выключена</button>
+    </div>
+  </div>
+
+  <!-- Emotional blocks toggle -->
+  <div class="settings-group" style="margin-bottom:0">
+    <span class="settings-label">Эмоциональные блоки</span>
+    <div class="settings-btn-row">
+      <button class="settings-btn active" id="moments-on">Карточки</button>
+      <button class="settings-btn" id="moments-off">Обычный текст</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <span class="header-arc">Re:Zero · Арка 10</span>
+  <span class="header-title">Слова поздравления</span>
+  <span class="header-pov" id="pov-indicator">Том 45</span>
+</header>
+
+<!-- ════ TITLE SCREEN ════ -->
+<div class="chapter-title-block">
+  <div class="chapter-kanji">祝辞</div>
+  <div class="chapter-arc">Re:Zero — Жизнь с нуля в альтернативном мире · Арка 10</div>
+  <div class="chapter-num">Глава 26</div>
+  <div class="chapter-subtitle">«Слова поздравления»</div>
+  <div class="scroll-hint">↓ Читать</div>
+  <div class="scroll-down">
+    <div class="scroll-chevron"></div>
+    <div class="scroll-chevron" style="margin-top:-8px;opacity:0.5;"></div>
+  </div>
+</div>
+
+<!-- ════ MAIN CONTENT ════ -->
+<main id="main-content">
+  <div class="location-tag reveal"><span class="dragon-mention">Церковь Божественного Дракона</span></div>
+  <p class="narr reveal">С самого мига назначения рыцарем Хейнкель испытывал тревогу из-за привычки Фьоре переть напролом, но, как оказалось, он все равно ее недооценивал — опасная нерассудительность девушки превосходила даже самые худшие его ожидания.</p>
+  <p class="narr reveal">— Значит, лекарства на складе, но доставить их не получается? — подытожила Фьоре у парня возле входа в <span class="dragon-mention">Церковь Божественного Дракона</span>.</p>
+  <p class="narr reveal">— Да, — ответил юноша с описью медикаментов в руках. — Из-за жутких заторов из драконьих повозок на въезде и выезде из столицы повозка Церкви тоже застряла. Если так пойдет и дальше…</p>
+  <p class="narr reveal">— Лекарства испортятся, да и в лечебнице полно стариков, которым совсем худо, если хоть день их не принять… Раз так, почему бы нам не вынести все своими руками?</p>
+  <p class="narr reveal">— Что?! С-своими руками?! — аж отшатнулся парень от ее напора.</p>
+  <p class="narr reveal">— Именно! — сжала Фьоре кулачки. — Раз не выходит прогнать драконью повозку, перетащим груз сами… Разве не отличный план?!</p>
+  <p class="narr reveal">Она уже сочла его реакцию за согласие, так что тотчас вознамерилась выскочить на торговую улицу, но Хейнкель спешно перегородил ей путь:</p>
+  <p class="narr reveal">— Постой-постой, госпожа Фьоре! Этак мы и до завтра проблему не решим. Ты ведь не всерьез собралась таскать ящики одна?</p>
+  <p class="narr reveal">— Что вы такое говорите! Конечно же нет! Господин Хейнкель — мой рыцарь, а значит, мы в одной лодке! В одной лодке! Не одна, а вдвоем!</p>
+  <p class="narr reveal">— И не подумаю! Даже если и серьезно, то тебе с своим-то положением нельзя заниматься подобным. Если кто и пойдет, то я один.</p>
+  <p class="narr reveal">— Не нужно отстраняться! Я, между прочим, весьма сильная. В монастыре я часто двигала мебель вместо старушек с больной спиной!</p>
+  <p class="narr reveal">— Да я вообще! Не об этом! Говорю! — неистово закричал Хейнкель.</p>
+  <p class="narr reveal">От изумления Фьоре округлила свои красные глаза. Пока девушка хлопала своими блестящими, словно драгоценные камни, глазами, Хейнкель почесал свои красные волосы и недовольно обратился к посыльному:</p>
+  <p class="narr reveal">— Эй. Доставить лекарства нужно в лечебницу восточного района, так? В западном и южном ведь тоже есть лечебницы, как там с проездом?</p>
+  <p class="narr reveal">— В западном и южном? Там дороги пока свободны, так что задержек с доставкой быть не должно…</p>
+  <p class="narr reveal">— Тогда все просто, — ответил Хейнкель и выхватил у юноши список медикаментов. — Переправлять нужно не лекарства, а пациентов.</p>
+  <p class="narr reveal">Рыцарь начал рассматривать наименования на листке. Все они были ему знакомы, и он легко мог представить состояние больных. С тех пор как его жена погрузилась в непробудный сон, Хейнкель изучил все возможные методы лечения от любых болезней. Благодаря привилегиям своего происхождения и богатству он разбирался в снадобьях получше иных лекарей.</p>
+  <p class="narr reveal">— Разумеется, самих больных я не видел — это решать лекарю, — но это куда реальнее, чем пытаться протолкнуть целую драконью повозку. Пока пациентам будут помогать как могут, мы расчистим путь до восточного района, и в следующий раз все пройдет без задержек. Ну как тебе идея, госпожа Фьоре?</p>
+  <p class="narr reveal">— Ох… да! Точно! Ах, но как быть с теми, кого нельзя перевозить?..</p>
+  <p class="narr reveal">— Но в больнице же не одни тяжелобольные. Одного ящика с самыми срочными лекарствами хватит на первое время.</p>
+  <p class="narr reveal">— Понятно! Тогда этот ящик я…</p>
+  <p class="narr reveal">— Эй, — перебил Хейнкель и строго глянул на нее.</p>
+  <p class="narr reveal">— То есть вы перенесете! — улыбнулась юноше Фьоре. — Это ведь ваша работа!</p>
+  <p class="narr reveal">Тот принял обратно список и кивнул девушке:</p>
+  <p class="narr reveal">— Все понял, сделаю в лучшем виде. А в больнице…</p>
+  <p class="narr reveal">— Не волнуйся! Церковь хорошо ладит с больницами! Я тут же отправлю посыльного, чтобы не было путаницы. Делай свою работу.</p>
+  <p class="narr reveal">— Да! Спасибо вам обоим огромное!</p>
+  <p class="narr reveal">С облегчением и чувством исполненного долга юноша выскочил из церкви. Глядя ему вслед, Хейнкель устало опустил плечи.</p>
+  <p class="narr reveal">Фьоре от начала и до конца без устали давала советы. Хорошо, конечно, что благодарят ее, но когда благодарность достается и Хейнкелю, стоящему рядом, ему становится не по себе. Как никак, он человек, который по-хорошему вообще не имеет права здесь находиться.</p>
+  <p class="narr reveal">Фьоре же вовсе и не могла как-либо подозревать о терзаниях Хейнкеля. Она уже поручила дело одному из верующих и вернулась к своему рыцарю.</p>
+  <p class="narr reveal">— Отличная работа, господин Хейнкель! Мы просто прекрасный дуэт! Я послала человека, так что он может со спокойной душой выполнять поручение.</p>
+  <p class="narr reveal">Девушка слегка приподняла ладонь. И не опускала. Хейнкель некоторое время молча смотрел на нее, а Фьоре продолжала махать ладонью перед его лицом влево и вправо.</p>
+  <p class="narr reveal">— Ты чего?.. — спросил он.</p>
+  <p class="narr reveal">— Не «чего», а ритуал в честь общего успеха! Когда я подставляю ладонь вот так, господин Хейнкель должен прикоснуться к ней своей. Так мы делимся радостью от хорошего дела — таково правило <span class="dragon-mention">Церкви Божественного Дракона</span>!</p>
+  <p class="narr reveal">— Когда я ходил в церковь, я что-то такого не видел.</p>
+  <p class="narr reveal">— Наверное, это новое правило! Ну или я добавила немного от себя!</p>
+  <p class="narr reveal">Учитывая, что Церковь уже четыреста лет неизменно поклоняется <span class="dragon-mention">Божественному Дракону</span>, версия о личном влиянии Фьоре звучала куда убедительнее новомодных веяний в обрядах. К сожалению, она ни за что не отступилась бы, не исполни он этот ритуал, поэтому Хейнкель снова вздохнул и хлопнул своей ладонью по ее руке.</p>
+  <p class="narr reveal">— Госпожа Фьоре, насчет недавнего разговора…</p>
+  <p class="narr reveal">— А, вы просто невероятно находчивый! Не переживайте — я велела посыльному передать лекарям, что это была идея господина Хейнкеля.</p>
+  <p class="narr reveal">— Воздержись… В обоих смыслах.</p>
+  <p class="narr reveal">— Воздержаться?! Мое самое нелюбимое слово!..</p>
+  <p class="narr reveal">Ее сияющая улыбка сменилась выражением глубокой обиды, и побледневшая Фьоре неловко прислонилась к скамье в молельном зале. В ответ Хейнкель тяжело вздохнул через нос.</p>
+  <p class="narr reveal">Не надо за пару минут удваивать число вещей, за которые ее хочется отругать.</p>
+  <p class="narr reveal">— Во-первых, перестань совать нос куда попало и копаться в золе камина. Никогда не знаешь, что там найдешь, а в большинстве случаев просто обожжешься. Если уж нужно раскопать золу, используй других людей. И первым делом — меня.</p>
+  <p class="narr reveal">— Это… потому что господин Хейнкель — бессмертный рыцарь, которому не страшен огонь?</p>
+  <p class="narr reveal">— Нет. Потому что если кому и суждено пострадать, то тому, чья травма ни на что не повлияет.</p>
+  <p class="narr reveal">Хейнкель намеренно строго и четко попытался исправить ход ее мыслей.</p>
+  <p class="narr reveal">Подход Фьоре был слишком опасен. Впрочем, ее врожденная способность привлекать к себе внимание — одно из важнейших качеств правителя. Раз уж она включилась в Королевские Выборы с задержкой, то ей следовало избегать неосмотрительных шагов и грамотно использовать имеющиеся козыри. Поэтому…</p>
+  <p class="narr reveal">— Не нужно при каждом удобном случае упоминать мое имя. Скажу прямо и без шуток: это только навредит твоей кампании в Выборах, госпожа Фьоре.</p>
+  <p class="narr reveal">— Но…</p>
+  <p class="narr reveal">— Услышат, что идея моя, — лечебница может и упереться. С моим-то положением так оно, наверное, и будет. Извини, конечно, но из нас двоих я понимаю это трезво.</p>
+  <p class="narr reveal">— Гх…</p>
+  <p class="narr reveal">Фьоре выглядела досадно, но поскольку причиной этой досады был сам Хейнкель, у него не находилось слов утешения или поддержки.</p>
+  <p class="narr reveal">Откровенно говоря, он до сих пор жалел о своем выборе. Ему не следовало соглашаться на просьбу Фьоре, которую он считал не иначе как минутным помешательством. От вида того, как эта неопытная девушка искренне отдается Выборам, он все сильнее проклинал себя за то, что служит ей лишь помехой. Особенно учитывая, что всю свою дурную славу он заработал собственными руками.</p>
+  <p class="narr reveal">— В конце концов, за что ни возьмись, все идет через одно место…</p>
+  <p class="narr reveal">Хейнкель старался действовать исходя из лучших побуждений, но со временем его прошлые поступки вновь удавкой сжимались на шее. Это происходило раз за разом: призраки прошлого настигали его, словно им же самим вырытые капканы. Он уже со счета сбился, сколько раз спотыкался о ямы, изгаженные собственными руками.</p>
+  <p class="narr reveal">Именно поэтому, если удавалось совершить нечто стоящее, не марать это именем Хейнкеля было наилучшим решением для Фьоре…</p>
+  <p class="narr reveal">— Ну уж нет, это совсем на меня не похоже!</p>
+  <p class="narr reveal">Пока Хейнкель щурился, погруженный в мысли, Фьоре вдруг громко выкрикнула и больно щипнула себя за тыльную сторону белой ладони. Она ойкала и поскуливала от боли. Хейнкель вытаращился на нее:</p>
+  <p class="narr reveal">— Т-ты что творишь?</p>
+  <p class="narr reveal">— Наказываю себя! Вообще-то мне стоило отвесить самой себе пощечину, но тогда пришлось бы встречаться с людьми с красным лицом. Поэтому, когда нужно взять себя в руки, я с детства делаю так! Если просто покраснела рука, всегда можно соврать, будто в гневе стукнула по столу!</p>
+  <p class="narr reveal">— Разве это оправдание? Гнев-то все равно никуда не делся…</p>
+  <p class="narr reveal">— Неважно! Гнев — это правда! И что бы мне ни говорили, в одном я не уступлю. Впредь я не стану скрывать заслуги господина Хейнкеля!</p>
+  <p class="narr reveal">Она ткнула пальцем прямо ему в лицо, отчего Хейнкель невольно отшатнулся. Фьоре тут же сократила дистанцию. Рыцарь отступил. Она шаг вперед. Он шаг назад. Когда она прижала его к стене, то замерла и направила палец ему прямо меж бровей. И, удерживая Хейнкеля у стены, Фьоре произнесла:</p>
+  <p class="narr reveal">— Я приму то, что о господине Хейнкеле говорят гадости из-за его прошлого. Пусть от этого зубы сжимаются, я это проглочу. Но! Я не позволю прошлым делам мешать тому, что вы сделаете сегодня или завтра!</p>
+  <p class="narr reveal">— Госпожа Фьоре…</p>
+  <p class="narr reveal">— Если ваши слова спасли чью-то жизнь, значит, без них эта жизнь могла бы оборваться. Если я стану королевой, а вы будете моим Первым Рыцарем, мы часто будем сталкиваться с подобным. Поэтому ради будущего мы должны восстановить честное имя господина Хейнкеля уже сейчас!</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">— Так что я буду прислушиваться к вашим советам по мере сил, а про призывы вроде «забейте на господина Хейнкеля», «держите его в запертом ящике» или «давайте выкинем этого пьяного рыцаря» я вообще забуду. Объявляю это официально!</p>
+  <p class="narr reveal">Фьоре медленно опустила палец и коснулась формы мужчины — официального мундира рыцаря Церкви, который его заставили надеть как рыцаря Святой. Выполненный в синих тонах, он выглядел священно и величественно, даже вызывал большее трепетное почтение, чем мундир Королевской Гвардии. Хейнкель понимал, что эта одежда совершенно ему не идет. Однако…</p>
+  <p class="narr reveal">— Но настанет день, когда люди будут смотреть на эту форму и вспоминать вас, господин Хейнкель. И тогда вы сможете вовсю использовать авторитет Церкви и вести себя настолько гордо, насколько захотите!</p>
+  <p class="narr reveal">Подмигнув, Фьоре попыталась изобразить милое выражение лица. От ее слов Хейнкель тяжело вздохнул. Ее неудержимый напор не делал исключений ни для кого. И, разумеется, Хейнкель не был исключением.</p>
+  <p class="narr reveal">— Если госпожа Фьоре станет королевой, значит. Выходит, помощь людям в церкви — это лишь холодный расчет?</p>
+  <p class="narr reveal">— Что за ужасы вы говорите?! Знаете ли, это невероятно выгодное дело! Когда мы помогаем тем, кто приходит в церковь, и им становится лучше, и обо мне идет слава как о добром человеке, и нам самим приятно от хорошего поступка… Видите?</p>
+  <p class="narr reveal">— Не надо так спокойно причислять меня к вам. Я…</p>
+  <p class="narr reveal">— Но разве получать благодарность от людей — это не радостно? Для меня — да. Посему, хоть титул «Святой» и тяжелая ноша, церковь я люблю.</p>
+  <p class="narr reveal">Фьоре кивнула и гордо расправила грудь в ожидании ответа, но Хейнкель ничего не мог сказать. Возможно, потому что она уже высказалась, а может, из уважения к нему, девушка не стала торопить Хейнкеля с ответом.</p>
+  <p class="narr reveal">А затем возможность произнести этот ответ снова была отложена — с улицы раздался звук открывающейся двери церкви.</p>
+  <p class="narr reveal">— Прошу прощения, — позвал Фьоре человек. — Совсем рядом с церковью стычка между жителями…</p>
+  <p class="narr reveal">— Ох, беда! Мы должны сейчас же вмешаться! Господин Хейнкель, бежим!</p>
+  <p class="narr reveal">— Не беги. Нам только не хватало прибавить работы лекарям из-за того, что кто-то расшиб себе нос.</p>
+  <p class="narr reveal">— Тогда быстрым шагом! — сказала она и сделала три широких шага к мужчине в дверях, а затем словно забыла о решении идти шагом и снова сорвалась на бег.</p>
+  <p class="narr reveal">Хейнкель опять почесал затылок. Затем цыкнул языком и поспешил за спиной своей несносной госпожи.</p>
+  <div class="section-divider reveal"><span class="divider-line"></span><span class="divider-sigil">△▼△▼△▼△</span><span class="divider-line"></span></div>
+  <p class="narr reveal">В час, когда сквозь высокие окна лился оранжевый свет заката, Хейнкель сидел над бумагами в одном из кабинетов церкви.</p>
+  <p class="narr reveal">— А ты работаешь куда добросовестнее, чем я думал, — вдруг раздался голос за его спиной.</p>
+  <p class="narr reveal">Хейнкель обернулся и увидел стоящего у дверей худощавого мужчину — священника <span class="dragon-mention">Церкви Божественного Дракона</span> и охранника Фьоре, Тигу Лауреона. Он сопровождал Фьоре еще до ее вступления в Королевские Выборы. Хейнкеля познакомили с ним сразу после назначения рыцарем, и с тех пор они часто пересекались.</p>
+  <p class="narr reveal">Разумеется, первое впечатление о Хейнкеле у Тиги было отвратительным — впрочем, не только у него, а абсолютно у всех в окружении Фьоре. По правде говоря, его назначению радовалась одна лишь Фьоре.</p>
+  <p class="narr reveal">«Ну, еще бы. Любой на вашем месте думал бы так же, да и я сам не исключение».</p>
+  <p class="narr reveal">Объективно говоря, нынешнее положение Хейнкеля было верхом несоответствия. Фьоре и без того доставляла кучу хлопот окружающим, а появление рядом с ней человека с такой скверной репутацией любой здравомыслящий человек посчитал бы безумием. И хотя сама Фьоре проявила волю, найти тех, кто был бы согласен с этим решением, было куда сложнее, чем недовольных.</p>
+  <p class="narr reveal">— Что это ты вдруг уставился в пустоту? — спросил Тига. — Неужели не расслышал колкость?</p>
+  <p class="narr reveal">— Нет, все я прекрасно слышал. И я вам даже сочувствую. Вам и с госпожой Фьоре забот хватает, так еще и меня в придачу навязали.</p>
+  <p class="narr reveal">— Коли ты сам все понимаешь, мог бы просто тихо отказаться.</p>
+  <p class="narr reveal">— И возразить-то нечего. Наверное, именно так и поступил бы разумный взрослый человек…</p>
+  <p class="narr reveal">Хейнкель вдруг заколебался: «Стоит ли продолжать?» Но под вопросительным взглядом Тиги ему пришлось открыть рот. Причина, по которой он не смог отвергнуть протянутую Фьоре руку, была очевидна.</p>
+  <p class="narr reveal">— В общем, это было просто невзрослое решение. Отпустить тяжело, хренова привязанность.</p>
+  <p class="narr reveal">Если взрослым называют того, кто умеет вовремя поставить точку и вовремя сдаться, то Хейнкель был абсолютно незрелым и жалким созданием. Но с другой стороны, взрослый, которым он восхищался больше всего на свете, был человеком, который до самого конца не выпускал из рук меча, рассекал даже невыполнимые преграды и никогда не отказывался от того, что любил.</p>
+  <p class="narr reveal">Восхищаться тем, до чего он сам никогда не смог бы дотянуться, к чему не мог даже прикоснуться пальцем… Пожалуй, именно с этого и началось проклятие Хейнкеля. Впрочем, рассказывать об этом Тиге не имело никакого смысла — тому все равно было бы плевать.</p>
+  <p class="narr reveal">— Я навел о тебе справки, — продолжил Лауреон. — Не пойми неправильно: мы не могли оставить подле Фьоре опасного человека. К тому же в узких кругах эта история и так известна.</p>
+  <p class="narr reveal">Однако от тона, с которым Тига произнес эти слова, Хейнкель удивленно приподнял бровь. Проживший долгие годы в попытках угадать чужое отношение к себе, он научился чутко улавливать оттенки презрения, насмешки, сочувствия или жалости. И именно поэтому ему хотелось недоуменно нахмуриться.</p>
+  <p class="narr reveal">Ибо в голосе Тиги совершенно четко слышалась сочувственная нотка.</p>
+  <p class="narr reveal">— Ты так мрачно разглядываешь расписание Фьоре? — заглянул юноша к нему через плечо. — Заставить эту девочку следовать графику — задачка не из легких.</p>
+  <p class="narr reveal">— Твоя правда, — отозвался Хейнкель.</p>
+  <p class="narr reveal">Дни Фьоре как кандидатки на престол и как Святой были расписаны по минутам. Даже вне официального графика она вставала на рассвете на молитву, а после нее добровольно выслушивала посетителей церкви.</p>
+  <p class="narr reveal">— И вдобавок она вообще не может пройти мимо чужой беды. Если увидит, что на улице ребенок потерялся и старику тяжело вещи нести, то все, прощай расписание.</p>
+  <p class="narr reveal">— Ага. Помню, как-то раз она исчезла, а потом оказалось, что она увязалась помогать старику тащить вещи в соседний город за тридевять земель, да еще и осталась у него на чай.</p>
+  <p class="narr reveal">— Пока она носит титул «Святой», это еще куда ни шло. Хотя даже для Святой подобное — сплошное безумие.</p>
+  <p class="narr reveal">Она стала кандидаткой на престол — больше вести себя как раньше она не может. На незаменимую роль всегда сваливаются незаменимые обязанности. От Фьоре ждали именно этого, и не было сомнений, что из двух вещей важнее. И все же…</p>
+  <p class="narr reveal">— Госпожа Фьоре не хочет бросать Церковь, но при этом собирается выложиться на полную и на Выборах… Это же чистой воды безумие.</p>
+  <p class="narr reveal">Покоряясь ее энтузиазму, Хейнкель крутился как белка в колесе. Вместо того чтобы лезть во все подряд, как делала Фьоре, он думал о том, кому перепоручить возникшие проблемы, перекраивал сорванный график, приносил извинения за отмененные встречи и заранее готовил необходимые бумаги. У него не оставалось времени даже на то, чтобы вспомнить о мече.</p>
+  <p class="narr reveal">За все время, что он пробыл ее рыцарем, он ни разу не обнажил клинок.</p>
+  <p class="narr reveal">— И все же во время утренних молитв Фьоре ты не пропускаешь тренировки, — сказал Тига. — А я-то грешным делом думал, что ты не любитель вставать ни свет ни заря.</p>
+  <p class="narr reveal">— Разве может быть рыцарем тот, кто поздно встает?</p>
+  <p class="narr reveal">— Вот как. Значит, мне эта роль точно не подходит. Хорошо, что мне не досталось столь высокой должности. Все равно мне не хватило бы мастерства, — дал себе оценку Тига, пока поправлял шляпу.</p>
+  <p class="narr reveal">Хейнкель окинул его скользящим взглядом: «„Не хватило бы мастерства“, значит?»</p>
+  <p class="narr reveal">Честно говоря, он не мог согласиться с заявлением Тиги. Как человек, которому доверили охрану Фьоре, Тига, вооруженный изогнутым клинком, был весьма умелым бойцом даже на глаз Хейнкеля. Гибкое тренированное тело, богатый боевой опыт и, главное, незыблемая выдержка. Он был не фехтовальщиком и не рыцарем, но безусловно воином.</p>
+  <p class="narr reveal">— А как твоя рана? — поинтересовался Хейнкель.</p>
+  <p class="narr reveal">— Ну-у, до идеала далеко. Стало получше, но рана была глубокой… — погладил свой бок Тига. — Все-таки не просто так ее называют Богиней Войны.</p>
+  <p class="narr reveal">Хейнкель нахмурился. «Герцогиня Карстен, устроившая побег и убившая лорда МакМахона…» Это имя принадлежало той самой женщине, что нанесла Тиге эту рану и приключила хаос, охвативший столицу.</p>
+  <p class="narr reveal">Изначально считавшаяся главным фаворитом Королевских Выборов Круш Карстен по прозвищу «Богиня Войны» ныне разыскивалась по всему Королевству как исполнительница убийства Миклотова МакМахона — ключевой фигуры Совета Мудрецов.</p>
+  <p class="narr reveal">Сам факт преступления был шокирующим, но куда более странным казалось то, что соучастником Круш объявили Нацуки Субару, рыцаря Эмилии. Более того, его обвиняли не просто в соучастии, а выдвигали дикое подозрение, будто он — Архиепископ Греха Лени.</p>
+  <p class="narr reveal">Из-за этого Эмилию заподозрили в измене короне. А Фельт не сумела развеять сомнения в фальсификации своего происхождения, и ее поместили под стражу в замке. Сторонники обоих Лагерей бежали из столицы — во время этих событий в город вырвался крупный зверодемон, и для наведения порядка пришлось задействовать Святого Меча.</p>
+  <p class="narr reveal">Все это уже произошло к моменту, когда Хейнкеля вернули в столицу, и этот кошмарный хаос продолжал отравлять не только столицу, но и все Королевство.</p>
+  <p class="narr reveal">— Нынче в столице царит такая обстановка, какой не было за всю историю Королевства. На улицах полно рыцарей и стражников с хмурыми лицами, у горожан нет ни одного повода для радости, все ходят с опущенными головами.</p>
+  <p class="narr reveal">— Кто может, тот уезжает из столицы. Но у большинства выбора нет. Честно говоря, в церкви такой суматохи не было уже много лет.</p>
+  <p class="narr reveal">— И от этого поддержка госпожи Фьоре только растет, я прав?</p>
+  <p class="narr reveal">— Мне не нравится ход твоих мыслей. Ни мне, ни Фьоре.</p>
+  <p class="narr reveal">На ядовитую реплику Хейнкеля взгляд Тиги сделался острым. Он не шутил — его это искренне задело, поэтому рыцарь поднял руки в знаке капитуляции.</p>
+  <p class="narr reveal">Однако, какими бы ни были чувства Тиги, реальность оставалась таковой. Чем сильнее разрасталась смута в Королевстве, тем меньше люди верили короне и тем охотнее обращались к церкви, почитающей <span class="dragon-mention">Божественного Дракона</span>, который веками защищал страну.</p>
+  <p class="narr reveal">И этот фактор, несомненно, подталкивал вперед Фьоре, стартовавшую с опозданием. И для Хейнкеля, ее рыцаря, это должно было быть поводом для радости, но…</p>
+  <p class="narr reveal">— Отец…</p>
+  <p class="narr reveal">В мыслях Хейнкеля всплыл образ его сгинувшего отца, Вильгельма.</p>
+  <p class="narr reveal">Объявленная в розыск Круш и служивший ей Вильгельм тоже оказались в числе тех, кто исчез из столицы. Скорее всего, он примкнул к своей госпоже и помогал ей скрываться, будучи в заведомо проигрышном положении.</p>
+  <p class="narr reveal">Конечно, мысль о том, что Демон Меча способен прорубить себе путь сквозь любые невзгоды, не была совсем уж лишена оснований…</p>
+  <p class="narr reveal">— Тебе тоже несладко приходится, господин Хейнкель, — пожал Тига плечами словно прочитал по его лицу и вздоху мысли.</p>
+  <p class="narr reveal">«Несладко» — пожалуй, точное определение. Но с тем же успехом можно сказать, что с самого момента вступления Хейнкеля в Лагерь Присциллы семья Астрея оказалась разделена.</p>
+  <p class="narr reveal">— Мои невзгоды — мелочь. Главное, чтобы это не повредило госпоже Фьоре. А отец и мой сын… оба взрослые мужики. Сами должны отвечать за свои поступки.</p>
+  <p class="narr reveal">— По крайней мере, там, где я бился мечи с герцогиней Карстен, твоего отца не было. Надеюсь, на него просто возвели напраслину.</p>
+  <p class="narr reveal">Тига ободряюще похлопал Хейнкеля по плечу. Тот не знал, что ответить, и лишь неопределенно буркнул:</p>
+  <p class="narr reveal">— Ага.</p>
+  <p class="narr reveal">Замечание о том, что Вильгельма там не было, не требовало пояснений. Если бы Демон Меча оказался там и вступил в бой с Тигой, последнего бы уже не было в живых.</p>
+  <p class="narr reveal">Впрочем, была и другая причина, почему его ответ вышел таким скомканным. И об этой причине он ни за что не мог обмолвиться стоящему рядом Тиге.</p>
+  <p class="narr reveal">Ибо внутри Хейнкеля все сильнее разрасталось неистребимое подозрение к <span class="dragon-mention">Церкви Божественного Дракона</span>.</p>
+  <div class="section-divider reveal"><span class="divider-line"></span><span class="divider-sigil">△▼△▼△▼△</span><span class="divider-line"></span></div>
+  <p class="narr reveal">В нынешнем Королевстве роль Церкви велика как никогда. Изначально Лугуника процветала под покровительством <span class="dragon-mention">Божественного Дракона</span> Волканики, что обещал покой и защиту государства. Поэтому большинство жителей Королевства испытывали естественный трепет перед Божественным Драконом, что автоматически выливалось в безграничное доверие к <span class="dragon-mention">Церкви Божественного Дракона</span>.</p>
+  <p class="narr reveal">Хейнкель не был исключением: именно поэтому, когда его жена погрузилась в непробудный сон, он ходил в церковь в надежде на чудо и молился высшим силам. К сожалению, мольбы Хейнкеля остались без ответа, а сам он позже совершил тяжкий грех, из-за которого не мог смотреть в глаза ни <span class="dragon-mention">Божественному Дракону</span>, ни его последователям. С тех пор он избегал церкви, и оттого его нынешнее положение казалось ему еще более злой иронией.</p>
+  <p class="narr reveal">Отогнавши мысли о собственном ничтожестве, Хейнкель вынужден был вернуться к главному: к зародившемуся в нем недоверию к <span class="dragon-mention">Церкви Божественного Дракона</span> и к самой Фьоре. Точнее — к истинным мотивам Церкви, толкнувшей Фьоре к участию в Королевских Выборах.</p>
+  <p class="narr reveal">Изо дня в день, что Хейнкель проводил с ней, он поражался ее невероятной, абсолютной искренности и доброте.</p>
+  <p class="narr reveal">Фьоре отдавалась любому делу без остатка и, хоть обладала сомнительной рассудительностью — начиная с назначения Хейнкеля, — умела брать на себя ответственность, добиваться поставленных целей. Для этого она много говорила, много смеялась, плакала и действовала. Ее способность вести за собой людей и открыто заявлять о своих желаниях была истинно королевским даром — наследием крови Лугуники.</p>
+  <p class="narr reveal">Хотя сама Фьоре утверждала, что не знает, является ли она пропавшей пятнадцать лет назад принцессой, и даже не пытается это выяснить…</p>
+  <p class="narr reveal">«Двух принцесс быть не может».</p>
+  <p class="narr reveal">Хейнкель был уверен в этом, поскольку хорошо знал принца Форда Лугунику — отца пропавшей принцессы и младшего брата покойного короля Рандхала Лугуники.</p>
+  <p class="narr reveal">У Форда была только одна дочь, никаких двойняшек или тройняшек. И эта единственная дочь исчезла из замка пятнадцать лет назад. Пропавшая принцесса — это либо Фьоре, либо Фельт. Третьего не дано. А значит, кто-то ведет свою игру. Кто-то возвел одну из двух девушек в статус выжившей представительницы королевской династии, чтобы использовать ее в своих целях.</p>
+  <p class="narr reveal">Учитывая обстоятельства, при которых Фьоре вступила в Выборы, у Хейнкеля были все основания сомневаться в Церкви. Однако…</p>
+  <p class="thought reveal">«Чего же я хочу на самом деле?..»</p>
+  <p class="narr reveal">На этой мысли рассуждения Хейнкеля замерли в ужасе. Это было так же глупо, как осознавать, что перед наступлением темноты тебя окружает густой туман, и при этом не делать ровным счетом ничего.</p>
+  <p class="narr reveal">Но в этом тумане теплился свет, к которому Хейнкель стремился долгие годы. Сделай он неверный шаг — и этот свет угаснет навсегда. Поэтому он не мог двинуться с места. Он боязливо замер, лишь бы избежать роковой ошибки.</p>
+  <div class="section-divider reveal"><span class="divider-line"></span><span class="divider-sigil">△▼△▼△▼△</span><span class="divider-line"></span></div>
+  <p class="narr reveal">И пока он не находил ответа, время уходило.</p>
+  <p class="narr reveal">С момента заключения союза между Хейнкелем и Фьоре прошли дни, затем недели, и вот уже минул почти месяц. За это время Лагерь Фьоре сумел наладить поставки товаров, нарушенные беспорядками в столице, откликалась на запросы местных церквей и лечебниц и планомерно укрепляла свои позиции в Королевских Выборах. Хейнкель же все так же не мог избавиться от подозрений к Церкви, но и не смел мешать Фьоре. Он топил свои тревоги в вечном решении текущих задач. Однако при всей этой активности два вопроса, волновавших саму Фьоре больше всего, не продвинулись ни на шаг.</p>
+  <p class="narr reveal">— Опять вернулось? — с досадой нахмурился Хейнкель в кабинете Церкви.</p>
+  <p class="narr reveal">Он разглядывал знакомый конверт поверх стопки документов. По ту сторону стола Сакура Элемент изо всех сил старалась не зевнуть, однако она вопреки своей показной лени ловко сортировала входящие бумаги.</p>
+  <p class="narr reveal">Девушка окинула Хейнкеля сонным и полураздавленным взглядом:</p>
+  <p class="narr reveal">— Да-а, похоже на то-о. То, что они так быстро отвечают, конечно, приятно-о, но вот содержание… Ах, в этот раз снова отложили-и.</p>
+  <p class="narr reveal">— Отложили, значит. Который это уже раз?</p>
+  <p class="narr reveal">— Ну-у, в замок ушло сорок семь писем, больших и малых. В церквях отдали тридцать два, плюс всякие материалы и показания… Учитывая, какая Фьоре писака, там уже явно за сотню перевалило-о.</p>
+  <p class="narr reveal">Одной рукой Сакура сортировала письма, другой — умело листала журнал учета. Хейнкель тяжело вздохнул.</p>
+  <p class="narr reveal">Упорство, с которым Фьоре ежедневно бомбардировала замок и Церковь письмами, поражало: она требовала аудиенции и допроса содержащихся под стражей Эмилии и Фельт, а также разрешения применить свое Таинство для исцеления жертв Культа Ведьмы в Городе Водных Врат, Пристелле.</p>
+  <p class="narr reveal">Фьоре упорно пыталась действовать через официальные каналы, но…</p>
+  <p class="narr reveal">— Почему они так упираются? Ладно встречи с Эмилией и Фельт, но Пристеллу-то стоит хотя бы проверить! Или в документах какая-то ошибка?</p>
+  <p class="narr reveal">— Ой-ой, вы сомневаетесь в моей работе-е? Если так, то выходит, я заставила Фьоре понапрасну перевести кучу бумаги-и… Какая же я обуза-а.</p>
+  <p class="narr reveal">— Я просто спросил. Ни в чем я тебя не подозреваю. Будь ты ненадежной, тебе не дали бы титул секретаря при Святой.</p>
+  <p class="narr reveal">— Вы так думаете-е? По-моему, тут вполне может быть заслуга роди-ителей. Вы так не считаете-е, заместитель командира Хейнкельчик?</p>
+  <p class="narr reveal">— Перестань сюсюкать со взрослым мужиком, Сакурочка.</p>
+  <p class="narr reveal">— Ваша просьба отправляется на рассмотрение, Хейнкельчик, — ответила Сакура так, будто и вовсе не собиралась выполнять прошение, и потянула рыцарю письмо из замка.</p>
+  <p class="narr reveal">Он пробежался по нему глазами и понял, что текст мог бы написать с закрытыми глазами.</p>
+  <p class="narr reveal">«В настоящее время данный вопрос находится на рассмотрении Совета Мудрецов, просим подождать еще немного».</p>
+  <p class="narr reveal">Что касается содержания двух девиц, что прошения о Таинстве в Пристелле — менялись лишь пара слов, а суть оставалась неизменной.</p>
+  <p class="narr reveal">— Они не отказывают, но и не разрешают. И сколько это будет продолжаться?</p>
+  <p class="narr reveal">— Кто зна-ает? Решать-то важным господам из замка-а. Учитывая обстановку, все проявляют осторо-ожность.</p>
+  <p class="narr reveal">— Перебарщивают они с осторожностью. У госпожи Фьоре уже терпение на исходе, она на стены готова лезть от досады.</p>
+  <p class="narr reveal">— Очень в стиле Фьоре-е, — прикрыла рот Сакура и тихо хихикнула.</p>
+  <p class="narr reveal">Но Хейнкель не разделял ее веселья. Видеть, как Фьоре с каждым днем все сильнее наигрывает бодрость, пока внутри у нее все горит, было невыносимо.</p>
+  <p class="narr reveal">— Раз замок молчит, что говорит Церковь? Госпожа Фьоре ведь Святая. Неужели она не вправе сама решать, к кому применять свое Таинство?</p>
+  <p class="narr reveal">— Не вправе-е. Это слишком ценная ве-ещь.</p>
+  <p class="narr reveal">От такого столь четкого ответа Хейнкель слегка опешил. Сакура постучала пальчиком по разложенным стопкам писем:</p>
+  <p class="narr reveal">— Вообще-то «Святая» — это не официальный чин в иерархии-и Церкви. Это особый титул, и его даруют верующим, коих отметил благодатью <span class="dragon-mention">Божественный Дракон</span>. Им оказывают почтение, сажают на видные места во время церемоний, но у них нет ни голоса в Священном Совете, ни реальной власти-и.</p>
+  <p class="narr reveal">— Но при этом Церковь выставляет ее своей главной фигурой.</p>
+  <p class="narr reveal">— Служить символом веры — важная обязанность Свято-ой. Хотя заставить Фьоре быть просто послушной куклой сложнее, чем усадить Дракона на хво-ост.</p>
+  <p class="narr reveal">С этим Хейнкель был полностью согласен, но объяснение Сакуры вызвало у него неприятный осадок. Ему недвусмысленно давали понять: пусть Фьоре и выступает кандидаткой на престол, от нее ждут выполнения роли Святой — то есть красивой ширмы <span class="dragon-mention">Церкви Божественного Дракона</span>.</p>
+  <p class="narr reveal">— А по-моему, Фьоре отлично подошла бы на роль королевы-ы. И то, как вы из кожи вон лезете, Хейнкельчик, лишь доказательство того, что вы очарованы ее королевским величие-ем.</p>
+  <p class="narr reveal">Сакура разгадала его мысли и теперь откровенно забавлялась. Хейнкелю это, конечно же, не нравилось.</p>
+  <p class="narr reveal">За ее витающим в облаках видом скрывался недюжинный ум. Тига был отличным стражником, но Сакура как чиновник превосходила подавляющее большинство: оформить сотню прошений и собрать всю документацию для Фьоре было ее заслугой.</p>
+  <p class="narr reveal">— Будь ты одна, Церковь, наверное, работала бы без сбоев.</p>
+  <p class="narr reveal">— Что вы, вы мне льстите-е. Я бы никогда не смогла стать символом надежды для стольких людей, как Фьоре-е. К тому же, что это тогда за церковь, раз она может рухнуть от ошибки одного-о человека?</p>
+  <p class="narr reveal">— Понятно… Очень скромно с твоей стороны.</p>
+  <p class="narr reveal">Ее слова звучали почти как скрытый выпад против системы власти. В Королевстве для компенсации ошибок правителя существовал Совет Мудрецов, но сейчас, когда сам Совет Мудрецов замер в нерешительности, даже рыцарю вроде Хейнкеля нечего было возразить.</p>
+  <p class="narr reveal">— Говорят, после смерти МакМахона там царит полный ужас…</p>
+  <p class="narr reveal">Хейнкель не присутствовал на заседаниях Совета Мудрецов, но знал, что именно Миклотов был их связующим звеном. Впрочем, другие члены совета, вроде вспыльчивого Бордо Зелгефа, тоже умели отстаивать свое мнение.</p>
+  <p class="narr reveal">Проблем в столице хватало, и государственная машина продолжала работать даже без Миклотова. Значит, движение застопорилось именно по двум вопросам, волновавшим Фьоре. И Хейнкель не мог понять, почему.</p>
+  <p class="narr reveal">— Церковь не дает добро на Таинство… из-за того, что герцогиня Карстен объявлена в розыск?</p>
+  <p class="narr reveal">— Отрицать это нельзя-я. По правде говоря, то, что Фьоре применила Таинство без согласия Священного Совета, вызвало скандал. Даже обсуждали, не лишить ли ее титула «Свято-ой».</p>
+  <p class="narr reveal">— Лишить титула «Святой»?! Такое вообще возможно?!</p>
+  <p class="narr reveal">— По правилам — да-а. На практике такого еще не бывало-о. В этот раз обошлось, но раз вопрос поднимался, расслабляться не сто-оит.</p>
+  <p class="narr reveal">Сакура говорила об этом как о чем-то обыденном, но Хейнкель был поражен. Самовольный поступок Фьоре, всколыхнувший королевский замок, оказался серьезным ударом и по Церкви — причем поставил под угрозу статус самой девушки. А то, что излеченная Круш теперь разыскивалась за убийство Миклотова, лишь усиливало давление на Фьоре.</p>
+  <p class="narr reveal">— Когда все, что ты делаешь, оборачивается против тебя — это тяжело…</p>
+  <p class="narr reveal">— А вы прямо сопереживаете-е. Впрочем, оно и понятно-о: для вас, Хейнкельчик, разрешение на использование Таинства — вопрос жизни и смерти-и.</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">— Или вы просто с концами вошли в роль ее рыцаря-я?</p>
+  <p class="narr reveal">Хейнкель лишь яростно фыркнул на ее поддевку. У него не было причин отвечать на колкости Сакуры. Разумеется, он хотел проверить, сможет ли Таинство Фьоре спасти его жену, Луанну. Но…</p>
+  <p class="narr reveal">— Тех, кто ждет в Пристелле, можно спасти наверняка — это факт. И если все упирается лишь в какую-то бумажку, то нормальный человек пробьет это разрешение как можно скорее.</p>
+  <p class="narr reveal">— Чужие интересы выше собственных? Не знала, что вы такой добряк, Хейнкельчик.</p>
+  <p class="narr reveal">— Я не об этом говорю. Одно дело — ждать спасения, и совсем другое — когда тебя заставляют ждать ни за что.</p>
+  <p class="narr reveal">— Это правда-а.</p>
+  <p class="narr reveal">Грубый ответ Хейнкеля заставил Сакуру сбросить насмешливый тон. Он удивленно взглянул на нее, но на ее лице не осталось и следа прежней иронии — видимо, ему просто показалось. Как бы то ни было…</p>
+  <p class="narr reveal">— Будем же стойко исполнять свой до-олг. Глядишь, и случится что-нибудь хорошее-е.</p>
+  <p class="narr reveal">Эти слова слуги Церкви прозвучали неожиданно скромно и вместе с тем отчаянно.</p>
+  <div class="section-divider reveal"><span class="divider-line"></span><span class="divider-sigil">△▼△▼△▼△</span><span class="divider-line"></span></div>
+  <p class="narr reveal">— Я решила! Раз сотня писем не помогла, я вручу сто первое лично в руки! Если просить глядя в глаза, им будет куда сложнее отказать!</p>
+  <p class="narr reveal">С видом человека, который только что получил откровение от самого Дракона, Фьоре объявила свое решение, и ее рыцарь, охранник и секретарь были вынуждены сопровождать ее в королевский замок.</p>
+  <p class="narr reveal">Ее решимость заслуживала похвалы, но…</p>
+  <p class="narr reveal">— Я не могу с этим смириться!!</p>
+  <p class="narr reveal">…стоило им выйти из приемного зала в белый коридор, как Фьоре не выдержала и закричала. Ее исполненный досады голос эхом разнесся по коридору замка и заставил проходивших чиновников и слуг в изумлении обернуться. Заметив это, Тига приложил указательный палец к губам:</p>
+  <p class="narr reveal">— Фьоре, не кричи так. Если твои слова долетят до ушей верхов, в следующий раз нас выставят прямо из вестибюля.</p>
+  <p class="narr reveal">— Но это же несправедливо! Я спросила, чего не хватает, предложила все достать, а они только твердят: «мы думаем», «вопрос отложен», «все в тумане»!.. Да что с ними не так?!</p>
+  <p class="narr reveal">— Похоже, им просто нечего добавить или исправи-ить.</p>
+  <p class="narr reveal">— Тогда почему бы просто не дать разрешение?!</p>
+  <p class="narr reveal">— Они с самого начала не собирались нас слушать.</p>
+  <p class="narr reveal">Фьоре повернулась к своему рыцарю. В ее красных глазах блестели слезы, но у Хейнкеля не было платка, чтобы утереть их.</p>
+  <p class="narr reveal">Вместо этого он прямо ответил на ее немой вопрос:</p>
+  <p class="narr reveal">— Дело не в ошибках в бумагах и не в нехватке условий. Все, чего они хотят, — это чтобы ты сдалась и перестала мозолить им глаза, госпожа Фьоре.</p>
+  <p class="narr reveal">— Но это… это же неправильно! Кто вообще мог такое придумать?!</p>
+  <p class="narr reveal">— Вот это и есть главный вопрос.</p>
+  <p class="narr reveal">Фьоре казалась капризным ребенком, но она сделала все, что было в ее силах, и требовать большего от нее было нельзя. Вопрос, терзавший ее, оставался без ответа и для Хейнкеля, а происходящее в последний месяц лишь подливало масла в огонь.</p>
+  <p class="narr reveal">«Все выглядит так, будто кто-то очень умело дергает за ниточки».</p>
+  <p class="narr reveal">Появление Фьоре на политической арене — если не считать ее поздний старт — выглядело так, будто <span class="dragon-mention">Церковь Божественного Дракона</span> спланировала все до мелочей. Однако при всей ее искренности и популярности среди народа, главный шаг — поездку в Пристеллу — не допускал сам Священный Совет Церкви. Если бы Церковь действительно хотела посадить Фьоре на престол, этот шаг был бы очевиден. Но вместо поддержки <span class="dragon-mention">Церковь Божественного Дракона</span> перекрывала ей пути, да и Совет Мудрецов не спешил идти навстречу.</p>
+  <p class="narr reveal">Подозрения Хейнкеля приобретали все более мрачные очертания. Впрочем, одно оставалось неизменным: Фьоре была неопытным ребенком, и она нуждалась в защите взрослых.</p>
+  <p class="narr reveal">— Фьоре, я понимаю твои чувства, но давай пока вернемся, — мягко произнес Тига.</p>
+  <p class="narr reveal">Покорно повесив голову, Фьоре пошла за ним. Вдоль коридора замка встречавшиеся чиновники останавливались и отвешивали ей нижайшие поклоны — уважение к ней как к кандидатке и как к Святой было искренним. И тем горше казалось то, что ни одно ее прошение так и не было услышано.</p>
+  <p class="narr reveal">В тяжелом молчании они миновали поворот коридора…</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">…и заметили идущего навстречу человека, Хейнкель замерз.</p>
+  <p class="narr reveal">— Райнхард… — невольно вырвалось из его груди.</p>
+  <p class="narr reveal">Красноволосый юноша в белом рыцарском мундире с Драконьим Мечом на поясе — Райнхард ван Астрея — остановил взгляд на окликнувшем его человеке. Их голубые глаза — прямой знак их родства — встретились.</p>
+  <p class="narr reveal">— Давно не виделись, отец.</p>
+  <p class="narr reveal">— М-да…</p>
+  <p class="narr reveal">Жалкий ответ. Хейнкель мысленно проклял себя.</p>
+  <p class="narr reveal">Встреча оказалась неожиданной. Занятый своими мыслями, он не успел подготовить привычные ядовитые слова. В итоге между отцом и сыном повисла гнетущая тишина.</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">За спиной Райнхарда шли двое рыцарей в белой форме. На первый взгляд — обычные подчиненные Святого Меча. Однако их взгляды были прикованы не к окружению, а исключительно к Райнхарду.</p>
+  <p class="narr reveal">И главное — Хейнкель никогда раньше не видел этих лиц. Рыцари взялись не пойми откуда. Зачем они сопровождают Райнхарда?..</p>
+  <p class="narr reveal">— Райнхард! Как хорошо, что мы встретились! Я как раз хотела с тобой поговорить!</p>
+  <p class="narr reveal">Фьоре бесстрашно сделала шаг навстречу юноше сквозь только что натянувшееся напряжение между отцом и сыном. Шедшие сзади рыцари невольно подтянулись, но Райнхард остановил их жестом руки.</p>
+  <p class="narr reveal">— Госпожа Фьоре. Вы были в замке?</p>
+  <p class="narr reveal">— Да. Я пыталась добиться встречи с Эмилией и Фельт, а также решить вопрос с Пристеллой. Но сейчас речь о тебе!</p>
+  <p class="narr reveal">— Обо мне?</p>
+  <p class="narr reveal">— Да! Как там Фельт? Вы ведь виделись?</p>
+  <p class="narr reveal">Райнхард тихо вздохнул, помедлив с ответом. Затем медленно качнул головой:</p>
+  <p class="narr reveal">— Нет.</p>
+  <p class="narr reveal">— Что? То есть… вы сегодня еще не виделись?</p>
+  <p class="narr reveal">— Не только сегодня. С тех пор как госпожа Фельт прибыла в замок.</p>
+  <p class="narr reveal">— С тех пор как она в замке… Ни разу?! Прошло же больше месяца!</p>
+  <p class="narr reveal">Голос Фьоре взлетел, и рыцари позади Райнхарда напряглись. Однако тот лишь спокойно кивнул. Изумление Святой было понятным: это отличалось от ее ситуации, когда ей просто отказали во встрече.</p>
+  <p class="narr reveal">— Но ты ведь рыцарь Фельт! Это же ненормально, что ты не можешь ее видеть! Разве ты сам так не думаешь?!</p>
+  <p class="narr reveal">— Встречи запрещены, так что ничего не поделаешь.</p>
+  <p class="narr reveal">— Но ты ведь хочешь ее увидеть! Хочешь поговорить!</p>
+  <p class="narr reveal">— Я — Меч Королевства. Раз из замка поступил приказ, я обязан его выполнять.</p>
+  <p class="narr reveal">— Ты не просто Меч Королевства, ты еще и Меч Фельт!</p>
+  <p class="narr reveal">Прямые, искренние слова Фьоре бритвой полоснули по Райнхарду. Хейнкель слишком хорошо знал, что ответит сын на этот бессознательный упрек.</p>
+  <p class="narr reveal">— Я — Меч Королевства, госпожа Фьоре.</p>
+  <p class="narr reveal">Разговор вернулся к начальной точке. Дело было не в том, что Фьоре не находила нужных слов, и не в том, что Райнхард ее не понимал. Что бы ему ни говорили, что бы он ни чувствовал, Святой Меча не изменит своего ответа.</p>
+  <p class="narr reveal">Правильнее было бы сказать — не может изменить.</p>
+  <p class="narr reveal">— Ты правда думаешь, что Фельт обманула Королевство?</p>
+  <p class="narr reveal">— Нет, — последовал, однако, ответ без малейшего колебания.</p>
+  <p class="narr reveal">И прежде чем Фьоре успела спросить «тогда почему», Райнхард продолжил:</p>
+  <p class="narr reveal">— Да, я верю в госпожу Фельт, но одной лишь верой нельзя доказать, что она невиновна. Нарушу приказ — и ее будут подозревать еще сильнее, положение только ухудшится.</p>
+  <p class="narr reveal">— И поэтому ты просто подчиняешься?</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">На этот вопрос Райнхард не ответил ни «да», ни «нет». Но само его молчание давало понятный ответ.</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">Хейнкель перевел взгляд на двух рыцарей за спиной Райнхарда. Было очевидно, что они ему не союзники. Скорее всего — надзиратели. Но какая же это бессмысленная мера! Захоти Райнхард — он сметет их в мгновение ока, исчезнет быстрее, чем кто-либо заметит, и проберется к Фельт без малейших помех. Замок ничего ему не сможет сделать.</p>
+  <p class="narr reveal">Но Райнхард этого не сделает. Не может. Пока он остается Святым Меча, для него это невозможно.</p>
+  <p class="narr reveal">— Тогда хотя бы передай Фельт…</p>
+  <p class="narr reveal">Фьоре сжала кулаки выкрикнула вслед молчаливому Райнхарду:</p>
+  <p class="narr reveal">— Я верю в Фельт! И в Эмилию тоже верю! Передай ей, что снаружи замка есть люди, которые не верят, что они предали Королевство!</p>
+  <p class="narr reveal">— Спасибо вам.</p>
+  <p class="narr reveal">— Я могу написать письмо! Я напишу!</p>
+  <p class="narr reveal">— Простите, но я не могу этого обещать. Мне запрещено передавать госпоже Фельт любые вещи или послания.</p>
+  <p class="narr reveal">— Как же так…</p>
+  <p class="narr reveal">— Прошу прощения, меня ждут дела, — склонил Райнхард голову и попытался пройти мимо.</p>
+  <p class="narr reveal">Когда его плечо почти сравнялось с плечом Хейнкеля, он на миг остановился.</p>
+  <p class="narr reveal">— Отец… я слышал, вы стали рыцарем госпожи Фьоре.</p>
+  <p class="narr reveal">— Ну да… Имеешь что-то против?</p>
+  <p class="narr reveal">— Поздравляю вас.</p>
+  <p class="narr reveal">Слова застряли у Хейнкеля в горле.</p>
+  <p class="narr reveal">Взгляд Райнхарда, что стоял на расстоянии вытянутой руки, был прикован прямо к его глазам. Хейнкель не выдержал взора сына, выросшего с него ростом, и отвел глаза.</p>
+  <p class="narr reveal">— Поздравлять тут не с чем…</p>
+  <p class="narr reveal">— И все же я правда рад, что вас выбрали, отец.</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">Хейнкелю нечего было ответить. В голосе Райнхарда не было ни сарказма, ни иронии. Он действительно радовался за своего опустившегося отца, которого кто-то выбрал своим рыцарем.</p>
+  <p class="narr reveal">Неужели он забыл, какими бранными словами Хейнкель осыпал его в Пристелле? Забыл, как Хейнкель поднял меч на его госпожу в том же городе? Или даже это для Райнхарда — лишь незначительные мелочи, не оставившие следа в его душе?</p>
+  <p class="narr reveal">Святой Меча слегка поклонился и ушел по белому коридору в сопровождении двух рыцарей.</p>
+  <p class="narr reveal">Фьоре с досадой смотрела ему вслед. Хейнкель же не смог даже посмотреть вслед удаляющемуся сыну.</p>
+  <div class="section-divider reveal"><span class="divider-line"></span><span class="divider-sigil">△▼△▼△▼△</span><span class="divider-line"></span></div>
+  <p class="narr reveal">— Фьоре, при всем уважении, твои слова Райнхарду были неосмотрительны, — произнес со строгим видом Тига, прикрывая дверь Церкви.</p>
+  <p class="narr reveal">Он всю дорогу обратно молча обдумывал, как лучше высказать свои замечания.</p>
+  <p class="narr reveal">— Может, ты и старалась подбирать выражения, но там были рыцари замка и другие люди. Если слухи дойдут до Совета Мудрецов, тебя посчитают бунтовщицей.</p>
+  <p class="narr reveal">— Пускай считают! Я и правда против них!</p>
+  <p class="narr reveal">— Я не об этом. Если тебе запретят аудиенции и доступ в замок, мы вообще ничего не сможем сделать.</p>
+  <p class="narr reveal">— Я понимаю!</p>
+  <p class="narr reveal">— Если бы понимала, не стала бы…</p>
+  <p class="narr reveal">— Да понимаю я!!!</p>
+  <p class="narr reveal">Фьоре резко перебила Тигу. От ее выкрика тот опешил, а Сакура опустила глаза.</p>
+  <p class="narr reveal">— Я понимаю… простите, — тихо и хрипло произнесла Святая. — Понимаю, поэтому мне и тошно! Если мы не будем подчиняться решениям замка, нас перестанут воспринимать как участников Королевских Выборов. А если нас перестанут воспринимать как участников, я не смогу помочь Эмилии и остальным. Поэтому приходится ждать, как приказано…</p>
+  <p class="narr reveal">— Фьоре…</p>
+  <p class="narr reveal">— Простите меня. Я правда ценю все, что вы для меня делаете.</p>
+  <p class="narr reveal">— Ладно…</p>
+  <p class="narr reveal">— Оставьте меня на минуту наедине с господином Хейнкелем.</p>
+  <p class="narr reveal">Тига поколебался, но кивнул. Сакура первой вышла из комнаты, и за ней последовал юноша. Дверь закрылась, в кабинете остались только Фьоре да Хейнкель.</p>
+  <p class="narr reveal">— …</p>
+  <p class="narr reveal">На столе рядами лежали месячные ответы из замка. Фьоре окинула их взглядом и тихо вздохнула.</p>
+  <p class="narr reveal">— Господин Хейнкель.</p>
+  <p class="narr reveal">— Что такое?</p>
+  <p class="narr reveal">Даже безудержная Фьоре заметно выдохлась.</p>
+  <p class="narr reveal">Ее отчаянные попытки не давали плодов, да и разговор с Райнхардом прошел совсем не так, как хотелось. Даже при ее неиссякаемом оптимизме постоянные неудачи давили на нее.</p>
+  <p class="narr reveal">Хейнкель и сам был опустошен нежданной встречей с Райнхардом и его поздравлением. И все же он собрал волю в кулак, приготовился принять любые ее слова.</p>
+  <p class="narr reveal">Наконец Фьоре прислонилась спиной к закрытой двери и задала вопрос, который не могла и не хотела задавать при Тиге и Сакуре:</p>
+  <p class="narr reveal">— Как вы думаете… как лучше устроить побег из замка?</p>
+
+  <div class="section-divider reveal"><span class="divider-line"></span><span class="divider-sigil">△▼△▼△▼△</span><span class="divider-line"></span></div>
+
+  <div style="text-align:center; padding: 40px 0 80px; opacity: 0.4;" class="reveal">
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.5em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px;">Конец главы</div>
+    <div style="font-family: 'EB Garamond', serif; font-style: italic; font-size: 28px; color: var(--accent);">祝辞</div>
+    <div style="font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.3em; color: var(--text-dim); margin-top: 12px;">Арка 10 · Глава 26</div>
+  </div>
+
+</main>
+
+<!-- ════ NAVIGATION BUTTONS ════ -->
+<nav class="nav-buttons">
+  <a href="10-25.html" class="nav-btn nav-btn-prev">
+    <span class="nav-icon">←</span>
+    <span>Глава 25</span>
+  </a>
+  <a href="index.html" class="nav-btn nav-btn-toc">
+    <span class="nav-icon">☰</span>
+    <span>Оглавление</span>
+  </a>
+</nav>
+
+<script>
+// ── Helpers ──
+const STORAGE_KEY = 'rezero-settings';
+
+function saveSettings(obj) {
+  try {
+    const cur = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({...cur, ...obj}));
+  } catch(e) {}
+}
+
+function loadSettings() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { return {}; }
+}
+
+// ── Theme toggle ──
+const themeBtn = document.getElementById('theme-toggle');
+const iconSun  = document.getElementById('icon-sun');
+const iconMoon = document.getElementById('icon-moon');
+const THEME_KEY = 'rezero-theme';
+
+function applyTheme(theme) {
+  if (theme === 'light') {
+    document.body.classList.add('light-theme');
+    iconSun.style.display  = 'block';
+    iconMoon.style.display = 'none';
+  } else {
+    document.body.classList.remove('light-theme');
+    iconSun.style.display  = 'none';
+    iconMoon.style.display = 'block';
+  }
+}
+
+const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+applyTheme(savedTheme);
+
+themeBtn.addEventListener('click', () => {
+  const isLight = document.body.classList.contains('light-theme');
+  const next = isLight ? 'dark' : 'light';
+  applyTheme(next);
+  localStorage.setItem(THEME_KEY, next);
+});
+</script>
+
+<script>
+// ── Settings panel toggle ──
+const settingsToggle = document.getElementById('settings-toggle');
+const settingsPanel  = document.getElementById('settings-panel');
+
+settingsToggle.addEventListener('click', () => {
+  const open = settingsPanel.classList.toggle('open');
+  settingsToggle.classList.toggle('active', open);
+});
+
+// Close panel when clicking outside
+document.addEventListener('click', (e) => {
+  if (!settingsPanel.contains(e.target) && e.target !== settingsToggle && !settingsToggle.contains(e.target)) {
+    settingsPanel.classList.remove('open');
+    settingsToggle.classList.remove('active');
+  }
+});
+
+// ── Font selector ──
+const fontBtns = document.querySelectorAll('#font-btns .settings-btn');
+const mainEl   = document.getElementById('main-content');
+
+function applyFont(fontName) {
+  document.body.style.fontFamily = `'${fontName}', Georgia, serif`;
+  fontBtns.forEach(b => b.classList.toggle('active', b.dataset.font === fontName));
+}
+
+fontBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyFont(btn.dataset.font);
+    saveSettings({ font: btn.dataset.font });
+  });
+});
+
+// ── Font size ──
+const fontSizeSlider = document.getElementById('font-size-slider');
+const fontSizeVal    = document.getElementById('font-size-val');
+
+function applyFontSize(size) {
+  document.body.style.fontSize = size + 'px';
+  fontSizeVal.textContent = size + 'px';
+  fontSizeSlider.value = size;
+}
+
+fontSizeSlider.addEventListener('input', () => {
+  applyFontSize(parseInt(fontSizeSlider.value));
+  saveSettings({ fontSize: fontSizeSlider.value });
+});
+
+// ── Container width ──
+const widthSlider = document.getElementById('width-slider');
+const widthVal    = document.getElementById('width-val');
+
+function applyWidth(w) {
+  const style = `${w}px`;
+  document.getElementById('main-content').style.maxWidth = style;
+  document.querySelector('.nav-buttons').style.maxWidth = style;
+  widthVal.textContent = style;
+  widthSlider.value = w;
+}
+
+widthSlider.addEventListener('input', () => {
+  applyWidth(parseInt(widthSlider.value));
+  saveSettings({ width: widthSlider.value });
+});
+
+// ── Animation toggle ──
+const animOn  = document.getElementById('anim-on');
+const animOff = document.getElementById('anim-off');
+
+function applyAnim(enabled) {
+  if (enabled) {
+    document.body.classList.remove('no-anim');
+    animOn.classList.add('active');
+    animOff.classList.remove('active');
+  } else {
+    document.body.classList.add('no-anim');
+    // Make all hidden elements visible immediately
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    animOff.classList.add('active');
+    animOn.classList.remove('active');
+  }
+}
+
+animOn.addEventListener('click', () => { applyAnim(true); saveSettings({ anim: true }); });
+animOff.addEventListener('click', () => { applyAnim(false); saveSettings({ anim: false }); });
+
+// ── Emotional blocks toggle ──
+const momentsOn  = document.getElementById('moments-on');
+const momentsOff = document.getElementById('moments-off');
+
+function applyMomentBlocks(enabled) {
+  document.body.classList.toggle('plain-moments', !enabled);
+  momentsOn.classList.toggle('active', enabled);
+  momentsOff.classList.toggle('active', !enabled);
+}
+
+momentsOn.addEventListener('click', () => { applyMomentBlocks(true); saveSettings({ momentBlocks: true }); });
+momentsOff.addEventListener('click', () => { applyMomentBlocks(false); saveSettings({ momentBlocks: false }); });
+
+// ── Text alignment ──
+const alignBtns = document.querySelectorAll('#align-btns .settings-btn');
+
+function applyAlign(align) {
+  const content = document.getElementById('main-content');
+  content.querySelectorAll('p, .moment-text, .dragon-eye-text, .return-text, .inner-fire').forEach(el => { el.style.textAlign = align; });
+  alignBtns.forEach(b => b.classList.toggle('active', b.dataset.align === align));
+}
+
+alignBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyAlign(btn.dataset.align);
+    saveSettings({ align: btn.dataset.align });
+  });
+});
+
+// ── Load persisted settings ──
+(function() {
+  const s = loadSettings();
+  if (s.font) applyFont(s.font);
+  if (s.fontSize) applyFontSize(parseInt(s.fontSize));
+  if (s.width) applyWidth(parseInt(s.width));
+  if (s.anim === false) applyAnim(false);
+  if (s.momentBlocks === false) applyMomentBlocks(false);
+  if (s.align) applyAlign(s.align);
+})();
+</script>
+
+<script>
+// ── Progress bar ──
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+});
+
+// ── Reveal on scroll ──
+const revealEls = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+// ── Ambient particle canvas ──
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function Particle() {
+  this.reset();
+}
+Particle.prototype.reset = function() {
+  this.x = Math.random() * W;
+  this.y = Math.random() * H;
+  this.vx = (Math.random() - 0.5) * 0.15;
+  this.vy = -Math.random() * 0.3 - 0.05;
+  this.r = Math.random() * 1.2 + 0.3;
+  this.alpha = Math.random() * 0.4 + 0.05;
+  this.life = 1;
+  this.decay = Math.random() * 0.002 + 0.001;
+  // Gold, green (Krusch), and purple (Beatrice) particles
+  const roll = Math.random();
+  if (roll > 0.65) {
+    this.color = `rgba(200,164,106,${this.alpha})`;
+  } else if (roll > 0.35) {
+    this.color = `rgba(90,170,122,${this.alpha * 0.7})`;
+  } else {
+    this.color = `rgba(160,100,220,${this.alpha * 0.5})`;
+  }
+};
+
+for (let i = 0; i < 80; i++) {
+  const p = new Particle();
+  p.y = Math.random() * H;
+  particles.push(p);
+}
+
+function animParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= p.decay;
+    if (p.life <= 0 || p.y < -10) p.reset();
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = p.life * 0.6;
+    ctx.fill();
+  });
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+
+// ── Dragon Eye dramatic entrance ──
+// When the dragon-eye-reveal becomes visible, add extra flare
+const dragonEye = document.querySelector('.dragon-eye-reveal');
+if (dragonEye) {
+  const eyeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Spawn a burst of golden particles from center
+        for (let i = 0; i < 20; i++) {
+          setTimeout(() => {
+            const burst = new Particle();
+            burst.x = W / 2 + (Math.random() - 0.5) * 200;
+            burst.y = H / 2;
+            burst.vy = -(Math.random() * 1.5 + 0.5);
+            burst.vx = (Math.random() - 0.5) * 1.2;
+            burst.alpha = 0.8;
+            burst.r = Math.random() * 2 + 1;
+            burst.color = `rgba(220,180,40,${burst.alpha})`;
+            burst.decay = 0.008;
+            particles.push(burst);
+            if (particles.length > 120) particles.splice(0, 1);
+          }, i * 60);
+        }
+        eyeObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  eyeObserver.observe(dragonEye);
+}
+
+// ── Return block: activate rings when visible ──
+const returnBlock = document.querySelector('.return-block');
+if (returnBlock) {
+  const retObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        returnBlock.querySelectorAll('.return-ring').forEach(r => {
+          r.style.opacity = '1';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  retObserver.observe(returnBlock);
+}
+</script>
+<script>document.querySelectorAll(".jp-minute-toggle").forEach(btn=>{const box=btn.closest(".jp-minute");const content=box.querySelector(".jp-minute-content");btn.setAttribute("aria-expanded","false");content.style.maxHeight="0px";btn.addEventListener("click",()=>{const open=btn.getAttribute("aria-expanded")==="true";btn.setAttribute("aria-expanded",String(!open));box.classList.toggle("open",!open);if(!open){content.style.maxHeight=content.scrollHeight+"px";}else{content.style.maxHeight=content.scrollHeight+"px";requestAnimationFrame(()=>{content.style.maxHeight="0px";});}});});</script>
+</body>
+</html>
