@@ -52,15 +52,19 @@ def build_navigation(chapters: list[dict], index: int) -> str:
 
 
 def chapter_card(chapter: dict) -> str:
-    number = html.escape(chapter["number"])
-    subtitle = html.escape(chapter.get("subtitle", ""))
-    card_num = number.replace("Глава ", "")
+    number = chapter["number"]
+    title = html.escape(chapter.get("cardTitle") or chapter.get("headerTitle") or chapter.get("subtitle", "").strip("«»"))
+    if number == "Пролог":
+        card_num = "P"
+    elif number == "Интерлюдия":
+        card_num = "I"
+    else:
+        card_num = html.escape(number.replace("Глава ", ""))
     return f'''    <a class="chapter-card available" href="{chapter["file"]}">
       <div class="card-num">{card_num}</div>
-      <div class="card-content">
-        <div class="card-title">{number}</div>
-        <div class="card-subtitle">{subtitle}</div>
-        <div class="status-available">Читать</div>
+      <div class="card-body">
+        <div class="card-title">{title}</div>
+        <div class="card-status status-available">Читать</div>
       </div>
       <div class="card-arrow">›</div>
     </a>'''
