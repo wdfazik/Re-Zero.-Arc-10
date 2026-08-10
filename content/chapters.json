@@ -1,0 +1,200 @@
+[
+  {
+    "file": "10-prologue2.html",
+    "content": "content/chapters/10-prologue2.html",
+    "title": "Re:Zero — Арка 10, Пролог",
+    "headerTitle": "Белое и черное",
+    "volume": "Том 45",
+    "kanji": "白と黒",
+    "number": "Пролог",
+    "subtitle": "«Белое и черное»",
+    "order": 1
+  },
+  {
+    "file": "10-13.html",
+    "content": "content/chapters/10-13.html",
+    "title": "Re:Zero — Арка 10, Глава 13",
+    "headerTitle": "Не запятнать кровью",
+    "volume": "Том 45",
+    "kanji": "血では汚せない",
+    "number": "Глава 13",
+    "subtitle": "«Не запятнать кровью»",
+    "order": 2
+  },
+  {
+    "file": "10-14.html",
+    "content": "content/chapters/10-14.html",
+    "title": "Re:Zero — Арка 10, Глава 14",
+    "headerTitle": "Мятежник",
+    "volume": "Том 45",
+    "kanji": "逆賊",
+    "number": "Глава 14",
+    "subtitle": "«Мятежник»",
+    "order": 3
+  },
+  {
+    "file": "10-15.html",
+    "content": "content/chapters/10-15.html",
+    "title": "Re:Zero — Арка 10, Глава 15",
+    "headerTitle": "С тобой хоть в ад",
+    "volume": "Том 45",
+    "kanji": "地獄まで一緒",
+    "number": "Глава 15",
+    "subtitle": "«С тобой хоть в ад»",
+    "order": 4
+  },
+  {
+    "file": "10-16.html",
+    "content": "content/chapters/10-16.html",
+    "title": "Re:Zero — Арка 10, Глава 16",
+    "headerTitle": "Удар исподтишка",
+    "volume": "Том 45",
+    "kanji": "騙し討ち",
+    "number": "Глава 16",
+    "subtitle": "«Удар исподтишка»",
+    "order": 5
+  },
+  {
+    "file": "10-17.html",
+    "content": "content/chapters/10-17.html",
+    "title": "Re:Zero — Арка 10, Глава 17",
+    "headerTitle": "Сгорите же дотла",
+    "volume": "Том 45",
+    "kanji": "灰 に な れ",
+    "number": "Глава 17",
+    "subtitle": "«Сгорите же дотла»",
+    "order": 6
+  },
+  {
+    "file": "10-18.html",
+    "content": "content/chapters/10-18.html",
+    "title": "Re:Zero — Арка 10, Глава 18",
+    "headerTitle": "Чудесный сон",
+    "volume": "Том 45",
+    "kanji": "夢 を 見 た",
+    "number": "Глава 18",
+    "subtitle": "«Чудесный сон»",
+    "order": 7
+  },
+  {
+    "file": "10-19.html",
+    "content": "content/chapters/10-19.html",
+    "title": "Re:Zero — Арка 10, Глава 19",
+    "headerTitle": "Враг не по зубам",
+    "volume": "Том 45",
+    "kanji": "大きすぎる敵",
+    "number": "Глава 19",
+    "subtitle": "«Враг не по зубам»",
+    "order": 8
+  },
+  {
+    "file": "10-20.html",
+    "content": "content/chapters/10-20.html",
+    "title": "Re:Zero — Арка 10, Глава 20",
+    "headerTitle": "Овечка в собачьем зеркале",
+    "volume": "Том 45",
+    "kanji": "羊鏡狗面",
+    "number": "Глава 20",
+    "subtitle": "«Овечка в собачьем зеркале»",
+    "order": 9
+  },
+  {
+    "file": "10-21.html",
+    "content": "content/chapters/10-21.html",
+    "title": "Re:Zero — Арка 10, Глава 21",
+    "headerTitle": "Шесть Языков",
+    "volume": "Том 45",
+    "kanji": "六枚舌",
+    "number": "Глава 21",
+    "subtitle": "«Шесть Языков»",
+    "order": 10
+  },
+  {
+    "file": "10-22.html",
+    "content": "content/chapters/10-22.html",
+    "title": "Re:Zero — Арка 10, Глава 22",
+    "headerTitle": "Задел и отказ",
+    "volume": "Том 45",
+    "kanji": "布石と拒絶",
+    "number": "Глава 22",
+    "subtitle": "«Задел и отказ»",
+    "order": 11
+  },
+  {
+    "file": "10-23.html",
+    "content": "content/chapters/10-23.html",
+    "title": "Re:Zero — Арка 10, Глава 23",
+    "headerTitle": "Как найти лучший выбор",
+    "volume": "Том 45",
+    "kanji": "最善の模索",
+    "number": "Глава 23",
+    "subtitle": "«Как найти лучший выбор»",
+    "order": 12
+  },
+  {
+    "file": "10-24.html",
+    "content": "content/chapters/10-24.html",
+    "title": "Re:Zero — Арка 10, Глава 24",
+    "headerTitle": "Как найти лучший выбор",
+    "volume": "Том 45",
+    "kanji": "一番いい奴",
+    "number": "Глава 24",
+    "subtitle": "«Лучший человек»",
+    "order": 13
+  },
+  {
+    "file": "10-interlude2.html",
+    "content": "content/chapters/10-interlude2.html",
+    "title": "Re:Zero — Арка 10, Интерлюдия: Золото и золото",
+    "headerTitle": "Золото и золото",
+    "volume": "Том 45",
+    "kanji": "金と金",
+    "number": "Интерлюдия",
+    "subtitle": "«Золото и золото»",
+    "order": 14
+  },
+  {
+    "file": "10-25.html",
+    "content": "content/chapters/10-25.html",
+    "title": "Re:Zero — Арка 10, Глава 25",
+    "headerTitle": "Клятва Первого Рыцаря",
+    "volume": "Том 46",
+    "kanji": "君の笑顔を愛したい",
+    "number": "Глава 25",
+    "subtitle": "«Так хочу любить твою улыбку»",
+    "order": 15
+  },
+  {
+    "file": "10-26.html",
+    "content": "content/chapters/10-26.html",
+    "title": "Re:Zero — Арка 10, Глава 26",
+    "headerTitle": "Слова поздравления",
+    "volume": "Том 46",
+    "kanji": "祝辞",
+    "number": "Глава 26",
+    "subtitle": "«Слова поздравления»",
+    "order": 16
+  },
+  {
+    "file": "10-27.html",
+    "content": "content/chapters/10-27.html",
+    "title": "Re:Zero — Арка 10, Глава 27",
+    "headerTitle": "Солнце, что не взойдет на западе",
+    "volume": "Том 46",
+    "kanji": "西から昇らぬ太陽",
+    "number": "Глава 27",
+    "subtitle": "«Солнце, что не взойдет на западе»",
+    "order": 17
+  },
+  {
+    "file": "10-28.html",
+    "content": "content/chapters/10-28.html",
+    "title": "Re:Zero — Арка 10, Глава 28",
+    "headerTitle": "И к чему это все теперь?",
+    "volume": "Том 46",
+    "kanji": "今さらなんだ",
+    "number": "Глава 28",
+    "subtitle": "«И к чему это все теперь?»",
+    "order": 18
+  }
+]
