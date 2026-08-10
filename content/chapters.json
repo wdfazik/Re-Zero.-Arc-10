@@ -196,5 +196,16 @@
     "number": "Глава 28",
     "subtitle": "«И к чему это все теперь?»",
     "order": 18
+  },
+  {
+    "file": "10-interlude3.html",
+    "content": "content/chapters/10-interlude3.html",
+    "title": "Re:Zero — Арка 10, Интерлюдия: Братья и сестры",
+    "headerTitle": "Братья и сестры",
+    "volume": "Том 46",
+    "kanji": "兄弟姉妹",
+    "number": "Интерлюдия",
+    "subtitle": "«Братья и сестры»",
+    "order": 19
   }
 ]
