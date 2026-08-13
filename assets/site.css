@@ -198,6 +198,24 @@ body.light-theme .dragon-mention {
   text-shadow: 0 0 6px rgba(138,90,0,0.2);
 }
 
+.subaru { color: var(--subaru); font-weight: 600; }
+.beatrice { color: var(--beatrice); font-weight: 600; }
+.krusch { color: var(--krusch); font-weight: 600; }
+.felix { color: #f0a0c8; font-weight: 600; }
+.rachins { color: #d4a060; font-weight: 600; }
+.russell { color: #b8c0d8; font-weight: 600; }
+.emilia { color: var(--emilia); font-weight: 600; }
+.ram { color: var(--ram); font-weight: 600; }
+.rem { color: #80b8f0; font-weight: 600; }
+.otto { color: #90c880; font-weight: 600; }
+.garfiel { color: #e0b060; font-weight: 600; }
+.petra { color: #f0a070; font-weight: 600; }
+.meiili { color: #d0a0e8; font-weight: 600; }
+.frederica { color: #e0c080; font-weight: 600; }
+.roswaal { color: #c090e0; font-weight: 600; }
+.moro { color: #c8a46a; font-weight: 600; }
+.codename { color: #c8a46a; font-weight: 600; letter-spacing: 0.01em; }
+
 body.light-theme .cult-mention {
   color: #6a3080;
   text-shadow: 0 0 6px rgba(106,48,128,0.2);

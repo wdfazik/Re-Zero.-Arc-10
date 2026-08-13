@@ -158,6 +158,7 @@
     "content": "content/chapters/10-25.html",
     "title": "Re:Zero — Арка 10, Глава 25",
     "headerTitle": "Клятва Первого Рыцаря",
+    "cardTitle": "«Так хочу любить твою улыбку»",
     "volume": "Том 46",
     "kanji": "君の笑顔を愛したい",
     "number": "Глава 25",
@@ -207,5 +208,16 @@
     "number": "Интерлюдия",
     "subtitle": "«Братья и сестры»",
     "order": 19
+  },
+  {
+    "file": "10-29.html",
+    "content": "content/chapters/10-29.html",
+    "title": "Re:Zero — Арка 10, Глава 29",
+    "headerTitle": "Миссия Серой Звезды",
+    "volume": "Том 46",
+    "kanji": "グレースターミッション",
+    "number": "Глава 29",
+    "subtitle": "«Миссия Серой Звезды»",
+    "order": 20
   }
 ]
