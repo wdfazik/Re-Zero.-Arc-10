@@ -219,5 +219,16 @@
     "number": "Глава 29",
     "subtitle": "«Миссия Серой Звезды»",
     "order": 20
+  },
+  {
+    "file": "10-30.html",
+    "content": "content/chapters/10-30.html",
+    "title": "Re:Zero — Арка 10, Глава 30",
+    "headerTitle": "Шариковая ручка",
+    "volume": "Том 46",
+    "kanji": "ボールペン",
+    "number": "Глава 30",
+    "subtitle": "«Шариковая ручка»",
+    "order": 21
   }
 ]
