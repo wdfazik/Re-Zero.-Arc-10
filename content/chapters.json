@@ -230,5 +230,16 @@
     "number": "Глава 30",
     "subtitle": "«Шариковая ручка»",
     "order": 21
+  },
+  {
+    "file": "10-31.html",
+    "content": "content/chapters/10-31.html",
+    "title": "Re:Zero — Арка 10, Глава 31",
+    "headerTitle": "С возвращением. Я дома",
+    "volume": "Том 46",
+    "kanji": "ただいま、おかえり",
+    "number": "Глава 31",
+    "subtitle": "«С возвращением. Я дома»",
+    "order": 22
   }
 ]
