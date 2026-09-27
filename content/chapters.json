@@ -154,6 +154,17 @@
     "order": 14
   },
   {
+    "file": "10-prologue3.html",
+    "content": "content/chapters/10-prologue3.html",
+    "title": "Re:Zero — Арка 10, Пролог",
+    "headerTitle": "Бесцветный",
+    "volume": "Том 46",
+    "kanji": "無色",
+    "number": "Пролог",
+    "subtitle": "«Бесцветный»",
+    "order": 15
+  },
+  {
     "file": "10-25.html",
     "content": "content/chapters/10-25.html",
     "title": "Re:Zero — Арка 10, Глава 25",
@@ -163,7 +174,7 @@
     "kanji": "君の笑顔を愛したい",
     "number": "Глава 25",
     "subtitle": "«Так хочу любить твою улыбку»",
-    "order": 15
+    "order": 16
   },
   {
     "file": "10-26.html",
@@ -174,7 +185,7 @@
     "kanji": "祝辞",
     "number": "Глава 26",
     "subtitle": "«Слова поздравления»",
-    "order": 16
+    "order": 17
   },
   {
     "file": "10-27.html",
@@ -185,7 +196,7 @@
     "kanji": "西から昇らぬ太陽",
     "number": "Глава 27",
     "subtitle": "«Солнце, что не взойдет на западе»",
-    "order": 17
+    "order": 18
   },
   {
     "file": "10-28.html",
@@ -196,7 +207,7 @@
     "kanji": "今さらなんだ",
     "number": "Глава 28",
     "subtitle": "«И к чему это все теперь?»",
-    "order": 18
+    "order": 19
   },
   {
     "file": "10-interlude3.html",
@@ -207,7 +218,7 @@
     "kanji": "兄弟姉妹",
     "number": "Интерлюдия",
     "subtitle": "«Братья и сестры»",
-    "order": 19
+    "order": 20
   },
   {
     "file": "10-29.html",
@@ -218,7 +229,7 @@
     "kanji": "グレースターミッション",
     "number": "Глава 29",
     "subtitle": "«Миссия Серой Звезды»",
-    "order": 20
+    "order": 21
   },
   {
     "file": "10-30.html",
@@ -229,7 +240,7 @@
     "kanji": "ボールペン",
     "number": "Глава 30",
     "subtitle": "«Шариковая ручка»",
-    "order": 21
+    "order": 22
   },
   {
     "file": "10-31.html",
@@ -240,7 +251,7 @@
     "kanji": "ただいま、おかえり",
     "number": "Глава 31",
     "subtitle": "«С возвращением. Я дома»",
-    "order": 22
+    "order": 23
   },
   {
     "file": "10-32.html",
@@ -251,7 +262,7 @@
     "kanji": "――ぁぁぁぁぁ",
     "number": "Глава 32",
     "subtitle": "«А-а-а-а-а…»",
-    "order": 23
+    "order": 24
   },
   {
     "file": "10-33.html",
@@ -262,7 +273,7 @@
     "kanji": "右往左往のトリプルアクセルで、全自動洗濯機のすすぎが止まらない",
     "number": "Глава 33",
     "subtitle": "«Тройной аксель в суматохе, или бесконечный режим полоскания»",
-    "order": 24
+    "order": 25
   },
   {
     "file": "10-34.html",
@@ -273,7 +284,7 @@
     "kanji": "いざってとき",
     "number": "Глава 34",
     "subtitle": "«В решающий миг»",
-    "order": 25
+    "order": 26
   },
   {
     "file": "10-35.html",
@@ -284,7 +295,7 @@
     "kanji": "白羊",
     "number": "Глава 35",
     "subtitle": "«Белая Овечка»",
-    "order": 26
+    "order": 27
   },
   {
     "file": "10-36.html",
@@ -295,7 +306,7 @@
     "kanji": "大馬鹿",
     "number": "Глава 36",
     "subtitle": "«Круглый идиот»",
-    "order": 27
+    "order": 28
   },
   {
     "file": "10-37.html",
@@ -306,6 +317,6 @@
     "kanji": "執行者",
     "number": "Глава 37",
     "subtitle": "«Исполнитель»",
-    "order": 28
+    "order": 29
   }
 ]
