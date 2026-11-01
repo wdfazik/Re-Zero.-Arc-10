@@ -100,7 +100,7 @@ def build_chapter_sections(chapters: list[dict]) -> str:
     phase_one = [locked_card(i) for i in range(1, 13)]
     phase_two_names = ["10-prologue2.html"] + [f"10-{i}.html" for i in range(13, 25)] + ["10-interlude2.html"]
     phase_three_names = ["10-prologue3.html"] + [f"10-{i}.html" for i in range(25, 29)] + ["10-interlude3.html", "10-29.html", "10-30.html", "10-31.html", "10-32.html", "10-33.html", "10-34.html", "10-35.html", "10-36.html", "10-37.html"]
-    phase_four_names = ["10-38.html"]
+    phase_four_names = [f"10-{i}.html" for i in range(38, 40)]
     phase_two = [chapter_card(by_file[name]) for name in phase_two_names if name in by_file]
     phase_three = [chapter_card(by_file[name]) for name in phase_three_names if name in by_file]
     phase_four = [chapter_card(by_file[name]) for name in phase_four_names if name in by_file]
