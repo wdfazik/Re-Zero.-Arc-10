@@ -13680,3 +13680,15 @@ body.light-theme #index-main .chapter-card.available:hover .card-subtitle,
 body.light-theme #main-content .chapter-card.available:hover .card-subtitle {
   color: #0a0800;
 }
+
+/* Arc 10 chapter 41: the Six Tongues are highlighted in gold. */
+.tongues-mention {
+  color: #d4a020;
+  font-style: normal;
+  text-shadow: 0 0 8px rgba(200,150,0,0.3);
+}
+
+body.light-theme .tongues-mention {
+  color: #8a5a00;
+  text-shadow: 0 0 6px rgba(138,90,0,0.2);
+}
