@@ -362,7 +362,7 @@
     "number": "Глава 41",
     "subtitle": "«Твоя ценность»",
     "order": 33
-  }  },
+  },
   {
     "file": "10-42.html",
     "content": "content/chapters/10-42.html",
@@ -373,5 +373,16 @@
     "number": "Глава 42",
     "subtitle": "«Последние мгновения драконьего хребта Милеста»",
     "order": 34
+  },
+  {
+    "file": "10-43.html",
+    "content": "content/chapters/10-43.html",
+    "title": "Re:Zero — Арка 10, Глава 43",
+    "headerTitle": "«Раскалывающая» Кларисса",
+    "volume": "Том 47",
+    "kanji": "『割り物』クラリッサ",
+    "number": "Глава 43",
+    "subtitle": "«Раскалывающая» Кларисса",
+    "order": 35
   }
 ]
