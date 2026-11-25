@@ -143,7 +143,7 @@
   function openBookmark(item) {
     const url = new URL(location.href);
     url.searchParams.set('chapter', item.chapterId);
-    url.hash = 'bookmark-' + item.blockIndex;
+    url.searchParams.set('bookmark', String(item.blockIndex));
     if (chapterId() === item.chapterId) {
       history.replaceState(history.state, '', url.pathname + url.search + url.hash);
       scrollToBookmark(item.blockIndex);
@@ -159,8 +159,8 @@
     setTimeout(() => target.classList.remove('bookmark-target'), 2400);
   }
   function restoreFromHash() {
-    const match = location.hash.match(/^#bookmark-(\d+)$/);
-    if (match) requestAnimationFrame(() => requestAnimationFrame(() => scrollToBookmark(Number(match[1]))));
+    const value = new URLSearchParams(location.search).get('bookmark');
+    if (value !== null && /^\d+$/.test(value)) requestAnimationFrame(() => requestAnimationFrame(() => scrollToBookmark(Number(value))));
   }
   const observer = new MutationObserver(() => {
     if (!document.body.classList.contains('mode-reader')) return;
