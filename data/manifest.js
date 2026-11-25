@@ -579,9 +579,9 @@ window.REZERO_MANIFEST = {
       "number": "Глава 47",
       "badge": "47",
       "title": "Re:Zero — Арка 10, Глава 47",
-      "headerTitle": "Персиковый кролик",
-      "cardTitle": "Персиковый кролик",
-      "subtitle": "«Персиковый кролик»",
+      "headerTitle": "Персиковый Кролик",
+      "cardTitle": "Персиковый Кролик",
+      "subtitle": "«Персиковый Кролик»",
       "kanji": "桃兎",
       "endLabel": "Конец главы"
     }
