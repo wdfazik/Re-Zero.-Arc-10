@@ -16,11 +16,7 @@ window.REZERO_MANIFEST = {
     {
       "id": "phase-1",
       "volume": "Том 44",
-      "title": "Первая фаза",
-      "lockedRange": [
-        1,
-        12
-      ]
+      "title": "Первая фаза"
     },
     {
       "id": "phase-2",
@@ -40,8 +36,205 @@ window.REZERO_MANIFEST = {
   ],
   "chapters": [
     {
-      "id": "10-prologue2",
+      "id": "10-prologue1",
       "order": 1,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Пролог",
+      "badge": "P",
+      "title": "Re:Zero — Арка 10, Пролог",
+      "headerTitle": "Роковая ночь",
+      "cardTitle": "Роковая ночь",
+      "subtitle": "«Роковая ночь»",
+      "kanji": "運命の夜",
+      "endLabel": "Конец пролога"
+    },
+    {
+      "id": "10-1",
+      "order": 2,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 1",
+      "badge": "1",
+      "title": "Re:Zero — Арка 10, Глава 1",
+      "headerTitle": "Друзья",
+      "cardTitle": "Друзья",
+      "subtitle": "«Друзья»",
+      "kanji": "お友達",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-2",
+      "order": 3,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 2",
+      "badge": "2",
+      "title": "Re:Zero — Арка 10, Глава 2",
+      "headerTitle": "Таинство Церкви",
+      "cardTitle": "Таинство Церкви",
+      "subtitle": "«Таинство Церкви»",
+      "kanji": "教会の秘蹟",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-3",
+      "order": 4,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 3",
+      "badge": "3",
+      "title": "Re:Zero — Арка 10, Глава 3",
+      "headerTitle": "Проблеск света",
+      "cardTitle": "Проблеск света",
+      "subtitle": "«Проблеск света»",
+      "kanji": "光の萌し",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-4",
+      "order": 5,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 4",
+      "badge": "4",
+      "title": "Re:Zero — Арка 10, Глава 4",
+      "headerTitle": "Ю а вэлкам",
+      "cardTitle": "Ю а вэлкам",
+      "subtitle": "«Ю а вэлкам»",
+      "kanji": "ユーアーウェルカム",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-5",
+      "order": 6,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 5",
+      "badge": "5",
+      "title": "Re:Zero — Арка 10, Глава 5",
+      "headerTitle": "Итог небольшого крюка",
+      "cardTitle": "Итог небольшого крюка",
+      "subtitle": "«Итог небольшого крюка»",
+      "kanji": "寄り道の顛末",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-6",
+      "order": 7,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 6",
+      "badge": "6",
+      "title": "Re:Zero — Арка 10, Глава 6",
+      "headerTitle": "Белое каление",
+      "cardTitle": "Белое каление",
+      "subtitle": "«Белое каление»",
+      "kanji": "瞬間湯沸かし器",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-7",
+      "order": 8,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 7",
+      "badge": "7",
+      "title": "Re:Zero — Арка 10, Глава 7",
+      "headerTitle": "Май фрэнд",
+      "cardTitle": "Май фрэнд",
+      "subtitle": "«Май фрэнд»",
+      "kanji": "マイフレンド",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-interlude1",
+      "order": 9,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "I",
+      "badge": "I",
+      "title": "Re:Zero — Арка 10, Интерлюдия",
+      "headerTitle": "Почему?..",
+      "cardTitle": "Почему?..",
+      "subtitle": "«Почему?..»",
+      "kanji": "――どうして？",
+      "endLabel": "Конец главы"
+    },
+    
+    {
+      "id": "10-8",
+      "order": 10,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 8",
+      "badge": "8",
+      "title": "Re:Zero — Арка 10, Глава 8",
+      "headerTitle": "Итог выбора",
+      "cardTitle": "Итог выбора",
+      "subtitle": "«Итог выбора»",
+      "kanji": "選択の結果",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-9",
+      "order": 11,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 9",
+      "badge": "9",
+      "title": "Re:Zero — Арка 10, Глава 9",
+      "headerTitle": "Нытик",
+      "cardTitle": "Нытик",
+      "subtitle": "«Нытик»",
+      "kanji": "泣き虫",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-10",
+      "order": 12,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 10",
+      "badge": "10",
+      "title": "Re:Zero — Арка 10, Глава 10",
+      "headerTitle": "Недоверие",
+      "cardTitle": "Недоверие",
+      "subtitle": "«Недоверие»",
+      "kanji": "信頼の沈殿",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-11",
+      "order": 13,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 11",
+      "badge": "11",
+      "title": "Re:Zero — Арка 10, Глава 11",
+      "headerTitle": "Почему сияет драконий жемчуг",
+      "cardTitle": "Почему сияет драконий жемчуг",
+      "subtitle": "«Почему сияет драконий жемчуг»",
+      "kanji": "竜珠の輝く理由",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-12",
+      "order": 14,
+      "phaseId": "phase-1",
+      "volume": "Том 44",
+      "number": "Глава 12",
+      "badge": "12",
+      "title": "Re:Zero — Арка 10, Глава 12",
+      "headerTitle": "Стон",
+      "cardTitle": "Стон",
+      "subtitle": "«Стон»",
+      "kanji": "呻き",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-prologue2",
+      "order": 15,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Пролог",
@@ -55,7 +248,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-13",
-      "order": 2,
+      "order": 16,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 13",
@@ -69,7 +262,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-14",
-      "order": 3,
+      "order": 17,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 14",
@@ -83,7 +276,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-15",
-      "order": 4,
+      "order": 18,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 15",
@@ -97,7 +290,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-16",
-      "order": 5,
+      "order": 19,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 16",
@@ -111,7 +304,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-17",
-      "order": 6,
+      "order": 20,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 17",
@@ -125,7 +318,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-18",
-      "order": 7,
+      "order": 21,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 18",
@@ -139,7 +332,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-19",
-      "order": 8,
+      "order": 22,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 19",
@@ -153,7 +346,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-20",
-      "order": 9,
+      "order": 23,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 20",
@@ -167,7 +360,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-21",
-      "order": 10,
+      "order": 24,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 21",
@@ -181,7 +374,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-22",
-      "order": 11,
+      "order": 25,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 22",
@@ -195,7 +388,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-23",
-      "order": 12,
+      "order": 26,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 23",
@@ -209,7 +402,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-24",
-      "order": 13,
+      "order": 27,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Глава 24",
@@ -223,7 +416,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-interlude2",
-      "order": 14,
+      "order": 28,
       "phaseId": "phase-2",
       "volume": "Том 45",
       "number": "Интерлюдия",
@@ -237,7 +430,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-prologue3",
-      "order": 15,
+      "order": 29,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Пролог",
@@ -251,7 +444,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-25",
-      "order": 16,
+      "order": 30,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 25",
@@ -265,7 +458,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-26",
-      "order": 17,
+      "order": 31,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 26",
@@ -279,7 +472,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-27",
-      "order": 18,
+      "order": 32,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 27",
@@ -293,7 +486,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-28",
-      "order": 19,
+      "order": 33,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 28",
@@ -307,7 +500,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-interlude3",
-      "order": 20,
+      "order": 34,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Интерлюдия",
@@ -321,7 +514,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-29",
-      "order": 21,
+      "order": 35,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 29",
@@ -335,7 +528,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-30",
-      "order": 22,
+      "order": 36,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 30",
@@ -349,7 +542,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-31",
-      "order": 23,
+      "order": 37,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 31",
@@ -363,7 +556,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-32",
-      "order": 24,
+      "order": 38,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 32",
@@ -377,7 +570,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-33",
-      "order": 25,
+      "order": 39,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 33",
@@ -391,7 +584,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-34",
-      "order": 26,
+      "order": 40,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 34",
@@ -405,7 +598,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-35",
-      "order": 27,
+      "order": 41,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 35",
@@ -419,7 +612,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-36",
-      "order": 28,
+      "order": 42,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 36",
@@ -433,7 +626,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-37",
-      "order": 29,
+      "order": 43,
       "phaseId": "phase-3",
       "volume": "Том 46",
       "number": "Глава 37",
@@ -447,7 +640,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-38",
-      "order": 30,
+      "order": 44,
       "phaseId": "phase-4",
       "volume": "Том 47",
       "number": "Глава 38",
@@ -461,7 +654,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-39",
-      "order": 31,
+      "order": 45,
       "phaseId": "phase-4",
       "volume": "Том 47",
       "number": "Глава 39",
@@ -475,7 +668,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-40",
-      "order": 32,
+      "order": 46,
       "phaseId": "phase-4",
       "volume": "Том 47",
       "number": "Глава 40",
@@ -489,7 +682,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-41",
-      "order": 33,
+      "order": 47,
       "phaseId": "phase-4",
       "volume": "Том 47",
       "number": "Глава 41",
@@ -503,7 +696,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-42",
-      "order": 34,
+      "order": 48,
       "phaseId": "phase-4",
       "volume": "Том 47",
       "number": "Глава 42",
@@ -517,7 +710,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-43",
-      "order": 35,
+      "order": 49,
       "phaseId": "phase-4",
       "volume": "Том 47",
       "number": "Глава 43",
@@ -531,7 +724,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-44",
-      "order": 36,
+      "order": 50,
       "phaseId": "phase-4",
       "volume": "Том 47",
       "number": "Глава 44",
@@ -545,7 +738,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-45",
-      "order": 37,
+      "order": 51,
       "phaseId": "phase-4",
       "volume": "Том 47",
       "number": "Глава 45",
@@ -559,7 +752,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-46",
-      "order": 38,
+      "order": 52,
       "phaseId": "phase-4",
       "volume": "Том 47",
       "number": "Глава 46",
@@ -573,7 +766,7 @@ window.REZERO_MANIFEST = {
     },
     {
       "id": "10-47",
-      "order": 39,
+      "order": 53,
       "phaseId": "phase-4",
       "volume": "Том 47",
       "number": "Глава 47",
