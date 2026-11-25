@@ -570,6 +570,20 @@ window.REZERO_MANIFEST = {
       "subtitle": "«Трагедия семьи Астрея»",
       "kanji": "アストレア家の悲劇",
       "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-47",
+      "order": 39,
+      "phaseId": "phase-4",
+      "volume": "Том 47",
+      "number": "Глава 47",
+      "badge": "47",
+      "title": "Re:Zero — Арка 10, Глава 47",
+      "headerTitle": "Персиковый кролик",
+      "cardTitle": "Персиковый кролик",
+      "subtitle": "«Персиковый кролик»",
+      "kanji": "桃兎",
+      "endLabel": "Конец главы"
     }
   ]
 };
