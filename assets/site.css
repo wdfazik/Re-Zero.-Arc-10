@@ -1665,3 +1665,14 @@ body.no-anim .scroll-chevron {
   }
   #bookmarks-panel { transform: none; }
 }
+
+
+#selection-toolbar {
+  display: flex;
+  visibility: hidden;
+  pointer-events: none;
+}
+#selection-toolbar.visible {
+  visibility: visible;
+  pointer-events: auto;
+}
