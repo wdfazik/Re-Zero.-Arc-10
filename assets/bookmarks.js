@@ -97,6 +97,37 @@
     toolbar.style.left = Math.min(Math.max(8, rect.left + rect.width / 2 - 112), window.innerWidth - 232) + 'px';
     toolbar.classList.add('visible');
   }
+  function paragraphAtPoint(x, y) {
+    const candidates = document.elementsFromPoint(x, y);
+    return candidates.map(el => el.closest?.('[data-reader-block]')).find(el => el && main.contains(el)) || null;
+  }
+  function pointHitsText(block, x, y) {
+    const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      if (!node.nodeValue.trim()) continue;
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      for (const rect of range.getClientRects()) {
+        if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) return true;
+      }
+    }
+    return false;
+  }
+  function bookmarkWholeParagraph(block) {
+    const quote = block.innerText?.trim();
+    if (!quote) return;
+    addBookmark(quote, Number(block.dataset.readerBlock));
+    block.classList.add('bookmark-tap-feedback');
+    setTimeout(() => block.classList.remove('bookmark-tap-feedback'), 850);
+  }
+  function handleBlankTap(event) {
+    if (event.pointerType && event.pointerType !== 'touch') return;
+    if (window.getSelection()?.toString().trim()) return;
+    const block = paragraphAtPoint(event.clientX, event.clientY);
+    if (!block || pointHitsText(block, event.clientX, event.clientY)) return;
+    bookmarkWholeParagraph(block);
+  }
   function ensurePanel() {
     const button = document.createElement('button');
     button.id = 'bookmarks-toggle'; button.type = 'button'; button.title = 'Закладки';
@@ -125,7 +156,7 @@
     list.replaceChildren();
     if (!items.length) {
       const empty = document.createElement('p'); empty.className = 'bookmarks-empty';
-      empty.textContent = 'Здесь пока нет закладок. Выдели фрагмент текста и нажми «В закладки».';
+      empty.textContent = 'Здесь пока нет закладок. Выдели фрагмент текста или нажми на свободное место рядом с абзацем.';
       list.append(empty); return;
     }
     items.forEach(item => {
@@ -168,6 +199,7 @@
   });
   observer.observe(main, { childList: true, subtree: true });
   document.addEventListener('selectionchange', updateToolbar);
+  main.addEventListener('pointerup', handleBlankTap, { passive: true });
   document.addEventListener('scroll', hideToolbar, { passive: true, capture: true });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { hideToolbar(); closePanel(); } });
   ensurePanel();
