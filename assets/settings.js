@@ -98,6 +98,55 @@
     }
   }
 
+  // Reliable probe for discrete `display` transition (guards against Firefox bug 1882408)
+  let supportsDisplayTransition;
+  function canTransitionDisplay() {
+    if (supportsDisplayTransition !== undefined) return supportsDisplayTransition;
+    if (!window.CSS?.supports?.('transition-behavior', 'allow-discrete') || !document.body) {
+      return false;
+    }
+    const probe = document.createElement('div');
+    probe.style.cssText = 'transition: display 1s allow-discrete !important; display: block;';
+    document.body.appendChild(probe);
+    getComputedStyle(probe).display;
+    probe.style.display = 'none';
+    supportsDisplayTransition = getComputedStyle(probe).display === 'block';
+    probe.remove();
+    return supportsDisplayTransition;
+  }
+
+  function supportsTopLayerExit() {
+    return Boolean(window.CSS?.supports?.('overlay', 'auto') && canTransitionDisplay());
+  }
+
+  async function closePopoverSmoothly(panel) {
+    if (!supportsTopLayerExit() && typeof panel.hidePopover === 'function') {
+      panel.setAttribute('data-closing', '');
+      const animations = typeof panel.getAnimations === 'function' ? panel.getAnimations({ subtree: true }) : [];
+      if (animations.length > 0) {
+        await Promise.race([
+          Promise.allSettled(animations.map((a) => a.finished)),
+          new Promise((resolve) => setTimeout(resolve, 600)),
+        ]);
+      }
+      if (!panel.hasAttribute('data-closing')) return;
+      panel.removeAttribute('data-closing');
+      panel.hidePopover();
+      return;
+    }
+    if (typeof panel.hidePopover === 'function') {
+      panel.hidePopover();
+    }
+  }
+
+  function isPopoverCurrentlyOpen(panel) {
+    try {
+      return panel.matches(':popover-open') || panel.classList.contains(':popover-open');
+    } catch {
+      return panel.classList.contains(':popover-open');
+    }
+  }
+
   async function initPopoverFallbacks(toggleBtn, panel) {
     const hasPopover = Object.hasOwn(HTMLElement.prototype, 'popover');
     const hasCommands = 'commandForElement' in HTMLButtonElement.prototype;
@@ -118,39 +167,50 @@
       }
     }
 
-    if (!('commandForElement' in HTMLButtonElement.prototype)) {
-      toggleBtn.addEventListener('click', () => {
-        if (typeof panel.togglePopover === 'function') {
-          panel.togglePopover();
-        } else {
+    // Intercept closing via toggle button when browser lacks native top-layer exit (Firefox / Safari)
+    toggleBtn.addEventListener('click', (event) => {
+      if (typeof panel.togglePopover !== 'function') {
+        if (!('commandForElement' in HTMLButtonElement.prototype)) {
           const isOpen = panel.classList.toggle(':popover-open');
           toggleBtn.setAttribute('aria-expanded', String(isOpen));
           toggleBtn.classList.toggle('active', isOpen);
         }
-      });
-
-      if (typeof panel.togglePopover !== 'function') {
-        document.addEventListener('click', (e) => {
-          if (
-            panel.classList.contains(':popover-open') &&
-            !panel.contains(e.target) &&
-            e.target !== toggleBtn &&
-            !toggleBtn.contains(e.target)
-          ) {
-            panel.classList.remove(':popover-open');
-            toggleBtn.setAttribute('aria-expanded', 'false');
-            toggleBtn.classList.remove('active');
-          }
-        });
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && panel.classList.contains(':popover-open')) {
-            panel.classList.remove(':popover-open');
-            toggleBtn.setAttribute('aria-expanded', 'false');
-            toggleBtn.classList.remove('active');
-            toggleBtn.focus();
-          }
-        });
+        return;
       }
+
+      if (!supportsTopLayerExit() && isPopoverCurrentlyOpen(panel)) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        closePopoverSmoothly(panel);
+        return;
+      }
+
+      if (!('commandForElement' in HTMLButtonElement.prototype)) {
+        panel.togglePopover();
+      }
+    });
+
+    if (typeof panel.togglePopover !== 'function') {
+      document.addEventListener('click', (e) => {
+        if (
+          panel.classList.contains(':popover-open') &&
+          !panel.contains(e.target) &&
+          e.target !== toggleBtn &&
+          !toggleBtn.contains(e.target)
+        ) {
+          panel.classList.remove(':popover-open');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          toggleBtn.classList.remove('active');
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && panel.classList.contains(':popover-open')) {
+          panel.classList.remove(':popover-open');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          toggleBtn.classList.remove('active');
+          toggleBtn.focus();
+        }
+      });
     }
   }
 
@@ -198,6 +258,11 @@
 
     if (settingsToggle && settingsPanel) {
       initPopoverFallbacks(settingsToggle, settingsPanel);
+      settingsPanel.addEventListener('beforetoggle', (event) => {
+        if (event.newState === 'open') {
+          settingsPanel.removeAttribute('data-closing');
+        }
+      });
       settingsPanel.addEventListener('toggle', (event) => {
         const isOpen = event.newState === 'open';
         settingsToggle.setAttribute('aria-expanded', String(isOpen));

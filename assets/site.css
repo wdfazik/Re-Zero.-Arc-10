@@ -500,10 +500,44 @@ body.mode-reader #progress-bar {
   padding: 20px;
   backdrop-filter: blur(16px);
   box-shadow: 0 12px 42px var(--shadow-strong);
+  opacity: 0;
+  transition-property: opacity, transform, display, overlay;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-out;
+  transition-behavior: allow-discrete;
 }
 
-#settings-panel[popover]:is(:popover-open, .\:popover-open) {
+@media (prefers-reduced-motion: no-preference) {
+  #settings-panel[popover] {
+    transform: translateY(12px) scale(0.97);
+  }
+}
+
+#settings-panel[popover]:is(:popover-open, .\:popover-open):where(:not([data-closing])) {
   display: block;
+  opacity: 1;
+
+  @starting-style {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transform: translateY(0) scale(1);
+
+    @starting-style {
+      transform: translateY(12px) scale(0.97);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #settings-panel[popover] {
+    transition-duration: 0.1s;
+  }
+}
+
+body.no-anim #settings-panel[popover] {
+  transition-duration: 0s;
 }
 
 .settings-title {
@@ -1340,10 +1374,9 @@ body.plain-moments .return-text {
   position: relative;
   z-index: 10;
   display: flex;
-  gap: 14px;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 16px;
   padding: 16px 40px 110px;
   max-width: var(--reader-max-width);
   margin: 0 auto;
@@ -1351,6 +1384,21 @@ body.plain-moments .return-text {
 
 .nav-buttons[hidden] {
   display: none;
+}
+
+.nav-primary-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.nav-jump-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .nav-btn {
@@ -1368,6 +1416,7 @@ body.plain-moments .return-text {
   border-radius: 4px;
   background: var(--surface-card);
   cursor: pointer;
+  white-space: nowrap;
   transition: color 0.25s ease, border-color 0.25s ease, transform 0.2s ease, background-color 0.25s ease;
 }
 
@@ -1389,15 +1438,24 @@ body.plain-moments .return-text {
 }
 
 .nav-jump-select {
-  padding: 12px 14px;
+  width: min(100%, 420px);
+  padding: 11px 16px;
   border-radius: 4px;
   border: 1px solid var(--border-subtle);
   background: var(--surface-card);
-  color: var(--text);
+  color: var(--text-soft);
   font-family: var(--reader-font);
   font-size: 15px;
-  max-width: 100%;
+  text-overflow: ellipsis;
   cursor: pointer;
+  transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.nav-jump-select:hover,
+.nav-jump-select:focus {
+  border-color: var(--border-strong);
+  background: var(--surface-card-hover);
+  color: var(--text);
 }
 
 /* ── Status & Error Cards ── */

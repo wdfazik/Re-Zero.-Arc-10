@@ -525,6 +525,8 @@
     const current = chapters[chapterIndex];
 
     const frag = document.createDocumentFragment();
+    const primaryRow = document.createElement('div');
+    primaryRow.className = 'nav-primary-row';
 
     if (prev) {
       const a = document.createElement('a');
@@ -537,7 +539,7 @@
       const text = document.createElement('span');
       text.textContent = prev.number;
       a.append(icon, text);
-      frag.appendChild(a);
+      primaryRow.appendChild(a);
     }
 
     const tocBtn = document.createElement('a');
@@ -550,7 +552,26 @@
     const tocText = document.createElement('span');
     tocText.textContent = 'Оглавление';
     tocBtn.append(tocIcon, tocText);
-    frag.appendChild(tocBtn);
+    primaryRow.appendChild(tocBtn);
+
+    if (next) {
+      const a = document.createElement('a');
+      a.className = 'nav-btn nav-btn-next';
+      a.href = buildChapterHref(next.id);
+      a.addEventListener('click', (e) => handleSpaLinkClick(e, next.id));
+      const text = document.createElement('span');
+      text.textContent = next.number;
+      const icon = document.createElement('span');
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = '→';
+      a.append(text, icon);
+      primaryRow.appendChild(a);
+    }
+
+    frag.appendChild(primaryRow);
+
+    const jumpRow = document.createElement('div');
+    jumpRow.className = 'nav-jump-row';
 
     const select = document.createElement('select');
     select.className = 'nav-jump-select';
@@ -567,21 +588,8 @@
         navigateTo(select.value);
       }
     });
-    frag.appendChild(select);
-
-    if (next) {
-      const a = document.createElement('a');
-      a.className = 'nav-btn nav-btn-next';
-      a.href = buildChapterHref(next.id);
-      a.addEventListener('click', (e) => handleSpaLinkClick(e, next.id));
-      const text = document.createElement('span');
-      text.textContent = next.number;
-      const icon = document.createElement('span');
-      icon.setAttribute('aria-hidden', 'true');
-      icon.textContent = '→';
-      a.append(text, icon);
-      frag.appendChild(a);
-    }
+    jumpRow.appendChild(select);
+    frag.appendChild(jumpRow);
 
     navEl.replaceChildren(frag);
     navEl.hidden = false;
@@ -617,8 +625,8 @@
     card.appendChild(p);
 
     const actions = document.createElement('div');
-    actions.className = 'nav-buttons';
-    actions.style.padding = '8px 0 0';
+    actions.className = 'nav-primary-row';
+    actions.style.marginTop = '8px';
 
     if (retryFn) {
       const retry = document.createElement('button');
