@@ -1573,3 +1573,46 @@ body.no-anim .scroll-chevron {
   #theme-toggle { right: 16px; bottom: 20px; }
   #settings-panel[popover] { left: 16px; bottom: 84px; }
 }
+
+
+/* ── Bookmarks & text selection tools ── */
+#bookmarks-toggle {
+  position: fixed; left: 96px; bottom: 32px; z-index: 200;
+  width: 52px; height: 52px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border-subtle); border-radius: 50%; color: var(--accent);
+  background: var(--surface-floating); backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px var(--shadow-strong); cursor: pointer;
+  transition: border-color .2s ease, transform .2s ease, background-color .2s ease;
+}
+#bookmarks-toggle svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+#bookmarks-toggle:hover, #bookmarks-toggle.active { border-color: var(--border-strong); transform: scale(1.06); }
+#bookmarks-panel {
+  position: fixed; z-index: 210; left: 32px; bottom: 98px;
+  width: min(370px, calc(100vw - 32px)); max-height: min(62vh, 560px);
+  overflow: hidden; display: none; flex-direction: column;
+  border: 1px solid var(--border-subtle); border-radius: 10px;
+  color: var(--text); background: var(--surface-strong);
+  box-shadow: 0 12px 42px var(--shadow-strong); backdrop-filter: blur(16px);
+}
+#bookmarks-panel.open { display: flex; }
+.bookmarks-heading { display: flex; justify-content: space-between; align-items: center; padding: 16px 18px; color: var(--accent); border-bottom: 1px solid var(--border-subtle); font: 600 11px 'Cinzel', serif; letter-spacing: .24em; text-transform: uppercase; }
+.bookmarks-close { border: 0; background: transparent; color: var(--text-dim); font-size: 23px; cursor: pointer; }
+.bookmarks-list { overflow-y: auto; padding: 10px 14px 14px; }
+.bookmarks-empty { padding: 18px 8px; color: var(--text-dim); font-size: 15px; line-height: 1.55; }
+.bookmark-item { display: flex; align-items: flex-start; gap: 8px; padding: 12px 4px; border-bottom: 1px solid var(--border-subtle); }
+.bookmark-open { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; border: 0; background: transparent; color: var(--text-soft); text-align: left; cursor: pointer; }
+.bookmark-chapter { color: var(--accent); font: 10px 'Cinzel', serif; letter-spacing: .1em; }
+.bookmark-quote { font-size: 15px; line-height: 1.45; overflow-wrap: anywhere; }
+.bookmark-remove { border: 1px solid var(--border-subtle); border-radius: 4px; padding: 5px 7px; background: var(--surface-btn); color: var(--text-dim); font: 9px 'Cinzel', serif; cursor: pointer; }
+#selection-toolbar { position: fixed; z-index: 300; display: none; align-items: center; gap: 5px; padding: 5px; border: 1px solid var(--border-strong); border-radius: 7px; background: var(--surface-strong); box-shadow: 0 8px 26px var(--shadow-strong); }
+#selection-toolbar.visible { display: flex; }
+#selection-toolbar button { border: 0; border-radius: 4px; padding: 8px 10px; background: var(--surface-btn); color: var(--text); font: 10px 'Cinzel', serif; cursor: pointer; white-space: nowrap; }
+#selection-toolbar button:hover { background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent); }
+.bookmark-target { outline: 1px solid var(--accent); outline-offset: 5px; background: color-mix(in srgb, var(--accent) 9%, transparent); transition: background-color .3s ease; }
+#bookmark-toast { position: fixed; z-index: 400; left: 50%; bottom: 100px; transform: translate(-50%, 8px); padding: 9px 14px; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-strong); color: var(--text); font: 12px 'EB Garamond', serif; opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+#bookmark-toast.visible { opacity: 1; transform: translate(-50%, 0); }
+@media (max-width: 640px) {
+  #bookmarks-toggle { left: 78px; bottom: 20px; width: 48px; height: 48px; }
+  #bookmarks-panel { left: 16px; bottom: 82px; width: calc(100vw - 32px); }
+  #bookmark-toast { bottom: 84px; max-width: calc(100vw - 32px); text-align: center; }
+}
