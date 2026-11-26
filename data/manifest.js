@@ -161,7 +161,6 @@ window.REZERO_MANIFEST = {
       "kanji": "――どうして？",
       "endLabel": "Конец главы"
     },
-    
     {
       "id": "10-8",
       "order": 10,
@@ -776,6 +775,20 @@ window.REZERO_MANIFEST = {
       "cardTitle": "Персиковый Кролик",
       "subtitle": "«Персиковый Кролик»",
       "kanji": "桃兎",
+      "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-48",
+      "order": 54,
+      "phaseId": "phase-4",
+      "volume": "Том 47",
+      "number": "Глава 48",
+      "badge": "48",
+      "title": "Re:Zero — Арка 10, Глава 48",
+      "headerTitle": "Наконец-то здесь",
+      "cardTitle": "Наконец-то здесь",
+      "subtitle": "«Наконец-то здесь»",
+      "kanji": "ようやくここに",
       "endLabel": "Конец главы"
     }
   ]
