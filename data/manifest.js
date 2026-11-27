@@ -790,6 +790,20 @@ window.REZERO_MANIFEST = {
       "subtitle": "«Наконец-то здесь»",
       "kanji": "ようやくここに",
       "endLabel": "Конец главы"
+    },
+    {
+      "id": "10-49",
+      "order": 55,
+      "phaseId": "phase-4",
+      "volume": "Том 47",
+      "number": "Глава 49",
+      "badge": "49",
+      "title": "Re:Zero — Арка 10, Глава 49",
+      "headerTitle": "«Тавро» Дандон Искар",
+      "cardTitle": "«Тавро» Дандон Искар",
+      "subtitle": "«Тавро» Дандон Искар",
+      "kanji": "『烙印』ダンドン・イスカール",
+      "endLabel": "Конец главы"
     }
   ]
 };
