@@ -152,7 +152,7 @@ window.REZERO_MANIFEST = {
       "order": 9,
       "phaseId": "phase-1",
       "volume": "Том 44",
-      "number": "I",
+      "number": "Интерлюдия",
       "badge": "I",
       "title": "Re:Zero — Арка 10, Интерлюдия",
       "headerTitle": "Почему?..",
